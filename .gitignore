@@ -1,0 +1,20 @@
+wp-config.php
+wp-admin/*
+wp-includes/*
+
+# Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+
+# Ignore everything in the "themes" directory, except the themes you specify
+wp-content/themes/*
+!wp-content/themes/jaipurgems/
+
+# sitemaps not needed locally #
+sitemap.xml
+sitemap.xml.gz
+
+# no need for these #
+.DS_Store
+.htaccess
