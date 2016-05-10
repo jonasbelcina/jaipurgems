@@ -1,3 +1,11 @@
+wp-config.php
+wp-admin/*
+wp-includes/*
+
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/index.php
+
 wp-content/themes/twentysixteen
 wp-content/themes/twentyfifteen
 wp-content/themes/twentyfourteen
