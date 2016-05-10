@@ -461,3 +461,43 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
+
+/*
+ *
+ * Custom functions
+ *
+ */
+
+// shorten character length for post title or content etc..
+function shortenText($text, $num, $ellipsis) { // Function name shortenText
+	$chars_limit = $num; // Character length
+	$chars_text = strlen($text);
+	$text = $text." ";
+	$text = substr($text,0,$chars_limit);
+	$text = substr($text,0,strrpos($text,' '));
+
+	if ($chars_text > $chars_limit)
+	 	{ $text = $text . $ellipsis; } // Ellipsis
+	 	return $text;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
