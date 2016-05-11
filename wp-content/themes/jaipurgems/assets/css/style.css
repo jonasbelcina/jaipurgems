@@ -229,7 +229,7 @@ body {
 		color: #fff;
 		font-size: 17px;
 		text-transform: uppercase;
-		padding: 0 40px;
+		padding: 0 25px;
 		line-height: 58px;
 		background: none;
 		font-family: 'GothamBook';
@@ -1500,7 +1500,8 @@ footer {
 		}
 
 	.navbar-default .navbar-nav > li > a {
-		padding: 0 30px;
+		padding: 0 20px;
+		font-size: 15px;
 	}
 
 	.dropdown-sub {
@@ -1508,8 +1509,8 @@ footer {
 	}
 
 		.dropdown-sub h2 {
-			font-size: 26px;
-			line-height: 26px;
+			font-size: 20px;
+			line-height: 20px;
 			margin-bottom: 25px;
 		}
 
@@ -1520,6 +1521,10 @@ footer {
 		.dropdown-sub li {
 			padding-bottom: 15px;
 		}
+
+			.dropdown-sub li a {
+				font-size: 16px;
+			}
 
 	.home-slide h1 {
 		font-size: 36px;

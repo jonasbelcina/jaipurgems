@@ -103,6 +103,34 @@
 	                            <li><a href="#">Diamonds</a></li>
 	                            <li><a href="#">Collections</a></li>
 	                            <li><a href="#">Our Legacy</a></li>
+	                            <li>
+	                            	<a href="#" class="dropdown-toggle" data-hover="dropdown" data-delay="100" data-close-others="true">Our World <span class="glyphicon glyphicon-plus"></span></a>
+
+	                            	<div class="dropdown-menu main-dropdown">
+	                            	    <div class="container">
+	                            	        <div class="row">
+	                            	            <div class="dropdown-sub">
+	                            	                <h2>Our World<span>Explore</span></h2>
+	                            	                <ul>
+	                            	                    <li>
+	                            	                        <a href="#">Campaigns</a>
+	                            	                        <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/bangles-tile.jpg" alt="bangles" />
+	                            	                    </li>
+	                            	                    <li>
+	                            	                        <a href="#">Media</a>
+	                            	                        <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/earrings-sub.jpg" alt="earrings" />
+	                            	                    </li>
+	                            	                    <li>
+	                            	                        <a href="#">Events</a>
+	                            	                        <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/bangles-tile.jpg" alt="bangles" />
+	                            	                    </li> 
+	                            	                </ul>
+	                            	            </div>
+
+	                            	        </div>
+	                            	    </div>
+	                            	</div>
+	                            </li>
 	                        </ul>
 	                    </div>
 	                </div>
