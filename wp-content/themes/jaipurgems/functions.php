@@ -481,6 +481,18 @@ function shortenText($text, $num, $ellipsis) { // Function name shortenText
 	 	return $text;
 }
 
+// ignore sticky posts on main blog page
+function jg_ignore_sticky( $query ) {
+	$obj = get_queried_object();
+	// var_dump(get_queried_object());
+    if ( is_home() && $query->is_main_query() ) {
+        // $query->set('ignore_sticky_posts', 1);
+        $query->set( 'post__not_in', get_option( 'sticky_posts' ) ); 
+    }
+}
+
+add_action( 'pre_get_posts', 'jg_ignore_sticky' );
+
 
 
 

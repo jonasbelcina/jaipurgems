@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
+<div id="primary" class="content-area iojaskndm,sa">
 	<main id="main" class="site-main" role="main">
 		<?php
 		// Start the loop.

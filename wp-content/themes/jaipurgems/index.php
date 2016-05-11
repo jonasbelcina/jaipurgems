@@ -50,22 +50,13 @@ get_header(); ?>
 											<li><?php the_time('F d, Y'); ?></li>
 										</ul>
 										<h2><?php the_title(); ?></h2>
-										<?php echo wpautop(shortenText(wpautop(get_the_content()), 180, '')); ?>
+										<?php echo wpautop(shortenText(wpautop(get_the_content()), 175, '')); ?>
 										<div class="buttons">
 											<a href="<?php the_permalink(); ?>">Read Post</a>
 											<a href="#" class="share">Share</a>
 										</div>
 									</div>
 								</div>
-
-								<!-- <div class="col-lg-6 col-md-6 col-sm-6 home-blog">
-									<a class="home-blog-img" href="<?php the_permalink(); ?>">
-										<?php the_post_thumbnail('full');?>
-									</a>
-									<h3><?php the_title(); ?><span class="news-date"><?php the_time('d.m.Y'); ?></span></h3>
-									<p><?php echo shortenText(get_the_excerpt(), 94, ''); ?></p>
-									<a href="<?php the_permalink(); ?>">Read more</a>
-								</div> -->
 								<?php
 								$ctr++;
 							endwhile; ?>
@@ -78,47 +69,68 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="container">
+		<div class="row">
 
-		<?php if ( have_posts() ) : ?>
+			<div class="col-lg-9 col-md-9 col-sm-9 blogs">
+				<?php if ( is_home() && ! is_front_page() ) : ?>
+					<h1>Recent Blogs</h1>
+				<?php endif; ?>
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-			<?php endif; ?>
+				<?php if ( have_posts() ) : ?>
 
-			<?php
-			// Start the loop.
-			while ( have_posts() ) : the_post();
+					<?php
+					// Start the loop.
+					while ( have_posts() ) : the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'template-parts/content', get_post_format() );
 
-			// End the loop.
-			endwhile;
+					// End the loop.
+					endwhile;
 
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-				'next_text'          => __( 'Next page', 'twentysixteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
-			) );
+					// // Previous/next page navigation.
+					// the_posts_pagination( array(
+					// 	'prev_text'          => __( 'Previous page', 'twentysixteen' ),
+					// 	'next_text'          => __( 'Next page', 'twentysixteen' ),
+					// 	'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
+					// ) );
 
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'template-parts/content', 'none' );
+					?>
 
-		endif;
-		?>
+					<div class="blogs-nav">
+						<?php
+							$next = explode('"',get_next_posts_link());
+							$next = $next[1];
+							$previous = explode('"',get_previous_posts_link()); 
+							$previous = $previous[1];
 
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+							if ($previous) {
+							    echo '<a href="' . $previous . '" class="blogs-prev">Previous page</a>';
+							}
 
-<?php get_sidebar(); ?>
+							if ($next) {
+							    echo '<a href="' . $next . '" class="blogs-next">Next page</a>';
+							}
+						?>
+					</div>
+
+				<?php
+				// If no content, include the "No posts found" template.
+				else :
+					get_template_part( 'template-parts/content', 'none' );
+
+				endif;
+				?>
+			</div>
+
+			<?php get_sidebar('blog'); ?>
+
+		</div>
+	</div>
+
 <?php get_footer(); ?>
