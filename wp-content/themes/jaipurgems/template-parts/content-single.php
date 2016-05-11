@@ -25,7 +25,7 @@
 		<a href="mailto:?&subject=<?php the_title();?>&body=<?php echo shortenText(get_the_content(), 110, '...');?><?php echo $link;?>"><img src="<?=get_template_directory_uri()?>/assets/images/icon-email.png"></a>
 	</div>
 
-	<?php the_post_thumbnail('full');?>
+	<?php the_post_thumbnail('full'); ?>
 
 	<?php the_content(); ?>
 

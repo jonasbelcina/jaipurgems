@@ -1194,6 +1194,7 @@ footer {
 
 			.blog-img img {
 				width: 100%;
+				height: auto;
 			}
 
 		.blog-item .blog-content {

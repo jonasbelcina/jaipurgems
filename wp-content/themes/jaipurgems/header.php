@@ -18,6 +18,11 @@
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
+
+	<?php if(is_single()) : ?>
+		<meta property="og:image" content="<?php the_post_thumbnail('full'); ?>" />
+	<?php endif; ?>
+
 	<?php wp_head(); ?>
 </head>
 
