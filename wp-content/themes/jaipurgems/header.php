@@ -20,7 +20,7 @@
 	<?php endif; ?>
 
 	<?php if(is_single()) : ?>
-		<meta property="og:image" content="<?php the_post_thumbnail('full'); ?>" />
+		<meta property="og:image" content="<?php get_the_post_thumbnail('full'); ?>" />
 	<?php endif; ?>
 
 	<?php wp_head(); ?>

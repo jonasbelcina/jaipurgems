@@ -16,7 +16,7 @@
 
 get_header(); ?>
 
-	<div class="container">
+	<div class="container breadcrumb-container">
 		<div class="row">
 			<nav class="breadcrumbs">
 				<a href="<?php echo home_url(); ?>">Home</a>
@@ -41,7 +41,7 @@ get_header(); ?>
 							<?php
 							$ctr == 1;
 							while( $query->have_posts() ) : $query->the_post(); ?>
-								<div class="<?php if($ctr == 1) { ?>col-lg-4 col-md-4 col-sm-4<?php } else { ?>col-lg-8 col-md-8 col-sm-8<?php } ?> featured-blog">
+								<div class="<?php if($ctr == 1) { ?>col-lg-4 col-md-4 col-sm-12<?php } else { ?>col-lg-8 col-md-8 col-sm-12<?php } ?> featured-blog">
 									<?php the_post_thumbnail('full');?>
 									<div class="blog-content">
 										<?php $categories = strip_tags(get_the_category_list() , '<li><a>');?>

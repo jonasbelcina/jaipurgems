@@ -15,6 +15,7 @@
 		<form>
 			<input type="text" placeholder="Name" />
 			<input type="email" placeholder="Email" />
+			<div class="clearfix"></div>
 			<button type="submit">Sign In</button>
 		</form>
 	</div>

@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div class="container">
+<div class="container breadcrumb-container">
 	<div class="row">
 		<nav class="breadcrumbs">
 			<a href="<?php echo home_url(); ?>">Home</a>
@@ -21,7 +21,7 @@ get_header(); ?>
 
 <div class="container">
 	<div class="row">
-		<div class="col-lg-9 col-md-9 col-sm-9 blogs">
+		<div class="col-lg-9 col-md-9 col-sm-12 blogs">
 			<?php
 			// Start the loop.
 			while ( have_posts() ) : the_post();

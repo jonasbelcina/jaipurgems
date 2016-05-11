@@ -51,6 +51,11 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.clearfix {
+	clear: both;
+	overflow: hidden;
+}
+
 .navbar-top {
 	text-align: center;
 	padding: 15px 0;
@@ -1085,7 +1090,7 @@ footer {
 			}
 
 				.featured-blog.col-md-4 .blog-content h2 {
-					height: 66px;
+					max-height: 66px;
 				}
 
 			.blog-content ul {
@@ -1136,7 +1141,7 @@ footer {
 			}
 
 			.featured-blog .blog-content p {
-				height: 44px;
+				max-height: 44px;
 				overflow: hidden;
 			}
 
@@ -1305,6 +1310,8 @@ footer {
 
 	.single-blog img {
 		margin-bottom: 25px;
+		max-width: 100%;
+		height: auto;
 	}
 
 	.single-blog p {
@@ -1590,6 +1597,46 @@ footer {
 			left: 15px;
 		}
 
+	.featured-blog {
+		height: 350px;
+	}
+
+		.featured-blog.col-md-8,
+		.featured-blog.col-md-4 {
+			padding: 0;
+		}
+
+		.featured-blog.col-md-8 {
+			margin-bottom: 20px;
+		}
+
+		.featured-blog .blog-content h2 {
+			font-size: 28px;
+		}
+
+	.blog-item .blog-content ul {
+		margin-bottom: 5px;
+	}
+
+	.blog-item .blog-content h2 {
+		font-size: 21px;
+		margin-bottom: 10px;
+	}
+
+	.blog-content p {
+		letter-spacing: 0;
+	}
+
+	.single .blog-sidebar {
+		width: 100%;
+		padding-left: 0;
+	}
+
+		.single .blog-sidebar .sidebox {
+			max-width: 277px;
+			margin: 0 auto 50px;
+		}
+
 	.footer-social label {
 		display: block;
 		margin: 0;
@@ -1736,6 +1783,44 @@ footer {
 				content: url('../images/prelink-white-sm.png');
 			}
 
+	.featured-blogs > .container {
+		margin: 0 15px;
+	}
+
+	.breadcrumb-container {
+		margin: 0 15px;
+	}
+
+	.blogs {
+		padding-left: 15px;
+	}
+
+		.blog-item {
+			height: auto;
+		}
+
+			.blog-item .blog-content {
+				height: auto;
+				padding-left: 0;
+			}
+
+			.blog-item .blog-content .buttons {
+				position: initial;
+			}
+
+			.blog-item .blog-img {
+				margin-bottom: 20px;
+			}
+
+	.blog-sidebar {
+		padding-left: 0;
+	}
+
+		.blog-sidebar .sidebox {
+			max-width: 277px;
+			margin: 0 auto 30px;
+		}
+
 	.footer-top {
 		padding: 20px 15px 0px;
 	}
@@ -1832,6 +1917,10 @@ footer {
 		.history-tile {
 			margin: 0;
 		}
+
+	.blog-content h2 {
+		font-size: 24px;
+	}
 
 	.find-jewellery {
 		padding: 0 10px;
