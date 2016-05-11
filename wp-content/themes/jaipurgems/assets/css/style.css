@@ -1635,10 +1635,10 @@ footer {
 		padding-left: 0;
 	}
 
-		.single .blog-sidebar .sidebox {
+		/*.single .blog-sidebar .sidebox {
 			max-width: 277px;
 			margin: 0 auto 50px;
-		}
+		}*/
 
 	.footer-social label {
 		display: block;
@@ -1821,10 +1821,15 @@ footer {
 		margin-top: 0;
 	}
 
-		.blog-sidebar .sidebox {
+	.tweets,
+	.insta {
+		margin: 0 15px;
+	}
+
+		/*.blog-sidebar .sidebox {
 			max-width: 277px;
 			margin: 0 auto 30px;
-		}
+		}*/
 
 	.footer-top {
 		padding: 20px 15px 0px;
