@@ -8,46 +8,39 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+<div class="blog-content single-blog" itemscope="" itemtype="http://schema.org/BlogPosting">
+	<?php $categories = strip_tags(get_the_category_list() , '<li><a>');?>
+	<ul>
+		<?php echo $categories; ?>
+		<li><?php the_time('F d, Y'); ?></li>
+	</ul>
+	<h2><?php the_title(); ?></h2>
+	
+	<?php $link = get_permalink();?>
+	<div class="share">
+		<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" onclick="return popitup('https://www.facebook.com/sharer/sharer.php?u=<?php echo $link; ?>')" target="_blank"><img src="<?=get_template_directory_uri()?>/assets/images/icon-fb.png"></a>
+		<a target="_blank" href="https://twitter.com/home?status=<?php echo shortenText(get_the_content(), 110, '...'); ?> <?php echo $link; ?>" onclick="return popitup('https://twitter.com/home?status=<?php echo shortenText(get_the_content(), 110, '...'); ?> <?php echo $link; ?>');"><img src="<?=get_template_directory_uri()?>/assets/images/icon-twitter.png"></a>
+		<a target="_blank" href="https://plus.google.com/share?url=<?php echo $link;?>"  onclick="return popitup('https://plus.google.com/share?url=<?php echo $link;?>')"><img src="<?=get_template_directory_uri()?>/assets/images/icon-g-plus.png"></a>
+		<a href="#" onclick="window.print()"><img src="<?=get_template_directory_uri()?>/assets/images/icon-print.png"></a>
+		<a href="mailto:?&subject=<?php the_title();?>&body=<?php echo shortenText(get_the_content(), 110, '...');?><?php echo $link;?>"><img src="<?=get_template_directory_uri()?>/assets/images/icon-email.png"></a>
+	</div>
 
-	<?php twentysixteen_excerpt(); ?>
+	<?php the_post_thumbnail('full');?>
 
-	<?php twentysixteen_post_thumbnail(); ?>
+	<?php the_content(); ?>
 
-	<div class="entry-content">
-		<?php
-			the_content();
+	<?php disqus_embed(' palmonfoundation '); ?>
 
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
-				'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
-
-			if ( '' !== get_the_author_meta( 'description' ) ) {
-				get_template_part( 'template-parts/biography' );
-			}
+	<div class="blogs-nav single-blogs-nav">
+		<?php 
+			$previous = get_previous_post();
+			$next = get_next_post();
+			if($next)
+				echo '<a href = "'.$next->guid.'" class="blogs-next">Next Post</a>';
+			if($previous)
+				echo '<a href = "'.$previous->guid.'" class="blogs-prev">Previous Post</a>';
+			
 		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php twentysixteen_entry_meta(); ?>
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+		<a href="<?php echo home_url(); ?>/blog">Back to Blogs</a>
+	</div>
+</div>

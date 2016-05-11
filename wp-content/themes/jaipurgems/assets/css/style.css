@@ -1020,7 +1020,7 @@ footer {
 			margin-left: 0;
 		}
 
-		.breadcrumbs a:first-child:after {
+		.breadcrumbs a:after {
 			content: '/';
 			position: absolute;
 			right: -19px;
@@ -1269,6 +1269,59 @@ footer {
 
 /* 
 =============================
+		 Single Blog
+=============================
+*/
+
+.single-blog {
+	position: initial;
+	color: #4b4b4b;
+	padding-top: 20px;
+}
+
+	.single-blog li {
+		color: #888;
+	}
+
+	.single-blog li a {
+		color: #888;
+	}
+
+	.single-blog .share {
+		margin-bottom: 40px;
+	}
+
+	.single-blog .share a {
+		min-width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: #525252;
+		display: inline-block;
+		padding: 10px;
+		margin: 3px;
+		text-align: center;
+	}
+
+	.single-blog img {
+		margin-bottom: 25px;
+	}
+
+	.single-blog p {
+		margin-bottom: 20px;
+	}
+
+	.single-blogs-nav {
+		margin-top: 15px;
+		border-top: 1px solid #efefef;
+	}
+
+		.single-blogs-nav .blogs-prev {
+			float: right;
+			margin-right: 15px;
+		}
+
+/* 
+=============================
 		Blog Sidebar
 =============================
 */
@@ -1390,6 +1443,30 @@ footer {
 		.insta {
 			margin-bottom: 20px;
 		}
+
+			.follow-insta {
+				font-family: 'Graphie';
+				display: inline-block;
+				background: #636363;
+				color: #fff;
+				text-transform: uppercase;
+				padding: 8px 16px;
+				border: 0;
+				-webkit-transition: all 0.3s linear;
+				transition: all 0.3s linear;
+				margin-top: 10px;
+			}
+
+				.follow-insta img {
+					margin-right: 5px;
+				}
+
+				.follow-insta:hover,
+				.follow-insta:focus {
+					text-decoration: none;
+					color: #fff;
+					background: #333;
+				}
 
 /* 
 =============================

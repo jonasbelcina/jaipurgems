@@ -45,6 +45,24 @@
                 $(this).find('span').addClass('glyphicon glyphicon-plus');
             }
         });
+
+        // $('.share a').on('click', function(e) {
+        //     e.preventDefault();
+        // });
+
 	});
 
 })(jQuery);
+
+// social sharing popup
+function popitup(url) {
+    newwindow=window.open(url,'name','height=200,width=400');
+    if (window.focus) {newwindow.focus()}
+    return false;
+}
+
+
+
+
+
+
