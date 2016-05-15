@@ -11,21 +11,17 @@
 get_header(); ?>
 
 <section class="banner">
-	<div class="container">
-		<div class="row">
-			<?php if( have_rows('home_slides') ): ?>
-				<div class="home-slides">
-					<?php while ( have_rows('home_slides') ) : the_row(); ?>
-						<div class="home-slide">
-							<?php $sub_image = get_sub_field('image'); ?>
-							<img src="<?php echo $sub_image['url']; ?>" alt="<?php echo $sub_image['alt']; ?>" />
-							<h1><?php the_sub_field('text'); ?></h1>
-						</div>
-					<?php endwhile; ?>
+	<?php if( have_rows('home_slides') ): ?>
+		<div class="home-slides">
+			<?php while ( have_rows('home_slides') ) : the_row(); ?>
+				<div class="home-slide">
+					<?php $sub_image = get_sub_field('image'); ?>
+					<img src="<?php echo $sub_image['url']; ?>" alt="<?php echo $sub_image['alt']; ?>" />
+					<h1><?php the_sub_field('text'); ?></h1>
 				</div>
-			<?php endif; ?>
+			<?php endwhile; ?>
 		</div>
-	</div>
+	<?php endif; ?>
 </section>
 
 <section class="expertise">
