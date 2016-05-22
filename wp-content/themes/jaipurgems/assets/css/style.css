@@ -221,17 +221,25 @@ body {
 	.navbar-header {
 		float: none;
 		display: inline-block;
+		width: 100%;
+	}
+
+	.navbar-nav {
+		width: 100%;
+		position: relative;
 	}
 
 	.navbar-default .navbar-nav > li {
 		background: none !important;
+		display: inline-block;
+		float: none;
 	}
 
 	.navbar-default .navbar-nav > li > a {
 		color: #fff;
 		font-size: 17px;
 		text-transform: uppercase;
-		padding: 0 25px;
+		padding: 0 40px;
 		line-height: 58px;
 		background: none;
 		font-family: 'GothamBook';
