@@ -1625,7 +1625,7 @@ footer {
 		padding: 0 25px 25px;
 		height: 315px;
 		position: relative;
-		margin: 0 0 5px 5px;
+		margin: 0 0 0 5px;
 	}
 
 		.history-item img {
@@ -1764,12 +1764,12 @@ footer {
 		}
 
 		.history-year > div:nth-child(2) span:before {
-			left: -12px;
+			left: -8px;
 			top: -35px;
 		}
 
 		.history-year > div:nth-child(3) span:before {
-			left: -17px;
+			left: -10px;
 			top: -35px;
 		}
 
@@ -2099,11 +2099,11 @@ footer {
 	}
 
 	.history-year > div:nth-child(2) span:before {
-		left: -4px;
+		left: 1px;
 	}
 
 	.history-year > div:nth-child(3) span:before {
-		left: -1px;
+		left: 6px;
 	}
 }
 
