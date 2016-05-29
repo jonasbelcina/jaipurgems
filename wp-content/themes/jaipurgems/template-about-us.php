@@ -11,24 +11,25 @@
 get_header(); ?>
 
 <div class="container">
-	<nav class="about-nav">
-		<ul>
-			<li><a href="#">The House</a></li>
-			<li><a href="#">History &amp; Heritage</a></li>
-			<li><a href="#">Our Expertise</a></li>
-			<li><a href="#">Philantrophy</a></li>
-			<li><a href="#">Product Line</a></li>
-		</ul>
-	</nav>
+	<div class="row">
+		<nav class="about-nav">
+			<ul>
+				<li><a href="#">The House</a></li>
+				<li><a href="#">History &amp; Heritage</a></li>
+				<li><a href="#">Our Expertise</a></li>
+				<li><a href="#">Philantrophy</a></li>
+				<li><a href="#">Product Line</a></li>
+			</ul>
+		</nav>
+	</div>
 </div>
 
-
+<?php $banner_img = get_field('about_banner_background_image'); ?>
 <section class="house-jaipur">
-	<div class="container">
-		<h2>The House of Jaipur Gems</h2>
-		<h3>Forever Now</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, uis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+	<div class="container" style="background: url(<?php echo $banner_img; ?>) center no-repeat;">
+		<h2><?php the_field('about_banner_heading'); ?></h2>
+		<h3><?php the_field('about_banner_heading_2'); ?></h3>
+		<?php echo wpautop(get_field('about_banner_content')); ?>
 	</div>
 </section>
 
@@ -144,7 +145,7 @@ get_header(); ?>
 		<h2 class="about-section-header">Philanthrophy</h2>
 		<h3>Jaipur Gems Charitable Trust</h3>
 		<div class="row">
-			<div class="col-md-3 col-sm-4 ph-tile">
+			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
 				<div class="row">
 					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p1.jpg" />
 					<div class="content">
@@ -154,7 +155,7 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-4 ph-tile">
+			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
 				<div class="row">
 					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p2.jpg" />
 					<div class="content">
@@ -164,7 +165,7 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-4 ph-tile">
+			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
 				<div class="row">
 					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p3.jpg" />
 					<div class="content">
@@ -174,7 +175,7 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-4 ph-tile">
+			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
 				<div class="row">
 					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p4.jpg" />
 					<div class="content">
@@ -184,7 +185,7 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-4 ph-tile">
+			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
 				<div class="row">
 					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p5.jpg" />
 					<div class="content">
@@ -194,7 +195,7 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-4 ph-tile">
+			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
 				<div class="row">
 					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p6.jpg" />
 					<div class="content">
@@ -204,7 +205,7 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-4 ph-tile">
+			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
 				<div class="row">
 					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p7.jpg" />
 					<div class="content">
@@ -214,7 +215,7 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-4 ph-tile">
+			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
 				<div class="row">
 					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p8.jpg" />
 					<div class="content">

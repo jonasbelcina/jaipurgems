@@ -1579,6 +1579,10 @@ footer {
 			bottom: -40px;
 		}
 
+	.owner img {
+		margin: 0 auto;
+	}
+
 	.owner p {
 		font-size: 22px;
 		color: #000;
@@ -1696,6 +1700,8 @@ footer {
 		top: 50%;
 		margin-top: -35px;
 		width: 100%;
+		height: 0;
+		z-index: 2;
 	}
 
 		.custom-nav > div {
@@ -1833,6 +1839,7 @@ footer {
 		.about-expertise-slider .owl-prev {
 			background: url('../images/prev.png');
 			margin-left: -30px;
+			float: left;
 		}
 
 		.about-expertise-slider .owl-next {
@@ -2068,7 +2075,7 @@ footer {
 		top: 50%;
 		margin-top: -11px;
 		width: 100%;
-		z-index: -1;
+		height: 0;
 	}
 
 		.latest-slider .owl-nav > div {
@@ -2079,6 +2086,7 @@ footer {
 		.latest-slider .owl-prev {
 			background: url('../images/prev.png');
 			margin-left: -20px;
+			float: left;
 		}
 
 		.latest-slider .owl-next {
@@ -2094,6 +2102,14 @@ footer {
 */
 
 @media only screen and (max-width : 1199px) {
+	#navbar {
+		padding: 0;
+	}
+
+	.navbar-default .navbar-nav > li > a {
+		padding: 0 20px;
+	}
+
 	.history-item {
 		height: 390px;
 	}
@@ -2105,6 +2121,29 @@ footer {
 	.history-year > div:nth-child(3) span:before {
 		left: 6px;
 	}
+
+	.product-line .nav-tabs li a {
+		padding: 33px 15px;
+		font-size: 19px;
+	}
+
+		.product-line .nav-tabs li.active a:after {
+			right: 12px;
+		}
+
+	.product-line .tab-content .col-xs-7 {
+		padding: 20px 20px 0;
+	}
+
+		.product-line .tab-content p {
+			font-size: 17px;
+			margin-bottom: 10px;
+		}
+
+		.product-line .tab-content img {
+			max-height: 284px;
+		}
+
 }
 
 @media only screen and (max-width : 991px) {
@@ -2276,6 +2315,20 @@ footer {
 		margin-bottom: 20px;
 	}
 
+	.about-nav li a {
+		font-size: 15px;
+	}
+
+	.owner p {
+		font-size: 17px;
+		padding-top: 24px;
+	}
+
+		.owner p:before {
+			top: 0;
+			left: 0;
+		}
+
 	.history-item {
 		height: auto;
 		padding: 0;
@@ -2301,8 +2354,42 @@ footer {
 			display: block;
 		}
 
+		.custom-nav {
+			position: initial;
+			margin: 15px 0 0;
+			text-align: center;
+		}
+
+		.custom-prev,
+		.custom-next {
+			margin: 0 15px;
+			display: inline-block;
+			float: none;
+		}
+
 	.history-year {
 		display: none;
+	}
+
+	.about-expertise-slider .owl-prev {
+		margin-left: 15px;
+	}
+
+	.about-expertise-slider .owl-next {
+		margin-right: 15px;
+	}
+
+	.latest-slider .latest-item {
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.latest-slider .owl-prev {
+		margin-left: 15px;
+	}
+
+	.latest-slider .owl-next {
+		margin-right: 15px;
 	}
 
 }
@@ -2547,6 +2634,36 @@ footer {
 		padding: 20px 15px 20px;
 	}
 
+	.about-nav {
+		display: none;
+	}
+
+	.house-jaipur .container {
+		padding: 30px 15px 10px;
+	}
+
+		.house-jaipur h2 {
+			font-size: 30px;
+		}
+
+		.house-jaipur h3 {
+			font-size: 24px;
+		}
+
+		.house-jaipur p {
+			font-size: 15px;
+			margin-bottom: 20px;
+		}
+
+	.about-section-header {
+		font-size: 28px;
+	}
+
+	.owner p:after {
+		bottom: -30px;
+		right: 0;
+	}
+
 	.history-item {
 		margin: 0 30px;
 	}
@@ -2555,10 +2672,6 @@ footer {
 			height: 240px;
 		}
 
-	.custom-nav {
-		z-index: 9;
-	}
-
 	.custom-prev {
 		margin-left: 10px;
 	}
@@ -2566,6 +2679,47 @@ footer {
 	.custom-next {
 		margin-right: 10px;
 	}
+
+	.about-expertise-slider {
+		background: #000;
+	}
+
+	.about-expertise-content {
+		position: initial;
+		background: #000;
+		padding: 20px;
+	}
+
+		.about-expertise-content h3 {
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+
+		.about-expertise-content p {
+			font-size: 14px;
+		}
+
+		.about-expertise-slider .owl-nav {
+			display: none;
+		}
+
+		.about-expertise-slider .owl-dots {
+			bottom: 3px;
+		}
+
+	.philosophy {
+		text-align: center;
+	}
+
+		.ph-tile {
+			width: 50%;
+			/*float: none;*/
+			/*display: inline-block;*/
+		}
+
+		.ph-tile img {
+			width: 100%;
+		}
 
 }
 
@@ -2747,6 +2901,15 @@ footer {
 @media only screen and (max-width : 379px) {
 	.history-item .content {
 		height: 440px;
+	}
+
+	.ph-tile .content p {
+		font-size: 18px;
+		top: 45%;
+	}
+
+	.ph-tile .content a {
+		bottom: 20px;
 	}
 }
 

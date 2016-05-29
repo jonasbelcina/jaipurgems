@@ -102,7 +102,18 @@
             nav: true,
             navText: true,
             loop: true,
-            dots: false
+            dots: false,
+            responsive : {
+                991 : {
+                    items : 3,
+                },
+                767: {
+                    items: 2,
+                },
+                0 : {
+                    items : 1,
+                }
+            },
             // animateOut: 'fadeOut',
             // autoplay: true
         });
