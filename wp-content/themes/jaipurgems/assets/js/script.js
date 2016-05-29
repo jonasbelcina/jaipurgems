@@ -93,7 +93,7 @@
             navText: true,
             // loop: true,
             // animateOut: 'fadeOut',
-            autoplay: true
+            // autoplay: true
         });
 
         // About Us - Latest Collection slider

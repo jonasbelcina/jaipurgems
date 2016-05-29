@@ -26,7 +26,7 @@ get_header(); ?>
 
 <?php $banner_img = get_field('about_banner_background_image'); ?>
 <section class="house-jaipur">
-	<div class="container" style="background: url(<?php echo $banner_img; ?>) center no-repeat;">
+	<div class="container" style="background: url(<?php echo $banner_img['url']; ?>) center no-repeat;">
 		<h2><?php the_field('about_banner_heading'); ?></h2>
 		<h3><?php the_field('about_banner_heading_2'); ?></h3>
 		<?php echo wpautop(get_field('about_banner_content')); ?>
@@ -37,15 +37,16 @@ get_header(); ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-sm-6">
-				<h2 class="about-section-header">From the Owner</h2>
+				<h2 class="about-section-header"><?php the_field('about_owner_heading'); ?></h2>
 				<div class="row">
-					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/owner-video.jpg" />
+					<?php $owner_img = get_field('about_owner_image'); ?>
+					<img class="img-responsive" src="<?php echo $owner_img['url']; ?>" />
 				</div>
 			</div>
 
 			<div class="col-md-6 col-sm-6">
-				<h2 class="about-section-header">Our Philosophy</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, uis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+				<h2 class="about-section-header"><?php the_field('about_philosophy_heading'); ?></h2>
+				<p><?php the_field('about_philosophy_content'); ?></p>
 			</div>
 		</div>
 	</div>
@@ -53,53 +54,29 @@ get_header(); ?>
 
 <section class="heritage">
 	<div class="container">
-		<h2 class="about-section-header">Heritage &amp; History</h2>
-		<h3>Explore a rich heritage filled with Legendary jewellery &amp; Milestones</h3>
+		<h2 class="about-section-header"><?php the_field('about_history_heading'); ?></h2>
+		<h3><?php the_field('about_history_subheading'); ?></h3>
 		<div class="row">
 			<div class="history-wrap">
-				<div class="history-slider">
-					<div class="history-item">
-						<h4>1960 - The Beginning</h4>
-						<div class="content">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-						</div>
-						<div class="content-year">
-							1960
-						</div>
+				<?php if( have_rows('timeline') ): ?>
+					<div class="history-slider">
+						<?php while ( have_rows('timeline') ) : the_row(); ?>
+							<div class="history-item">
+								<h4><?php the_sub_field('year'); ?> - <?php the_sub_field('heading'); ?></h4>
+								<div class="content">
+									<?php $timeline_img = get_sub_field('image');
+										if($timeline_img) : ?>
+											<img src="<?php echo $timeline_img['url']; ?>" />
+										<?php endif; ?>
+									<?php echo wpautop(get_sub_field('content')); ?>
+								</div>
+								<div class="content-year">
+									<?php the_sub_field('year'); ?>
+								</div>
+							</div>
+						<?php endwhile; ?>
 					</div>
-
-					<div class="history-item">
-						<h4>1965 - First Collection</h4>
-						<div class="content">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/history2.jpg" />
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-						</div>
-						<div class="content-year">
-							1965
-						</div>
-					</div>
-
-					<div class="history-item">
-						<h4>1970 - Diamonds Collection</h4>
-						<div class="content">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/history3.jpg" />
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
-						</div>
-						<div class="content-year">
-							1970
-						</div>
-					</div>
-
-					<div class="history-item">
-						<h4>1979 - Latest Collection</h4>
-						<div class="content">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-						</div>
-						<div class="content-year">
-							1979
-						</div>
-					</div>
-				</div>
+				<?php endif; ?>
 
 				<div class="custom-nav">
 					<div class="custom-prev"></div>
@@ -108,10 +85,12 @@ get_header(); ?>
 			</div>
 
 			<div class="history-year">
-				<div class="current"><span>1960</span></div>
-				<div><span>1965</span></div>
-				<div><span>1970</span></div>
-				<div><span>1979</span></div>
+				<?php if( have_rows('timeline') ): $ctr = 1; ?>
+					<?php while ( have_rows('timeline') ) : the_row(); ?>
+						<div class="<?php if($ctr == 1) { ?>current<?php } ?>"><span><?php the_sub_field('year'); ?></span></div>
+						<?php $ctr++; ?>
+					<?php endwhile; ?>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
@@ -119,31 +98,28 @@ get_header(); ?>
 
 <section class="about-expertise">
 	<div class="container">
-		<h2 class="about-section-header">Our Expertise</h2>
-		<div class='about-expertise-slider'>
-			<div class="about-expertise-slide">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-expertise1.jpg" />
-				<div class="about-expertise-content">
-					<h3>Signature</h3>
-					<p>Two years ago, Mr. Siddhartha Sacheti curated a collection called the Dal Lake. Inspired by the beauty of Kashmir, it included delicate motifs like the lotus and the peacock. The latter, in particular, became an instant success, and has turned into a key element of the brand’s signature style. It features extensively in the jewellery designs of Jaipur Gems.</p>
-				</div>
+		<h2 class="about-section-header"><?php the_field('about_expertise_heading'); ?></h2>
+		<?php if( have_rows('expertise') ): ?>
+			<div class='about-expertise-slider'>
+				<?php while ( have_rows('expertise') ) : the_row(); ?>
+					<div class="about-expertise-slide">
+						<?php $expertise_img = get_sub_field('image'); ?>
+						<img src="<?php echo $expertise_img['url']; ?>" alt="<?php echo $expertise_img['alt']; ?>" />
+						<div class="about-expertise-content">
+							<h3><?php the_sub_field('heading'); ?></h3>
+							<p><?php the_sub_field('content'); ?></p>
+						</div>
+					</div>
+				<?php endwhile; ?>
 			</div>
-
-			<div class="about-expertise-slide">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-expertise1.jpg" />
-				<div class="about-expertise-content">
-					<h3>Excepteur</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-				</div>
-			</div>
-		</div>
+		<?php endif; ?>
 	</div>
 </section>
 
 <section class="philantrophy">
 	<div class="container">
-		<h2 class="about-section-header">Philanthrophy</h2>
-		<h3>Jaipur Gems Charitable Trust</h3>
+		<h2 class="about-section-header"><?php the_field('philantrophy_heading'); ?></h2>
+		<h3><?php the_field('philantrophy_subheading'); ?></h3>
 		<div class="row">
 			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
 				<div class="row">
@@ -230,67 +206,80 @@ get_header(); ?>
 
 <section class="product-line">
 	<div class="container">
-		<h2 class="about-section-header">Product Line</h2>
+		<h2 class="about-section-header"><?php the_field('product_line_heading'); ?></h2>
 		<div class="row">
-			<div class="col-md-3">
-				<div class="row">
-					<ul class="nav nav-tabs" role="tablist">
-					    <li role="presentation" class="active"><a href="#materials" aria-controls="materials" role="tab" data-toggle="tab">Our Materials</a></li>
-					    <li role="presentation"><a href="#stones" aria-controls="stones" role="tab" data-toggle="tab">Precious Stones</a></li>
-					    <li role="presentation"><a href="#certifications" aria-controls="certifications" role="tab" data-toggle="tab">Certifications</a></li>
-				  	</ul>
-			  	</div>
+			<div class="desktop-product-line">
+				<div class="col-md-3">
+					<div class="row">
+						<?php if( have_rows('product_line') ): $ctr = 1; ?>
+							<ul class="nav nav-tabs" role="tablist">
+								<?php while ( have_rows('product_line') ) : the_row(); ?>
+									<li role="presentation" <?php if($ctr == 1) { ?>class="active"<?php } ?>><a href="#tab<?php echo $ctr; ?>" role="tab" data-toggle="tab"><?php the_sub_field('heading'); ?></a></li>
+								<?php $ctr++; 
+								endwhile; ?>
+							</ul>
+						<?php endif; ?>
+					</div>
+				</div>
+
+				<div class="col-md-9">
+					<div class="row">
+						<?php if( have_rows('product_line') ): $ctr = 1; ?>
+							<div class="tab-content">
+								<?php while ( have_rows('product_line') ) : the_row(); ?>
+									<div role="tabpanel" class="tab-pane fade in <?php if($ctr == 1) { ?>active<?php  }?>" id="tab<?php echo $ctr; ?>">
+										<div class="col-xs-7">
+											<?php echo wpautop(get_sub_field('content')); ?>
+										</div>
+
+										<div class="col-xs-5">
+											<div class="row">
+												<?php $tab_img = get_sub_field('image'); ?>
+												<img class="img-responsive" src="<?php echo $tab_img['url']; ?>" alt="<?php echo $tab_img['alt']; ?>" />
+											</div>
+										</div>
+									</div>
+								<?php $ctr++;
+								endwhile; ?>
+							</div>
+						<?php endif; ?>
+					</div>
+				</div>
 			</div>
 
-			<div class="col-md-9">
-				<div class="row">
-					<div class="tab-content">
-					    <div role="tabpanel" class="tab-pane fade in active" id="materials">
-					    	<div class="col-xs-7">
-					    		<p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut</strong></p>
-					    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-					    	</div>
-
-					    	<div class="col-xs-5">
-					    		<div class="row">
-					    			<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/pl1.jpg" />
-					    		</div>
-					    	</div>
-					    </div>
-					    <div role="tabpanel" class="tab-pane fade in" id="stones">
-					    	<div class="col-xs-7">
-					    		<p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut</strong></p>
-					    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-					    	</div>
-
-					    	<div class="col-xs-5">
-					    		<div class="row">
-					    			<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/pl1.jpg" />
-					    		</div>
-					    	</div>
-					    </div>
-					    <div role="tabpanel" class="tab-pane fade in" id="certifications">
-					    	<div class="col-xs-7">
-					    		<p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut</strong></p>
-					    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-					    	</div>
-
-					    	<div class="col-xs-5">
-					    		<div class="row">
-					    			<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/pl1.jpg" />
-					    		</div>
-					    	</div>
-					    </div>
-				  	</div>
-			  	</div>
+			<div class="mobile-product-line">
+				<?php if( have_rows('product_line') ): $ctr = 1; ?>
+					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+						<?php while ( have_rows('product_line') ) : the_row(); ?>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="heading_<?php echo $ctr; ?>">
+									<h4 class="panel-title">
+										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_<?php echo $ctr; ?>" aria-expanded="true" aria-controls="collapse_<?php echo $ctr; ?>">
+											<?php the_sub_field('heading'); ?>
+										</a>
+									</h4>
+								</div>
+								<div id="collapse_<?php echo $ctr; ?>" class="panel-collapse collapse <?php if($ctr == 1) { ?>in<?php } ?>" role="tabpanel" aria-labelledby="heading_<?php echo $ctr; ?>">
+									<div class="panel-body">
+										<?php $accord_img = get_sub_field('image'); ?>
+										<img class="img-responsive" src="<?php echo $accord_img['url'] ?>" alt="<?php echo $accord_img['alt'] ?>" />
+										<?php echo wpautop(get_sub_field('content')); ?>
+									</div>
+								</div>
+							</div>
+						<?php $ctr++;
+						endwhile; ?>
+					</div>
+				<?php endif; ?>
 			</div>
+
 		</div>
 	</div>
 </section>
 
 <section class="latest-collection">
 	<div class="container">
-		<h2 class="about-section-header">Latest Collection</h2>
+		<h2 class="about-section-header"><?php the_field('about_latest_heading'); ?></h2>
 		<div class="row">
 			<div class="latest-slider">
 				<div class="latest-item">

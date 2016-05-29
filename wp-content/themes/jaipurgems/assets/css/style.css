@@ -1999,6 +1999,35 @@ footer {
 			object-fit: cover;
 		}
 
+	.mobile-product-line {
+		display: none;
+		padding: 0 15px;
+	}
+
+		.mobile-product-line .panel {
+			margin-bottom: 10px;
+		}
+
+		.mobile-product-line .panel-title a {
+			color: #555;
+			text-transform: uppercase;
+			font-size: 18px;
+			font-family: 'GothamBook';
+		}
+
+		.mobile-product-line .panel-title a:hover,
+		.mobile-product-line .panel-title a:focus {
+			text-decoration: none;
+		}
+
+		.mobile-product-line .panel-body img {
+			margin: 0 auto 20px;
+		}
+
+		.mobile-product-line .panel-body p {
+			font-size: 15px;
+		}
+
 .latest-collection {
 	margin-bottom: 45px;
 }
@@ -2379,6 +2408,26 @@ footer {
 		margin-right: 15px;
 	}
 
+	.product-line .nav-tabs li {
+		width: auto;
+	}
+
+		.product-line .nav-tabs li a {
+			padding: 20px;
+		}
+
+		.product-line .nav-tabs li:last-child a {
+			border-bottom: 1px solid #f4f4f4;
+		}
+
+			.product-line .nav-tabs li.active a:after {
+				display: none;
+			}
+
+	.product-line .tab-content {
+		padding: 30px 20px 30px 0;
+	}
+
 	.latest-slider .latest-item {
 		max-width: 300px;
 		margin: 0 auto;
@@ -2429,6 +2478,10 @@ footer {
 			z-index: 999;
 			border-bottom: 1px solid #959595;
 		}
+
+			.navbar-default .navbar-nav > li {
+				display: block;
+			}
 
 			.navbar-default .navbar-nav > li > a {
 				padding: 0 15px;
@@ -2720,6 +2773,14 @@ footer {
 		.ph-tile img {
 			width: 100%;
 		}
+
+	.desktop-product-line {
+		display: none;
+	}
+
+	.mobile-product-line {
+		display: block;
+	}
 
 }
 
