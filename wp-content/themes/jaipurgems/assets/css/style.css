@@ -2126,6 +2126,40 @@ footer {
 
 /* 
 =============================
+		 Woocommerce
+=============================
+*/
+
+.shop-nav {
+
+}
+
+	.shop-nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-align: center;
+	}
+
+	.shop-nav li {
+		display: inline-block;
+	}
+
+	.shop-nav li a {
+		display: block;
+		font-size: 17px;
+		color: #000;
+		text-transform: uppercase;
+		padding: 23px 40px;
+	}
+
+		.shop-nav li a:hover {
+			color: #9c8451;
+			text-decoration: none;
+		}
+
+/* 
+=============================
 		Media Queries
 =============================
 */

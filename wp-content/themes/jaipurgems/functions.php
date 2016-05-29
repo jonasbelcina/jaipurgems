@@ -506,6 +506,64 @@ function disqus_embed($disqus_shortname) {
     </script>';
 }
 
+// Register Bootstrap Navigation Walker
+include get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+
+register_nav_menus( array(
+    'primary' => __( 'Primary Menu', 'jaipurgems' ),
+) );
+
+// Add custom type
+add_filter('acf/location/rule_types', 'acf_location_rules_types');
+function acf_location_rules_types( $choices )
+{
+    $choices['Other']['product_category'] = 'Product Category';
+
+    return $choices;
+}
+
+// Add custom value
+add_filter('acf/location/rule_values/product_category', 'acf_location_rules_values_product_category');
+function acf_location_rules_values_product_category( $choices )
+{
+    $args = array(
+    			'taxonomy'		=> 'product_cat',
+    			'hide_empty' 	=> 0
+    		);
+
+    $categories = get_categories($args);
+
+    if($categories) {
+    	foreach ($categories as $cat) {
+    		$choices[$cat->term_id] = $cat->name;
+    	}
+    }
+
+    return $choices;
+}
+
+// Matching the rule
+add_filter('acf/location/rule_match/product_category', 'acf_location_rules_match_product_category', 10, 3);
+function acf_location_rules_match_product_category( $match, $rule, $options )
+{
+    if(isset($_GET['taxonomy']) && isset($_GET['tag_ID'])) {
+    	$current_cat = $_GET['tag_ID'];
+    }
+
+    $selected_cat = $rule['value'];
+    // print_r(array($rule));
+
+    if($rule['operator'] == "==") {
+    	$match = ($current_cat == $selected_cat);
+    }
+    elseif($rule['operator'] == "!=") {
+    	$match = ($current_cat != $selected_cat);
+    }
+
+    return $match;
+}
+
+
 
 
 
