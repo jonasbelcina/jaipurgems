@@ -551,7 +551,7 @@ function acf_location_rules_match_product_category( $match, $rule, $options )
     }
 
     $selected_cat = $rule['value'];
-    // print_r(array($rule));
+    print_r(array($rule));
 
     if($rule['operator'] == "==") {
     	$match = ($current_cat == $selected_cat);
