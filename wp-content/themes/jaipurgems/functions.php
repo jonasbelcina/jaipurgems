@@ -517,14 +517,14 @@ register_nav_menus( array(
 add_filter('acf/location/rule_types', 'acf_location_rules_types');
 function acf_location_rules_types( $choices )
 {
-    $choices['Other']['product_category'] = 'Product Category';
+    $choices['Woocommerce']['product_parent_category'] = 'Product Parent Category';
 
     return $choices;
 }
 
 // Add custom value
-add_filter('acf/location/rule_values/product_category', 'acf_location_rules_values_product_category');
-function acf_location_rules_values_product_category( $choices )
+add_filter('acf/location/rule_values/product_parent_category', 'acf_location_rules_values_product_parent_category');
+function acf_location_rules_values_product_parent_category( $choices )
 {
     $args = array(
     			'taxonomy'		=> 'product_cat',
@@ -543,21 +543,22 @@ function acf_location_rules_values_product_category( $choices )
 }
 
 // Matching the rule
-add_filter('acf/location/rule_match/product_category', 'acf_location_rules_match_product_category', 10, 3);
-function acf_location_rules_match_product_category( $match, $rule, $options )
+add_filter('acf/location/rule_match/product_parent_category', 'acf_location_rules_match_product_parent_category', 10, 3);
+function acf_location_rules_match_product_parent_category( $match, $rule, $options )
 {
-    if(isset($_GET['taxonomy']) && isset($_GET['tag_ID'])) {
-    	$current_cat = $_GET['tag_ID'];
-    }
+    global $post;
+
+    $terms = get_the_terms( $post->ID, 'product_cat' );
+    $parent_cat = $terms[0]->parent;
 
     $selected_cat = $rule['value'];
     // print_r(array($rule));
 
     if($rule['operator'] == "==") {
-    	$match = ($current_cat == $selected_cat);
+    	$match = ($parent_cat == $selected_cat);
     }
     elseif($rule['operator'] == "!=") {
-    	$match = ($current_cat != $selected_cat);
+    	$match = ($parent_cat != $selected_cat);
     }
 
     return $match;
