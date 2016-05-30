@@ -31,3 +31,10 @@ echo apply_filters( 'woocommerce_loop_add_to_cart_link',
 		esc_html( $product->add_to_cart_text() )
 	),
 $product );
+
+?>
+
+<ul>
+	<li><a href="#"><span>+</span> Add to my jewellery box</a></li>
+	<li><a href="<?php the_permalink(); ?>">View details</a></li>
+</ul>

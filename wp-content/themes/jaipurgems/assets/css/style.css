@@ -2256,7 +2256,156 @@ footer {
 
 	.products .product {
 		padding: 5px;
+		border: 1px solid #fff;
 	}
+
+		.products .product a:hover {
+			text-decoration: none;
+		}
+
+	.products .product .details {
+		position: absolute;
+		width: 100%;
+		left: 100%;
+		top: -1px;
+		bottom: -1px;
+		background: #fff;
+		z-index: 2;
+		display: none;
+		border: 1px solid #959595;
+		border-left: 0;
+		text-align: center;
+		padding: 15px;
+	}
+
+	.product-col:last-child .details {
+		right: 100%;
+		left: initial;
+		border-left: 1px solid #959595;
+		border-right: 0;
+	}
+
+		.products .product:hover {
+			border: 1px solid #959595;
+		}
+
+		.products .product:hover .details {
+			display: block;
+		}
+
+	.products .product .details .content {	
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+		.product .content h3 {
+			margin: 0 0 40px;
+			padding-top: 60px;
+			padding-bottom: 45px;
+			font-size: 19px;
+			color: #000;
+			position: relative;
+		}
+
+			.col-md-6 .product .content h3 {
+				padding-top: 110px;
+			}
+
+			.product .content h3:after {
+				content: url('../images/product-title-after.png');
+				position: absolute;
+				left: 50%;
+				margin-left: -92px;
+				bottom: 0;
+			}
+
+		.product .content .amount {
+			color: #b09d76;
+			font-family: 'GothamBook';
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		.product .content .ref {
+			font-size: 16px;
+			color: #b09d76;
+			text-transform: uppercase;
+			margin-top: 5px;
+		}
+
+		.product .content-bottom {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			left: 0;
+		}
+
+		.product .content-bottom .add_to_cart_button {
+			background: #b09d76;
+			color: #fff;
+			width: 100%;
+			max-width: 357px;
+			margin: 0 auto;
+			text-transform: uppercase;
+			display: block;
+			font-size: 17px;
+			border-radius: 0;
+			-webkit-transition: all 0.3s linear;
+					transition: all 0.3s linear;
+		}
+
+			.product .content-bottom .add_to_cart_button:hover {
+				background: #a48c5a;
+				color: #fff;
+			}
+
+		.product .content-bottom ul {
+			margin: 20px 0 0;
+			padding: 0;
+			list-style: none;
+		}
+
+			.col-md-6 .product .content-bottom ul {
+				border-top: 1px solid #e5e5e5;
+				padding-top: 20px;
+				margin-top: 30px;
+			}
+
+		.product .content-bottom li {
+			display: inline-block;
+			float: left;
+		}
+
+		.product .content-bottom li a {
+			font-family: 'GothamBook';
+			font-size: 13px;
+			color: #000;
+			text-transform: uppercase;
+			position: relative;
+		}
+
+			.product .content-bottom li a:hover {
+				color: #a48c5a;
+			}
+
+			.product .content-bottom li a span {
+				font-size: 20px;
+				color: #b09d76;
+				position: absolute;
+				left: 0;
+				top: -4px;
+				line-height: 1;
+				font-weight: bold;
+			}
+
+			.product .content-bottom li:first-child a {
+				padding-left: 18px;
+			}
+
+			.product .content-bottom li:last-child {
+				float: right;
+			}
 
 /* 
 =============================
