@@ -2192,6 +2192,72 @@ footer {
 		margin: 6px 0 0;
 	}
 
+.shop-filter {
+	
+}
+
+	.shop-filter .woocommerce-ordering {
+		float: none;
+		border-bottom: 1px solid #000;
+		margin: 0;
+	}
+
+	.shop-filter ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.shop-filter li {
+		display: inline-block;
+		position: relative;
+	}
+
+	.shop-filter li a {
+		font-size: 18px;
+		color: #4f4f4f;
+		padding: 23px 60px;
+		display: block;
+	}
+
+		.shop-filter li a:hover {
+			text-decoration: none;
+		}
+
+		.shop-filter li a:first-child {
+			padding-left: 0;
+		}
+
+	.shop-filter li ul {
+		border-color: #000;
+		border-top: 0;
+		border-radius: 0;
+		padding-left: 15px;
+		min-width: 180px;
+		left: -15px;
+		padding-bottom: 5px;
+	}
+
+		.shop-filter li ul li {
+			display: block;
+		}
+
+		.shop-filter button {
+			border: 0;
+			background: #fff;
+			font-size: 16px;
+			color: #4f4f4f;
+			padding: 7px 0;
+		}
+
+.products {
+	margin: 20px 0;
+}
+
+	.products .product {
+		padding: 5px;
+	}
+
 /* 
 =============================
 		Media Queries

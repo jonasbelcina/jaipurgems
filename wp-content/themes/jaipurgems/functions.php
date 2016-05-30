@@ -602,6 +602,28 @@ function acf_location_rules_match_product_parent_category( $match, $rule, $optio
     return $match;
 }
 
+// Display xx products per page. Goes in functions.php
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 14;' ), 20 );
+
+// remove woocommerce result count and sorting option
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+
+add_filter( 'woocommerce_currencies', 'add_my_currency' );
+
+function add_my_currency( $currencies ) {
+     $currencies['AED'] = __( 'Currency name', 'woocommerce' );
+     return $currencies;
+}
+
+add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
+
+function add_my_currency_symbol( $currency_symbol, $currency ) {
+     switch( $currency ) {
+          case 'AED': $currency_symbol = ' AED'; break;
+     }
+     return $currency_symbol;
+}
 
 
 
