@@ -551,9 +551,9 @@ function acf_location_rules_match_product_category( $match, $rule, $options )
     // }
 
     $selected_cat = $rule['value'];
-    print_r(array($rule));
-    echo '@@@';
-    echo 'current-cat = ' . $current_cat;
+    // print_r(array($rule));
+    // echo '@@@';
+    // echo 'current-cat = ' . $current_cat;
     // print_r(array($options));
 
     if($rule['operator'] == "==") {

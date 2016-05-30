@@ -44,6 +44,21 @@ $cat = $wp_query->get_queried_object();
 	</nav>
 
 	<?php
+		$banner_img = '';
+		if($cat->term_id == 6) {
+			$banner_img = get_template_directory_uri() . '/assets/images/jewellery-banner.jpg';
+		}
+
+	?>
+
+	<section class="shop-banner" style="background-image: url(<?php echo $banner_img; ?>);">
+		<div class="content">
+			<h1>Jewellery</h1>
+			<h2>That transcends time</h2>
+		</div>
+	</section>
+
+	<?php
 		/**
 		 * woocommerce_before_main_content hook.
 		 *

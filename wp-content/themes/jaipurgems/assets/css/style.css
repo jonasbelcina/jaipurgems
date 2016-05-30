@@ -2158,6 +2158,40 @@ footer {
 			text-decoration: none;
 		}
 
+.shop-banner {
+	height: 324px;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+	.shop-banner .content {
+		text-align: center;
+		position: relative;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		   -moz-transform: translateY(-50%);
+		    -ms-transform: translateY(-50%);
+		    	transform: translateY(-50%);
+	}
+
+	.shop-banner h1 {
+		font-family: 'HVDFontsNiveauGroteskLightSmallCaps';
+		font-size: 64px;
+		color: #4f4f4f;
+		margin: 0;
+	}
+
+	.shop-banner h2 {
+		font-family: 'HVDFontsNiveauGroteskLightSmallCaps';
+		font-size: 30px;
+		color: #4f4f4f;
+		text-transform: uppercase;
+		opacity: 0.8;
+		letter-spacing: 3px;
+		margin: 6px 0 0;
+	}
+
 /* 
 =============================
 		Media Queries
