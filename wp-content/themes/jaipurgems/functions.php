@@ -528,7 +528,9 @@ function acf_location_rules_values_product_parent_category( $choices )
 {
     $args = array(
     			'taxonomy'		=> 'product_cat',
-    			'hide_empty' 	=> 0
+    			'hide_empty' 	=> 0,
+    			'parent'		=> 0
+
     		);
 
     $categories = get_categories($args);
