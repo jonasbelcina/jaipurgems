@@ -546,15 +546,12 @@ function acf_location_rules_values_product_category( $choices )
 add_filter('acf/location/rule_match/product_category', 'acf_location_rules_match_product_category', 10, 3);
 function acf_location_rules_match_product_category( $match, $rule, $options )
 {
-    // if(isset($_GET['taxonomy']) && isset($_GET['tag_ID'])) {
+    if(isset($_GET['taxonomy']) && isset($_GET['tag_ID'])) {
     	$current_cat = $_GET['tag_ID'];
-    // }
+    }
 
     $selected_cat = $rule['value'];
     // print_r(array($rule));
-    // echo '@@@';
-    // echo 'current-cat = ' . $current_cat;
-    // print_r(array($options));
 
     if($rule['operator'] == "==") {
     	$match = ($current_cat == $selected_cat);
@@ -566,15 +563,6 @@ function acf_location_rules_match_product_category( $match, $rule, $options )
     return $match;
 }
 
-// add_filter('acf/location/screen', 'acf_location_screen_options', 10, 2);
-
-// function acf_location_screen_options( $options, $field_group ) {
-    
-//     $options['field_group_id'] = $field_group['ID'];
-    
-//     return $options;
-    
-// }
 
 
 
