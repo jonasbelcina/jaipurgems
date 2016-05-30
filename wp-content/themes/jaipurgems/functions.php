@@ -513,24 +513,39 @@ register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'jaipurgems' ),
 ) );
 
+function get_product_top_level_category ( $product_id ) {
+ 
+    $product_terms            =  get_the_terms ( $product_id, 'product_cat' );
+    $product_category         =  $product_terms[0]->parent;
+    $product_category_term    =  get_term ( $product_category, 'product_cat' );
+    $product_category_parent  =  $product_category_term->parent;
+    $product_top_category     =  $product_category_term->term_id;
+
+    while ( $product_category_parent  !=  0 ) {
+            $product_category_term    =  get_term ( $product_category_parent, 'product_cat' );
+            $product_category_parent  =  $product_category_term->parent;
+            $product_top_category     =  $product_category_term->term_id;
+    }
+
+    return $product_top_category;
+}
+
 // Add custom type
 add_filter('acf/location/rule_types', 'acf_location_rules_types');
 function acf_location_rules_types( $choices )
 {
-    $choices['Woocommerce']['product_parent_category'] = 'Product Parent Category';
+    $choices['Other']['product_category'] = 'Product Category';
 
     return $choices;
 }
 
 // Add custom value
-add_filter('acf/location/rule_values/product_parent_category', 'acf_location_rules_values_product_parent_category');
-function acf_location_rules_values_product_parent_category( $choices )
+add_filter('acf/location/rule_values/product_category', 'acf_location_rules_values_product_category');
+function acf_location_rules_values_product_category( $choices )
 {
     $args = array(
     			'taxonomy'		=> 'product_cat',
-    			'hide_empty' 	=> 0,
-    			'parent'		=> 0
-
+    			'hide_empty' 	=> 0
     		);
 
     $categories = get_categories($args);
@@ -545,26 +560,47 @@ function acf_location_rules_values_product_parent_category( $choices )
 }
 
 // Matching the rule
-add_filter('acf/location/rule_match/product_parent_category', 'acf_location_rules_match_product_parent_category', 10, 3);
-function acf_location_rules_match_product_parent_category( $match, $rule, $options )
+add_filter('acf/location/rule_match/product_category', 'acf_location_rules_match_product_category', 10, 3);
+function acf_location_rules_match_product_category( $match, $rule, $options )
 {
-    global $post;
-
-    $terms = get_the_terms( $post->ID, 'product_cat' );
-    $parent_cat = $terms[0]->parent;
+    if(isset($_GET['taxonomy']) && isset($_GET['tag_ID'])) {
+    	$current_cat = $_GET['tag_ID'];
+    }
 
     $selected_cat = $rule['value'];
     // print_r(array($rule));
 
+    $cat_id = intval($current_cat);
+
+    $args = array(
+    			'taxonomy'		=> 'product_cat',
+    			'child_of'		=> $selected_cat,
+    			'hide_empty'	=> 0
+			);
+
+    $categories = get_terms($args);
+    // var_dump($categories);
+    $child_of = false;
+    foreach ($categories as $cat) {
+    	if($cat->term_id == $cat_id) {
+    		if($cat->term_id == $cat_id) {
+    			$child_of = true;
+    		}
+    	}
+    }
+
+    // var_dump($child_of);
+
     if($rule['operator'] == "==") {
-    	$match = ($parent_cat == $selected_cat);
+    	$match = ($current_cat == $selected_cat || $child_of);
     }
     elseif($rule['operator'] == "!=") {
-    	$match = ($parent_cat != $selected_cat);
+    	$match = ($current_cat != $selected_cat || !$child_of);
     }
 
     return $match;
 }
+
 
 
 
