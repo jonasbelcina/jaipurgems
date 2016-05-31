@@ -28,10 +28,25 @@ $terms = get_the_terms( $post->ID, 'product_cat' );
 
 <div class="product-nav">
 	<div class="container">
-		<div class="row">
-			<?php //echo get_top_parent_cat(8); ?>
-			<a href="">Browse</a>
-		</div>
+		<?php
+			$top_cat_id = get_top_parent_cat($terms[0]->term_id);
+			$top_cat_name = get_term_by('id', $top_cat_id, 'product_cat');
+		?>
+		<a href="<?php echo get_term_link($top_cat_id); ?>">Browse <?php echo $top_cat_name->name; ?></a>
+
+		<?php
+			$previous = get_previous_post();
+			$next = get_next_post();
+		?>
+		<ul>
+			<?php if($previous) : ?>
+				<li class="prev"><a href="<?php echo $previous->guid; ?>">Previous</a></li>
+			<?php endif; ?>
+			
+			<?php if($next) : ?>
+				<li class="next"><a href="<?php echo $next->guid; ?>">Next</a></li>
+			<?php endif; ?>
+		</ul>
 	</div>
 </div>
 
@@ -57,7 +72,7 @@ $terms = get_the_terms( $post->ID, 'product_cat' );
 		 *
 		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
 		 */
-		do_action( 'woocommerce_after_main_content' );
+		// do_action( 'woocommerce_after_main_content' );
 	?>
 
 	<?php

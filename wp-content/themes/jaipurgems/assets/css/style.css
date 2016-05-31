@@ -357,7 +357,7 @@ body {
 					font-size: 12px;
 				}
 
-		.dropdown-img {
+		.dropdown-sub .dropdown-img {
 			position: absolute;
 			right: 0;
 			top: 50%;
@@ -2407,9 +2407,63 @@ footer {
 				float: right;
 			}
 
-.product-nav .container {
-	border: 1px solid #e3e3e3;
+.product-nav {
+	margin-bottom: 15px;
 }
+
+	.product-nav .container {
+		border-bottom: 1px solid #e3e3e3;
+		padding: 16px 15px;
+	}
+
+	.product-nav a {
+		color: #4f4f4f;
+		font-size: 17px;
+		padding: 3px 0 3px 20px;
+		position: relative;
+	}
+
+		.product-nav a:hover,
+		.product-nav a:focus {
+			text-decoration: none;
+			color: #a38d60;
+		}
+
+		.product-nav a:before {
+			content: url('../images/gold-left.png');
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+	.product-nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		float: right;
+	}
+
+	.product-nav li {
+		display: inline-block;
+		padding: 0 20px;
+	}
+
+		.product-nav li.next {
+			border-left: 1px solid #e3e3e3;
+			padding-right: 0;
+		}
+
+			.product-nav li.next a {
+				padding-left: 0;
+				padding-right: 20px;
+			}
+
+			.product-nav li.next a:before {
+				content: url('../images/gold-right.png');
+				position: absolute;
+				right: 0;
+				left: initial;
+			}
 
 /* 
 =============================

@@ -74,7 +74,7 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 			 * @hooked woocommerce_template_loop_product_thumbnail - 10
 			 */
 			do_action( 'woocommerce_before_shop_loop_item_title' );
-			the_post_thumbnail( 'full' );
+			// the_post_thumbnail( 'full' );
 			?>
 
 			<div class="details">

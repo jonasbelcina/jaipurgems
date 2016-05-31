@@ -609,7 +609,7 @@ add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 14;' ), 20 )
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 
 // remove product loop thumbnail
-remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+// remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 
 // remove ratings
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
@@ -636,7 +636,7 @@ function get_top_parent_cat($cat_ID)
 	$cat = get_category( $cat_ID );
 	$new_cat_id = $cat->category_parent;
 
-	if($new_cat_id != "0") {
+	if($new_cat_id != 0) {
 		return (get_top_parent_cat($new_cat_id));
 	}
 
