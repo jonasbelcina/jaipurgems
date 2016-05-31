@@ -2263,6 +2263,16 @@ footer {
 			text-decoration: none;
 		}
 
+	.products .col-md-6 .product > a img:first-child {
+		display: none;
+	}
+
+	.products .col-md-6 .product > a img:last-child {
+		width: 100%;
+		height: 450px;
+		object-fit: cover;
+	}
+
 	.products .product .details {
 		position: absolute;
 		width: 100%;
@@ -2464,6 +2474,14 @@ footer {
 				right: 0;
 				left: initial;
 			}
+
+.single-product .product .images {
+	width: 49%;
+}
+
+.single-product .product .entry-summary {
+	width: 49%;
+}
 
 /* 
 =============================
