@@ -614,15 +614,24 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 // remove ratings
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
 
-add_filter( 'woocommerce_currencies', 'add_my_currency' );
+// rearrange single product details
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 25);
 
+// remove product meta (categories)
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+
+// rmeove data tabs
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+
+
+add_filter( 'woocommerce_currencies', 'add_my_currency' );
 function add_my_currency( $currencies ) {
      $currencies['AED'] = __( 'Currency name', 'woocommerce' );
      return $currencies;
 }
 
 add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
-
 function add_my_currency_symbol( $currency_symbol, $currency ) {
      switch( $currency ) {
           case 'AED': $currency_symbol = ' AED'; break;
@@ -643,7 +652,18 @@ function get_top_parent_cat($cat_ID)
 	return $cat_ID;
 }
 
-
+add_action('woocommerce_share','wooshare');
+function wooshare(){
+	$link = get_permalink(); ?>
+	<div class="share-buttons">
+		<div class="label">Share:</div>
+	   <a target="_blank" class="share-link" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" onclick="return popitup('https://www.facebook.com/sharer/sharer.php?u=<?php echo $link; ?>')" target="_blank"></a>
+	   <a target="_blank" class="share-link" href="https://twitter.com/home?status=<?php echo shortenText(get_the_content(), 110, ''); ?> <?php echo $link; ?>" onclick="return popitup('https://twitter.com/home?status=<?php echo shortenText(get_the_content(), 110, ''); ?> <?php echo $link; ?>');"></a>
+	   <a target="_blank" class="share-link" href="https://plus.google.com/share?url=<?php echo $link;?>"  onclick="return popitup('https://plus.google.com/share?url=<?php echo $link;?>')"></a>
+	   <a target="_blank" class="share-link" href="https://pinterest.com/pin/create/button/?url=<?php echo $link; ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>&description=<?php echo shortenText(get_the_content(), 110, '');?>" onclick="return popitup('https://pinterest.com/pin/create/button/?url=<?php echo $link; ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>&description=<?php echo shortenText(get_the_content(), 110, '');?>');"></a>
+	</div>
+<?php
+}
 
 
 

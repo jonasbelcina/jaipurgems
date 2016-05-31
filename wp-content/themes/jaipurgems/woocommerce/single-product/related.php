@@ -42,25 +42,34 @@ $args = apply_filters( 'woocommerce_related_products_args', array(
 $products = new WP_Query( $args );
 
 $woocommerce_loop['columns'] = $columns;
+?>
 
-if ( $products->have_posts() ) : ?>
+<div class="other-products">
 
-	<div class="related products">
+	<?php if ( $products->have_posts() ) : ?>
 
-		<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
+		<div class="related products col-md-6 col-sm-6">
 
-		<?php woocommerce_product_loop_start(); ?>
+			<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
 
-			<?php while ( $products->have_posts() ) : $products->the_post(); ?>
+			<?php woocommerce_product_loop_start(); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php while ( $products->have_posts() ) : $products->the_post(); ?>
 
-			<?php endwhile; // end of the loop. ?>
+					<?php wc_get_template_part( 'content', 'product' ); ?>
 
-		<?php woocommerce_product_loop_end(); ?>
+				<?php endwhile; // end of the loop. ?>
+
+			<?php woocommerce_product_loop_end(); ?>
+
+		</div>
+
+	<?php endif;
+
+	wp_reset_postdata(); ?>
+
+	<div class="additional-items col-md-6 col-sm-6">
 
 	</div>
 
-<?php endif;
-
-wp_reset_postdata();
+</div>

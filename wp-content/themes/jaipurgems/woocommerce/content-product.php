@@ -55,7 +55,7 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 	<?php }
 ?>
 
-<div class="product-col <?php if($woocommerce_loop['loop'] == 4 || $woocommerce_loop['loop'] == 5) { ?>col-md-6 col-sm-6<?php } else { ?>col-md-4 col-sm-4<?php } ?>">
+<div class="product-col <?php if(is_product()) { ?>single-prod-col<?php } else { if($woocommerce_loop['loop'] == 4 || $woocommerce_loop['loop'] == 5) { ?>col-md-6 col-sm-6<?php } else { ?>col-md-4 col-sm-4<?php } } ?>">
 	<div class="row">
 		<div class="product">
 

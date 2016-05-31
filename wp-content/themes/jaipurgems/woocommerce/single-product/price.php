@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 ?>
-<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+<div itemprop="offers" class="offers" itemscope itemtype="http://schema.org/Offer">
 
 	<p class="price"><?php echo $product->get_price_html(); ?></p>
 
@@ -30,4 +30,40 @@ global $product;
 	<meta itemprop="priceCurrency" content="<?php echo esc_attr( get_woocommerce_currency() ); ?>" />
 	<link itemprop="availability" href="http://schema.org/<?php echo $product->is_in_stock() ? 'InStock' : 'OutOfStock'; ?>" />
 
+	<span class="ref">Ref: <?php the_ID(); ?></span>
+
 </div>
+
+<?php if(get_the_content()) : ?>
+	<div class="description">
+		<?php the_content(); ?>
+	</div>
+<?php endif; ?>
+
+<?php if(get_field('white_gold') || get_field('diamonds') || get_field('rose_gold')) : ?>
+	<div class="specs">
+		<div class="white-gold">
+			<?php the_field('white_gold'); ?>K
+			<span>White Gold</span>
+		</div>
+		<div class="diamond">
+			<?php the_field('diamonds'); ?>CT
+			<span>Diamonds</span>
+		</div>
+		<div class="rose-gold">
+			<?php the_field('rose_gold'); ?>K
+			<span>Rose Gold</span>
+		</div>
+	</div>
+<?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+

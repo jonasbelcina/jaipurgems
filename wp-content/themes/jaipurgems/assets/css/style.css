@@ -2263,11 +2263,11 @@ footer {
 			text-decoration: none;
 		}
 
-	.products .col-md-6 .product > a img:first-child {
+	.products .col-md-6:not(.single-prod-col) .product > a img:first-child {
 		display: none;
 	}
 
-	.products .col-md-6 .product > a img:last-child {
+	.products .col-md-6:not(.single-prod-col) .product > a img:last-child {
 		width: 100%;
 		height: 450px;
 		object-fit: cover;
@@ -2475,13 +2475,323 @@ footer {
 				left: initial;
 			}
 
-.single-product .product .images {
+.single-product div.product div.images {
 	width: 49%;
 }
 
-.single-product .product .entry-summary {
+	.single-product div.product .images > img {
+		max-height: 446px;
+	}
+
+	.single-product div.product .images div.thumbnails a {
+		width: 100%;
+		/*margin-right: 0;*/
+		padding: 0 5px;
+	}
+
+	.single-product div.product .images div.thumbnails a.last {
+		/*padding-right: 0;*/
+	}
+
+	.single-product div.product .images div.thumbnails a img {
+		border: 2px solid transparent;
+		max-height: 120px;
+	}
+
+	.single-product .product .images .thumbnails .current img {
+		border-color: #adadad;
+	}
+
+	.single-product .product .images .thumbs-count {
+		text-align: center;
+		color: #000;
+		font-size: 14px;
+		margin-top: 10px;
+	}
+
+	.thumb-custom-prev {
+		background: url('../images/gold-left.png');
+		width: 6px;
+		height: 10px;
+		display: inline-block;
+		margin: 0 60px;
+		vertical-align: top;
+		cursor: pointer;
+		margin-top: 4px;
+	}
+
+	.thumb-custom-next {
+		background: url('../images/gold-right.png');
+		width: 6px;
+		height: 10px;
+		display: inline-block;
+		margin: 0 60px;
+		vertical-align: top;
+		cursor: pointer;
+		margin-top: 4px;
+	}
+
+.single-product div.product div.entry-summary {
 	width: 49%;
 }
+
+	.single-product .entry-summary h1.product_title {
+		color: #4f4f4f;
+		font-size: 30px;
+		margin: 10px 0 5px;
+	}
+
+	.single-product .entry-summary p {
+		font-size: 15px;
+		color: #868686;
+		text-transform: uppercase;
+	}
+
+	.single-product .offers {
+		overflow: hidden;
+		padding: 21px 0;
+		border-top: 1px solid #e3e3e3;
+		border-bottom: 1px solid #e3e3e3;
+		margin-top: 20px;
+	}
+
+	.single-product .entry-summary .price {
+		float: left;
+		margin: 0;
+		display: inline-block;
+	}
+
+		.single-product .entry-summary .amount {
+			font-family: 'GothamBook';
+			font-size: 22px;
+			color: #b09d76;
+			font-weight: bold;
+			display: block;
+			line-height: 1;
+		}
+
+	.single-product .entry-summary .ref {
+		float: right;
+		display: inline-block;
+		font-size: 16px;
+		color: #b09d76;
+		text-transform: uppercase;
+		line-height: 22px;
+	}
+
+	.single-product .description {
+		padding: 20px 0 10px;
+	}
+
+		.single-product .description p {
+			font-size: 14px;
+			color: #000;
+			text-transform: none;
+			line-height: 24px;
+		}
+
+	.single-product .specs {
+		padding: 20px 0;
+		border-top: 1px solid #e3e3e3;
+		border-bottom: 1px solid #e3e3e3;
+		text-align: center;
+	}
+
+	.single-product .specs div {
+		display: inline-block;
+		color: #a38d60;
+		font-family: 'GothamBook';
+		font-weight: bold;
+		font-size: 28px;
+		line-height: 1;
+		margin: 0 40px;
+	}
+
+		.single-product .specs div span {
+			display: block;
+			font-size: 15px;
+			font-weight: normal;
+			margin-top: 5px;
+		}
+
+	.single-product div.product form.cart {
+		padding: 30px 0 0;
+		margin-bottom: 0;
+	}
+
+		.single-product .input-group .label {
+			font-size: 17px;
+			font-family: 'GothamBook';
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #4f4f4f;
+			letter-spacing: 2px;
+		}
+
+		.single-product .quantity .qty {
+			border: 0;
+			background: rgba(242,244,245,0.4);
+			width: 102px;
+			height: 46px;
+			font-size: 17px;
+			-moz-appearance: textfield;
+		}
+
+			.single-product .quantity .qty:focus {
+				outline: 0;
+			}
+
+			/* Remove controls from Safari and Chrome */
+			.single-product .quantity .qty::-webkit-inner-spin-button, 
+			.single-product .quantity .qty::-webkit-outer-spin-button { 
+			  -webkit-appearance: none;
+			  margin: 0; /* Removes leftover margin */
+			}
+
+		.single-product .size select {
+			-webkit-appearance: none;
+			   -moz-appearance: none;
+			width: 179px;
+			height: 46px;
+			border: 0;
+			border-radius: 0;
+			background: url('../images/gold-down.png') 92% center rgba(242,244,245,0.4) no-repeat;
+			font-size: 17px;
+			text-transform: uppercase;
+			padding: 0 25px;
+		}
+
+		.single-product .cart .single_add_to_cart_button {
+			display: block;
+			width: 100%;
+			border-radius: 0;
+			background: #a38d60 !important;
+			color: #fff;
+			font-size: 17px;
+			text-transform: uppercase;
+			padding: 13px 0;
+			letter-spacing: 2px;
+			margin: 30px 0;
+		}
+
+		#size-chart {
+			font-size: 14px;
+			text-transform: uppercase;
+			color: #000;
+			margin-left: 30px;
+			display: inline-block;
+			letter-spacing: 1px;
+			text-decoration: underline;
+		}
+
+	.single-product .product .entry-summary ul {
+		padding: 0 0 20px;
+		list-style: none;
+		border-bottom: 1px solid #e5e5e5;
+		overflow: hidden;
+		marign: 0;
+	}
+
+	.single-product .product .entry-summary li {
+		display: inline-block;
+		float: left;
+	}
+
+	.single-product .product .entry-summary li a {
+		font-family: 'GothamBook';
+		font-size: 13px;
+		color: #000;
+		text-transform: uppercase;
+		position: relative;
+		letter-spacing: 1px;
+	}
+
+		.single-product .product .entry-summary li a:hover {
+			/*color: #a48c5a;*/
+		}
+
+		.single-product .product .entry-summary li a span {
+			font-size: 20px;
+			color: #b09d76;
+			position: absolute;
+			left: 0;
+			top: -4px;
+			line-height: 1;
+			font-weight: bold;
+		}
+
+		.single-product .product .entry-summary li:first-child a {
+			padding-left: 18px;
+		}
+
+		.single-product .product .entry-summary li:last-child {
+			float: right;
+		}
+
+		.single-product .product .entry-summary li:last-child a {
+			padding-left: 30px;
+		}
+
+			.single-product .product .entry-summary li:last-child a:before {
+				content: url('../images/contact-icon.png');
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+
+	.single-product .entry-summary .share-buttons {
+		padding-top: 10px;
+	}
+
+		.single-product .entry-summary .share-buttons a {
+			display: inline-block;
+			width: 39px;
+			height: 39px;
+		}
+
+			.single-product .entry-summary .share-buttons a:nth-child(2) {
+				background: url('../images/share-fb.png') center no-repeat;
+			}
+
+			.single-product .entry-summary .share-buttons a:nth-child(3) {
+				background: url('../images/share-twitter.png') center no-repeat;
+			}
+
+			.single-product .entry-summary .share-buttons a:nth-child(4) {
+				background: url('../images/share-googleplus.png') center no-repeat;
+			}
+
+			.single-product .entry-summary .share-buttons a:last-child {
+				background: url('../images/share-pinterest.png') center no-repeat;
+			}
+
+		.single-product .entry-summary .share-buttons .label {
+			float: left;
+			font-size: 17px;
+			font-family: 'GothamBook';
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #4f4f4f;
+			letter-spacing: 2px;
+			padding-top: 12px;
+		}
+
+	.other-products .products > .container {
+		width: 100%;
+	}
+
+	.single-prod-col {
+		width: 49%;
+		display: inline-block;
+	}
+
+	/*.single-prod-col .product {
+		width: 49%;
+	}*/
+
+	.single-prod-col .product a > img:nth-child(2) {
+		display: none;
+	}
 
 /* 
 =============================
