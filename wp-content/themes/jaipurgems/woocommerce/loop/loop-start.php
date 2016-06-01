@@ -18,3 +18,6 @@
 
 <section class="products">
 	<div class="container">
+		<?php if(is_product()) : ?>
+			<div class="row">
+		<?php endif; ?>

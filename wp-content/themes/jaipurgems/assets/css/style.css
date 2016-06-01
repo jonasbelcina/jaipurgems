@@ -300,6 +300,7 @@ body {
 		box-shadow: none;
 		padding: 0;
 		border-top: 0;
+		right: 0;
 	}
 
 		.dropdown-sub {
@@ -363,6 +364,7 @@ body {
 			top: 50%;
 			transform: translateY(-50%);
 			object-fit: cover;
+			object-position: center right;
 		    height: 100%;
 		    width: 60%;
 		    display: none;
@@ -2776,22 +2778,85 @@ footer {
 			padding-top: 12px;
 		}
 
+	.other-products {
+		overflow: hidden;
+		margin-top: 80px;
+	}
+
 	.other-products .products > .container {
 		width: 100%;
 	}
 
+	.other-products h2 {
+		font-family: 'GothamBook';
+		font-size: 20px;
+		text-transform: uppercase;
+		margin: 0;
+		padding: 18px 0;
+		text-align: center;
+		border: 1px solid transparent;
+		border-bottom: 1px solid #e5e5e5;
+		color: #000;
+	}
+
+	.related.products {
+		margin: 0;
+	}
+
+	.related h2 {
+		color: #a38d60;
+		border: 1px solid #e5e5e5;
+	}
+
 	.single-prod-col {
-		width: 49%;
-		display: inline-block;
+		/*width: 49%;
+		display: inline-block;*/
 	}
 
-	/*.single-prod-col .product {
-		width: 49%;
-	}*/
+		.single-prod-col > .row {
+			/*margin: 0;*/
+		}
 
-	.single-prod-col .product a > img:nth-child(2) {
-		display: none;
-	}
+		/*.single-prod-col .product {
+			width: 49%;
+		}*/
+
+		.single-prod-col .product a > img:nth-child(2) {
+			display: none;
+		}
+
+		.single-prod-col .product .details {
+			top: 1px;
+			bottom: 1px;
+			left: 0;
+			border: 0;
+		}
+
+		.single-prod-col .product .content h3 {
+			padding-top: 20px;
+			margin: 0 0 15px;
+			padding-bottom: 30px;
+			font-size: 18px;
+		}
+
+		.single-prod-col .content .amount {
+			font-size: 19px;
+		}
+
+		.single-prod-col .content .ref {
+			margin-top: 0;
+		}
+
+		.col-md-6 .single-prod-col .content-bottom ul {
+			margin: 10px 0 0;
+			padding: 0;
+			border: 0;
+		}
+
+		.single-prod-col .content-bottom li,
+		.single-prod-col .content-bottom li:last-child {
+			float: none;
+		}
 
 /* 
 =============================

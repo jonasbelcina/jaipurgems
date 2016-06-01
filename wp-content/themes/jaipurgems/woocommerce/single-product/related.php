@@ -49,19 +49,20 @@ $woocommerce_loop['columns'] = $columns;
 	<?php if ( $products->have_posts() ) : ?>
 
 		<div class="related products col-md-6 col-sm-6">
+			<div class="row">
 
-			<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
+				<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
 
-			<?php woocommerce_product_loop_start(); ?>
+				<?php woocommerce_product_loop_start(); ?>
 
-				<?php while ( $products->have_posts() ) : $products->the_post(); ?>
+					<?php while ( $products->have_posts() ) : $products->the_post(); ?>
 
-					<?php wc_get_template_part( 'content', 'product' ); ?>
+						<?php wc_get_template_part( 'content', 'product' ); ?>
 
-				<?php endwhile; // end of the loop. ?>
+					<?php endwhile; // end of the loop. ?>
 
-			<?php woocommerce_product_loop_end(); ?>
-
+				<?php woocommerce_product_loop_end(); ?>
+			</div>
 		</div>
 
 	<?php endif;
@@ -69,7 +70,44 @@ $woocommerce_loop['columns'] = $columns;
 	wp_reset_postdata(); ?>
 
 	<div class="additional-items col-md-6 col-sm-6">
+		<div class="row">
+			<h2>Additional Items</h2>
+			<?php
+				$terms = get_the_terms( $post->ID, 'product_cat' );
+				// var_dump($terms);
+				// $cat = get_category($terms[0]->term_id);
+				$adtl_args = array(
+							'post_type'			=> 'product',
+							'post__not_in'		=> $related,
+							// 'category__not_in'	=> array('7'),
+							'orderby'			=> 'rand',
+							'posts_per_page' 	=> 4,
+							// 'tag__not_in'		=> array(7),
+							'tax_query'			=> array(
+														array(
+															'taxonomy'	=> 'product_cat',
+															'field'		=> 'term_id',
+															'terms'		=> $terms[0]->term_id,
+															'operator' 	=> 'NOT IN'
+														)
+												),
+						);
 
+				$query = new WP_Query($adtl_args);
+
+				if($query->have_posts()) :
+					woocommerce_product_loop_start();
+
+					while ( $query->have_posts() ) : $query->the_post();
+						wc_get_template_part( 'content', 'product' );
+					endwhile;
+
+					woocommerce_product_loop_end();
+				endif;
+
+				wp_reset_postdata();
+			?>
+		</div>
 	</div>
 
 </div>

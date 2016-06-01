@@ -75,8 +75,8 @@
                                 <a href="<?php echo home_url(); ?>/product-category/jewellery" class="dropdown-toggle" data-hover="dropdown" data-delay="100" data-close-others="true">Jewellery <span class="glyphicon glyphicon-plus"></span></a>
 
                                 <div class="dropdown-menu main-dropdown">
-                                    <div class="container">
-                                        <div class="row">
+                                    <!-- <div class="container"> -->
+                                        <!-- <div class="row"> -->
                                             <div class="dropdown-sub">
                                                 <h2>Jewellery<span>Explore Jewellery</span></h2>
                                                 <ul>
@@ -95,8 +95,8 @@
                                                 </ul>
                                             </div>
 
-                                        </div>
-                                    </div>
+                                        <!-- </div> -->
+                                    <!-- </div> -->
                                 </div>
                             </li>
                             <li><a href="#">Diamonds</a></li>
