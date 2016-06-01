@@ -183,6 +183,8 @@
             $('.owl-item').removeClass('current');
             $(this).closest('.owl-item').addClass('current');
             $('.single-product .product .images > img').attr('src' , $('.owl-item.current img').attr('src'));
+            var index = $(this).closest('.owl-item').index() + 1;
+            $('.thumbs-count span').text(index);
         });
 
 		// main nav mobile dropdown

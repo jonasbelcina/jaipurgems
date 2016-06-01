@@ -2481,8 +2481,9 @@ footer {
 	width: 49%;
 }
 
-	.single-product div.product .images > img {
-		max-height: 446px;
+	.single-product div.product div.images > img {
+		height: 446px;
+		object-fit: cover;
 	}
 
 	.single-product div.product .images div.thumbnails a {
@@ -2497,7 +2498,8 @@ footer {
 
 	.single-product div.product .images div.thumbnails a img {
 		border: 2px solid transparent;
-		max-height: 120px;
+		height: 120px;
+		object-fit: cover;
 	}
 
 	.single-product .product .images .thumbnails .current img {
