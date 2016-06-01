@@ -16,16 +16,16 @@
 
 get_header(); ?>
 
-	<div class="container breadcrumb-container">
+	<!-- <div class="container breadcrumb-container">
 		<div class="row">
 			<nav class="breadcrumbs">
 				<a href="<?php echo home_url(); ?>">Home</a>
 				<span>Blogs</span>
 			</nav>
 		</div>
-	</div>
+	</div> -->
 
-	<div class="featured-blogs">
+	<!-- <div class="featured-blogs">
 		<div class="container">
 			<div class="row">
 				<?php
@@ -67,17 +67,21 @@ get_header(); ?>
 				?>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="container">
 		<div class="row">
 
-			<div class="col-lg-9 col-md-9 col-sm-9 blogs">
+			<div class="col-lg-9 col-md-9 col-sm-12 blogs">
 				<?php if ( is_home() && ! is_front_page() ) : ?>
-					<h1>Recent Blogs</h1>
+					<div class="blog-title">
+						<h1>Recent Blogs</h1>
+						<h2>Place for subtitle</h2>
+					</div>
 				<?php endif; ?>
 
 				<?php if ( have_posts() ) : ?>
+					<div class="blog-holder">
 
 					<?php
 					// Start the loop.
@@ -126,6 +130,7 @@ get_header(); ?>
 
 				endif;
 				?>
+				</div>
 			</div>
 
 			<?php get_sidebar('blog'); ?>

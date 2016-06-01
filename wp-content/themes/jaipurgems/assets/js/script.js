@@ -1,14 +1,14 @@
 ;(function($){
-	$(document).ready(function(){
-		// home page slider
-		$('.home-slides').owlCarousel({
-			items: 1,
-			nav: false,
-			loop: true,
-			navText: false,
-			animateOut: 'fadeOut',
-			autoplay: true
-		});
+    $(document).ready(function(){
+        // home page slider
+        $('.home-slides').owlCarousel({
+            items: 1,
+            nav: false,
+            loop: true,
+            navText: false,
+            animateOut: 'fadeOut',
+            autoplay: true
+        });
 
         // About Us - History slider
         var owl = $('.history-slider');
@@ -187,7 +187,7 @@
             $('.thumbs-count span').text(index);
         });
 
-		// main nav mobile dropdown
+        // main nav mobile dropdown
         $('.dropdown-toggle span').on('click', function() {
             var ww = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
@@ -265,7 +265,15 @@
             });
         }
 
-	});
+    });
+
+    $(window).load(function() {
+        $('.blog-holder').masonry({
+            // options
+            itemSelector: '.blog-item',
+            // columnWidth: 200
+        });
+    });
 
 })(jQuery);
 

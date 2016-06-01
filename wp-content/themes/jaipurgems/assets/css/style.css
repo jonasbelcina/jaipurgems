@@ -1060,7 +1060,149 @@ footer {
 		margin: 0 17px;
 	}
 
-.featured-blogs {
+.blogs {
+
+}
+
+	.blog-title {
+		position: relative;
+		margin: 50px 15px;
+	}
+	
+	.blogs h1 {
+		font-family: 'GothamBook';
+	    font-size: 28px;
+	    text-transform: uppercase;
+	    margin: 0;
+	    display: inline-block;
+	    background: #fff;
+	    padding-right: 10px;
+	}
+
+	.blog-title h2 {
+		font-family: 'GothamBook';
+		margin: 2px 0 0;
+		font-size: 13px;
+		text-transform: uppercase;
+		color: #868686;
+	}
+
+		.blog-title:after {
+			content: '';
+			height: 2px;
+			width: 100%;
+			background: #000;
+			position: absolute;
+			left: 0;
+			top: 18px;
+			z-index: -1;
+		}
+
+	.blog-item {
+		text-align: center;
+		margin-bottom: 50px;
+	}
+
+		.blog-item .blog-img img {
+			width: 100%;
+			height: auto;
+		}
+
+		.blog-item h2 {
+			font-size: 20px;
+			font-family: 'GothamBook';
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+			.blog-item h2 a {
+				color: #000;
+			}
+
+				.blog-item h2 a:hover,
+				.blog-item h2 a:focus {
+					text-decoration: none;
+				}
+
+		.blog-item ul {
+			padding: 0;
+			margin: 0 0 20px;
+			list-style: none;
+			text-align: center;
+		}
+
+		.blog-item li {
+			display: inline-block;
+			font-size: 13px;
+			color: #868686;
+			text-transform: uppercase;
+			padding: 0 10px;
+			position: relative;
+		}
+
+			.blog-item li:before {
+				content: '/';
+				position: absolute;
+				left: -5px;
+				top: 0;
+			}
+
+			.blog-item li:first-child:before {
+				content: none;
+			}
+
+		.blog-item li a {
+			color: #b09d76;
+			font-weight: bold;
+		}
+
+			.blog-item li a:hover,
+			.blog-item li a:focus {
+				text-decoration: none;
+			}
+
+		.blog-item p {
+			font-size: 14px;
+			line-height: 22px;
+		}
+
+		.blog-button {
+			position: relative;
+			margin-top: 20px;
+		}
+
+			.blog-button a {
+				display: inline-block;
+				border: 2px solid #000;
+				padding: 7px 10px;
+				text-transform: uppercase;
+				background: #fff;
+				color: #000;
+				line-height: 1;
+				font-weight: bold;
+				-webkit-transition: all 0.3s linear;
+						transition: all 0.3s linear;
+			}
+
+				.blog-button a:hover {
+					text-decoration: none;
+					background: #000;
+					color: #fff;
+				}
+
+			.blog-button:after {
+				content: '';
+				background: #000;
+				height: 2px;
+				position: absolute;
+				top: 50%;
+				margin-top: -1px;
+				width: 100%;
+				left: 0;
+				z-index: -1;
+			}
+
+/*.featured-blogs {
 	margin-top: 20px;
 }
 
@@ -1281,7 +1423,7 @@ footer {
 
 		.blogs-next {
 			float :right;
-		}
+		}*/
 
 /* 
 =============================
@@ -1290,6 +1432,111 @@ footer {
 */
 
 .single-blog {
+	margin-top: 50px;
+}
+
+	.single-blog > img {
+		max-width: 100%;
+	}
+
+	.single-blog h2 {
+		font-size: 26px;
+		font-family: 'GothamBook';
+		text-transform: uppercase;
+		margin: 30px 0 20px;
+	}
+
+		.single-blog h2 a {
+			color: #000;
+		}
+
+			.single-blog h2 a:hover,
+			.single-blog h2 a:focus {
+				text-decoration: none;
+			}
+
+	.single-blog ul {
+		padding: 0;
+		margin: 0 0 20px;
+		list-style: none;
+	}
+
+	.single-blog li {
+		display: inline-block;
+		font-size: 13px;
+		color: #868686;
+		text-transform: uppercase;
+		padding: 0 10px;
+		position: relative;
+	}
+
+		.single-blog li:first-child {
+			padding-left: 0;
+		}
+
+		.single-blog li:before {
+			content: '/';
+			position: absolute;
+			left: -5px;
+			top: 0;
+		}
+
+		.single-blog li:first-child:before {
+			content: none;
+		}
+
+	.single-blog li a {
+		color: #b09d76;
+		font-weight: bold;
+	}
+
+		.single-blog li a:hover,
+		.single-blog li a:focus {
+			text-decoration: none;
+		}
+
+	.single-blog .content {
+		margin-bottom: 50px;
+	}
+
+	.single-blog p {
+		font-size: 14px;
+		line-height: 22px;
+		font-family: 'GothamBook';
+	}
+
+	.single-blogs-nav {
+		margin-top: 40px;
+	}
+
+		.single-blogs-nav a {
+			display: inline-block;
+			background: #fff;
+			color: #111;
+			border: 2px solid #111;
+			padding: 7px 11px;
+			text-transform: uppercase;
+			font-weight: bold;
+			line-height: 1;
+		}
+
+			.single-blogs-nav a:hover {
+				text-decoration: none;
+			}
+
+		.single-blogs-nav ul {
+			float: right;
+		}
+
+		.single-blogs-nav li:before {
+			content: '';
+		}
+
+		.single-blogs-nav li a {
+			color: #111;
+		}
+
+/*.single-blog {
 	position: initial;
 	color: #4b4b4b;
 	padding-top: 20px;
@@ -1336,7 +1583,7 @@ footer {
 		.single-blogs-nav .blogs-prev {
 			float: right;
 			margin-right: 15px;
-		}
+		}*/
 
 /* 
 =============================
@@ -1345,6 +1592,87 @@ footer {
 */
 
 .blog-sidebar {
+	margin-top: 50px;
+	padding: 0;
+}
+
+	.sidebox {
+		margin-bottom: 20px;
+	}
+
+		.sidebox .title {
+			position: relative;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+			.sidebox .title:after {
+				content: '';
+				background: #000;
+				height: 2px;
+				position: absolute;
+				left: 0;
+				width: 100%;
+				top: 50%;
+				margin-top: -1px;
+				z-index: -1;
+			}
+
+			.sidebox .title h2 {
+				text-transform: uppercase;
+				font-size: 20px;
+				font-family: 'GothamBook';
+				background: #fff;
+				display: inline-block;
+				margin: 0;
+				padding: 0 10px;
+			}
+
+	.sidebox.social {
+		overflow: hidden;
+	}
+
+		.sidebox.social ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.sidebox.social li {
+			width: 50%;
+			float: left;
+			height: 52px;
+			margin-bottom: 20px;
+		}
+
+			.social-icon {
+				width: 40px;
+				height: 40px;
+				background: #111;
+				/*color: #b5985a;*/
+				color: #fff;
+				text-align: center;
+				display: inline-block;
+				float: left;
+				margin-right: 10px;
+			}
+ 
+				.social-icon i {
+					font-size: 20px;
+					line-height: 40px;
+				}
+
+			.sidebox.social .data {
+				display: inline-block;
+				float: left;
+				color: #888;
+				text-transform: uppercase;
+				font-size: 14px;
+				line-height: 40px;
+				font-family: 'GothamBook';
+			}
+
+/*.blog-sidebar {
 	padding-right: 0;
 	margin-top: 50px;
 }
@@ -1373,25 +1701,25 @@ footer {
 			margin-top: 25px;
 		}
 
-			.newsletter form ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+			.newsletter form ::-webkit-input-placeholder {
 			  color: #888;
 			  font-family: 'GothamLight';
 			  text-transform: uppercase;
 			  font-size: 13px;
 			}
-			.newsletter form ::-moz-placeholder { /* Firefox 19+ */
+			.newsletter form ::-moz-placeholder {
 			  color: #888;
 			  font-family: 'GothamLight';
 			  text-transform: uppercase;
 			  font-size: 13px;
 			}
-			.newsletter form :-ms-input-placeholder { /* IE 10+ */
+			.newsletter form :-ms-input-placeholder {
 			  color: #888;
 			  font-family: 'GothamLight';
 			  text-transform: uppercase;
 			  font-size: 13px;
 			}
-			.newsletter form :-moz-placeholder { /* Firefox 18- */
+			.newsletter form :-moz-placeholder {
 			  color: #888;
 			  font-family: 'GothamLight';
 			  text-transform: uppercase;
@@ -1484,7 +1812,7 @@ footer {
 					text-decoration: none;
 					color: #fff;
 					background: #333;
-				}
+				}*/
 
 /* 
 =============================
@@ -3053,7 +3381,7 @@ footer {
 			left: 15px;
 		}
 
-	.featured-blog {
+	/*.featured-blog {
 		height: 350px;
 	}
 
@@ -3081,12 +3409,12 @@ footer {
 
 	.blog-content p {
 		letter-spacing: 0;
-	}
+	}*/
 
-	.single .blog-sidebar {
+	/*.single .blog-sidebar {
 		width: 100%;
 		padding-left: 0;
-	}
+	}*/
 
 		/*.single .blog-sidebar .sidebox {
 			max-width: 277px;
@@ -3232,6 +3560,15 @@ footer {
 	.single-product .size {
 		float: none;
 	}
+
+	.blog-sidebar {
+		padding: 0 15px;
+	}
+
+		.sidebox.social {
+			max-width: 320px;
+			margin: 0 auto 20px;
+		}
 
 }
 
@@ -3407,15 +3744,15 @@ footer {
 				content: url('../images/prelink-white-sm.png');
 			}
 
-	.featured-blogs > .container {
+	/*.featured-blogs > .container {
 		margin: 0 15px;
-	}
+	}*/
 
 	.breadcrumb-container {
 		margin: 0 15px;
 	}
 
-	.blogs {
+	/*.blogs {
 		padding-left: 15px;
 	}
 
@@ -3435,9 +3772,9 @@ footer {
 			.blog-item .blog-img {
 				margin-bottom: 20px;
 				padding-right: 0;
-			}
+			}*/
 
-	.blog-sidebar {
+	/*.blog-sidebar {
 		padding-left: 0;
 		margin-top: 0;
 	}
@@ -3445,7 +3782,7 @@ footer {
 	.tweets,
 	.insta {
 		margin: 0 15px;
-	}
+	}*/
 
 		/*.blog-sidebar .sidebox {
 			max-width: 277px;
@@ -3707,6 +4044,15 @@ footer {
 		margin-right: -20px;
 	}
 
+	.single-blogs-nav {
+		text-align: center;
+	}
+
+		.single-blogs-nav ul {
+			float: none;
+			display: block;
+		}
+
 }
 
 
@@ -3744,9 +4090,9 @@ footer {
 			margin: 0;
 		}
 
-	.blog-content h2 {
+	/*.blog-content h2 {
 		font-size: 24px;
-	}
+	}*/
 
 	.find-jewellery {
 		padding: 0 10px;
