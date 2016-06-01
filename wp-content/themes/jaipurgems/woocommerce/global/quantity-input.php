@@ -31,6 +31,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<option value="medium">Medium</option>
 		<option value="large">Large</option>
 	</select>
-
-	<a href="#" id="size-chart">Size chart</a>
 </div>
+
+<a href="#" id="size-chart">Size chart</a>

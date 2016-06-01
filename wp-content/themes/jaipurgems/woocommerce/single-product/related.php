@@ -79,10 +79,8 @@ $woocommerce_loop['columns'] = $columns;
 				$adtl_args = array(
 							'post_type'			=> 'product',
 							'post__not_in'		=> $related,
-							// 'category__not_in'	=> array('7'),
 							'orderby'			=> 'rand',
 							'posts_per_page' 	=> 4,
-							// 'tag__not_in'		=> array(7),
 							'tax_query'			=> array(
 														array(
 															'taxonomy'	=> 'product_cat',

@@ -130,14 +130,14 @@
             // center:
             dots: false,
             responsive : {
-                991 : {
-                    items : 3,
+                767 : {
+                    items : 4,
                 },
-                767: {
-                    items: 2,
+                568: {
+                    items: 3,
                 },
                 0 : {
-                    items : 1,
+                    items : 2,
                 }
             },
             // animateOut: 'fadeOut',
@@ -221,9 +221,47 @@
             }
         });
 
-        // $('.share a').on('click', function(e) {
-        //     e.preventDefault();
+        // $( window ).on('resize' ,function() {
+        //     var ww = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        //     if(ww == 768) {
+        //         $('.related .products > .container > .row').owlCarousel({
+        //             items: 1,
+        //             nav: true,
+        //             navText: false,
+        //             dots: false,
+        //         });
+
+        //         $('.additional-items .products > .container > .row').owlCarousel({
+        //             items: 1,
+        //             nav: true,
+        //             navText: false,
+        //             dots: false,
+        //         });
+        //     } else if(ww == 769) {
+        //         if($('.products .owl-carousel').length) {
+        //             console.log('asdasdk');
+        //             $('.related .products > .container > .row').data('owl.carousel').destroy(); 
+        //             $('.related .products > .container > .row').owlCarousel({touchDrag: false, mouseDrag: false});
+        //         }
+        //     }
         // });
+
+        var ww = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        if(ww < 769) {
+            $('.related .products > .container > .row').owlCarousel({
+                items: 1,
+                nav: true,
+                navText: false,
+                dots: false,
+            });
+
+            $('.additional-items .products > .container > .row').owlCarousel({
+                items: 1,
+                nav: true,
+                navText: false,
+                dots: false,
+            });
+        }
 
 	});
 

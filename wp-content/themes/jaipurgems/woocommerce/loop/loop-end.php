@@ -17,7 +17,7 @@
 ?>
 
 	<?php if(is_product()) : ?>
-		<div class="row">
+		</div>
 	<?php endif; ?>
 	</div>
 </section>
