@@ -40,7 +40,7 @@
 	<div class="sidebox social">
 		<ul>
 			<li>
-				<a href="#">
+				<a href="<?php the_field('twitter' , 'options'); ?>" target="_blank">
 					<div class="social-icon"><i class="fa fa-twitter"></i></div>
 					<div class="data">
 						<?php echo getTwitterFollowers('jaipurgems'); ?>
@@ -50,7 +50,7 @@
 			</li>
 
 			<li>
-				<a href="#">
+				<a href="<?php the_field('facebook' , 'options'); ?>" target="_blank">
 					<div class="social-icon"><i class="fa fa-facebook"></i></div>
 					<div class="data">
 						<?php echo facebook_count('tutsplus'); ?>
@@ -60,7 +60,7 @@
 			</li>
 
 			<li>
-				<a href="#">
+				<a href="<?php the_field('instagram' , 'options'); ?>" target="_blank">
 					<div class="social-icon"><i class="fa fa-instagram"></i></div>
 					<div class="data">
 						<?php echo instagram_count('300973134'); ?>
@@ -70,7 +70,7 @@
 			</li>
 
 			<li>
-				<a href="#">
+				<a href="<?php the_field('google_plus' , 'options'); ?>" target="_blank">
 					<div class="social-icon"><i class="fa fa-google-plus"></i></div>
 					<div class="data">
 						<?php echo googleplus_count( '+jaipurgems', 'AIzaSyBWtMiuGE2-CeFOyhNnVwwz5AMuUxubehQ' ); ?>
