@@ -42,28 +42,40 @@
 			<li>
 				<a href="#">
 					<div class="social-icon"><i class="fa fa-twitter"></i></div>
-					<div class="data">Follow</div>
+					<div class="data">
+						<?php echo getTwitterFollowers('jaipurgems'); ?>
+						<span>Followers</span>
+					</div>
 				</a>
 			</li>
 
 			<li>
 				<a href="#">
 					<div class="social-icon"><i class="fa fa-facebook"></i></div>
-					<div class="data">Like</div>
+					<div class="data">
+						<?php echo facebook_count('tutsplus'); ?>
+						<span>Likes</span>
+					</div>
 				</a>
 			</li>
 
 			<li>
 				<a href="#">
 					<div class="social-icon"><i class="fa fa-instagram"></i></div>
-					<div class="data">Follow</div>
+					<div class="data">
+						<?php echo instagram_count('300973134'); ?>
+						<span>Followers</span>
+					</div>
 				</a>
 			</li>
 
 			<li>
 				<a href="#">
-					<div class="social-icon"><i class="fa fa-pinterest"></i></div>
-					<div class="data">Follow</div>
+					<div class="social-icon"><i class="fa fa-google-plus"></i></div>
+					<div class="data">
+						<?php echo googleplus_count( '+jaipurgems', 'AIzaSyBWtMiuGE2-CeFOyhNnVwwz5AMuUxubehQ' ); ?>
+						<span>Followers</span>
+					</div>
 				</a>
 			</li>
 		</ul>

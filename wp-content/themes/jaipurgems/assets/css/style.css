@@ -1665,12 +1665,19 @@ footer {
 			.sidebox.social .data {
 				display: inline-block;
 				float: left;
-				color: #888;
-				text-transform: uppercase;
-				font-size: 14px;
-				line-height: 40px;
+				color: #111;
+				font-size: 16px;
 				font-family: 'GothamBook';
+				font-weight: bold;
 			}
+
+				.sidebox.social .data span {
+					display: block;
+					color: #888;
+					font-weight: normal;
+					text-transform: uppercase;
+					font-size: 11px;
+				}
 
 /*.blog-sidebar {
 	padding-right: 0;
@@ -3259,6 +3266,10 @@ footer {
 		float: right;
 	}
 
+	.social-icon {
+		margin-right: 6px;
+	}
+
 }
 
 @media only screen and (max-width : 991px) {
@@ -3568,6 +3579,10 @@ footer {
 		.sidebox.social {
 			max-width: 320px;
 			margin: 0 auto 20px;
+		}
+
+		.social-icon {
+			margin-right: 10px;
 		}
 
 }

@@ -666,6 +666,100 @@ function wooshare(){
 <?php
 }
 
+// get facebook followers count
+function facebook_count( $username ) {
+    $facebook_count = file_get_contents( 'https://graph.facebook.com/'.$username . '?fields=likes&access_token=1223633204329440|euvE-dfiXsIWzEcCJ8UQUE_EQiA' );
+    return json_decode( $facebook_count )->likes;
+}
+
+// get twitter followers count
+function getTwitterFollowers($screenName = 'wpbeginner')
+{
+    // some variables
+    $consumerKey = 'lEnX52Llvi6Uzn1Ml5yyeKEtK';
+    $consumerSecret = 'PG4vb8QrDf6uii6EHD8InkCEiFATTSjkvq3keZmnsTIvCiOU8L';
+    $token = get_option('cfTwitterToken');
+ 
+    // get follower count from cache
+    $numberOfFollowers = get_transient('cfTwitterFollowers');
+ 
+    // cache version does not exist or expired
+    if (false === $numberOfFollowers) {
+        // getting new auth bearer only if we don't have one
+        if(!$token) {
+            // preparing credentials
+            $credentials = $consumerKey . ':' . $consumerSecret;
+            $toSend = base64_encode($credentials);
+ 
+            // http post arguments
+            $args = array(
+                'method' => 'POST',
+                'httpversion' => '1.1',
+                'blocking' => true,
+                'headers' => array(
+                    'Authorization' => 'Basic ' . $toSend,
+                    'Content-Type' => 'application/x-www-form-urlencoded;charset=UTF-8'
+                ),
+                'body' => array( 'grant_type' => 'client_credentials' )
+            );
+ 
+            add_filter('https_ssl_verify', '__return_false');
+            $response = wp_remote_post('https://api.twitter.com/oauth2/token', $args);
+ 
+            $keys = json_decode(wp_remote_retrieve_body($response));
+ 
+            if($keys) {
+                // saving token to wp_options table
+                update_option('cfTwitterToken', $keys->access_token);
+                $token = $keys->access_token;
+            }
+        }
+        // we have bearer token wether we obtained it from API or from options
+        $args = array(
+            'httpversion' => '1.1',
+            'blocking' => true,
+            'headers' => array(
+                'Authorization' => "Bearer $token"
+            )
+        );
+ 
+        add_filter('https_ssl_verify', '__return_false');
+        $api_url = "https://api.twitter.com/1.1/users/show.json?screen_name=$screenName";
+        $response = wp_remote_get($api_url, $args);
+ 
+        if (!is_wp_error($response)) {
+            $followers = json_decode(wp_remote_retrieve_body($response));
+            $numberOfFollowers = $followers->followers_count;
+        } else {
+            // get old value and break
+            $numberOfFollowers = get_option('cfNumberOfFollowers');
+            // uncomment below to debug
+            //die($response->get_error_message());
+        }
+ 
+        // cache for an hour
+        set_transient('cfTwitterFollowers', $numberOfFollowers, 1*60*60);
+        update_option('cfNumberOfFollowers', $numberOfFollowers);
+    }
+ 
+    return $numberOfFollowers;
+}
+
+// get google plus followers count
+function googleplus_count( $user, $apikey ) {
+    $google = file_get_contents( 'https://www.googleapis.com/plus/v1/people/' . $user . '?key=' . $apikey );
+    return json_decode( $google )->circledByCount;
+}
+
+// get instagram followers count
+// https://api.instagram.com/v1/users/self?access_token=300973134.e60c771.bd8e33d624e94ed4931e68818001206d <-- get user id first
+function instagram_count($user_id) {
+	$result = file_get_contents("https://api.instagram.com/v1/users/" . $user_id . "?access_token=300973134.e60c771.bd8e33d624e94ed4931e68818001206d");
+	$obj = json_decode($result);
+	return $obj->data->counts->followed_by;
+}
+
+
 
 
 
