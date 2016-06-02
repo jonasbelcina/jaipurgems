@@ -53,7 +53,7 @@
 				<a href="<?php the_field('facebook' , 'options'); ?>" target="_blank">
 					<div class="social-icon"><i class="fa fa-facebook"></i></div>
 					<div class="data">
-						<?php echo facebook_count('tutsplus'); ?>
+						<?php echo facebook_count('JaipurGems.India'); ?>
 						<span>Likes</span>
 					</div>
 				</a>

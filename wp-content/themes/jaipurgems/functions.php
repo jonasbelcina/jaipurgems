@@ -668,8 +668,8 @@ function wooshare(){
 
 // get facebook followers count
 function facebook_count( $username ) {
-    $facebook_count = file_get_contents( 'https://graph.facebook.com/'.$username . '?fields=likes&access_token=1223633204329440|euvE-dfiXsIWzEcCJ8UQUE_EQiA' );
-    return json_decode( $facebook_count )->likes;
+    $facebook_count = file_get_contents( 'https://graph.facebook.com/v2.6/' . $username .'?fields=fan_count&access_token=EAACEdEose0cBABb2zjsPk75XCmFrM4vhfV1ppzROo1Gg9JbgX532QmjL14Lt9NFnqhNEIh1qKxWpVPwY2HVeZA1aAHGnc6qwOWXWnRA46eZCtNKHOY4aZByP5JZCXoQD3SXkWH70ZAWLFT7TCkcaXb64ZARYNvajukUXnn4pKNfgZDZD' );
+    return json_decode( $facebook_count )->fan_count;
 }
 
 // get twitter followers count
