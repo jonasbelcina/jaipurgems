@@ -75,7 +75,7 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 			 */
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 				if($woocommerce_loop['loop'] % 5 == 4 || $woocommerce_loop['loop'] % 5 == 0) {
-					// the_post_thumbnail( 'full' );
+					the_post_thumbnail( 'full' );
 				}
 			?>
 
