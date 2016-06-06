@@ -835,3 +835,4 @@ class WC_Shortcodes {
 		return $args;
 	}
 }
+
