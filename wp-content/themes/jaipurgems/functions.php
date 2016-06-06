@@ -603,6 +603,32 @@ function acf_location_rules_match_product_parent_category( $match, $rule, $optio
     return $match;
 }
 
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+// redirect to checkout page after clicking add to cart button
+add_filter ('woocommerce_add_to_cart_redirect', 'woo_redirect_to_checkout');
+function woo_redirect_to_checkout() {
+	$checkout_url = WC()->cart->get_checkout_url();
+	return $checkout_url;
+}
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+
+function my_theme_wrapper_start() {
+  echo '<section id="main">';
+}
+
+function my_theme_wrapper_end() {
+  echo '</section>';
+}
+
 // Display xx products per page. Goes in functions.php
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 14;' ), 20 );
 

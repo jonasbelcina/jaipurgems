@@ -9,9 +9,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	<?php if(wc_get_page_id( 'cart' ) != get_the_ID() && wc_get_page_id( 'checkout' ) != get_the_ID()) : ?>
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header><!-- .entry-header -->
+	<?php endif; ?>
 
 	<?php twentysixteen_post_thumbnail(); ?>
 

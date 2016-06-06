@@ -37,5 +37,6 @@ get_header(); ?>
 
 </div><!-- .content-area -->
 
-<?php get_sidebar(); ?>
+<?php if(!is_woocommerce)
+	get_sidebar(); ?>
 <?php get_footer(); ?>
