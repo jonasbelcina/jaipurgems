@@ -771,6 +771,30 @@ function instagram_count($user_id) {
 	return $obj->data->counts->followed_by;
 }
 
+// Create Events Custom Post Type
+function jg_events_init() {
+    $args = array(
+      	'labels' => array(
+      					'name' => _x( 'Events', 'events' ),
+      					'singular_name' => _x( 'Event', 'event' ),
+      					'add_new_item' => __( 'Add New Event' ),
+      					'all_items' => __( 'All Events' ),
+      					'edit_item' => __( 'Edit Event' ),
+      				),
+        'public' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'query_var' => true,
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail',)
+        );
+    register_post_type( 'events', $args );
+}
+add_action( 'init', 'jg_events_init' );
 
 
 
