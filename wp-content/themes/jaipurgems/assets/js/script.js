@@ -119,6 +119,49 @@
             // autoplay: true
         });
 
+        $('.open-popup').magnificPopup({
+            // delegate: 'img', // child items selector, by clicking on it popup will open
+            type: 'inline',
+            // gallery:{
+            //     enabled:true
+            //   }
+        });
+
+
+        $('.open-popup').on('click', function() {
+
+            $(".event-gallery").css('display', 'block');
+            // $(".campaign-gallery").owlCarousel({
+
+            //         items : 1,
+            //         navigation:true,
+            //         singleItem:true,
+            //         navigationText: [
+            //         "<i class='icon-chevron-left icon-white'><</i>",
+            //         "<i class='icon-chevron-right icon-white'>></i>"
+            //         ],
+            //     });
+
+            // $('.campaign-gallery img').unveil(1, function() {
+            //     $(this).load(function() {
+            //         $(this).css({
+            //             'height': '100%',
+            //         });
+            //     });
+            // });
+
+            // Event gallery slider
+            $('.event-gallery').owlCarousel({
+                items: 1,
+                nav: true,
+                loop: false,
+                navText: false,
+                // animateOut: 'fadeOut',
+                // autoplay: true
+            });
+
+        });
+
         // Single product thumbnail slider
         $('.thumbnails').on('initialized.owl.carousel', function( event ){
             $('.thumbnails .owl-item:nth-of-type(1)').addClass('current');
