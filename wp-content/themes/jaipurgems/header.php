@@ -79,7 +79,27 @@
                                         <!-- <div class="row"> -->
                                             <div class="dropdown-sub">
                                                 <h2>Jewellery<span>Explore Jewellery</span></h2>
-                                                <ul>
+                                                <?php
+                                                    $args = array(
+                                                                'taxonomy'      => 'product_cat',
+                                                                'parent'        => 6,
+                                                                'hide_empty'    => 0
+                                                            );
+
+                                                    $child_categories = get_categories($args);
+                                                    if($child_categories) : ?>
+                                                        <ul>
+                                                            <?php foreach($child_categories as $child_category) : ?>
+                                                                <li>
+                                                                    <a href="<?php echo get_term_link($child_category, 'product_cat'); ?>"><?php echo $child_category->name; ?></a>
+                                                                    <?php $drop_img = get_field('dropdown_image', 'product_cat_' . $child_category->term_id); ?>
+                                                                    <img class="dropdown-img" src="<?php echo $drop_img['url']; ?>" alt="<?php echo $drop_img['alt']; ?>" />
+                                                                </li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
+                                                    <?php endif;
+                                                ?>
+                                                <!-- <ul>
                                                     <li>
                                                         <a href="#">Necklaces</a>
                                                         <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/bangles-tile.jpg" alt="bangles" />
@@ -92,7 +112,7 @@
                                                         <a href="#">Bangles</a>
                                                         <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/bangles-tile.jpg" alt="bangles" />
                                                     </li> 
-                                                </ul>
+                                                </ul> -->
                                             </div>
 
                                         <!-- </div> -->
@@ -101,7 +121,7 @@
                             </li>
                             <li><a href="#">Diamonds</a></li>
                             <li><a href="#">Collections</a></li>
-                            <li><a href="#">Our Legacy</a></li>
+                            <li><a href="<?php echo home_url(); ?>/about-us">Our Legacy</a></li>
                             <li>
                             	<a href="#" class="dropdown-toggle" data-hover="dropdown" data-delay="100" data-close-others="true">Our World <span class="glyphicon glyphicon-plus"></span></a>
 

@@ -133,6 +133,8 @@
                 </div>
             </div>
         </div>
+
+        <a href="#top" class="cd-top"><span class="glyphicon glyphicon-chevron-up"></span></a>
 	</footer>
 
 <?php wp_footer(); ?>

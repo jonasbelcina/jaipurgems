@@ -24,6 +24,7 @@ get_header( 'shop' );
 global $wp_query;
 $cat = $wp_query->get_queried_object();
 // var_dump($cat);
+$parent = $cat->parent == 0 ? $cat->term_id : $cat->parent;
  ?>
 
 	<nav class="shop-nav">
@@ -32,7 +33,7 @@ $cat = $wp_query->get_queried_object();
 				<?php
 					$categories = get_categories(array(
 									'taxonomy' 		=> 'product_cat',
-									'child_of' 		=> $cat->term_id,
+									'parent' 		=> $parent,
 									'hide_empty' 	=> false
 								));
 					foreach ($categories as $category) { ?>
