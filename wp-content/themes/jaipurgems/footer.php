@@ -93,7 +93,7 @@
 										<li><a href="#">Sign In / Sign Up</a></li>
 										<li><a href="#">FAQ</a></li>
 										<li><a href="#">Privacy Policy</a></li>
-										<li><a href="#">Shipping &amp; Returns</a></li>
+										<li><a href="#" data-toggle="modal" data-target="#snrModal">Shipping &amp; Returns</a></li>
 									</ul>
 								</div>
 							</div>
@@ -137,7 +137,7 @@
 		<a href="#top" class="cd-top"><span class="glyphicon glyphicon-chevron-up"></span></a>
 	</footer>
 
-	<!-- Modal -->
+	<!-- Appointment Modal -->
 	<div class="modal fade" id="appointmentForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -147,6 +147,30 @@
 				</div>
 				<div class="modal-body">
 					<?php echo do_shortcode('[contact-form-7 id="107" title="Make an Appointment"]'); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Shipping & Returns Modal -->
+	<div class="modal fade" id="snrModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Shipping &amp; Returns</h4>
+				</div>
+				<div class="modal-body">
+					<h5>Shipping</h5>
+
+					<p>We will be shipping to all of USA, UK, Singapore, U.A.E & Qatar.</p>
+					<p>Shipping charges - All orders of value US$ 20,000/- and above will be shipped without any additional cost. For all orders below US$ 20,000/- there will be a shipping charge of US$ 500.</p>
+					<p>Delivery – All orders will be insured until the point of delivery. Delivery time for gold jewellery will be 3 weeks and for diamond and jadau jewellery it will be 5 weeks.</p>
+
+					<h5>Returns</h5>
+					<p>For all orders, there will be full exchange until 30 days of purchase.</p>
+					<p>Gold Jewellery – After 30 days, the exchange value would be the weight of the product into the current gold price.</p>
+					<p>Diamond & Jadau Jewellery – After 30 days, the exchange value is at 80% of current value of the product.</p>
 				</div>
 			</div>
 		</div>

@@ -995,7 +995,7 @@ footer {
 			max-width: 400px;
 		}
 
-		#appointmentForm .modal-title {
+		.modal-title {
 			text-transform: uppercase;
 			text-align: center;
 			font-family: 'GothamBook';
@@ -1059,6 +1059,14 @@ footer {
 		  font-size: 11px;
 		  text-transform: none;
 		}
+
+	#snrModal h5 {
+		font-family: 'GothamBook';
+		font-weight: bold;
+		font-size: 15px;
+		text-transform: uppercase;
+		margin: 20px 0 10px;
+	}
 
 .footer-bottom {
 	background: #0c0c0c;
@@ -2756,7 +2764,7 @@ footer {
 		padding: 15px;
 	}
 
-	.product-col:last-child .details {
+	.product-col:not(:first-child) .details {
 		right: 100%;
 		left: initial;
 		border-left: 1px solid #959595;
