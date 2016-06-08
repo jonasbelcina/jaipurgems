@@ -811,7 +811,7 @@ function jg_events_init() {
             'thumbnail',)
         );
     register_post_type( 'events', $args );
- 	// flush_rewrite_rules( false );
+ 	flush_rewrite_rules( true );
 }
 add_action( 'init', 'jg_events_init' );
 
@@ -842,7 +842,7 @@ function jg_campaigns_init() {
             'thumbnail',)
         );
     register_post_type( 'campaigns', $args );
- 	// flush_rewrite_rules( false );
+ 	// flush_rewrite_rules( true );
 }
 add_action( 'init', 'jg_campaigns_init' );
 
@@ -868,11 +868,18 @@ function jg_media_init() {
             'thumbnail',)
         );
     register_post_type( 'media', $args );
- 	// flush_rewrite_rules( false );
+ 	// flush_rewrite_rules( true );
 }
 add_action( 'init', 'jg_media_init' );
 
 
+// function custom_flush_rules(){
+// 	//defines the post type so the rules can be flushed.
+
+// 	//and flush the rules.
+// 	flush_rewrite_rules();
+// }
+// add_action('after_theme_switch', 'custom_flush_rules');
 
 
 
