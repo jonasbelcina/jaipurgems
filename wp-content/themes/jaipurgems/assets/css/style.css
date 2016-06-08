@@ -1082,21 +1082,26 @@ footer {
 	margin-top: 30px;
 }
 
-.single-event {
+.single-event,
+.single-campaign {
 	position: relative;
 }
 
-	.single-event .open-popup {
+	.single-event .open-popup,
+	.single-campaign .open-popup {
 		display: inline-block;
 		position: relative;
 	}
 
-	.single-event img {
+	.single-event img,
+	.single-campaign img {
 		max-width: 100%;
 		width: auto;
+		height: auto;
 	}
 
-	.single-event .overlay {
+	.single-event .overlay,
+	.single-campaign .overlay {
 		background: rgba(0,0,0,0.6);
 		height: 100%;
 		position: absolute;
@@ -1110,7 +1115,8 @@ footer {
 				transition: all 0.3s linear;
 	}
 
-	.single-event .overlay h2 {
+	.single-event .overlay h2,
+	.single-campaign .overlay h2 {
 		position: absolute;
 		top: 50%;
 		font-size: 22px;
@@ -1121,56 +1127,91 @@ footer {
 		margin: 0;
 	}
 
-	.single-event .open-popup:hover .overlay {
+	.single-event .open-popup:hover .overlay,
+	.single-campaign .open-popup:hover .overlay {
 		opacity: 1;
 	}
 
-.event-gallery .owl-item img {
+.event-gallery .owl-item img,
+.campaign-gallery .owl-item img {
 	max-width: 100%;
 	width: auto;
 	max-height: 100%;
 	margin: 0 auto; 
 }
 
-.event-gallery .owl-dots {
+.event-gallery .owl-dots,
+.campaign-gallery .owl-dots {
 	bottom: -30px;
 }
 
-	.event-gallery .owl-dot {
+	.event-gallery .owl-dot,
+	.campaign-gallery .owl-dot {
 		background: rgba(255,255,255,0.5);
 	}
 
-	.event-gallery .owl-dot.active {
+	.event-gallery .owl-dot.active,
+	.campaign-gallery .owl-dot.active {
 		background: #a48c5a;
 	}
 
-.event-gallery .owl-nav {
+.event-gallery .owl-nav,
+.campaign-gallery .owl-nav {
 	position: absolute;
 	top: 50%;
 	margin-top: -11px;
 	width: 100%;
 }
 
-	.event-gallery .owl-nav > div {
+	.event-gallery .owl-nav > div,
+	.campaign-gallery .owl-nav > div {
 		width: 12px;
 		height: 22px;
 	}
 
-	.event-gallery .owl-prev {
+	.event-gallery .owl-prev,
+	.campaign-gallery .owl-prev {
 		background: url('../images/prev.png');
 		margin-left: -20px;
 		float: left;
 	}
 
-	.event-gallery .owl-next {
+	.event-gallery .owl-next,
+	.campaign-gallery .owl-next {
 		background: url('../images/next.png');
 		float: right;
 		margin-right: -20px;
 	}
 
+.mfp-ready {
+	opacity: 0.90;
+}
+
 .mfp-close-btn-in .mfp-close {
 	background: rgba(255,255,255,0.5);
 }
+
+.campaigns {
+	max-width: 700px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+	.campaign-holder {
+		margin-bottom: 30px;
+	}
+
+	.single-campaign {
+		width: 48%;
+		padding: 10px;
+	}
+
+	.campaign-gallery .owl-item img {
+		max-height: 90vh;
+		max-width: 100%;
+		width: auto;
+		margin: 0 auto;
+	}
 
 .footer-bottom {
 	background: #0c0c0c;

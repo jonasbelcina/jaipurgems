@@ -128,7 +128,7 @@
         });
 
 
-        $('.open-popup').on('click', function() {
+        $('.open-popup.event-popup').on('click', function() {
 
             $(".event-gallery").css('display', 'block');
             // $(".campaign-gallery").owlCarousel({
@@ -156,6 +156,23 @@
                 nav: true,
                 loop: false,
                 navText: false,
+                // animateOut: 'fadeOut',
+                // autoplay: true
+            });
+
+        });
+
+        $('.open-popup.campaign-popup').on('click', function() {
+            var this_campaign = $(this).attr('href');
+
+            $(this_campaign).find('.campaign-gallery').css('display', 'block');
+
+            $(this_campaign).find('.campaign-gallery').owlCarousel({
+                items: 1,
+                nav: true,
+                loop: false,
+                navText: false,
+                autoHeight: true
                 // animateOut: 'fadeOut',
                 // autoplay: true
             });
@@ -315,6 +332,12 @@
         $('.blog-holder').masonry({
             // options
             itemSelector: '.blog-item',
+            // columnWidth: 200
+        });
+
+        $('.campaign-holder').masonry({
+            // options
+            itemSelector: '.single-campaign'
             // columnWidth: 200
         });
     });

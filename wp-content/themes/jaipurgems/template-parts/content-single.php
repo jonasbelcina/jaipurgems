@@ -33,7 +33,7 @@
 				<div class="event-holder">
 					<?php $images = get_field('gallery');
 					if( $images ): ?>
-						<a class="open-popup event-img" href="#campaign_<?php echo $post->ID; ?>">
+						<a class="open-popup event-popup" href="#campaign_<?php echo $post->ID; ?>">
 							<?php the_post_thumbnail('full'); ?>
 							<div class="overlay">
 								<h2>View Gallery</h2>

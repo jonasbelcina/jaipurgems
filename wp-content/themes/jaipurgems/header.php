@@ -132,7 +132,7 @@
                             	                <h2>Our World<span>Explore</span></h2>
                             	                <ul>
                             	                    <li>
-                            	                        <a href="#">Campaigns</a>
+                            	                        <a href="<?php echo home_url(); ?>/campaigns">Campaigns</a>
                             	                        <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/bangles-tile.jpg" alt="bangles" />
                             	                    </li>
                             	                    <li>
