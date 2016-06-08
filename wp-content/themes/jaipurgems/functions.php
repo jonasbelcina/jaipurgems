@@ -804,15 +804,15 @@ function jg_events_init() {
         'capability_type' => 'post',
         'hierarchical' => false,
         'query_var' => true,
-        'rewrite' => array('slug' => 'events'),
-        // 'has_archive' => true,
+        // 'rewrite' => array('slug' => 'events'),
+        'has_archive' => true,
         'supports' => array(
             'title',
             'editor',
             'thumbnail',)
         );
     register_post_type( 'events', $args );
- 	flush_rewrite_rules( false );
+ 	// flush_rewrite_rules( false );
 }
 add_action( 'init', 'jg_events_init' );
 

@@ -56,7 +56,7 @@
 			<?php } ?>
 	</div>
 
-	<?php disqus_embed(' palmonfoundation '); ?>
+	<?php disqus_embed(' jaipurgems '); ?>
 
 	<div class="single-blogs-nav">
 		<?php 
@@ -86,6 +86,6 @@
 		<?php else : ?>
 			<a href="<?php echo home_url(); ?>/blog">Back to Blogs</a>
 		<?php endif; ?>
-		</div>
+
 	</div>
 </div>
