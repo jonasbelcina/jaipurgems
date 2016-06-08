@@ -13,7 +13,11 @@ get_header(); ?>
 	<div class="row">
 		<nav class="breadcrumbs">
 			<a href="<?php echo home_url(); ?>">Home</a>
-			<a href="<?php echo home_url(); ?>/blog">Blogs</a>
+			<?php if(get_post_type() == 'events') : ?>
+				<a href="<?php echo home_url(); ?>/events">Events</a>
+			<?php else : ?>
+				<a href="<?php echo home_url(); ?>/blog">Blogs</a>
+			<?php endif; ?>
 			<span><?php the_title(); ?></span>
 		</nav>
 	</div>

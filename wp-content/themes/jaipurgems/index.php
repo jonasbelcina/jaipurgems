@@ -16,66 +16,13 @@
 
 get_header(); ?>
 
-	<!-- <div class="container breadcrumb-container">
-		<div class="row">
-			<nav class="breadcrumbs">
-				<a href="<?php echo home_url(); ?>">Home</a>
-				<span>Blogs</span>
-			</nav>
-		</div>
-	</div> -->
-
-	<!-- <div class="featured-blogs">
-		<div class="container">
-			<div class="row">
-				<?php
-					$args = array(
-						'posts_per_page'      => 2,
-						'post__in'            => get_option( 'sticky_posts' ),
-						'ignore_sticky_posts' => 1,
-						// 'order'				  => 'ASC'
-					);
-					$query = new WP_Query($args);
-
-					if( $query->have_posts() ): ?>
-							<?php
-							$ctr == 1;
-							while( $query->have_posts() ) : $query->the_post(); ?>
-								<div class="<?php if($ctr == 1) { ?>col-lg-4 col-md-4 col-sm-12<?php } else { ?>col-lg-8 col-md-8 col-sm-12<?php } ?> featured-blog">
-									<?php the_post_thumbnail('full');?>
-									<div class="blog-content">
-										<?php $categories = strip_tags(get_the_category_list() , '<li><a>');?>
-										<ul>
-											<?php echo $categories; ?>
-											<li><?php the_time('F d, Y'); ?></li>
-										</ul>
-										<h2><?php the_title(); ?></h2>
-										<?php echo wpautop(shortenText(wpautop(get_the_content()), 175, '')); ?>
-										<div class="buttons">
-											<a href="<?php the_permalink(); ?>">Read Post</a>
-											<a href="#" class="share">Share</a>
-										</div>
-									</div>
-								</div>
-								<?php
-								$ctr++;
-							endwhile; ?>
-					<?php
-					endif;
-
-					wp_reset_postdata();
-				?>
-			</div>
-		</div>
-	</div> -->
-
 	<div class="container">
 		<div class="row">
 
 			<div class="col-lg-9 col-md-9 col-sm-12 blogs">
 				<?php if ( is_home() && ! is_front_page() ) : ?>
 					<div class="blog-title">
-						<h1>Recent Blogs</h1>
+						<h1>Recent <?php echo (get_post_type() == 'events') ? 'Events' : 'Blogs'; ?></h1>
 						<h2>Place for subtitle</h2>
 					</div>
 				<?php endif; ?>
@@ -106,23 +53,6 @@ get_header(); ?>
 
 					?>
 
-					<div class="blogs-nav">
-						<?php
-							$next = explode('"',get_next_posts_link());
-							$next = $next[1];
-							$previous = explode('"',get_previous_posts_link()); 
-							$previous = $previous[1];
-
-							if ($previous) {
-							    echo '<a href="' . $previous . '" class="blogs-prev">Previous page</a>';
-							}
-
-							if ($next) {
-							    echo '<a href="' . $next . '" class="blogs-next">Next page</a>';
-							}
-						?>
-					</div>
-
 				<?php
 				// If no content, include the "No posts found" template.
 				else :
@@ -131,6 +61,40 @@ get_header(); ?>
 				endif;
 				?>
 				</div>
+
+				<div class="clearfix"></div>
+				<div class="blogs-nav">
+					<?php
+
+						if(!is_null(get_previous_posts_link()) || !is_null(get_next_posts_link())) {
+							echo '<ul>';
+						}
+
+							$previous = explode('"',get_previous_posts_link()); 
+							if(!is_null(get_previous_posts_link())) {
+								$previous = $previous[1];
+
+								if ($previous) {
+								    echo '<li><a href="' . $previous . '" class="blogs-prev">Previous</a></li>';
+								}
+							}
+
+							$next = explode('"',get_next_posts_link());
+							if(!is_null(get_next_posts_link())) {
+								$next = $next[1];
+
+								if ($next) {
+								    echo '<li><a href="' . $next . '" class="blogs-next">Next</a></li>';
+								}
+							}
+
+						if(!is_null(get_previous_posts_link()) || !is_null(get_next_posts_link())) {
+							echo '</ul>';
+						}
+						
+					?>
+				</div>
+
 			</div>
 
 			<?php get_sidebar('blog'); ?>

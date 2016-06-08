@@ -797,8 +797,14 @@ function jg_events_init() {
             'thumbnail',)
         );
     register_post_type( 'events', $args );
+ 	// flush_rewrite_rules( false );
 }
 add_action( 'init', 'jg_events_init' );
+
+// function my_flush_rewrite_rules() {
+//     flush_rewrite_rules();
+// }
+// add_action( 'after_switch_theme', 'my_flush_rewrite_rules' );
 
 
 

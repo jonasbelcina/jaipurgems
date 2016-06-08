@@ -140,7 +140,7 @@
                             	                        <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/earrings-sub.jpg" alt="earrings" />
                             	                    </li>
                             	                    <li>
-                            	                        <a href="#">Events</a>
+                            	                        <a href="<?php echo home_url(); ?>/events">Events</a>
                             	                        <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/bangles-tile.jpg" alt="bangles" />
                             	                    </li> 
                             	                </ul>

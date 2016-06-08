@@ -25,30 +25,35 @@
 	
 	<?php $link = get_permalink();?>
 
-	<div class="content">
+	<div class="content <?php if(get_post_type() == 'events') echo 'single-event'; ?>">
 		<?php 
 			the_content();
 
-			if(get_post_type() == 'events') {
-				$images = get_field('gallery');
-				if( $images ): ?>
-					<a class="open-popup" href="#campaign_<?php echo $post->ID; ?>">
-						<?php the_post_thumbnail('full'); ?>
-					</a>
+			if(get_post_type() == 'events') { ?>
+				<div class="event-holder">
+					<?php $images = get_field('gallery');
+					if( $images ): ?>
+						<a class="open-popup event-img" href="#campaign_<?php echo $post->ID; ?>">
+							<?php the_post_thumbnail('full'); ?>
+							<div class="overlay">
+								<h2>View Gallery</h2>
+							</div>
+						</a>
 
-					<div style="display:none">
-						<div class="popup" id="campaign_<?php echo $post->ID; ?>">
-							<div class="popup-content">
-								<div class="event-gallery">
-							        <?php foreach( $images as $image ): ?>
-				                     	<img class="gallery-item" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-							        <?php endforeach; ?>
+						<div style="display:none">
+							<div class="popup" id="campaign_<?php echo $post->ID; ?>">
+								<div class="popup-content">
+									<div class="event-gallery">
+								        <?php foreach( $images as $image ): ?>
+					                     	<img class="gallery-item" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+								        <?php endforeach; ?>
+							        </div>
 						        </div>
 					        </div>
 				        </div>
-			        </div>
-				<?php endif;
-			} ?>
+					<?php endif; ?>
+				</div>
+			<?php } ?>
 	</div>
 
 	<?php disqus_embed(' palmonfoundation '); ?>
