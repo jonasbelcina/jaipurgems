@@ -806,6 +806,32 @@ add_action( 'init', 'jg_events_init' );
 // }
 // add_action( 'after_switch_theme', 'my_flush_rewrite_rules' );
 
+// Create Campaigns Custom Post Type
+function jg_campaigns_init() {
+    $args = array(
+      	'labels' => array(
+      					'name' => _x( 'Campaigns', 'campaigns' ),
+      					'singular_name' => _x( 'Campaign', 'campaign' ),
+      					'add_new_item' => __( 'Add New Campaign' ),
+      					'all_items' => __( 'All Campaigns' ),
+      					'edit_item' => __( 'Edit Campaign' ),
+      				),
+        'public' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'query_var' => true,
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail',)
+        );
+    register_post_type( 'campaigns', $args );
+ 	// flush_rewrite_rules( false );
+}
+add_action( 'init', 'jg_campaigns_init' );
+
 
 
 

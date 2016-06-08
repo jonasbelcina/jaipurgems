@@ -62,17 +62,30 @@
 		<?php 
 			$previous = get_previous_post();
 			$next = get_next_post();
+
+			$post_type = '';
+
+			if(get_post_type() == 'events') {
+				$post_type = 'Event';
+			}else {
+				$post_type = 'Post';
+			}
 		?>
 			<ul>
 			<?php
 			if($previous)
-				echo '<li><a href = "'.$previous->guid.'" class="blogs-prev">Previous Post</a></li>';
+				echo '<li><a href = "'.$previous->guid.'" class="blogs-prev">Previous ' .$post_type .'</a></li>';
 
 			if($next)
-				echo '<li><a href = "'.$next->guid.'" class="blogs-next">Next Post</a></li>';
+				echo '<li><a href = "'.$next->guid.'" class="blogs-next">Next ' .$post_type .'</a></li>';
 			?>
 			</ul>
-			
-		<a href="<?php echo home_url(); ?>/blog">Back to Blogs</a>
+		
+		<?php if(get_post_type() == 'events') : ?>
+			<a href="<?php echo home_url(); ?>/events">Back to Events</a>
+		<?php else : ?>
+			<a href="<?php echo home_url(); ?>/blog">Back to Blogs</a>
+		<?php endif; ?>
+		</div>
 	</div>
 </div>
