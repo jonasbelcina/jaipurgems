@@ -18,31 +18,66 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<?php
+	$header = '';
+	$element_id = '';
+
+	if(get_post_type() == 'campaigns') :
+		$header = 'Campaigns';
+		$element_id = 'campaign';
+	elseif(get_post_type() == 'media') :
+		$header = 'Media';
+		$element_id = 'media';
+	endif;
+?>
+
+
+<div class="container">
+	<div class="campaigns">
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<h1 class="about-section-header"><?php echo $header; ?></h1>
+				<div class="campaign-holder">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+				// Start the Loop.
+				while ( have_posts() ) : the_post();
 
-			<?php
-			// Start the Loop.
-			while ( have_posts() ) : the_post();
+					/*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					// get_template_part( 'template-parts/content', get_post_format() );
+					?>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+					<div class="single-campaign col-md-4 col-sm-6">
+						<?php $images = get_field('gallery', get_the_ID());
+						if( $images ): ?>
+							<a class="open-popup campaign-popup" href="#<?php echo $element_id; ?>_<?php echo $post->ID; ?>">
+								<?php the_post_thumbnail('full'); ?>
+								<div class="overlay">
+									<h2><?php the_title(); ?><span><?php the_field('year', get_the_ID()) ?></span></h2>
+								</div>
+							</a>
 
-			// End the loop.
-			endwhile;
+							<div style="display:none">
+								<div class="popup" id="<?php echo $element_id; ?>_<?php echo $post->ID; ?>">
+									<div class="popup-content">
+										<div class="campaign-gallery">
+									        <?php foreach( $images as $image ): ?>
+						                     	<img class="gallery-item" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+									        <?php endforeach; ?>
+								        </div>
+							        </div>
+						        </div>
+					        </div>
+						<?php endif; ?>
+					</div>
+
+
+				<?php // End the loop.
+				endwhile;
 
 			// Previous/next page navigation.
 			the_posts_pagination( array(
@@ -51,15 +86,15 @@ get_header(); ?>
 				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
 			) );
 
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'template-parts/content', 'none' );
+			// If no content, include the "No posts found" template.
+			else :
+				get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
+			endif;
+			?>
+		</div>
+	</div>
+</div>
 
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -136,7 +136,7 @@
                             	                        <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/bangles-tile.jpg" alt="bangles" />
                             	                    </li>
                             	                    <li>
-                            	                        <a href="#">Media</a>
+                            	                        <a href="<?php echo home_url(); ?>/media">Media</a>
                             	                        <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/earrings-sub.jpg" alt="earrings" />
                             	                    </li>
                             	                    <li>

@@ -1192,7 +1192,7 @@ footer {
 }
 
 .campaigns {
-	max-width: 800px;
+	/*max-width: 800px;*/
 	margin: 0 auto;
 	width: 100%;
 }
@@ -1202,8 +1202,9 @@ footer {
 	}
 
 	.single-campaign {
-		width: 48%;
-		padding: 10px;
+		/*width: 48%;*/
+		/*padding: 10px;*/
+		margin: 15px 0;
 	}
 
 		.single-campaign .campaign-popup h2 {
