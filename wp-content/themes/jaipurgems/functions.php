@@ -49,6 +49,7 @@ function jg_scripts() {
 	wp_register_script( 'jg-bootstrap-hover-dropdown', get_template_directory_uri().'/assets/vendor/bootstrap-hover-dropdown' . $suffix . '.js', array(), '1.0', true );
 	wp_register_script( 'vendor-masonry', get_template_directory_uri().'/assets/vendor/masonry.pkgd' . $suffix . '.js', array(), '1.0.0', true );
 	wp_register_script( 'vendor-magnific-popup', get_template_directory_uri().'/assets/vendor/jquery.magnific-popup' . $suffix . '.js', array(), '1.0.0', true );
+	wp_register_script( 'vendor-images-loaded', get_template_directory_uri().'/assets/vendor/imagesloaded.pkgd' . $suffix . '.js', array(), '1.0.0', true );
 	wp_register_script( 'jg-script', get_template_directory_uri().'/assets/js/script.js', array( 'jquery'), filemtime( $themejspath ), true );
 
 	wp_enqueue_style('jg-bootstrap');
@@ -60,6 +61,7 @@ function jg_scripts() {
 	wp_enqueue_script('vendor-owl-carousel');
 	wp_enqueue_script('vendor-masonry');
 	wp_enqueue_script('vendor-magnific-popup');
+	wp_enqueue_script('vendor-images-loaded');
 	wp_enqueue_script('jg-bootstrap');
 	wp_enqueue_script('jg-bootstrap-hover-dropdown');
 	wp_enqueue_script('jg-script');
@@ -498,6 +500,18 @@ function jg_ignore_sticky( $query ) {
 }
 // add_action( 'pre_get_posts', 'jg_ignore_sticky' );
 
+function set_archive_posts_per_page( $query ) {
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
+
+    if ( is_post_type_archive( 'campaigns' ) || is_post_type_archive( 'media' ) ) {
+        // Display 50 posts for a custom post type called 'movie'
+        $query->set( 'posts_per_page', -1 );
+        return;
+    }
+}
+add_action( 'pre_get_posts', 'set_archive_posts_per_page', 1 );
+
 // enable disqus shortcode
 function disqus_embed($disqus_shortname) {
     global $post;
@@ -831,6 +845,32 @@ function jg_campaigns_init() {
  	// flush_rewrite_rules( false );
 }
 add_action( 'init', 'jg_campaigns_init' );
+
+// Create Media Custom Post Type
+function jg_media_init() {
+    $args = array(
+      	'labels' => array(
+      					'name' => _x( 'Media', 'media' ),
+      					'singular_name' => _x( 'media', 'media' ),
+      					'add_new_item' => __( 'Add New media' ),
+      					'all_items' => __( 'All Media' ),
+      					'edit_item' => __( 'Edit media' ),
+      				),
+        'public' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'query_var' => true,
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail',)
+        );
+    register_post_type( 'media', $args );
+ 	// flush_rewrite_rules( false );
+}
+add_action( 'init', 'jg_media_init' );
 
 
 

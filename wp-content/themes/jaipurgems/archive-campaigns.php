@@ -43,7 +43,7 @@ get_header(); ?>
 							<a class="open-popup campaign-popup" href="#campaign_<?php echo $post->ID; ?>">
 								<?php the_post_thumbnail('full'); ?>
 								<div class="overlay">
-									<h2>View Gallery</h2>
+									<h2><?php the_title(); ?><span><?php the_field('year', get_the_ID()) ?></span></h2>
 								</div>
 							</a>
 

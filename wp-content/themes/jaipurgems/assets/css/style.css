@@ -1192,7 +1192,7 @@ footer {
 }
 
 .campaigns {
-	max-width: 700px;
+	max-width: 800px;
 	margin: 0 auto;
 	width: 100%;
 }
@@ -1205,6 +1205,17 @@ footer {
 		width: 48%;
 		padding: 10px;
 	}
+
+		.single-campaign .campaign-popup h2 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.single-campaign .campaign-popup h2 span {
+			display: block;
+			font-size: 20px;
+			font-weight: normal;
+		}
 
 	.campaign-gallery .owl-item img {
 		max-height: 90vh;

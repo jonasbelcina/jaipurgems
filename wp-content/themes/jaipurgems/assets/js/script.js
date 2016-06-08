@@ -334,12 +334,17 @@
             itemSelector: '.blog-item',
             // columnWidth: 200
         });
+    });
 
-        $('.campaign-holder').masonry({
-            // options
-            itemSelector: '.single-campaign'
-            // columnWidth: 200
-        });
+    var $grid = $('.campaign-holder').masonry({
+        // options
+        itemSelector: '.single-campaign'
+        // columnWidth: 200
+    });
+
+    // layout Masonry after each image loads
+    $grid.imagesLoaded().progress( function() {
+        $grid.masonry('layout');
     });
 
     var headerTop = $('.navbar').offset().top;
