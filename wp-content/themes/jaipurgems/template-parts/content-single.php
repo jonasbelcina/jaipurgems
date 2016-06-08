@@ -9,7 +9,11 @@
 ?>
 
 <div class="blog-content single-blog" itemscope="" itemtype="http://schema.org/BlogPosting">
-	<?php the_post_thumbnail('full'); ?>
+	<?php 
+		if(get_post_type() != 'events') {
+			the_post_thumbnail('full');
+		}
+	?>
 
 	<h2><?php the_title(); ?></h2>
 
@@ -28,7 +32,9 @@
 			if(get_post_type() == 'events') {
 				$images = get_field('gallery');
 				if( $images ): ?>
-					<a class="open-popup" href="#campaign_<?php echo $post->ID; ?>">open gallery</a>
+					<a class="open-popup" href="#campaign_<?php echo $post->ID; ?>">
+						<?php the_post_thumbnail('full'); ?>
+					</a>
 
 					<div style="display:none">
 						<div class="popup" id="campaign_<?php echo $post->ID; ?>">

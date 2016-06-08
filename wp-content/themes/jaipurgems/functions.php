@@ -682,9 +682,9 @@ function wooshare(){
 <?php
 }
 
-// get facebook followers count
+// get facebook followers count - 1223633204329440|euvE-dfiXsIWzEcCJ8UQUE_EQiA
 function facebook_count( $username ) {
-    $facebook_count = file_get_contents( 'https://graph.facebook.com/v2.6/' . $username .'?fields=fan_count&access_token=EAACEdEose0cBABOy6FQNBbXLSeg0dFnpnuvCMYxYSP4upF5ClzeVpm4IpLsLuUTzNSd1MCMh3PSPzAT0ss5KLfdJGXs0m5xHagSStyAAWgQ8vtCJNsbGhaZA6MRxLVFUajlU7NICVxMdUAZBrX8CWVgVLI6NhJ14PLC48mPgZCP5RDHImby3nx8842eNjb11jx4iGgKtAZDZD' );
+    $facebook_count = file_get_contents( 'https://graph.facebook.com/v2.6/' . $username .'?fields=fan_count&access_token=1223633204329440|euvE-dfiXsIWzEcCJ8UQUE_EQiA' );
     return json_decode( $facebook_count )->fan_count;
 }
 
@@ -790,7 +790,7 @@ function jg_events_init() {
         'capability_type' => 'post',
         'hierarchical' => false,
         'query_var' => true,
-        'has_archive' => true,
+        // 'has_archive' => true,
         'supports' => array(
             'title',
             'editor',
