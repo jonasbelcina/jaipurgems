@@ -3475,7 +3475,7 @@ footer {
 				background: url('../images/share-googleplus.png') center no-repeat;
 			}
 
-			.single-product .entry-summary .share-buttons a:last-child {
+			.single-product .entry-summary .share-buttons a:nth-child(5) {
 				background: url('../images/share-pinterest.png') center no-repeat;
 			}
 
@@ -3488,6 +3488,107 @@ footer {
 			color: #4f4f4f;
 			letter-spacing: 2px;
 			padding-top: 12px;
+		}
+
+		.try-img {
+			width: 48px;
+			height: 48px;
+			background: url('../images/try.png');
+			margin: 0 auto;
+		}
+
+		.try-img-1 {
+			background-position: -1px;
+		}
+
+		.try-img-2 {
+			background-position: 120px -1px;
+		}
+
+		.try-img-3 {
+			background-position: 242px 0px;
+		}
+
+		.try-cols p {
+			font-size: 12px;
+		}
+
+		a.try-at-home {
+			float: right;
+			color: #000;
+			text-transform: uppercase;
+			width: auto !important;
+			line-height: 39px;
+			text-decoration: underline;
+		}
+
+		#tryAtHome .modal-dialog {
+			max-width: 400px;
+		}
+
+		.modal-title {
+			text-transform: uppercase;
+			text-align: center;
+			font-family: 'GothamBook';
+		}
+
+		#tryAtHome input:not([type="submit"]) {
+			width: 100%;
+			height: 30px;
+			border: 1px solid #e3e3e3;
+			padding: 0 15px;
+		}
+
+		#tryAtHome textarea {
+			width: 100%;
+			border: 1px solid #e3e3e3;
+			height: 90px;
+			padding: 7px 15px;
+		}
+
+		.recaptcha-holder {
+			margin-bottom: 10px;
+		}
+
+		#tryAtHome p:nth-last-of-type(1) {
+			text-align: center;
+		}
+
+		#tryAtHome input[type="submit"] {
+			background: #b09d76;
+			color: #fff;
+			text-transform: uppercase;
+			border: 0;
+			display: inline-block;
+			padding: 10px 15px;
+			font-family: 'GothamBook';
+			font-size: 15px;
+			font-weight: bold;
+		}
+
+		#tryAtHome ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		  color: #777;
+		  font-family: 'GothamBook';
+		  font-size: 11px;
+		  text-transform: none;
+		}
+		#tryAtHome ::-moz-placeholder { /* Firefox 19+ */
+		  color: #777;
+		  font-family: 'GothamBook';
+		  font-size: 11px;
+		  text-transform: none;
+		}
+		#tryAtHome :-ms-input-placeholder { /* IE 10+ */
+		  color: #777;
+		  font-family: 'GothamBook';
+		  font-size: 11px;
+		  text-transform: none;
+		}
+		#tryAtHome :-moz-placeholder { /* Firefox 18- */
+		  color: #777;
+		  font-family: 'GothamBook';
+		  font-size: 11px;
+		  text-transform: none;
 		}
 
 	.other-products {

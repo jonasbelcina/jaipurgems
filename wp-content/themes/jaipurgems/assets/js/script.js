@@ -447,6 +447,12 @@
 		});
 	});
 
+	// include product name on try at home contact
+	$('.try-at-home').on('click', function(){
+	    var product = $(this).data('product');
+	    $(".product-hidden").val(product);
+	});
+
 })(jQuery);
 
 // social sharing popup
