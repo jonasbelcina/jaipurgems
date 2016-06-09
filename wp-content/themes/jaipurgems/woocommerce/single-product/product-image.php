@@ -28,7 +28,10 @@ global $post, $woocommerce, $product;
 			$image_caption = get_post( get_post_thumbnail_id() )->post_excerpt;
 			$image_link    = wp_get_attachment_url( get_post_thumbnail_id() );
 			$image         = get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ), array(
-				'title'	=> get_the_title( get_post_thumbnail_id() )
+				'title'	=> get_the_title( get_post_thumbnail_id() ),
+				'class' => 'single-prod-img',
+				'data-zoom-image' => $image_link,
+				'data-asd' => 'tst'
 			) );
 
 			$attachment_count = count( $product->get_gallery_attachment_ids() );

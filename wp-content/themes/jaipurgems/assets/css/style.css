@@ -3163,6 +3163,9 @@ footer {
 	.single-product div.product div.images > img {
 		height: 446px;
 		object-fit: cover;
+		max-width: 100%;
+		width: auto;
+		margin: 0 auto;
 	}
 
 	.single-product div.product .images div.thumbnails a {

@@ -217,6 +217,8 @@
                 current.removeClass('current');
                 current.next('.owl-item').addClass('current');
                 $('.single-product .product .images > img').attr('src' , $('.owl-item.current img').attr('src'));
+                $('.single-product .product .images > img').data('zoomImage' , $('.owl-item.current img').attr('src'));
+                changeData();
                 thumb_num++;
                 $('.thumbs-count span').text(thumb_num);
             }
@@ -234,6 +236,8 @@
                 current.removeClass('current');
                 current.prev('.owl-item').addClass('current');
                 $('.single-product .product .images > img').attr('src' , $('.owl-item.current img').attr('src'));
+                $('.single-product .product .images > img').data('zoomImage' , $('.owl-item.current img').attr('src'));
+                changeData();
                 thumb_num--;
                 $('.thumbs-count span').text(thumb_num);
             }
@@ -243,10 +247,23 @@
             e.preventDefault();
             $('.owl-item').removeClass('current');
             $(this).closest('.owl-item').addClass('current');
-            $('.single-product .product .images > img').attr('src' , $('.owl-item.current img').attr('src'));
+            var newSrc = $('.owl-item.current img').attr('src');
+
+            $('.single-product .product .images > img').attr('src' , newSrc);
+            $('.single-prod-img').data('zoomImage', newSrc);
+            changeData();
+
             var index = $(this).closest('.owl-item').index() + 1;
             $('.thumbs-count span').text(index);
         });
+
+        function changeData(val) {
+            $('.single-prod-img').elevateZoom({
+                'cursor': 'crosshair',
+                zoomWindowWidth: 300,
+                zoomWindowHeight: 300
+            });
+        }
 
         // main nav mobile dropdown
         $('.dropdown-toggle span').on('click', function(e) {
@@ -325,6 +342,13 @@
                 dots: false,
             });
         }
+
+        // product zoom
+        $('.single-prod-img').elevateZoom({
+            'cursor': 'crosshair',
+            zoomWindowWidth: 300,
+            zoomWindowHeight: 300
+        });
 
     });
 
