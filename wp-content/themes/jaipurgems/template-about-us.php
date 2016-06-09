@@ -14,18 +14,18 @@ get_header(); ?>
 	<div class="row">
 		<nav class="about-nav">
 			<ul>
-				<li><a href="#">The House</a></li>
-				<li><a href="#">History &amp; Heritage</a></li>
-				<li><a href="#">Our Expertise</a></li>
-				<li><a href="#">Philantrophy</a></li>
-				<li><a href="#">Product Line</a></li>
+				<li><a class="smooth" href="#house">The House</a></li>
+				<li><a class="smooth" href="#history">History &amp; Heritage</a></li>
+				<li><a class="smooth" href="#expertise">Our Expertise</a></li>
+				<li><a class="smooth" href="#philantrophy">Philantrophy</a></li>
+				<li><a class="smooth" href="#product-line">Product Line</a></li>
 			</ul>
 		</nav>
 	</div>
 </div>
 
 <?php $banner_img = get_field('about_banner_background_image'); ?>
-<section class="house-jaipur">
+<section class="house-jaipur" id="house">
 	<div class="container" style="background: url(<?php echo $banner_img['url']; ?>) center no-repeat;">
 		<h2><?php the_field('about_banner_heading'); ?></h2>
 		<h3><?php the_field('about_banner_heading_2'); ?></h3>
@@ -52,7 +52,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="heritage">
+<section class="heritage" id="history">
 	<div class="container">
 		<h2 class="about-section-header"><?php the_field('about_history_heading'); ?></h2>
 		<h3><?php the_field('about_history_subheading'); ?></h3>
@@ -96,7 +96,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="about-expertise">
+<section class="about-expertise" id="expertise">
 	<div class="container">
 		<h2 class="about-section-header"><?php the_field('about_expertise_heading'); ?></h2>
 		<?php if( have_rows('expertise') ): ?>
@@ -116,7 +116,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="philantrophy">
+<section class="philantrophy" id="philantrophy">
 	<div class="container">
 		<h2 class="about-section-header"><?php the_field('philantrophy_heading'); ?></h2>
 		<h3><?php the_field('philantrophy_subheading'); ?></h3>
@@ -147,7 +147,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="product-line">
+<section class="product-line" id="product-line">
 	<div class="container">
 		<h2 class="about-section-header"><?php the_field('product_line_heading'); ?></h2>
 		<div class="row">

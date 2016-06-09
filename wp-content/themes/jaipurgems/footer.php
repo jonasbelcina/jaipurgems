@@ -66,10 +66,10 @@
 								<div class="row">
 									<h3>Maison <span class="glyphicon glyphicon-plus"></span></h3>
 									<ul>
-										<li><a href="#">Our Legacy</a></li>
+										<li><a href="<?php echo home_url(); ?>/about-us">Our Legacy</a></li>
 										<li><a href="#">Philanthropy</a></li>
 										<li><a href="#">Product Line</a></li>
-										<li><a href="#">News</a></li>
+										<li><a href="<?php echo home_url(); ?>/blog">News</a></li>
 									</ul>
 								</div>
 							</div>
@@ -78,9 +78,9 @@
 								<div class="row">
 									<h3>Shop Now <span class="glyphicon glyphicon-plus"></span></h3>
 									<ul>
-										<li><a href="#">Bangles</a></li>
-										<li><a href="#">Earrings</a></li>
-										<li><a href="#">Necklaces</a></li>
+										<li><a href="<?php echo home_url(); ?>/product-category/jewellery/bangles">Bangles</a></li>
+										<li><a href="<?php echo home_url(); ?>/product-category/jewellery/earrings">Earrings</a></li>
+										<li><a href="<?php echo home_url(); ?>/product-category/jewellery/necklaces">Necklaces</a></li>
 										<li><a href="#">Our Collections</a></li>
 									</ul>
 								</div>
