@@ -18,7 +18,7 @@
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
-
+    <link rel="shortcut icon" href="<?php the_field('favicon' , 'options'); ?>" />
 	<?php if(is_single()) : ?>
 		<meta property="og:image" content="<?php get_the_post_thumbnail('full'); ?>" />
 	<?php endif; ?>
