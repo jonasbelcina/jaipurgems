@@ -1132,6 +1132,10 @@ footer {
 		opacity: 1;
 	}
 
+.event-gallery .owl-item {
+	text-align: center;
+}
+
 .event-gallery .owl-item img,
 .campaign-gallery .owl-item img {
 	max-width: 100%;

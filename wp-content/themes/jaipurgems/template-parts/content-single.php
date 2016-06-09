@@ -44,8 +44,12 @@
 							<div class="popup" id="campaign_<?php echo $post->ID; ?>">
 								<div class="popup-content">
 									<div class="event-gallery">
-								        <?php foreach( $images as $image ): ?>
-					                     	<img class="gallery-item" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+								        <?php foreach( $images as $image ):
+								        	if($image['caption'] !== '') :
+								        		echo $image['caption'];
+								        	else : ?>
+					                     		<img class="gallery-item" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+				                     		<?php endif; ?>
 								        <?php endforeach; ?>
 							        </div>
 						        </div>
