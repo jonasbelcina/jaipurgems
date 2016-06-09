@@ -2555,6 +2555,12 @@ footer {
 		background: #000;
 	}
 
+		.ph-tile img {
+			max-width: 100%;
+			height: 292px;
+			object-fit: cover;
+		}
+
 		.ph-tile .content {
 			position: absolute;
 			top: 0;
@@ -3653,6 +3659,10 @@ footer {
 		left: 6px;
 	}
 
+	.ph-tile img {
+		height: 242px;
+	}
+
 	.product-line .nav-tabs li a {
 		padding: 33px 15px;
 		font-size: 19px;
@@ -3933,6 +3943,10 @@ footer {
 
 	.about-expertise-slider .owl-next {
 		margin-right: 15px;
+	}
+
+	.ph-tile img {
+		height: 187px;
 	}
 
 	.product-line .nav-tabs li {

@@ -121,85 +121,28 @@ get_header(); ?>
 		<h2 class="about-section-header"><?php the_field('philantrophy_heading'); ?></h2>
 		<h3><?php the_field('philantrophy_subheading'); ?></h3>
 		<div class="row">
-			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
-				<div class="row">
-					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p1.jpg" />
-					<div class="content">
-						<p>Jaipur Showcase 2016</p>
-						<a href="#">View Gallery</a>
-					</div>
-				</div>
-			</div>
+		<?php
+			$args = array(
+						'post_type' 		=> 'events',
+						'posts_per_page' 	=> 8
+					);
 
-			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
-				<div class="row">
-					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p2.jpg" />
-					<div class="content">
-						<p>Jaipur Showcase 2016</p>
-						<a href="#">View Gallery</a>
+			$query = new WP_Query( $args );
+			if( $query->have_posts() ):
+				while( $query->have_posts() ) : $query->the_post(); ?>
+					<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
+						<div class="row">
+							<?php the_post_thumbnail('full'); ?>
+							<div class="content">
+								<p><?php the_title(); ?></p>
+								<a href="<?php the_permalink(); ?>">View Gallery</a>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
-				<div class="row">
-					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p3.jpg" />
-					<div class="content">
-						<p>Jaipur Showcase 2016</p>
-						<a href="#">View Gallery</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
-				<div class="row">
-					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p4.jpg" />
-					<div class="content">
-						<p>Jaipur Showcase 2016</p>
-						<a href="#">View Gallery</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
-				<div class="row">
-					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p5.jpg" />
-					<div class="content">
-						<p>Jaipur Showcase 2016</p>
-						<a href="#">View Gallery</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
-				<div class="row">
-					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p6.jpg" />
-					<div class="content">
-						<p>Jaipur Showcase 2016</p>
-						<a href="#">View Gallery</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
-				<div class="row">
-					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p7.jpg" />
-					<div class="content">
-						<p>Jaipur Showcase 2016</p>
-						<a href="#">View Gallery</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-3 col-xs-3 ph-tile">
-				<div class="row">
-					<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/p8.jpg" />
-					<div class="content">
-						<p>Jaipur Showcase 2016</p>
-						<a href="#">View Gallery</a>
-					</div>
-				</div>
-			</div>
+				<?php endwhile;
+			endif;
+			wp_reset_postdata();
+		?>
 		</div>
 	</div>
 </section>
