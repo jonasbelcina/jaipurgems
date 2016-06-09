@@ -507,7 +507,6 @@ function set_archive_posts_per_page( $query ) {
         return;
 
     if ( is_post_type_archive( 'campaigns' ) || is_post_type_archive( 'media' ) ) {
-        // Display 50 posts for a custom post type called 'movie'
         $query->set( 'posts_per_page', -1 );
         return;
     }
@@ -636,7 +635,7 @@ function woo_redirect_to_checkout() {
 }
 
 // Display xx products per page. Goes in functions.php
-add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 14;' ), 20 );
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 10;' ), 20 );
 
 // remove woocommerce result count and sorting option
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);

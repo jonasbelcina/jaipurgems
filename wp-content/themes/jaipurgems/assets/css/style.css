@@ -3156,6 +3156,29 @@ footer {
 				left: initial;
 			}
 
+.woocommerce-pagination {
+	margin-bottom: 20px;
+}
+	
+	.woocommerce nav.woocommerce-pagination ul {
+		border: 0;
+	}
+
+	nav.woocommerce-pagination ul.page-numbers li {
+		float: none;
+		border: 0;
+	}
+
+	.woocommerce-pagination li .page-numbers {
+		background: #fff;
+		color: #111;
+		border: 2px solid #111;
+		font-size: 13px;
+		width: 30px;
+		height: 30px;
+		font-weight: bold !important;
+	}
+
 .single-product div.product div.images {
 	width: 49%;
 }
