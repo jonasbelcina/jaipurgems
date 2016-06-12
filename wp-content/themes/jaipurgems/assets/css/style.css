@@ -2894,10 +2894,11 @@ footer {
 		position: relative;
 	}
 
-	.shop-filter li a {
-		font-size: 18px;
+	.shop-filter li a,
+	.shop-filter li button {
+		font-size: 16px;
 		color: #4f4f4f;
-		padding: 23px 60px;
+		padding: 20px;
 		display: block;
 	}
 
@@ -2905,11 +2906,15 @@ footer {
 			text-decoration: none;
 		}
 
-		.shop-filter li a:first-child {
+		.sort-categories li:first-child a {
 			padding-left: 0;
 		}
 
-	.shop-filter li ul {
+		.shop-filter li a.active {
+			font-weight: bold;
+		}
+
+	/*.shop-filter li ul {
 		border-color: #000;
 		border-top: 0;
 		border-radius: 0;
@@ -2917,10 +2922,10 @@ footer {
 		min-width: 180px;
 		left: -15px;
 		padding-bottom: 5px;
-	}
+	}*/
 
 		.shop-filter li ul li {
-			display: block;
+			display: inline-block;
 		}
 
 		.shop-filter button {
@@ -2929,6 +2934,28 @@ footer {
 			font-size: 16px;
 			color: #4f4f4f;
 			padding: 7px 0;
+		}
+
+	.sort-fields {
+		float: right;
+	}
+
+		.sort-fields li:first-child button {
+			cursor: initial;
+			font-size: 13px;
+			padding: 20px 0;
+		}
+
+			.sort-fields li:first-child button:focus {
+				outline: 0;
+			}
+
+		.sort-fields li:last-child button {
+			padding-right: 0;
+		}
+
+		.sort-fields li button.active {
+			font-weight: bold;
 		}
 
 .products {

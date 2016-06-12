@@ -19,10 +19,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+global $wp_query;
+$cat = $wp_query->get_queried_object();
+// var_dump($cat);
+$parent = $cat->parent == 0 ? $cat->term_id : $cat->parent;
+
 ?>
 <form class="woocommerce-ordering" method="get">
 	<ul>
-		<li>
+		<!-- <li>
 			<a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-delay="100" data-close-others="true">Material</a>
 			<ul class="dropdown-menu">
 				<li><button type="submit" name="material">Material 1</button></li>
@@ -45,13 +50,46 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<li><button type="submit" name="product-type">Product Type 2</button></li>
 				<li><button type="submit" name="product-type">Product Type 3</button></li>
 			</ul>
-		</li>
+		</li> -->
+
 		<li>
-			<a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-delay="100" data-close-others="true">Sort By</a>
-			<ul class="dropdown-menu">
-			<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
-				<li><button type="submit" name="orderby" value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></button></li>
-			<?php endforeach; ?>
+			<!-- <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-delay="100" data-close-others="true">Sort By</a> -->
+			<ul class="sort-categories">
+				<li><a href="<?php echo get_term_link($parent); ?>" class="<?php echo ($cat->parent == 0) ? 'active' : ''; ?>">All</a></li>
+				<?php
+					$categories = get_categories(array(
+									'taxonomy' 		=> 'product_cat',
+									'parent' 		=> $parent,
+									'hide_empty' 	=> false
+								));
+					foreach ($categories as $category) { ?>
+						<li><a href="<?php echo get_term_link($category); ?>" class="<?php echo ($cat->term_id == $category->term_id) ? 'active' : ''; ?>"><?php echo $category->name; ?></a></li>
+					<?php }
+				?>
+			<?php //foreach ( $catalog_orderby_options as $id => $name ) : ?>
+				<!-- <li><button type="submit" name="orderby" value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></button></li> -->
+			<?php //endforeach; ?>
+			</ul>
+		</li>
+
+		<li class="sort-fields">
+			<ul>
+				<li><button type="button">Sort by:</button></li>
+				<?php
+					if(isset($_GET['orderby']) && ($_GET['orderby'] == 'name' || $_GET['orderby'] == 'name-desc')) {
+						echo '<li><button  class="active" type="submit" name="orderby" value="name-desc" >Name</button></li>';
+					} else {
+						echo '<li><button type="submit" name="orderby" value="name" >Name</button></li>';
+					}
+
+					if(isset($_GET['orderby']) && $_GET['orderby'] == 'price') {
+						echo '<li><button class="active" type="submit" name="orderby" value="price-desc" >Price</button></li>';
+					} else if(isset($_GET['orderby']) && $_GET['orderby'] == 'price-desc') {
+						echo '<li><button class="active" type="submit" name="orderby" value="price" >Price</button></li>';
+					} else {
+						echo '<li><button type="submit" name="orderby" value="price" >Price</button></li>';
+					}
+				?>
 			</ul>
 		</li>
 	</ul>
