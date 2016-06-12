@@ -671,6 +671,59 @@ function add_my_currency_symbol( $currency_symbol, $currency ) {
      return $currency_symbol;
 }
 
+//Store the custom field for size
+add_filter( 'woocommerce_add_cart_item_data', 'add_cart_item_custom_data_vase', 10, 2 );
+function add_cart_item_custom_data_vase( $cart_item_meta, $product_id ) {
+
+    global $woocommerce;
+
+    if(is_array($_POST['size'])){
+        foreach ($_POST['size'] as $key => $size) {
+            if($key == $product_id && $size != '')
+                $cart_item_meta['size'] = $size ;
+        }
+        
+    }
+    else{
+        if( $_POST['size'] != '')
+            $cart_item_meta['size'] = $_POST['size'] ;
+    }
+    return $cart_item_meta; 
+}
+
+//Get it from the session and add it to the cart variable
+function get_cart_items_from_session( $item, $values, $key ) {
+    if ( array_key_exists( 'size', $values ) )
+        $item[ 'size' ] = $values['size'];
+    return $item;
+}
+add_filter( 'woocommerce_get_cart_item_from_session', 'get_cart_items_from_session', 1, 3 );
+
+add_action('woocommerce_add_order_item_meta','wdm_add_values_to_order_item_meta',1,2);
+function wdm_add_values_to_order_item_meta($item_id, $values)
+{
+        global $woocommerce,$wpdb;
+        $user_custom_values = $values['size'];
+        if(!empty($user_custom_values))
+        {
+            wc_add_order_item_meta($item_id,'size',$user_custom_values);  
+        }
+}
+
+add_action('woocommerce_before_cart_item_quantity_zero','wdm_remove_user_custom_data_options_from_cart',1,1);
+function wdm_remove_user_custom_data_options_from_cart($cart_item_key)
+{
+        global $woocommerce;
+        // Get cart
+        $cart = $woocommerce->cart->get_cart();
+        // For each item in cart, if item is upsell of deleted product, delete it
+        foreach( $cart as $key => $values)
+        {
+        // if ( $values['size'] == $cart_item_key )
+            unset( $woocommerce->cart->cart_contents[ $key ] );
+        }
+}
+
 // get top level category of post
 function get_top_parent_cat($cat_ID)
 {

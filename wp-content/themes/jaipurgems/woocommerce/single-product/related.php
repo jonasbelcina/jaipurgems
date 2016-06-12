@@ -33,7 +33,7 @@ $args = apply_filters( 'woocommerce_related_products_args', array(
 	'post_type'            => 'product',
 	'ignore_sticky_posts'  => 1,
 	'no_found_rows'        => 1,
-	'posts_per_page'       => $posts_per_page,
+	'posts_per_page'       => 8,
 	'orderby'              => $orderby,
 	'post__in'             => $related,
 	'post__not_in'         => array( $product->id )
@@ -46,66 +46,79 @@ $woocommerce_loop['columns'] = $columns;
 
 <div class="other-products">
 
-	<?php if ( $products->have_posts() ) : ?>
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#related" aria-controls="related" role="tab" data-toggle="tab">Related Products</a></li>
+		<li role="presentation"><a href="#additional" aria-controls="additional" role="tab" data-toggle="tab" class="additional">Additional Items</a></li>
+	</ul>
 
-		<div class="related products col-md-6 col-sm-6">
-			<div class="row">
+	<!-- Tab panes -->
+  	<div class="tab-content">
+    	<div role="tabpanel" class="tab-pane active" id="related">
+			<?php if ( $products->have_posts() ) : ?>
 
-				<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
+				<div class="related products col-md-12">
+					<div class="row">
 
-				<?php woocommerce_product_loop_start(); ?>
+						<!-- <h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2> -->
 
-					<?php while ( $products->have_posts() ) : $products->the_post(); ?>
+						<?php woocommerce_product_loop_start(); ?>
 
-						<?php wc_get_template_part( 'content', 'product' ); ?>
+							<?php while ( $products->have_posts() ) : $products->the_post(); ?>
 
-					<?php endwhile; // end of the loop. ?>
+								<?php wc_get_template_part( 'content', 'product' ); ?>
 
-				<?php woocommerce_product_loop_end(); ?>
-			</div>
-		</div>
+							<?php endwhile; // end of the loop. ?>
 
-	<?php endif;
+						<?php woocommerce_product_loop_end(); ?>
+					</div>
+				</div>
 
-	wp_reset_postdata(); ?>
+			<?php endif;
 
-	<div class="additional-items col-md-6 col-sm-6">
-		<div class="row">
-			<h2>Additional Items</h2>
-			<?php
-				$terms = get_the_terms( $post->ID, 'product_cat' );
-				// var_dump($terms);
-				// $cat = get_category($terms[0]->term_id);
-				$adtl_args = array(
-							'post_type'			=> 'product',
-							'post__not_in'		=> $related,
-							'orderby'			=> 'rand',
-							'posts_per_page' 	=> 4,
-							'tax_query'			=> array(
-														array(
-															'taxonomy'	=> 'product_cat',
-															'field'		=> 'term_id',
-															'terms'		=> $terms[0]->term_id,
-															'operator' 	=> 'NOT IN'
-														)
-												),
-						);
+			wp_reset_postdata(); ?>
+    	</div>
 
-				$query = new WP_Query($adtl_args);
+	    <div role="tabpanel" class="tab-pane" id="additional">
+    		<div class="additional-items col-md-12">
+    			<div class="row">
+    				<!-- <h2>Additional Items</h2> -->
+    				<?php
+    					$terms = get_the_terms( $post->ID, 'product_cat' );
+    					// var_dump($terms);
+    					// $cat = get_category($terms[0]->term_id);
+    					$adtl_args = array(
+    								'post_type'			=> 'product',
+    								'post__not_in'		=> $related,
+    								'orderby'			=> 'rand',
+    								'posts_per_page' 	=> 8,
+    								'tax_query'			=> array(
+    															array(
+    																'taxonomy'	=> 'product_cat',
+    																'field'		=> 'term_id',
+    																'terms'		=> $terms[0]->term_id,
+    																'operator' 	=> 'NOT IN'
+    															)
+    													),
+    							);
 
-				if($query->have_posts()) :
-					woocommerce_product_loop_start();
+    					$query = new WP_Query($adtl_args);
 
-					while ( $query->have_posts() ) : $query->the_post();
-						wc_get_template_part( 'content', 'product' );
-					endwhile;
+    					if($query->have_posts()) :
+    						woocommerce_product_loop_start();
 
-					woocommerce_product_loop_end();
-				endif;
+    						while ( $query->have_posts() ) : $query->the_post();
+    							wc_get_template_part( 'content', 'product' );
+    						endwhile;
 
-				wp_reset_postdata();
-			?>
-		</div>
-	</div>
+    						woocommerce_product_loop_end();
+    					endif;
+
+    					wp_reset_postdata();
+    				?>
+    			</div>
+    		</div>
+	    </div>
+  	</div>
 
 </div>

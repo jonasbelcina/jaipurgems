@@ -54,7 +54,7 @@
             <div class="header-right-bottom">
                 <ul>
                     <li><a href="#">Login or Register</a></li>
-                    <li><a href="#">(<span class="cart-qty">0</span>) Shopping Cart</a></li>
+                    <li><a href="<?php echo WC()->cart->get_cart_url(); ?>">(<span class="cart-qty"><?php echo WC()->cart->get_cart_contents_count(); ?></span>) Shopping Cart</a></li>
                 </ul>
             </div>
         </div>

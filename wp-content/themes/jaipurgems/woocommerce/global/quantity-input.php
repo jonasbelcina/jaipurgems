@@ -24,13 +24,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<input type="number" step="<?php echo esc_attr( $step ); ?>" min="<?php echo esc_attr( $min_value ); ?>" max="<?php echo esc_attr( $max_value ); ?>" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $input_value ); ?>" title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) ?>" class="input-text qty text" size="4" />
 </div>
 
-<div class="size input-group">
-	<div class="label">Size:</div>
-	<select name="size" required>
-		<option value="small">Small</option>
-		<option value="medium">Medium</option>
-		<option value="large">Large</option>
-	</select>
-</div>
+<?php if(!is_cart()) : ?>
+	<div class="size input-group">
+		<div class="label">Size:</div>
+		<select name="size" required>
+			<option value="Small">Small</option>
+			<option value="Medium">Medium</option>
+			<option value="Large">Large</option>
+		</select>
+	</div>
 
-<a href="#" id="size-chart">Size chart</a>
+	<a href="#" id="size-chart">Size chart</a>
+<?php endif; ?>

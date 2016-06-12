@@ -341,17 +341,27 @@
 		var ww = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 		if(ww < 769) {
 			$('.related .products > .container > .row').owlCarousel({
-				items: 1,
+				items: 2,
 				nav: true,
 				navText: false,
 				dots: false,
 			});
 
-			$('.additional-items .products > .container > .row').owlCarousel({
-				items: 1,
-				nav: true,
-				navText: false,
-				dots: false,
+			// $('.additional-items .products > .container > .row').owlCarousel({
+			// 	items: 2,
+			// 	nav: true,
+			// 	navText: false,
+			// 	dots: false,
+			// });
+			$('.additional').click(function() {
+			    setTimeout(function() {
+				    $('.additional-items .products > .container > .row').owlCarousel({
+				    	items: 2,
+				    	nav: true,
+				    	navText: false,
+				    	dots: false,
+				    });
+				}, 50);
 			});
 		}
 

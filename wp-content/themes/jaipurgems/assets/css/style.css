@@ -3600,7 +3600,11 @@ footer {
 		width: 100%;
 	}
 
-	.other-products h2 {
+	.other-products .nav-tabs li {
+		width: 50%;
+	}
+
+	.other-products .nav-tabs li a {
 		font-family: 'GothamBook';
 		font-size: 20px;
 		text-transform: uppercase;
@@ -3610,7 +3614,24 @@ footer {
 		border: 1px solid transparent;
 		border-bottom: 1px solid #e5e5e5;
 		color: #000;
+		border-radius: 0;
+		border-bottom-color: #ddd;
+		line-height: 1;
 	}
+
+		.other-products .nav-tabs > li.active > a,
+		.other-products .nav-tabs > li.active > a:focus,
+		.other-products .nav-tabs > li.active > a:hover {
+			border: 1px solid #ddd;
+			background: #fdfdfd;
+			color: #a38d60;
+		}
+
+		.other-products .nav-tabs > li > a:hover {
+			background: none;
+			border-color: transparent;
+			border-bottom-color: #ddd; 
+		}
 
 	.related.products {
 		margin: 0;
@@ -3670,6 +3691,54 @@ footer {
 		.single-prod-col .content-bottom li:last-child {
 			float: none;
 		}
+
+/* Cart */
+
+.woocommerce-cart table.cart .product-thumbnail {
+	max-width: 90px;
+}
+
+.woocommerce table.shop_table th {
+	text-transform: uppercase;
+}
+
+.woocommerce table.shop_table td {
+	padding: 12px;
+	vertical-align: top;
+	font-family: 'GothamBook';
+}
+
+.woocommerce-cart table.cart img {
+	width: 100%;
+}
+
+.product-name {
+	position: relative;
+}
+
+.product-name a {
+	color: #111;
+	font-size: 15px;
+	font-family: 'GothamBook';
+}
+
+.woocommerce .product-name a.remove {
+	color: #111 !important;
+	width: auto;
+	height: auto;
+	display: initial;
+	position: absolute;
+	bottom: 12px;
+	left: 12px;
+	font-size: 13px;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+	.woocommerce .product-name a.remove:hover {
+		background: none;
+		color: #111;
+	}
 
 .checkout_panel {
 	border: 1px solid #e3e3e3;
@@ -4321,6 +4390,11 @@ footer {
 			float: right;
 			/*margin-right: -20px;*/
 		}
+
+	.single-prod-col {
+		width: 100%;
+		float: none;
+	}
 
 }
 
