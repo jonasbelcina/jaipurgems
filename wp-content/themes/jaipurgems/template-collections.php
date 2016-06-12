@@ -1,3 +1,5 @@
 <?php
-
-echo 'asdiojakslda';
+/*
+Template Name: Collections 
+*/
+?>
