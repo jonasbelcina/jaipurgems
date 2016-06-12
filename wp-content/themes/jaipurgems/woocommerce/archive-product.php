@@ -44,9 +44,17 @@ $parent = $cat->parent == 0 ? $cat->term_id : $cat->parent;
 		</div>
 	</nav>
 
-	<?php $banner_img = get_field('banner_image', 'product_cat_' . $cat->term_id); ?>
+	<?php if(is_tax('collection')) : ?>
+		<div class="container collection-header">
+			<h1><?php echo $cat->name; ?></h1>
+		</div>
+	<?php endif; ?>
 
-	<section class="shop-banner" style="background-image: url(<?php echo $banner_img['url']; ?>);">
+	<?php 
+		$banner_img = (is_tax('collection') == true) ? get_field( 'collection_image' , 'collection_' . $cat->term_id ) : get_field('banner_image', 'product_cat_' . $cat->term_id);
+	?>
+
+	<section class="shop-banner <?php if(is_tax('collection')) { echo 'collection-banner'; } ?>" style="background-image: url(<?php echo $banner_img['url']; ?>);">
 		<div class="content">
 			<?php
 				$heading = get_field('heading', 'product_cat_' . $cat->term_id);
@@ -54,7 +62,9 @@ $parent = $cat->parent == 0 ? $cat->term_id : $cat->parent;
 					$heading = woocommerce_page_title();
 				}
 			?>
-			<h1><?php echo $heading; ?></h1>
+			<?php if(get_field('heading', 'product_cat_' . $cat->term_id)) :
+				echo '<h1>' . $heading . '</h1>';
+			endif; ?>
 			<?php if(get_field('subheading', 'product_cat_' . $cat->term_id)) : ?>
 				<h2><?php the_field('subheading', 'product_cat_' . $cat->term_id); ?></h2>
 			<?php endif; ?>
