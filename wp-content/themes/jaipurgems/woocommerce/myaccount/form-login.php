@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php do_action( 'woocommerce_before_customer_login_form' ); ?>
 
-<?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
+<?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' && !is_checkout() ) : ?>
 
 <div class="col2-set" id="customer_login">
 
@@ -34,7 +34,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php endif; ?>
 
 		<h3><?php _e( 'Login', 'woocommerce' ); ?></h3>
-		<p>If you have a Jaipur Gems Account, please sign in below:</p>
+		<?php if(is_checkout()) : ?>
+			<p>If you have a Jaipur Gems Account, please sign in below:</p>
+		<?php endif; ?>
 
 		<form method="post" class="login">
 
@@ -66,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		</form>
 
-<?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
+<?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' && !is_checkout() ) : ?>
 
 	</div>
 
