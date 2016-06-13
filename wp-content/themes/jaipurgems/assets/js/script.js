@@ -481,30 +481,32 @@
 		        $('#email').css('border-color', '#e00000');
 		    // }
 		} else {
+			$('#billing_email').val($('.guest-form #email').val());
 			$('.guest-error').removeClass('active');
 			$('#email').css('border-color', '#e3e3e3');
 			$('.checkout_panel.step_1').removeClass('active');
 			$('.checkout_panel.step_2').addClass('active');
 		}
+	});
 
-		// shipping validation
-		$('.panel-btn a').on('click', function(e) {
-			var billing_valid = true;
-			e.preventDefault();
-			$('.woocommerce-billing-fields .checkout-field').each(function() {
-				if($(this).hasClass('woocommerce-invalid') || $(this).find('.input-text').val() == '') {
-					$('.billing-error').addClass('active');
-					billing_valid = false;
-				}
-			});
-
-			console.log(billing_valid.toString());
-			if(billing_valid == true) {
-				$('.checkout_panel.step_2').removeClass('active');
-				$('.checkout_panel.step_3').addClass('active');
+	// shipping validation
+	// $(document).on('submit', '.panel-btn a', function(e) {
+	$('.panel-btn a').on('click', function(e) {
+		e.preventDefault();
+		console.log('asdasd');
+		var billing_valid = true;
+		$('.woocommerce-billing-fields .checkout-field').each(function() {
+			if($(this).hasClass('woocommerce-invalid') || $(this).find('.input-text').val() == '') {
+				$('.billing-error').addClass('active');
+				billing_valid = false;
 			}
 		});
-		
+
+		console.log(billing_valid.toString());
+		if(billing_valid == true) {
+			$('.checkout_panel.step_2').removeClass('active');
+			$('.checkout_panel.step_3').addClass('active');
+		}
 	});
 
 })(jQuery);

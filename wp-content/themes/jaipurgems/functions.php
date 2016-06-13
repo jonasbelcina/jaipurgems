@@ -1030,13 +1030,12 @@ add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
 
 // Hook in
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
-
 // Our hooked in function - $fields is passed via the filter!
 function custom_override_checkout_fields( $fields ) {
  	unset($fields['billing']['billing_company']);
  	unset($fields['billing']['billing_address_2']);
  	unset($fields['billing']['billing_state']);
- 	unset($fields['billing']['billing_email']);
+ 	// unset($fields['billing']['billing_email']);
  	unset($fields['billing']['billing_city']);
  	unset($fields['billing']['billing_postcode']);
 
@@ -1101,7 +1100,8 @@ function ajax_login(){
     	$user_phone = get_user_meta( $user_signon->ID, 'billing_phone', true );
     	$user_first = get_user_meta( $user_signon->ID, 'billing_first_name', true );
     	$user_last = get_user_meta( $user_signon->ID, 'billing_last_name', true );
-        echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, redirecting...'), 'billing_address'=>$user_address, 'user_phone'=>$user_phone, 'user_first'=>$user_first, 'user_last'=>$user_last ));
+    	$user_email = get_user_meta( $user_signon->ID, 'billing_email', true );
+        echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, redirecting...'), 'billing_address'=>$user_address, 'user_phone'=>$user_phone, 'user_first'=>$user_first, 'user_last'=>$user_last, 'user_email'=>$user_email ));
     }
 
     die();

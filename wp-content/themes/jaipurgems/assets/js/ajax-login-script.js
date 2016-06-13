@@ -34,8 +34,9 @@ jQuery(document).ready(function($) {
                     // console.log(data);
                     $('#billing_first_name').val(data.user_first);
                     $('#billing_last_name').val(data.user_last);
+                    $('#billing_email').val(data.user_email);
                     $('#billing_phone').val(data.user_phone);
-                    $('#billing_address_1').val(data.user_address);
+                    $('#billing_address_1').val(data.billing_address);
                     $('.checkout_panel.step_1').removeClass('active');
                     $('.checkout_panel.step_2').addClass('active');
                 }
