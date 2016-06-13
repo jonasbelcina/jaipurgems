@@ -209,9 +209,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</ul>
 						</li>
 						
-					<?php }
+					<?php } ?>
 
-					?>
+					<li class="review-subtotal">
+						<ul>
+							<li>Subtotal <span><?php wc_cart_totals_order_total_html(); ?></span></li>
+							<li>Shipping <span>Free</span></li>
+						</ul>
+					</li>
+
+					<li class="review-total">
+						Total <span><?php wc_cart_totals_order_total_html(); ?></span>
+					</li>
+
 				</ul>
 			</div>
 		</div>

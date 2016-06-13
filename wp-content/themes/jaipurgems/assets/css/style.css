@@ -4150,6 +4150,33 @@ footer {
 				font-weight: bold;
 			}
 
+	li.review-subtotal {
+		margin-bottom: 2px;
+	}		
+
+		li.review-subtotal ul {
+			padding: 0;
+		}
+
+		li.review-subtotal ul li {
+			margin-bottom: 0;
+		}
+
+			li.review-subtotal ul li span {
+				float: right;
+			}
+
+	li.review-total {
+		font-size: 16px;
+		font-weight: bold;
+		border-top: 1px solid #e3e3e3;
+		padding: 8px 0;
+	}
+
+		li.review-total span {
+			float: right;
+		}
+
 /* 
 =============================
 		 Collections
