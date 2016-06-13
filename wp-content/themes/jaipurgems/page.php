@@ -37,6 +37,6 @@ get_header(); ?>
 
 </div><!-- .content-area -->
 
-<?php if(wc_get_page_id( 'cart' ) != get_the_ID() && wc_get_page_id( 'checkout' ) != get_the_ID())
+<?php if(wc_get_page_id( 'cart' ) != get_the_ID() && wc_get_page_id( 'checkout' ) != get_the_ID() && !is_account_page())
 	get_sidebar(); ?>
 <?php get_footer(); ?>

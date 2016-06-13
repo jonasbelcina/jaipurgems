@@ -74,7 +74,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="col-2">
 
-		<h2><?php _e( 'Register', 'woocommerce' ); ?></h2>
+		<h3><?php _e( 'Register', 'woocommerce' ); ?></h3>
 
 		<form method="post" class="register">
 
