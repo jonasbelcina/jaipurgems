@@ -58,7 +58,7 @@ global $product;
 
 		<?php if(get_field('gem')) { ?>
 			<div class="rose-gold">
-				<?php the_field('gem'); ?>
+				<?php the_field('gem'); ?> 
 				<span>Gem</span>
 			</div>
 		<?php } ?>
