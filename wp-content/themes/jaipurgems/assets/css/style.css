@@ -3740,51 +3740,81 @@ footer {
 
 /* Cart */
 
-.woocommerce-cart table.cart .product-thumbnail {
-	max-width: 90px;
+.cart-page {
+	margin-top: 50px;
 }
 
-.woocommerce table.shop_table th {
-	text-transform: uppercase;
-}
-
-.woocommerce table.shop_table td {
-	padding: 12px;
-	vertical-align: top;
-	font-family: 'GothamBook';
-}
-
-.woocommerce-cart table.cart img {
-	width: 100%;
-}
-
-.product-name {
-	position: relative;
-}
-
-.product-name a {
-	color: #111;
-	font-size: 15px;
-	font-family: 'GothamBook';
-}
-
-.woocommerce .product-name a.remove {
-	color: #111 !important;
-	width: auto;
-	height: auto;
-	display: initial;
-	position: absolute;
-	bottom: 12px;
-	left: 12px;
-	font-size: 13px;
-	font-weight: normal;
-	text-decoration: underline;
-}
-
-	.woocommerce .product-name a.remove:hover {
-		background: none;
+	.cart-title {
+		text-transform: uppercase;
+		font-size: 26px;
+		font-family: 'GothamBook';
 		color: #111;
+		text-align: center;
+		margin: 0 0 30px;
+		letter-spacing: 1px;
 	}
+
+		.cart-title span {
+			display: block;
+			font-size: 14px;
+			text-transform: none;
+			font-family: 'GothamLight';
+			margin-top: 3px;
+		}
+
+	.woocommerce-cart table.cart .product-thumbnail {
+		max-width: 90px;
+	}
+
+	.woocommerce table.shop_table th {
+		text-transform: uppercase;
+	}
+
+	.woocommerce table.shop_table td {
+		padding: 12px;
+		vertical-align: top;
+		font-family: 'GothamBook';
+	}
+
+	.woocommerce-cart table.cart img {
+		width: 100%;
+	}
+
+	.product-name {
+		position: relative;
+	}
+
+	.product-name a {
+		color: #111;
+		font-size: 15px;
+		font-family: 'GothamBook';
+	}
+
+	.woocommerce .product-name a.remove {
+		color: #111 !important;
+		width: auto;
+		height: auto;
+		display: initial;
+		position: absolute;
+		bottom: 12px;
+		left: 12px;
+		font-size: 13px;
+		font-weight: normal;
+		text-decoration: underline;
+	}
+
+		.woocommerce .product-name a.remove:hover {
+			background: none;
+			color: #111;
+		}
+
+	.woocommerce .cart input.button {
+		background: #111;
+		color: #fff;
+		border-radius: 0;
+	}
+
+/* Checkout */
 
 .checkout_panel {
 	border: 1px solid #e3e3e3;

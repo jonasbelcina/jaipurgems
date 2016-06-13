@@ -23,7 +23,9 @@ wc_print_notices();
 
 do_action( 'woocommerce_before_cart' ); ?>
 
-<div class="container">
+<div class="container cart-page">
+
+	<h1 class="cart-title">Cart<span><?php echo WC()->cart->get_cart_contents_count(); ?> Items</span></h1>
 
 	<form action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
