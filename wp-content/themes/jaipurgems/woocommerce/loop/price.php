@@ -26,4 +26,4 @@ global $product;
 	<span class="price"><?php echo $price_html; ?></span>
 <?php endif; ?>
 
-<div class="ref">Ref: <?php the_ID(); ?></div>
+<div class="ref">Ref: <?php echo $product->sku; ?></div>

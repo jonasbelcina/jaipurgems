@@ -30,7 +30,7 @@ global $product;
 	<meta itemprop="priceCurrency" content="<?php echo esc_attr( get_woocommerce_currency() ); ?>" />
 	<link itemprop="availability" href="http://schema.org/<?php echo $product->is_in_stock() ? 'InStock' : 'OutOfStock'; ?>" />
 
-	<span class="ref">Ref: <?php the_ID(); ?></span>
+	<span class="ref">Ref: <?php echo $product->sku; ?></span>
 
 </div>
 
@@ -42,18 +42,27 @@ global $product;
 
 <?php if(get_field('white_gold') || get_field('diamonds') || get_field('rose_gold')) : ?>
 	<div class="specs">
-		<div class="white-gold">
-			<?php the_field('white_gold'); ?>K
-			<span>White Gold</span>
+		<?php if(get_field('white_gold')) { ?>
+			<div class="white-gold">
+				<?php the_field('white_gold'); ?>K
+				<span>Yellow Gold</span>
+			</div>
+		<?php } ?>
+
+		<?php if(get_field('diamond')) { ?>
+			<div class="diamond">
+				<?php the_field('diamonds'); ?>CT
+				<span>Diamonds</span>
+			</div>
 		</div>
-		<div class="diamond">
-			<?php the_field('diamonds'); ?>CT
-			<span>Diamonds</span>
-		</div>
-		<div class="rose-gold">
-			<?php the_field('rose_gold'); ?>K
-			<span>Rose Gold</span>
-		</div>
+		<?php } ?>
+
+		<?php if(get_field('white_gold')) { ?>
+			<div class="rose-gold">
+				<?php the_field('rose_gold'); ?>K
+				<span>Rose Gold</span>
+			</div>
+		<?php } ?>
 	</div>
 <?php endif; ?>
 
