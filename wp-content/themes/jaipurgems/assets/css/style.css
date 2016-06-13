@@ -3858,6 +3858,22 @@ footer {
 			background: #111;
 		}
 
+	.cart-empty {
+		margin: 40px auto;
+		text-align: center;
+	}
+
+		.return-to-shop a.button {
+			background: #111;
+			border-radius: 0;
+			color: #fff;
+		}
+
+			.return-to-shop a.button:hover {
+				background: #111;
+				color: #fff;
+			}
+
 /* Checkout */
 
 .checkout_panel {

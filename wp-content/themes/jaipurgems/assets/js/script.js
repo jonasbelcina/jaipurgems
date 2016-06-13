@@ -218,6 +218,7 @@
 				current.next('.owl-item').addClass('current');
 				$('.single-product .product .images > img').attr('src' , $('.owl-item.current img').attr('src'));
 				$('.single-product .product .images > img').data('zoomImage' , $('.owl-item.current img').attr('src'));
+				$('.single-product .product .images > img').attr('srcset' , $('.owl-item.current img').attr('src'));
 				changeData();
 				thumb_num++;
 				$('.thumbs-count span').text(thumb_num);
@@ -237,6 +238,7 @@
 				current.prev('.owl-item').addClass('current');
 				$('.single-product .product .images > img').attr('src' , $('.owl-item.current img').attr('src'));
 				$('.single-product .product .images > img').data('zoomImage' , $('.owl-item.current img').attr('src'));
+				$('.single-product .product .images > img').attr('srcset' , $('.owl-item.current img').attr('src'));
 				changeData();
 				thumb_num--;
 				$('.thumbs-count span').text(thumb_num);
@@ -251,6 +253,7 @@
 
 			$('.single-product .product .images > img').attr('src' , newSrc);
 			$('.single-prod-img').data('zoomImage', newSrc);
+			$('.single-product .product .images > img').attr('srcset' , newSrc);
 			changeData();
 
 			var index = $(this).closest('.owl-item').index() + 1;
