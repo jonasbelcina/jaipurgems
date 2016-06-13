@@ -45,7 +45,7 @@ global $product;
 		<?php if(get_field('white_gold')) { ?>
 			<div class="white-gold">
 				<?php the_field('white_gold'); ?>K
-				<span>Yellow Gold</span>
+				<span>Gold</span>
 			</div>
 		<?php } ?>
 
