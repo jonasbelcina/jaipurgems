@@ -54,7 +54,6 @@ global $product;
 				<?php the_field('diamonds'); ?>CT
 				<span>Diamonds</span>
 			</div>
-		</div>
 		<?php } ?>
 
 		<?php if(get_field('gem')) { ?>
