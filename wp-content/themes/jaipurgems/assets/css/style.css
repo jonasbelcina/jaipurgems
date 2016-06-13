@@ -3876,9 +3876,13 @@ footer {
 
 /* Checkout */
 
+.woocommerce-checkout .woocommerce-message {
+	display: none !important;
+}
+
 .checkout_panel {
 	border: 1px solid #e3e3e3;
-	margin-top: 20px;
+	margin: 20px 0 30px;
 	overflow: hidden;
 	color: #252525;
 }
@@ -3887,21 +3891,51 @@ footer {
 		border-left: 1px solid #e3e3e3;
 	}
 
+	.checkout_panel .guest-error,
+	.billing-error {
+		height: 1px;
+		margin: 0;
+		overflow: hidden;
+		color: #e00000;
+		-webkit-transition: all 0.3s linear;
+				transition: all 0.3s linear;
+	}
+
+	.checkout_panel .guest-error.active,
+	.billing-error.active {
+		height: 17px;
+	}
+
 	.checkout_panel h2 {
 		font-size: 13px;
 		font-family: 'GothamBook';
 		text-transform: uppercase;
-		color: #fff;
-		background: #252525;
+		color: #111;
+		background: #e3e3e3;
 		margin: 0;
 		padding: 0 15px;
 		line-height: 41px;
 		font-weight: bold;
 	}
 
+	.checkout_panel.active h2 {
+		color: #fff;
+		background: #252525;
+	}
+
 	.checkout_panel .content {
-		padding: 15px 0;
+		padding: 0;
 		overflow: hidden;
+		height: 1px;
+		margin-top: -1px;
+		-webkit-transition: all 0.3s linear;
+				transition: all 0.3s linear;
+	}
+
+	.checkout_panel.active .content {
+		height: auto;
+		padding: 15px 0;
+		margin-top: 0;
 	}
 
 	.checkout_panel h3 {
@@ -3962,6 +3996,158 @@ footer {
 				font-size: 11px;
 				text-transform: uppercase;
 				font-family: 'GothamBook';
+			}
+
+	.woocommerce-billing-fields {
+		margin-top: 20px;
+	}
+
+	.checkout-field {
+		width: 100% !important;
+		display: block;
+		float: none !important;
+	}
+
+		.checkout-field label {
+			width: 120px;
+			display: inline-block !important;
+		}
+
+		.checkout-field input {
+			width: 70% !important;
+			display: inline-block !important;
+			height: 28px;
+		}
+
+		/*.checkout-field select,*/
+		.checkout-field #s2id_billing_country {
+			width: 70% !important;
+			display: inline-block !important;
+			height: 28px;
+		}
+
+		.select2-container .select2-choice {
+			height: 28px;
+			border-radius: 0;
+		}
+
+		.woocommerce-billing-fields #billing_country {
+			/*display: none !important;*/
+		}
+
+	.panel-btn {
+		text-align: center;
+		margin-top: 10px;
+	}
+
+		.panel-btn a {
+			background: #4d4d4d;
+			font-family: 'GothamBook';
+			font-size: 14px;
+			font-weight: bold;
+			/*text-transform: uppercase;*/
+			display: inline-block;
+			color: #fff;
+			padding: 7px 15px;
+		}
+
+			.panel-btn a:hover {
+				background: #4d4d4d;
+				text-decoration: none;
+			}
+
+.checkout_panel.step_3 {
+	margin-bottom: 30px;
+}
+
+.woocommerce-checkout #payment {
+	background: none;
+}
+
+	.wc_payment_method label {
+		/*float: left;*/
+		font-size: 15px;
+		font-family: 'GothamBook';
+	}
+
+	.woocommerce-checkout #payment div.payment_box {
+		/*float: left;*/
+		line-height: 26px;
+		font-size: 13px;
+		width: auto;
+		margin: 0 0 0 10px;
+		padding: 0;
+		background: none;
+	}
+
+ 	#add_payment_method #payment div.payment_box, .woocommerce-checkout #payment div.payment_box:before {
+ 		content: none;
+ 	}
+
+	.woocommerce-checkout #payment div.form-row {
+		text-align: center;
+		padding-bottom: 0;
+	}
+
+		.woocommerce-page #payment #place_order {
+			float: none;
+			display: inline-block;
+			color: #fff;
+			padding: 10px 20px;
+			background: #a38d60;
+			font-family: 'GothamBook';
+			font-size: 16px;
+			font-weight: bold;
+			border-radius: 0;
+		}
+
+.checkout-review {
+	border: 1px solid #e3e3e3;
+	margin-top: 20px;
+	font-family: 'GothamBook';
+}
+
+	.checkout-review h2 {
+		background: #e3e3e3;
+		font-size: 13px;
+		font-family: 'GothamBook';
+		text-transform: uppercase;
+		text-align: center;
+		color: #111;
+		margin: 0;
+		font-weight: bold;
+		line-height: 41px;
+	}
+
+	.checkout-review ul {
+		margin: 0;
+		padding: 15px;
+		list-style: none;
+	}
+
+	.checkout-review li {
+		margin-bottom: 15px;
+	}
+
+		.review-img {
+			width: 40%;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		ul.review-details {
+			width: 58%;
+			display: inline-block;
+			padding: 0 5px;
+			vertical-align: top;
+		}
+
+		ul.review-details li {
+			margin-bottom: 0;
+		}
+
+			.review-prod-title {
+				font-weight: bold;
 			}
 
 /* 

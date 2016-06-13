@@ -466,6 +466,47 @@
 	    $(".product-hidden").val(product);
 	});
 
+	// guest checkout
+	$('.guest-form .button').on('click', function(e) {
+		e.preventDefault();
+		var pattern = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
+		if( $('#email').val() === '' || !pattern.test($('#email').val()) ){
+		    // if($('#email').val() != '') {
+		        // alert = 'Please choose a valid email';
+		        // return false;
+		        // console.log(';asdsa');
+		        if(!$('.guest-error').hasClass('active')) {
+		        	$('.guest-error').addClass('active');
+		        }
+		        $('#email').css('border-color', '#e00000');
+		    // }
+		} else {
+			$('.guest-error').removeClass('active');
+			$('#email').css('border-color', '#e3e3e3');
+			$('.checkout_panel.step_1').removeClass('active');
+			$('.checkout_panel.step_2').addClass('active');
+		}
+
+		// shipping validation
+		$('.panel-btn a').on('click', function(e) {
+			var billing_valid = true;
+			e.preventDefault();
+			$('.woocommerce-billing-fields .checkout-field').each(function() {
+				if($(this).hasClass('woocommerce-invalid') || $(this).find('.input-text').val() == '') {
+					$('.billing-error').addClass('active');
+					billing_valid = false;
+				}
+			});
+
+			console.log(billing_valid.toString());
+			if(billing_valid == true) {
+				$('.checkout_panel.step_2').removeClass('active');
+				$('.checkout_panel.step_3').addClass('active');
+			}
+		});
+		
+	});
+
 })(jQuery);
 
 // social sharing popup

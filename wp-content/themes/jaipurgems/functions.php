@@ -999,7 +999,7 @@ add_filter('woocommerce_get_catalog_ordering_args', 'custom_woocommerce_get_cata
 function custom_pre_get_posts_query( $q ) {
 
     if ( ! $q->is_main_query() ) return;
-    
+
     $query = array();
     
     if (isset($_GET['filterby']) && ! is_admin()) {
@@ -1027,6 +1027,85 @@ function custom_pre_get_posts_query( $q ) {
 
 }
 add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+
+// Hook in
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_checkout_fields( $fields ) {
+ 	unset($fields['billing']['billing_company']);
+ 	unset($fields['billing']['billing_address_2']);
+ 	unset($fields['billing']['billing_state']);
+ 	unset($fields['billing']['billing_email']);
+ 	unset($fields['billing']['billing_city']);
+ 	unset($fields['billing']['billing_postcode']);
+
+ 	$fields['billing']['billing_address_1']['placeholder'] = '';
+
+ 	return $fields;
+}
+
+add_filter('woocommerce_checkout_fields', 'add_custom_class_checkout_fields' );
+function add_custom_class_checkout_fields($fields) {
+    foreach ($fields as &$fieldset) {
+        foreach ($fieldset as &$field) {
+            // if you want to add the form-group class around the label and the input
+            $field['class'][] = 'checkout-field'; 
+
+            // add form-control to the actual input
+            // $field['input_class'][] = 'form-control';
+        }
+    }
+    return $fields;
+}
+
+// ajax login
+function ajax_login_init(){
+
+    wp_register_script('ajax-login-script', get_template_directory_uri() . '/assets/js/ajax-login-script.js', array('jquery') ); 
+    wp_enqueue_script('ajax-login-script');
+
+    wp_localize_script( 'ajax-login-script', 'ajax_login_object', array( 
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'redirecturl' => home_url(),
+        'loadingmessage' => __('Sending user info, please wait...')
+    ));
+
+    // Enable the user with no privileges to run ajax_login() in AJAX
+    add_action( 'wp_ajax_nopriv_ajaxlogin', 'ajax_login' );
+}
+
+// Execute the action only if the user isn't logged in
+if (!is_user_logged_in()) {
+    add_action('init', 'ajax_login_init');
+}
+
+function ajax_login(){
+
+    // First check the nonce, if it fails the function will break
+    // check_ajax_referer( 'ajax-login-nonce', 'security' );
+
+    // Nonce is checked, get the POST data and sign user on
+    $info = array();
+    $info['user_login'] = $_POST['username'];
+    $info['user_password'] = $_POST['password'];
+    $info['remember'] = true;
+
+    $user_signon = wp_signon( $info, false );
+    if ( is_wp_error($user_signon) ){
+        echo json_encode(array('loggedin'=>false, 'message'=>__('Wrong username or password.')));
+    } else {
+    	// $user = get_user_by('login', $info['user_login']);
+    	// $userdata = get_userdata( $user->ID );
+    	$user_address = get_user_meta( $user_signon->ID, 'billing_address_1', true );
+    	$user_phone = get_user_meta( $user_signon->ID, 'billing_phone', true );
+    	$user_first = get_user_meta( $user_signon->ID, 'billing_first_name', true );
+    	$user_last = get_user_meta( $user_signon->ID, 'billing_last_name', true );
+        echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, redirecting...'), 'billing_address'=>$user_address, 'user_phone'=>$user_phone, 'user_first'=>$user_first, 'user_last'=>$user_last ));
+    }
+
+    die();
+}
 
 
 
