@@ -4008,6 +4008,10 @@ footer {
 		float: none !important;
 	}
 
+	.checkout-field.validate-email {
+		display: none;
+	}
+
 		.checkout-field label {
 			width: 120px;
 			display: inline-block !important;
