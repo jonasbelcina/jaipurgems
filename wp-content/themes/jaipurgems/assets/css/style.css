@@ -3944,6 +3944,37 @@ footer {
 		margin: 20px 0;
 	}
 
+/* Collection Single */
+.collection-banner .content {
+	background: rgba(0,0,0,0.3);
+	width: 100%;
+	padding: 15px 0;
+	position: absolute;
+	top: initial;
+	bottom: 0;
+	-webkit-transform: none;
+	   -moz-transform: none;
+	    -ms-transform: none;
+	    	transform: none;
+}
+
+	.collection-banner .content h3 {
+		color: #fff;
+		font-family: 'GothamBook';
+		font-size: 24px;
+		text-align: left;
+		margin: 0;
+		letter-spacing: 1px;
+	}
+
+	.collection-banner .content h3 span {
+		display: block;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: 28px;
+		margin-top: 3px;
+		font-weight: bold;
+	}
 
 /* 
 =============================

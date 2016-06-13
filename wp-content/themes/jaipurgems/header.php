@@ -120,7 +120,7 @@
                                 </div>
                             </li>
                             <li><a href="#">Diamonds</a></li>
-                            <li><a href="#">Collections</a></li>
+                            <li><a href="<?php echo home_url(); ?>/collections">Collections</a></li>
                             <li><a href="<?php echo home_url(); ?>/about-us">Our Legacy</a></li>
                             <li>
                             	<a href="#" class="dropdown-toggle" data-hover="dropdown" data-delay="100" data-close-others="true">Our World <span class="glyphicon glyphicon-plus"></span></a>
