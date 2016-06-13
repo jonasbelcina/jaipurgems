@@ -40,7 +40,7 @@ global $product;
 	</div>
 <?php endif; ?>
 
-<?php if(get_field('white_gold') || get_field('diamonds') || get_field('rose_gold')) : ?>
+<?php if(get_field('white_gold') || get_field('diamonds') || get_field('gem')) : ?>
 	<div class="specs">
 		<?php if(get_field('white_gold')) { ?>
 			<div class="white-gold">
@@ -49,7 +49,7 @@ global $product;
 			</div>
 		<?php } ?>
 
-		<?php if(get_field('diamond')) { ?>
+		<?php if(get_field('diamonds')) { ?>
 			<div class="diamond">
 				<?php the_field('diamonds'); ?>CT
 				<span>Diamonds</span>
@@ -57,10 +57,10 @@ global $product;
 		</div>
 		<?php } ?>
 
-		<?php if(get_field('white_gold')) { ?>
+		<?php if(get_field('gem')) { ?>
 			<div class="rose-gold">
-				<?php the_field('rose_gold'); ?>K
-				<span>Rose Gold</span>
+				<?php the_field('gem'); ?>K
+				<span>Gem</span>
 			</div>
 		<?php } ?>
 	</div>
