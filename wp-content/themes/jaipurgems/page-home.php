@@ -170,7 +170,7 @@ get_header(); ?>
 			<img class="img-responsive perfect-jewellery" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>" />
 			<h1><?php the_field('1t_heading'); ?></h1>
 			<h4><?php the_field('1t_text'); ?></h4>
-			<a class="tile-link" href="<?php the_field('1t_link'); ?>"><?php the_field('1t_link_text'); ?></a>
+			<a class="tile-link" href="" data-toggle="modal" data-target="#appointmentForm"><?php the_field('1t_link_text'); ?></a>
 		</div>
 	</div>
 </section>

@@ -976,6 +976,58 @@ function custom_taxonomy_Item()  {
     register_taxonomy_for_object_type( 'collection', 'product' );
 }
 
+// Extra sorting options for products
+function custom_woocommerce_get_catalog_ordering_args( $args ) {
+    global $wp_query;
+    if (isset($_GET['orderby'])) {
+        switch ($_GET['orderby']) :
+            case 'name' :
+                $args['order'] = 'ASC';
+                $args['orderby'] = 'title';
+                break;
+            case 'name-desc' :
+                $args['order'] = 'DESC';
+                $args['orderby'] = 'title';
+                break;
+        endswitch;
+    }
+    return $args;
+}
+add_filter('woocommerce_get_catalog_ordering_args', 'custom_woocommerce_get_catalog_ordering_args');
+
+// Filter products by category
+function custom_pre_get_posts_query( $q ) {
+
+    if ( ! $q->is_main_query() ) return;
+    
+    $query = array();
+    
+    if (isset($_GET['filterby']) && ! is_admin()) {
+        $query[] = array(
+            'taxonomy' => 'product_cat',
+            'field' => 'slug',
+            'terms' => array( $_GET['filterby'] ),
+            'operator' => 'IN'
+        ); 
+        
+    }
+    
+    // if (isset($_GET['color']) && ! is_admin()) {
+    //     $query[] = array(
+    //         'taxonomy' => 'pa_color',
+    //         'field' => 'slug',
+    //         'terms' => array( $_GET['color'] ),
+    //         'operator' => 'IN'
+    //     );
+    // }
+    if(!empty($query))
+        $q->set( 'tax_query', $query );
+
+    remove_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+
+}
+add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+
 
 
 

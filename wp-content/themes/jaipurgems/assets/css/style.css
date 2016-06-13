@@ -2879,7 +2879,6 @@ footer {
 
 	.shop-filter .woocommerce-ordering {
 		float: none;
-		border-bottom: 1px solid #000;
 		margin: 0;
 	}
 
@@ -2887,6 +2886,7 @@ footer {
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		border-bottom: 1px solid #000;
 	}
 
 	.shop-filter li {
@@ -2902,14 +2902,21 @@ footer {
 		display: block;
 	}
 
+		.shop-filter li button:hover,
 		.shop-filter li a:hover {
 			text-decoration: none;
 		}
 
+		ul.sort-categories {
+			border-bottom: 0;
+		}
+
+		.sort-categories li:first-child button,
 		.sort-categories li:first-child a {
 			padding-left: 0;
 		}
 
+		.shop-filter li button.active,
 		.shop-filter li a.active {
 			font-weight: bold;
 		}
@@ -2936,8 +2943,9 @@ footer {
 			padding: 7px 0;
 		}
 
-	.sort-fields {
+	li.sort-fields {
 		float: right;
+		border-bottom: none;
 	}
 
 		.sort-fields li:first-child button {
