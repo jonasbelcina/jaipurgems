@@ -2861,20 +2861,25 @@ footer {
 	.products .product .details {
 		position: absolute;
 		width: 100%;
-		left: 100%;
+		/*left: 100%;*/
 		top: -1px;
 		bottom: -1px;
 		background: #fff;
 		z-index: 2;
-		display: none;
+		/*display: none;*/
 		border: 1px solid #959595;
 		border-left: 0;
 		text-align: center;
 		padding: 15px;
+		left: 0;
+		opacity: 0;
+		-webkit-transition: all 0.3s linear;
+				transition: all 0.3s linear;
 	}
 
 	.product-col:not(:first-child) .details {
-		right: 100%;
+		/*right: 100%;*/
+		right: 0;
 		left: initial;
 		border-left: 1px solid #959595;
 		border-right: 0;
@@ -2884,8 +2889,18 @@ footer {
 			border: 1px solid #959595;
 		}
 
-		.products .product:hover .details {
-			display: block;
+		.product-col:not(.single-prod-col):first-child .product:hover > .details {
+			/*display: block;*/
+			left: 100%;
+			opacity: 1;
+			z-index: 9;
+		}
+
+		.product-col:not(:first-child) .product:hover .details,
+		.single-prod-col .product:hover .details {
+			right: 100%;
+			opacity: 1;
+			z-index: 9;
 		}
 
 	.products .product .details .content {	
