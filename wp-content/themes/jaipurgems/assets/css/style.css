@@ -4916,6 +4916,10 @@ footer {
 }
 
 @media only screen and (max-width : 767px) {
+	.navbar-brand img {
+		max-width: 75px;
+	}
+
 	.home-slide img:first-child {
 		display: none;
 	}
