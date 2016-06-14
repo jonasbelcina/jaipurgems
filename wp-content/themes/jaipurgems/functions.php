@@ -1148,6 +1148,69 @@ function my_post_object_query( $args, $field, $post_id ) {
 // filter for every field
 add_filter('acf/fields/post_object/query', 'my_post_object_query', 10, 3);
 
+// create store custom post
+function jg_stores_init() {
+    $args = array(
+      'label' => 'Stores',
+        'public' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'query_var' => true,
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor')
+        );
+    register_post_type( 'store', $args );
+
+    $args = array(
+        'label'                      => 'Country &amp; State',
+        'hierarchical'               => true,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+        'query_var'                  => true, 
+    );
+    register_taxonomy( 'country-state' , 'store' , $args );
+}
+add_action( 'init', 'jg_stores_init' );
+
+
+// store location meta box
+add_filter( 'rwmb_meta_boxes', 'mr_meta_fields' );
+function mr_meta_fields( $meta_boxes )
+{
+
+    $meta_boxes[] = array(
+        'title'  => __( 'Store Location' ),
+        'post_types' => array( 'store' ),
+        'fields' => array(
+            array(
+                'id'   => 'address',
+                'name' => __( 'Address to search on map' ),
+                'type' => 'text',
+            ),
+            array(
+                'id'            => 'location',
+                'name'          => __( 'Map' ),
+                'type'          => 'map',
+
+                // Default location: 'latitude,longitude[,zoom]' (zoom is optional)
+                'std'           => '-6.233406,-35.049906,15',
+
+                // Name of text field where address is entered. Can be list of text fields, separated by commas (for ex. city, state)
+                'address_field' => 'address',
+            ),
+        ),
+    );
+
+
+    return $meta_boxes;
+}
+
 
 
 
