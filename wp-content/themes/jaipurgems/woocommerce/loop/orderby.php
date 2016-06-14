@@ -91,7 +91,7 @@ else
 		</li>
 
 		<li>
-			<form class="woocommerce-ordering" method="get">
+			<form class="woocommerce-ordering" method="get" action="<?php echo home_url(); ?>/product-category/jewellery">
 			<ul class="sort-categories">
 				<li>
 					<?php if($cat->parent == 0) : ?>
