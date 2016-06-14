@@ -43,7 +43,7 @@
                 		</form>
                     </li>
                     <li><a href="#">Store Locator</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#contactForm">Contact</a></li>
                 </ul>
             </div>
 
