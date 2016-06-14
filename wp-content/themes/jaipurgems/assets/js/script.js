@@ -397,7 +397,7 @@
 			});
 		}
 
-	});
+	}); // end document.ready
 
 	$(window).load(function() {
 		$('.blog-holder').masonry({
@@ -418,14 +418,21 @@
 		$grid.masonry('layout');
 	});
 
+	var ww = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 	var headerTop = $('.navbar').offset().top;
 	$(window).scroll(function(e){
 		var windowTop = $(window).scrollTop();
 
 		if(windowTop > headerTop) {
 			$('.navbar').addClass('navbar-fixed-top');
+			if(ww > 768) {
+				$('body').css('padding-top', '50px');
+			}
 		} else {
 			$('.navbar').removeClass('navbar-fixed-top');
+			if(ww > 768) {
+				$('body').css('padding-top', '0');
+			}
 		}
 	});
 

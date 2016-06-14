@@ -240,7 +240,7 @@
 		    addMarkers(allMarkers);
 		 
 		}
-		function addMarkers(m){
+		function addMarkers(m, trigger = false){
 		    var infowindow = new google.maps.InfoWindow(); 
 		    var marker, i;
 		    var bounds = new google.maps.LatLngBounds();
@@ -273,7 +273,9 @@
 		        })(marker, i));
 		        markers.push(marker);
 		    }
-		    map.fitBounds(bounds);
+		    if(!trigger) {
+		    	map.fitBounds(bounds);
+	    	}
 		}
 		function deleteMarkers() {
 		    for (var i = 0; i < markers.length; i++) {
@@ -310,7 +312,7 @@
 		                    $('#list').html('');
 		                    deleteMarkers();
 		                    if(getMarkers.length > 0){
-		                        addMarkers(getMarkers);
+		                        addMarkers(getMarkers, true);
 		                    }
 		                    else{
 		                        $('#list').html('No stores found.');

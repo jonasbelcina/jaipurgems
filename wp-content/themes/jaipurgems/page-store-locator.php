@@ -7,7 +7,7 @@
             <div class="search">
                 <input type="text" name="search" placeholder="Search" id="search-store">
                 <button class="more-button" onclick="searchStore();" id="search-button">Search</button>
-                <div class="clr"></div>
+                <div class="clearfix"></div>
             </div> 
             <div class="show-around">
                 <!-- <a class="more-button" onclick="showAroundMe();">Show around me</a> --> <a class="more-button" onclick="hideMap();">Hide map</a>
@@ -28,16 +28,17 @@
             <?php while ( have_posts() ) : the_post(); ?>
 
                 <div class="page">
+                    <div class="all-stores">
+                        <h1 class="cart-title">All Stores</h1>
+                        <hr />
+                        <div class="show-around">
+                            <a class="more-button" onclick="showMap();">Show map</a>
+                        </div>
 
-                    <h1>All Stores</h1>
-                    <hr />
-                    <div class="show-around">
-                        <a class="more-button" onclick="showMap();">Show map</a>
+                        <?php the_content(); ?>
+
+                        <div class="clearfix"></div>
                     </div>
-
-                    <?php the_content(); ?>
-
-                    <div class="clr"></div>
                 </div>
 
             <?php endwhile; // end of the loop. ?>
