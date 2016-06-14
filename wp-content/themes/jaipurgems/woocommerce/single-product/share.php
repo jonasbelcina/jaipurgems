@@ -24,7 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <ul>
-	<li><a href="#"><span>+</span> Add to my jewellery box</a></li>
+	<!-- <li><a href="#"><span>+</span> Add to my jewellery box</a></li> -->
+	<li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
 	<li><a href="<?php the_permalink(); ?>">Contact us</a></li>
 </ul>
 

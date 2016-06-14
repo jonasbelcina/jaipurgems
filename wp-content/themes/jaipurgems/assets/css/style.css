@@ -3366,6 +3366,37 @@ footer {
 		float: left;
 	}
 
+		.yith-wcwl-add-to-wishlist {
+			margin: 0;
+		}
+
+		.add_to_wishlist {
+			position: relative;
+		}
+
+			.add_to_wishlist:before {
+				content: '+';
+				font-size: 20px;
+				color: #b09d76;
+				font-weight: bold;
+				position: absolute;
+				top: -4px;
+				left: 0;
+				line-height: 1;
+			}
+
+		.yith-wcwl-wishlistexistsbrowse .feedback {
+			display: block;
+		}
+
+		.wishlists-exists {
+			padding: 0 !important;
+		}
+
+			.wishlist-exists .fa-check {
+				color: #a38d60;
+			}
+
 	.single-product .product .entry-summary li a {
 		font-family: 'GothamBook';
 		font-size: 13px;
