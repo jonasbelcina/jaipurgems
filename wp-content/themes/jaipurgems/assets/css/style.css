@@ -315,6 +315,8 @@ body {
 				text-transform: uppercase;
 				margin: 0 0 35px;
 				line-height: 28px;
+				position: relative;
+				z-index: 9;
 			}
 
 			.dropdown-sub h2 span {
@@ -342,6 +344,7 @@ body {
 				text-transform: uppercase;
 				padding-left: 15px;
 				display: block;
+				z-index: 9;
 			}
 
 				.dropdown-sub li a:hover {
@@ -366,7 +369,7 @@ body {
 			object-fit: cover;
 			object-position: center right;
 		    height: 100%;
-		    width: 60%;
+		    /*width: 60%;*/
 		    display: none;
 		}
 
@@ -561,6 +564,13 @@ body {
 		    	transform: translateY(-50%);
 	}
 
+	.necklaces-tile:hover img,
+	.earrings-tile:hover img,
+	.bangles-tile:hover img {
+		-webkit-filter: grayscale(95%);
+		    	filter: grayscale(95%);
+	}
+
 /* 
 =============================
 		  Gems Home
@@ -698,6 +708,13 @@ body {
 				    	transform: translateY(-50%);
 			}
 
+	.diamonds-tile:hover img,
+	.rajputana-tile:hover img,
+	.gems-tile:hover img {
+		-webkit-filter: grayscale(95%);
+		    	filter: grayscale(95%);
+	}
+
 /* 
 =============================
 	Arabian Princess Home
@@ -741,12 +758,18 @@ body {
 		}
 
 			.princess-content .tile-link:hover {
-				color: #000;
+				color: #b5985a;
 			}
 
 			.princess-content .tile-link:before {
 				content: url('../images/prelink-white.png');
 			}
+
+	.princess-tile:hover img,
+	.history-tile:hover img {
+		-webkit-filter: grayscale(95%);
+		    	filter: grayscale(95%);
+	}
 
 /* 
 =============================

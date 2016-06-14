@@ -53,13 +53,15 @@ get_header(); ?>
 <section class="collections-home">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-6">
-				<div class="row">
-				<?php $cs_left_image = get_field('cs_left_image'); ?>
-					<img class="img-responsive" src="<?php echo $cs_left_image['url']; ?>" alt="<?php echo $cs_left_image['alt']; ?>" />
-					<div class="necklaces-content">
-						<h1><?php the_field('cs_left_heading'); ?></h1>
-						<a class="tile-link" href="<?php the_field('cs_left_link'); ?>"><?php the_field('cs_left_link_text'); ?></a>
+			<div class="necklaces-tile">
+				<div class="col-md-6 col-sm-6 col-xs-6">
+					<div class="row">
+					<?php $cs_left_image = get_field('cs_left_image'); ?>
+						<img class="img-responsive" src="<?php echo $cs_left_image['url']; ?>" alt="<?php echo $cs_left_image['alt']; ?>" />
+						<div class="necklaces-content">
+							<h1><?php the_field('cs_left_heading'); ?></h1>
+							<a class="tile-link" href="<?php the_field('cs_left_link'); ?>"><?php the_field('cs_left_link_text'); ?></a>
+						</div>
 					</div>
 				</div>
 			</div>
