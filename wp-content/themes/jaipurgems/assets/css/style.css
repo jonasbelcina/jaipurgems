@@ -4384,17 +4384,26 @@ footer {
 
 @media only screen and (max-width : 991px) {
 	.navbar-top {
-		padding: 10px 0;
+		padding: 10px 15px;
+		overflow: hidden;
 	}
 
 		.header-left {
 			position: initial;
+			margin-left: 0;
+			text-indent: -35px;
 		}
 
 		.header-right-top {
 			position: initial;
 			margin: 5px 0 10px;
 		}
+
+			.header-right-top ul {
+				float :right;
+				display: inline-block;
+				margin-top: 10px;
+			}
 
 			.header-right-top li:not(:first-child) {
 				display: none;
@@ -4412,6 +4421,11 @@ footer {
 			margin-top: 10px;
 			display: none;
 		}
+
+	.navbar-brand {
+		float: left;
+		padding-bottom: 5px;
+	}
 
 	.navbar-default .navbar-nav > li > a {
 		padding: 0 20px;
@@ -4690,6 +4704,18 @@ footer {
 			padding: 0;
 		}*/
 
+
+	.navbar {
+		height: auto;
+		border: 0;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		background: none;
+		border-bottom: 1px solid rgba(0,0,0,0.7);
+	}
+
+
 	.navbar-header {
         float: none;
     }
@@ -4706,7 +4732,9 @@ footer {
     .navbar-fixed-top {
 		top: 0;
 		border-width: 0 0 1px;
-		background: rgba(0,0,0,0.6);
+		background: rgba(0,0,0,0.6) !important;
+		bottom: initial !important;
+		position: fixed !important;
 	}
     .navbar-collapse.collapse {
         display: none!important;
@@ -4735,9 +4763,10 @@ footer {
 		}
 
 
-	.navbar {
-		height: auto;
-		border: 0;
+
+
+	header {
+		position: relative;
 	}
 
 		#navbar {
