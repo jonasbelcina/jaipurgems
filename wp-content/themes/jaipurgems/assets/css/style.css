@@ -81,6 +81,10 @@ body {
 				content: url('../images/uae.png');
 			}
 
+			.uae:last-child {
+				display: none;
+			}
+
 	.navbar-brand {
 		float: none;
 		display: inline-block;
@@ -4406,16 +4410,25 @@ footer {
 
 		.header-left {
 			position: initial;
-			margin-left: 0;
-			text-indent: -35px;
-			margin-bottom: 10px;
+			margin: 20px 0 0;
+			display: inline-block;
+			float: right;
+			padding-right: 30px;
 		}
+
+			.uae:first-child {
+				display: none;
+			}
+
+			.uae:last-child {
+				display: inline-block;
+			}
 
 		.header-right-top {
 			position: initial;
 			/*margin: 5px 0 10px;*/
 			float :right;
-			display: inline-block;
+			display: none;
 			margin-top: 20px;
 		}
 

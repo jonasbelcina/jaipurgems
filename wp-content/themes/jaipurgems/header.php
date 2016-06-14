@@ -30,7 +30,7 @@
 	<header>
         <div class="navbar-top">
             <div class="header-left">
-                We Ship To <span class="uae">United Arab Emirates</span>
+                We Ship To <span class="uae">United Arab Emirates</span><span class="uae">UAE</span>
             </div>
 
             <div class="header-right-top">
