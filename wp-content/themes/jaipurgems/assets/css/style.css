@@ -3818,6 +3818,28 @@ footer {
 	margin: 30px auto;
 }
 
+	.woocommerce table.wishlist_table {
+		border-radius: 0;
+		font-size: 100%;
+	}
+
+		.wishlist_table .product-price {
+			text-align: center;
+		}
+
+		.wishlist_table tfoot {
+			display: none;
+		}
+
+		.wishlist_table a.remove {
+			color: #b5985a !important;
+		}
+
+			.wishlist_table a.remove:hover {
+				background: none;
+				color: #b5985a !important;
+			}
+
 /* Checkout */
 
 .woocommerce-checkout .woocommerce-message {

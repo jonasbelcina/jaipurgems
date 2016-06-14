@@ -34,7 +34,11 @@ $product );
 
 ?>
 
-<ul>
-	<li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
-	<li><a href="<?php the_permalink(); ?>">View details</a></li>
-</ul>
+<?php if(!is_page('448')) : ?>
+	<ul>
+		<li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
+		<li><a href="<?php the_permalink(); ?>">View details</a></li>
+	</ul>
+<?php endif; ?>
+
+
