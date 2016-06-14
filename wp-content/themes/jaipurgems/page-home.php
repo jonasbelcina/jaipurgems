@@ -34,7 +34,7 @@ get_header(); ?>
 			<div class="col-md-6 col-sm-6">
 				<div class="row">
 					<?php $craftsmanship_image = get_field('craftsmanship_image'); ?>
-					<img class="img-responsive" src="<?php echo $craftsmanship_image['url']; ?>" alt="<?php echo $craftsmanship_image['alt']; ?>" />
+					<img class="img-responsive" style="-webkit-filter: grayscale(95%); filter: grayscale(95%);" src="<?php echo $craftsmanship_image['url']; ?>" alt="<?php echo $craftsmanship_image['alt']; ?>" />
 				</div>
 			</div>
 
@@ -60,33 +60,39 @@ get_header(); ?>
 			<div class="necklaces-tile">
 				<div class="col-md-6 col-sm-6 col-xs-6">
 					<div class="row">
-					<?php $cs_left_image = get_field('cs_left_image'); ?>
-						<img class="img-responsive" src="<?php echo $cs_left_image['url']; ?>" alt="<?php echo $cs_left_image['alt']; ?>" />
-						<div class="necklaces-content">
-							<h1><?php the_field('cs_left_heading'); ?></h1>
-							<a class="tile-link" href="<?php the_field('cs_left_link'); ?>"><?php the_field('cs_left_link_text'); ?></a>
-						</div>
+						<a class="outer-link" href="<?php the_field('cs_left_link'); ?>">
+							<?php $cs_left_image = get_field('cs_left_image'); ?>
+							<img class="img-responsive" src="<?php echo $cs_left_image['url']; ?>" alt="<?php echo $cs_left_image['alt']; ?>" />
+							<div class="necklaces-content">
+								<h1><?php the_field('cs_left_heading'); ?></h1>
+								<a class="tile-link" href="<?php the_field('cs_left_link'); ?>"><?php the_field('cs_left_link_text'); ?></a>
+							</div>
+						</a>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-md-6 col-sm-6 col-xs-6 collections-right">
 				<div class="earrings-tile collections-right-tile">
-					<?php $cs_right_top_image = get_field('cs_right_top_image'); ?>
-					<img class="img-responsive" src="<?php echo $cs_right_top_image['url']; ?>" alt="<?php echo $cs_right_top_image['alt']; ?>" />
-					<div class="earrings-content">
-						<h1><?php the_field('cs_right_top_heading'); ?></h1>
-						<a class="tile-link" href="<?php the_field('cs_right_top_link'); ?>"><?php the_field('cs_right_top_link_text'); ?></a>
-					</div>
+					<a class="outer-link" href="<?php the_field('cs_right_top_link'); ?>">
+						<?php $cs_right_top_image = get_field('cs_right_top_image'); ?>
+						<img class="img-responsive" src="<?php echo $cs_right_top_image['url']; ?>" alt="<?php echo $cs_right_top_image['alt']; ?>" />
+						<div class="earrings-content">
+							<h1><?php the_field('cs_right_top_heading'); ?></h1>
+							<a class="tile-link" href="<?php the_field('cs_right_top_link'); ?>"><?php the_field('cs_right_top_link_text'); ?></a>
+						</div>
+					</a>
 				</div>
 
 				<div class="bangles-tile collections-right-tile">
-					<?php $cs_right_bottom_image = get_field('cs_right_bottom_image'); ?>
-					<img class="img-responsive" src="<?php echo $cs_right_bottom_image['url']; ?>" alt="<?php echo $cs_right_bottom_image['alt']; ?>" />
-					<div class="bangles-content">
-						<h1><?php the_field('cs_right_bottom_heading'); ?></h1>
-						<a class="tile-link" href="<?php the_field('cs_right_bottom_link'); ?>"><?php the_field('cs_right_bottom_link_text'); ?></a>
-					</div>
+					<a class="outer-link" href="<?php the_field('cs_right_bottom_link'); ?>">
+						<?php $cs_right_bottom_image = get_field('cs_right_bottom_image'); ?>
+						<img class="img-responsive" src="<?php echo $cs_right_bottom_image['url']; ?>" alt="<?php echo $cs_right_bottom_image['alt']; ?>" />
+						<div class="bangles-content">
+							<h1><?php the_field('cs_right_bottom_heading'); ?></h1>
+							<a class="tile-link" href="<?php the_field('cs_right_bottom_link'); ?>"><?php the_field('cs_right_bottom_link_text'); ?></a>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -99,12 +105,14 @@ get_header(); ?>
 			<div class="col-md-4 col-sm-4">
 				<div class="row">
 					<div class="gems-tile">
-						<?php $left_sm = get_field('4t_left_small_image'); ?>
-						<img class="img-responsive" src="<?php echo $left_sm['url']; ?>" alt="<?php echo $left_sm['alt']; ?>" />
-						<div class="gems-content">
-							<h1><?php the_field('4t_left_small_heading'); ?></h1>
-							<a class="tile-link" href="<?php the_field('4t_left_small_link'); ?>"><?php the_field('4t_left_small_link_text'); ?></a>
-						</div>
+						<a class="outer-link" href="<?php the_field('4t_left_small_link'); ?>">
+							<?php $left_sm = get_field('4t_left_small_image'); ?>
+							<img class="img-responsive" src="<?php echo $left_sm['url']; ?>" alt="<?php echo $left_sm['alt']; ?>" />
+							<div class="gems-content">
+								<h1><?php the_field('4t_left_small_heading'); ?></h1>
+								<a class="tile-link" href="<?php the_field('4t_left_small_link'); ?>"><?php the_field('4t_left_small_link_text'); ?></a>
+							</div>
+						</a>
 					</div>
 
 					<div class="iconic-tile">
@@ -148,21 +156,25 @@ get_header(); ?>
 
 			<div class="col-md-8 col-sm-8 gems-right">
 				<div class="diamonds-tile">
-					<?php $right_top = get_field('4t_right_top_image'); ?>
-					<img class="img-responsive" src="<?php echo $right_top['url']; ?>" alt="<?php echo $right_top['alt']; ?>" />
-					<div class="diamonds-content">
-						<h1><?php the_field('4t_right_top_heading'); ?></h1>
-						<a class="tile-link" href="<?php the_field('4t_right_top_link'); ?>"><?php the_field('4t_right_top_link_text'); ?></a>
-					</div>
+					<a class="outer-link" href="<?php the_field('4t_right_top_link'); ?>">
+						<?php $right_top = get_field('4t_right_top_image'); ?>
+						<img class="img-responsive" src="<?php echo $right_top['url']; ?>" alt="<?php echo $right_top['alt']; ?>" />
+						<div class="diamonds-content">
+							<h1><?php the_field('4t_right_top_heading'); ?></h1>
+							<a class="tile-link" href="<?php the_field('4t_right_top_link'); ?>"><?php the_field('4t_right_top_link_text'); ?></a>
+						</div>
+					</a>
 				</div>
 
 				<div class="rajputana-tile">
-					<?php $right_bottom = get_field('4t_right_bottom_image'); ?>
-					<img class="img-responsive" src="<?php echo $right_bottom['url']; ?>" alt="<?php echo $right_bottom['alt']; ?>" />
-					<div class="rajputana-content">
-						<h1><?php the_field('4t_right_bottom_heading'); ?></h1>
-						<a class="tile-link" href="<?php the_field('4t_right_bottom_link'); ?>"><?php the_field('4t_right_bottom_link_text'); ?></a>
-					</div>
+					<a class="outer-link" href="<?php the_field('4t_right_bottom_link'); ?>">
+						<?php $right_bottom = get_field('4t_right_bottom_image'); ?>
+						<img class="img-responsive" src="<?php echo $right_bottom['url']; ?>" alt="<?php echo $right_bottom['alt']; ?>" />
+						<div class="rajputana-content">
+							<h1><?php the_field('4t_right_bottom_heading'); ?></h1>
+							<a class="tile-link" href="<?php the_field('4t_right_bottom_link'); ?>"><?php the_field('4t_right_bottom_link_text'); ?></a>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -174,23 +186,27 @@ get_header(); ?>
 		<div class="row">
 			<div class="col-md-6 col-sm-6">
 				<div class="princess-tile">
-					<?php $left_img = get_field('2t_left_image'); ?>
-					<img class="img-responsive" src="<?php echo $left_img['url']; ?>" alt="<?php echo $left_img['alt']; ?>" />
-					<div class="princess-content">
-						<h1><?php the_field('2t_left_heading'); ?></h1>
-						<a class="tile-link" href="<?php the_field('2t_left_link'); ?>"><?php the_field('2t_left_link_text'); ?></a>
-					</div>
+					<a class="outer-link" href="<?php the_field('2t_left_link'); ?>">
+						<?php $left_img = get_field('2t_left_image'); ?>
+						<img class="img-responsive" src="<?php echo $left_img['url']; ?>" alt="<?php echo $left_img['alt']; ?>" />
+						<div class="princess-content">
+							<h1><?php the_field('2t_left_heading'); ?></h1>
+							<a class="tile-link" href="<?php the_field('2t_left_link'); ?>"><?php the_field('2t_left_link_text'); ?></a>
+						</div>
+					</a>
 				</div>
 			</div>
 
 			<div class="col-md-6 col-sm-6">
 				<div class="history-tile">
-					<?php $right_img = get_field('2t_right_image'); ?>
-					<img class="img-responsive" src="<?php echo $right_img['url']; ?>" alt="<?php echo $right_img['alt']; ?>" />
-					<div class="princess-content">
-						<h1><?php the_field('2t_right_heading'); ?></h1>
-						<a class="tile-link" href="<?php the_field('2t_right_link'); ?>"><?php the_field('2t_right_link_text'); ?></a>
-					</div>
+					<a class="outer-link" href="<?php the_field('2t_right_link'); ?>">
+						<?php $right_img = get_field('2t_right_image'); ?>
+						<img class="img-responsive" src="<?php echo $right_img['url']; ?>" alt="<?php echo $right_img['alt']; ?>" />
+						<div class="princess-content">
+							<h1><?php the_field('2t_right_heading'); ?></h1>
+							<a class="tile-link" href="<?php the_field('2t_right_link'); ?>"><?php the_field('2t_right_link_text'); ?></a>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>

@@ -527,6 +527,22 @@ body {
 			text-decoration: none;
 		}
 
+	.outer-link:hover,
+	.outer-link:focus {
+		text-decoration: none;
+	}
+
+	.necklaces-tile:hover .tile-link,
+	.bangles-tile:hover .tile-link,
+	.earrings-tile:hover .tile-link,
+	.gems-tile:hover .tile-link,
+	.diamonds-tile:hover .tile-link,
+	.rajputana-tile:hover .tile-link,
+	.princess-tile:hover .tile-link,
+	.history-tile:hover .tile-link {
+		color: #ab9056;
+	}
+
 /* 
 =============================
 	  Collections Home
@@ -5110,7 +5126,8 @@ footer {
 		display: block;
 	}
 
-	.shop-nav {
+	.shop-nav,
+	.shop-banner {
 		display: none;
 	}
 

@@ -68,7 +68,7 @@
 									<ul>
 										<li><a href="<?php echo home_url(); ?>/about-us">Our Legacy</a></li>
 										<li><a href="#">Philanthropy</a></li>
-										<li><a href="#">Product Line</a></li>
+										<li><a href="<?php echo home_url(); ?>/product-category/jewellery">Product Line</a></li>
 										<li><a href="<?php echo home_url(); ?>/blog">News</a></li>
 									</ul>
 								</div>
@@ -91,7 +91,6 @@
 									<h3>My Account <span class="glyphicon glyphicon-plus"></span></h3>
 									<ul>
 										<li><a href="<?php echo home_url(); ?>/my-account">Sign In / Sign Up</a></li>
-										<li><a href="#">FAQ</a></li>
 										<li><a href="#">Privacy Policy</a></li>
 										<li><a href="#" data-toggle="modal" data-target="#snrModal">Shipping &amp; Returns</a></li>
 									</ul>
