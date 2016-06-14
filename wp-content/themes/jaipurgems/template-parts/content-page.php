@@ -9,7 +9,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if(wc_get_page_id( 'cart' ) != get_the_ID() && wc_get_page_id( 'checkout' ) != get_the_ID() && !is_account_page()) : ?>
+	<?php if(wc_get_page_id( 'cart' ) != get_the_ID() && wc_get_page_id( 'checkout' ) != get_the_ID() && !is_account_page() && !is_page('448')) : ?>
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header><!-- .entry-header -->

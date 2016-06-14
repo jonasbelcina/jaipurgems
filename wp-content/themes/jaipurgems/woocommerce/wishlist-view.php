@@ -12,7 +12,9 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 } // Exit if accessed directly
 ?>
 
-<div class="container">
+<div class="container jewellery-box">
+
+    <h1 class="cart-title">Jewellery Box</h1>
 
     <?php do_action( 'yith_wcwl_before_wishlist_form', $wishlist_meta ); ?>
 
