@@ -28,6 +28,9 @@ get_header(); ?>
 	elseif(get_post_type() == 'media') :
 		$header = 'Media';
 		$element_id = 'media';
+	elseif(get_post_type() == 'celebrities') :
+		$header = 'Celebrities';
+		$element_id = 'celebrities';
 	endif;
 ?>
 

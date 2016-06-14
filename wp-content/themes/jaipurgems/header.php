@@ -129,6 +129,10 @@
                             	                        <a href="<?php echo home_url(); ?>/events">Events</a>
                             	                        <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/dropdown-events.jpg" alt="Events" />
                             	                    </li> 
+                                                    <li>
+                                                        <a href="<?php echo home_url(); ?>/celebrities">Celebrities</a>
+                                                        <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/dropdown-campaigns.jpg" alt="Celebrities" />
+                                                    </li>
                             	                </ul>
                             	            </div>
 
