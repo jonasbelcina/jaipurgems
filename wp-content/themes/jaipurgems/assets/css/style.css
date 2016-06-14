@@ -4330,6 +4330,15 @@ footer {
 		font-weight: bold;
 	}
 
+/* Store locator */
+.store-map .map {
+    width: 70%;
+    height: 100%;
+    background: #efefef;
+    float: left;
+    height: 500px;
+}
+
 /* 
 =============================
 		Media Queries

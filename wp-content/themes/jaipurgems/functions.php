@@ -44,6 +44,7 @@ function jg_scripts() {
 	wp_register_style('vendor-owl-carousel', get_template_directory_uri().'/assets/vendor/owl.carousel.css', array(), '2.0' );
 	wp_register_style('vendor-magnific-popup', get_template_directory_uri().'/assets/vendor/magnific-popup.css', array(), '1.0' );
 
+	wp_register_script( 'google-maps', 'https://maps.google.com/maps/api/js?sensor=false', array(), false , false);
 	wp_register_script( 'vendor-owl-carousel', get_template_directory_uri().'/assets/vendor/owl.carousel' . $suffix . '.js', array( 'jquery'), '2.0', true );
 	wp_register_script( 'jg-bootstrap', get_template_directory_uri().'/assets/vendor/bootstrap' . $suffix . '.js', array(), '3.3.6', true );
 	wp_register_script( 'jg-bootstrap-hover-dropdown', get_template_directory_uri().'/assets/vendor/bootstrap-hover-dropdown' . $suffix . '.js', array(), '1.0', true );
@@ -59,6 +60,7 @@ function jg_scripts() {
 	wp_enqueue_style('vendor-magnific-popup');
 	wp_enqueue_style('jg-style');
 
+	wp_enqueue_script('google-maps');
 	wp_enqueue_script('vendor-owl-carousel');
 	wp_enqueue_script('vendor-masonry');
 	wp_enqueue_script('vendor-magnific-popup');
