@@ -63,9 +63,9 @@ $parent = $cat->parent == 0 ? $cat->term_id : $cat->parent;
 			<?php else : ?>
 				<?php
 					$heading = get_field('heading', 'product_cat_' . $cat->term_id);
-					if(!$heading) {
-						$heading = woocommerce_page_title();
-					}
+					// if(!$heading) {
+					// 	$heading = woocommerce_page_title();
+					// }
 				?>
 				<?php if(get_field('heading', 'product_cat_' . $cat->term_id)) :
 					echo '<h1>' . $heading . '</h1>';
