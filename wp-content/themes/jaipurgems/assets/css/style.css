@@ -2744,6 +2744,31 @@ footer {
 	
 }
 
+	.sort-categories li:first-child button {
+		display: none;
+		font-size: 14px;
+	    text-transform: uppercase;
+	    color: #a48c5a;
+	    font-family: 'GothamBook';
+	}
+
+	.mobile-filter {
+		display: none;
+		text-align: center;
+		color: #111;
+		padding: 15px 0;
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		border-top: 1px solid #e3e3e3;
+		border-bottom: 1px solid #e3e3e3;
+	}
+
+		.mobile-filter:hover {
+			color: #111;
+			text-decoration: none;
+		}
+
 	.shop-filter .woocommerce-ordering {
 		float: none;
 		margin: 0;
@@ -4434,46 +4459,6 @@ footer {
 			left: 15px;
 		}
 
-	/*.featured-blog {
-		height: 350px;
-	}
-
-		.featured-blog.col-md-8,
-		.featured-blog.col-md-4 {
-			padding: 0;
-		}
-
-		.featured-blog.col-md-8 {
-			margin-bottom: 20px;
-		}
-
-		.featured-blog .blog-content h2 {
-			font-size: 28px;
-		}
-
-	.blog-item .blog-content ul {
-		margin-bottom: 5px;
-	}
-
-	.blog-item .blog-content h2 {
-		font-size: 21px;
-		margin-bottom: 10px;
-	}
-
-	.blog-content p {
-		letter-spacing: 0;
-	}*/
-
-	/*.single .blog-sidebar {
-		width: 100%;
-		padding-left: 0;
-	}*/
-
-		/*.single .blog-sidebar .sidebox {
-			max-width: 277px;
-			margin: 0 auto 50px;
-		}*/
-
 	.footer-social label {
 		display: block;
 		margin: 0;
@@ -4878,43 +4863,6 @@ footer {
 		margin: 0 15px;
 	}
 
-	/*.blogs {
-		padding-left: 15px;
-	}
-
-		.blog-item {
-			height: auto;
-		}
-
-			.blog-item .blog-content {
-				height: auto;
-				padding-left: 0;
-			}
-
-			.blog-item .blog-content .buttons {
-				position: initial;
-			}
-
-			.blog-item .blog-img {
-				margin-bottom: 20px;
-				padding-right: 0;
-			}*/
-
-	/*.blog-sidebar {
-		padding-left: 0;
-		margin-top: 0;
-	}
-
-	.tweets,
-	.insta {
-		margin: 0 15px;
-	}*/
-
-		/*.blog-sidebar .sidebox {
-			max-width: 277px;
-			margin: 0 auto 30px;
-		}*/
-
 	.footer-top {
 		padding: 20px 15px 0px;
 	}
@@ -5070,6 +5018,51 @@ footer {
 		display: block;
 	}
 
+	.shop-nav {
+		display: none;
+	}
+
+	.shop-filter {
+		padding: 0 15px;
+		margin-top: 30px;
+	}
+
+	.mobile-filter {
+		display: block;
+	}
+
+	.sort-categories li:first-child button {
+		display: block;
+	}
+
+	.sort-fields li:first-child button {
+		font-size: 14px;
+		text-transform: uppercase;
+		color: #a48c5a;
+		font-family: 'GothamBook';
+	}
+
+	.shop-filter > .container > .row > ul {
+		margin-top: 20px;
+		padding: 0 15px;
+		display: none;
+	}
+
+	.shop-filter ul {
+		border-bottom: 0;
+	}
+
+		.shop-filter li ul li {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		.shop-filter li a,
+		.shop-filter li button {
+			font-size: 14px;
+			padding: 0 !important;
+		}
+
 	.products .product {
 		max-width: 320px;
 		margin: 0 auto;
@@ -5081,6 +5074,17 @@ footer {
 			top: 0;
 			bottom: 0;
 		}
+
+			.product-col:not(.single-prod-col):first-child .product > .details {
+				left: 0;
+				right: 0;
+			}
+
+			.product-col:not(.single-prod-col):first-child .product:hover > .details {
+				opacity: 1;
+				left: 0;
+				right: 0;
+			}
 
 		.product .content h3 {
 			padding-top: 20px;

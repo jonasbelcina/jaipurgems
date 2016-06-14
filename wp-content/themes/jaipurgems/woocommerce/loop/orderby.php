@@ -33,6 +33,8 @@ else
 	$filterby = 'all';
 ?>
 
+	<a class="mobile-filter" href=""><i class="fa fa-bars" aria-hidden="true"></i> Filter Products</a>
+
 	<ul>
 
 		<li class="sort-fields">
@@ -93,6 +95,7 @@ else
 		<li>
 			<form class="woocommerce-ordering" method="get" action="<?php echo home_url(); ?>/product-category/jewellery">
 			<ul class="sort-categories">
+				<li><button type="button">Categories:</button></li>
 				<li>
 					<?php if($cat->parent == 0) : ?>
 						<button type="submit" value="" class="<?php echo ($filterby == 'all') ? 'active' : ''; ?>">All</button>

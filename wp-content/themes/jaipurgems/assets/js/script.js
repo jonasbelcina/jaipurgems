@@ -520,6 +520,12 @@
 		}
 	});
 
+	// mobile products filter
+	$('.mobile-filter').on('click', function(e) {
+		e.preventDefault();
+		$(this).next('ul').slideToggle();
+	});
+
 })(jQuery);
 
 // social sharing popup
