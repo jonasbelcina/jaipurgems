@@ -220,7 +220,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="latest-collection">
+<!-- <section class="latest-collection">
 	<div class="container">
 		<h2 class="about-section-header"><?php the_field('about_latest_heading'); ?></h2>
 		<div class="row">
@@ -259,7 +259,7 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <?php get_footer(); ?>
 

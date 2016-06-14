@@ -1133,6 +1133,20 @@ function ajax_login(){
     die();
 }
 
+// change post object order
+function my_post_object_query( $args, $field, $post_id ) {
+	
+    // only show children of the current post being edited
+    $args['order'] = 'DESC';
+    $args['orderby'] = 'post_date';
+	
+	// return
+    return $args;
+    
+}
+
+// filter for every field
+add_filter('acf/fields/post_object/query', 'my_post_object_query', 10, 3);
 
 
 

@@ -10,6 +10,17 @@
 			autoplay: true
 		});
 
+		// Home - Celebrities slider
+		$('.celebrity-slides').owlCarousel({
+			items: 1,
+			nav: true,
+			navText: true,
+			dots: false
+			// loop: true,
+			// animateOut: 'fadeOut',
+			// autoplay: true
+		});
+
 		// About Us - History slider
 		var owl = $('.history-slider');
 
@@ -82,7 +93,7 @@
 
 		function removeLast() {
 			$('.history-slider .owl-item:nth-of-type(4)').removeClass('active');
-			console.log('removed');
+			// console.log('removed');
 		}
 
 		removeLast();

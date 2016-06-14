@@ -108,12 +108,40 @@ get_header(); ?>
 					</div>
 
 					<div class="iconic-tile">
-						<?php $left_long = get_field('4t_left_long_image'); ?>
+						<!-- <?php $left_long = get_field('4t_left_long_image'); ?>
 						<img class="img-responsive" src="<?php echo $left_long['url']; ?>" alt="<?php echo $left_long['alt']; ?>" />
 						<div class="iconic-content">
 							<h1><?php the_field('4t_left_long_heading'); ?></h1>
 							<a class="tile-link" href="<?php the_field('4t_left_long_link'); ?>"><?php the_field('4t_left_long_link_text'); ?></a>
-						</div>
+						</div> -->
+
+						<?php
+						$tile_heading = get_field('4t_left_long_heading');
+						if( have_rows('left_long_column') ) : ?>
+							<div class="celebrity-slides">
+							    <?php while ( have_rows('left_long_column') ) : the_row();
+
+							    	$post_object = get_sub_field('celebrity');
+							    	if( $post_object ) :
+							    		// override $post
+							    		$post = $post_object;
+							    		setup_postdata( $post ); ?>
+
+							    		<div class="celeb-slide">
+							    			<?php the_post_thumbnail('full'); ?>
+							    			<div class="iconic-content">
+							    				<h1><?php echo $tile_heading; ?></h1>
+							    				<a class="tile-link" href="<?php echo home_url() . '/celebrities/#celebrities_id_' . get_the_ID(); ?>"><?php the_title(); ?></a>
+							    			</div>
+							    		</div>
+							        
+							        <?php endif;
+							        wp_reset_postdata();
+
+							    endwhile; ?>
+						    </div>
+						<?php
+						endif; ?>
 					</div>
 				</div>
 			</div>
