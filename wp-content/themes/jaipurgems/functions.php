@@ -1211,7 +1211,46 @@ function mr_meta_fields( $meta_boxes )
     return $meta_boxes;
 }
 
+/* AJAX Store Search */
+add_action( 'wp_ajax_store_search', 'store_search' );
+add_action( 'wp_ajax_nopriv_store_search', 'store_search' );
+function store_search()
+{
+    global $wpdb;
+    $query = "SELECT distinct wp_posts.*
+                FROM wp_posts, wp_term_relationships, wp_term_taxonomy, wp_terms
+                WHERE (wp_terms.name LIKE '%".$_POST["s"]."%'
+                OR wp_posts.post_title LIKE '%".$_POST["s"]."%')
+                AND wp_posts.post_status = 'publish'
+                AND wp_posts.post_type = 'store'
+                AND wp_posts.ID = wp_term_relationships.object_id
+                AND wp_term_relationships.term_taxonomy_id = wp_term_taxonomy.term_taxonomy_id
+                AND wp_term_taxonomy.term_id = wp_terms.term_id";
 
+    $stores = $wpdb->get_results($query);
+
+    $stores_array =  array();
+    if($stores){
+        foreach ($stores as $s) {
+            if($location = rwmb_meta('location' , array(), $s->ID)){
+                $store = array();
+                $location = explode(',', $location);
+                $content = str_replace(array("\r\n", "\n", "\r"), '<br/>', $s->post_content);
+                $content1 = strip_tags(get_the_term_list( $s->ID, 'country-state', '', ',', '' ));
+                $content2  =  htmlentities($content);
+                $store[0] = $s->post_title;
+                $store[1] = $location[0];
+                $store[2] = $location[1];
+                $store[3] = $content1;
+                $store[4] = $content2;
+                $stores_array[] = $store;
+            }
+            
+        }
+    }
+    echo json_encode($stores_array);
+    wp_die();
+}
 
 
 
