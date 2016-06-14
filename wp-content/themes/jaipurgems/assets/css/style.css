@@ -2764,9 +2764,11 @@ footer {
 		border-bottom: 1px solid #e3e3e3;
 	}
 
-		.mobile-filter:hover {
+		.mobile-filter:hover,
+		.mobile-filter:focus {
 			color: #111;
 			text-decoration: none;
+			outline: none;
 		}
 
 	.shop-filter .woocommerce-ordering {
