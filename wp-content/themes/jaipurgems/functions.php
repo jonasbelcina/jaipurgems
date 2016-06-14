@@ -929,6 +929,32 @@ function jg_media_init() {
 }
 add_action( 'init', 'jg_media_init' );
 
+// Create Celebrities Custom Post Type
+function jg_celebrities_init() {
+    $args = array(
+      	'labels' => array(
+      					'name' => _x( 'Celebrities', 'celebrities' ),
+      					'singular_name' => _x( 'Celebrity', 'celebrity' ),
+      					'add_new_item' => __( 'Add New Celebrity' ),
+      					'all_items' => __( 'All Celebrities' ),
+      					'edit_item' => __( 'Edit Celebrity' ),
+      				),
+        'public' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'query_var' => true,
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail',)
+        );
+    register_post_type( 'celebrities', $args );
+ 	// flush_rewrite_rules( true );
+}
+add_action( 'init', 'jg_celebrities_init' );
+
 
 // function custom_flush_rules(){
 // 	//defines the post type so the rules can be flushed.

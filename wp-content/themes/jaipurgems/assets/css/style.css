@@ -210,7 +210,8 @@ body {
 
 .navbar {
 	background: #252525;
-	border: 1px solid #959595;
+	/*border: 1px solid #959595;*/
+	border: 0;
 	height: 58px;
 	border-radius: 0;
 	margin-bottom: 0;
@@ -272,7 +273,7 @@ body {
 				height: 0; 
 				border-left: 10px solid transparent;
 				border-right: 10px solid transparent;
-				border-bottom: 10px solid #fff;
+				border-bottom: 10px solid #f2f1ed;
 				position: absolute;
 				left: 50%;
 				bottom: 0;
@@ -369,8 +370,9 @@ body {
 			object-fit: cover;
 			object-position: center right;
 		    height: 100%;
-		    /*width: 60%;*/
+		    width: 100%;
 		    display: none;
+		    left: 0;
 		}
 
 		.dropdown-sub li:first-child img {

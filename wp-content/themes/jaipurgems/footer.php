@@ -81,7 +81,7 @@
 										<li><a href="<?php echo home_url(); ?>/product-category/jewellery/bangles">Bangles</a></li>
 										<li><a href="<?php echo home_url(); ?>/product-category/jewellery/earrings">Earrings</a></li>
 										<li><a href="<?php echo home_url(); ?>/product-category/jewellery/necklaces">Necklaces</a></li>
-										<li><a href="#">Our Collections</a></li>
+										<li><a href="<?php echo home_url(); ?>/collections">Our Collections</a></li>
 									</ul>
 								</div>
 							</div>
@@ -90,7 +90,7 @@
 								<div class="row">
 									<h3>My Account <span class="glyphicon glyphicon-plus"></span></h3>
 									<ul>
-										<li><a href="#">Sign In / Sign Up</a></li>
+										<li><a href="<?php echo home_url(); ?>/my-account">Sign In / Sign Up</a></li>
 										<li><a href="#">FAQ</a></li>
 										<li><a href="#">Privacy Policy</a></li>
 										<li><a href="#" data-toggle="modal" data-target="#snrModal">Shipping &amp; Returns</a></li>
