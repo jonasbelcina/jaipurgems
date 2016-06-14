@@ -4392,18 +4392,22 @@ footer {
 			position: initial;
 			margin-left: 0;
 			text-indent: -35px;
+			margin-bottom: 10px;
 		}
 
 		.header-right-top {
 			position: initial;
-			margin: 5px 0 10px;
+			/*margin: 5px 0 10px;*/
+			float :right;
+			display: inline-block;
+			margin-top: 20px;
 		}
 
-			.header-right-top ul {
+			/*.header-right-top ul {
 				float :right;
 				display: inline-block;
 				margin-top: 10px;
-			}
+			}*/
 
 			.header-right-top li:not(:first-child) {
 				display: none;
