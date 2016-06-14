@@ -39,8 +39,11 @@ get_header(); ?>
 			<div class="col-md-6 col-sm-6">
 				<h2 class="about-section-header"><?php the_field('about_owner_heading'); ?></h2>
 				<div class="row">
-					<?php $owner_img = get_field('about_owner_image'); ?>
-					<img class="img-responsive" src="<?php echo $owner_img['url']; ?>" />
+					<!-- <?php $video = get_field('about_owner_image'); ?> -->
+					<!-- <img class="img-responsive" src="<?php echo $owner_img['url']; ?>" /> -->
+					<div class="video-container">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('about_owner_image'); ?>?showinfo=0" frameborder="0" allowfullscreen></iframe>
+					</div>
 				</div>
 			</div>
 

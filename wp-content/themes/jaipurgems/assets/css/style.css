@@ -2139,6 +2139,22 @@ footer {
 		margin: 0 auto;
 	}
 
+	.video-container {
+	    position: relative;
+	    padding-bottom: 56.25%;
+	    padding-top: 35px;
+	    height: 0;
+	    overflow: hidden;
+	}
+
+		.video-container iframe {
+		    position: absolute;
+		    top:0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		}
+
 	.owner p {
 		font-size: 22px;
 		color: #000;
@@ -4410,7 +4426,7 @@ footer {
 
 		.header-left {
 			position: initial;
-			margin: 10px 0 0;
+			margin: 5px 0 0;
 			display: inline-block;
 			float: right;
 			padding-right: 30px;
