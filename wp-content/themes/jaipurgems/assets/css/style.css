@@ -940,21 +940,25 @@ footer {
 		  color: #fff;
 		  font-family: 'GothamBook';
 		  font-size: 11px;
+		  text-align: left;
 		}
 		.footer-top ::-moz-placeholder { /* Firefox 19+ */
 		  color: #fff;
 		  font-family: 'GothamBook';
 		  font-size: 11px;
+		  text-align: left;
 		}
 		.footer-top :-ms-input-placeholder { /* IE 10+ */
 		  color: #fff;
 		  font-family: 'GothamBook';
 		  font-size: 11px;
+		  text-align: left;
 		}
 		.footer-top :-moz-placeholder { /* Firefox 18- */
 		  color: #fff;
 		  font-family: 'GothamBook';
 		  font-size: 11px;
+		  text-align: left;
 		}
 
 	.footer-top button {
@@ -4113,8 +4117,11 @@ footer {
 
 .woocommerce .woocommerce-message {
 	border-top-color: #b5985a;
-	color: #b5985a;
 }
+
+	.woocommerce .woocommerce-message:before {
+		color: #b5985a;
+	}
 
 /* 
 =============================
