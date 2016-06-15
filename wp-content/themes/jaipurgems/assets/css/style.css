@@ -5257,14 +5257,37 @@ footer {
 		right: 0;
 	}
 
+	.custom-nav {
+		bottom: 0;
+	}
+
 	.history-item {
 		margin: 0 30px;
 		height: auto;
+		border-bottom: 0;
 	}
 
 		.history-item .content {
-			height: 240px;
+			height: auto;
+			border: 0;
 		}
+
+		.history-item h4 {
+			border: 0;
+			color: #000;
+		}
+
+		.history-item p {
+			color: #000;
+		}
+
+		.history-item img {
+			opacity: 1;
+		}
+
+	.history-year {
+		display: none !important;
+	}
 
 	.history-year .owl-item {
 		padding: 20px 25px 0;
