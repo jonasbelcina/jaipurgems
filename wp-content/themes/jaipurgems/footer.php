@@ -245,13 +245,24 @@
 		    var marker, i;
 		    var bounds = new google.maps.LatLngBounds();
 
+		    var pinColor = "b5985a";
+	        var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+	            new google.maps.Size(21, 34),
+	            new google.maps.Point(0,0),
+	            new google.maps.Point(10, 34));
+	        var pinShadow = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_shadow",
+	            new google.maps.Size(40, 37),
+	            new google.maps.Point(0, 0),
+	            new google.maps.Point(12, 35));
+
 		    for (i = 0; i < m.length; i++) { 
 		        var pos = new google.maps.LatLng(m[i][1], m[i][2]);
 		        bounds.extend(pos);
 		        marker = new google.maps.Marker({
 		            position: pos,
 		            map: map,
-		            icon: '<?=get_template_directory_uri()?>/assets/images/map-marker.png'
+		            icon: pinImage
+		            // icon: '<?=get_template_directory_uri()?>/assets/images/map-marker.png'
 		        });
 		        (function(marker){
 		            google.maps.event.addDomListener($('<li/>').html( '<h2>' + m[i][0] + '</h2>' + html_entity_decode(m[i][3]) ).appendTo('#list')[0],'click',function(){
