@@ -475,6 +475,25 @@ body {
 	    /*margin-top: -8px;*/
 	}
 
+#navbar {
+	position: relative;
+}
+
+.fixed-logo {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 15px;
+}
+
+	.fixed-logo.active {
+		display: block;
+	}
+
+	.fixed-logo img {
+		max-height: 30px;
+	}
+	
 
 /* 
 =============================

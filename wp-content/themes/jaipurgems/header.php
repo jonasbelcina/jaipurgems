@@ -143,6 +143,10 @@
                             <li><a href="<?php echo home_url(); ?>/my-account">Login or Register</a></li>
                             <li><a href="" data-toggle="modal" data-target="#contactForm">Contact</a></li>
                         </ul>
+
+                        <a class="fixed-logo" href="<?php echo home_url(); ?>">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/crown.png" alt="Jaipur Gems" />
+                        </a>
                     </div><!-- #navbar -->
 
                 </div>
