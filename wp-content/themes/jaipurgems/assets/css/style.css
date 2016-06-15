@@ -1147,6 +1147,7 @@ footer {
 		  	font-family: 'GothamBook';
 		  	font-size: 11px;
 		  	text-transform: none;
+		  	text-align: left;
 		}
 		#appointmentForm ::-moz-placeholder,
 			#contactForm ::-moz-placeholder { /* Firefox 19+ */
@@ -1154,6 +1155,7 @@ footer {
 		  	font-family: 'GothamBook';
 		  	font-size: 11px;
 		  	text-transform: none;
+		  	text-align: left;
 		}
 		#appointmentForm :-ms-input-placeholder,
 			#contactForm :-ms-input-placeholder { /* IE 10+ */
@@ -1161,6 +1163,7 @@ footer {
 		  		font-family: 'GothamBook';
 		  		font-size: 11px;
 		  		text-transform: none;
+		  		text-align: left;
 		}
 		#appointmentForm :-moz-placeholder,
 			#contactForm :-moz-placeholder { /* Firefox 18- */
@@ -1168,6 +1171,7 @@ footer {
 			  	font-family: 'GothamBook';
 			  	font-size: 11px;
 			  	text-transform: none;
+			  	text-align: left;
 		}
 
 	#snrModal h5 {
@@ -1897,148 +1901,6 @@ footer {
 					text-transform: uppercase;
 					font-size: 11px;
 				}
-
-/*.blog-sidebar {
-	padding-right: 0;
-	margin-top: 50px;
-}
-	
-	.sidebox {
-		text-align: center;
-		margin-bottom: 50px;
-	}
-
-		.sidebox h2 {
-			font-family: 'GothamBook';
-		    font-size: 26px;
-		    color: #4b4b4b;
-		    text-transform: uppercase;
-		    margin-top: 0;
-		}
-
-		.sidebox p {
-			font-family: 'HVDFontsNiveauGroteskLightSmallCaps';
-			font-size: 19px;
-			line-height: 20px;
-			color: #888;
-		}
-
-		.newsletter form {
-			margin-top: 25px;
-		}
-
-			.newsletter form ::-webkit-input-placeholder {
-			  color: #888;
-			  font-family: 'GothamLight';
-			  text-transform: uppercase;
-			  font-size: 13px;
-			}
-			.newsletter form ::-moz-placeholder {
-			  color: #888;
-			  font-family: 'GothamLight';
-			  text-transform: uppercase;
-			  font-size: 13px;
-			}
-			.newsletter form :-ms-input-placeholder {
-			  color: #888;
-			  font-family: 'GothamLight';
-			  text-transform: uppercase;
-			  font-size: 13px;
-			}
-			.newsletter form :-moz-placeholder {
-			  color: #888;
-			  font-family: 'GothamLight';
-			  text-transform: uppercase;
-			  font-size: 13px;
-			}
-
-			.newsletter input {
-				width: 100%;
-				max-width: 213px;
-				margin: 0 auto 15px;
-				padding: ;
-				border: 1px solid #efefef;
-				text-align: center;
-				padding: 9px 15px;
-			}
-
-				.newsletter input:focus {
-					outline: none;
-				}
-
-			.newsletter form button {
-				font-family: 'GothamBook';
-			    display: inline-block;
-			    background: #636363;
-			    color: #fff;
-			    text-transform: uppercase;
-			    padding: 8px 16px;
-			    border: 0;
-			    -webkit-transition: all 0.3s linear;
-			    transition: all 0.3s linear;
-			}
-
-		.connect .social-icons {
-			margin-top: 25px;
-		}
-
-			.connect a {
-				width: 40px;
-				height: 40px;
-				display: inline-block;
-				border-radius: 50%;
-				margin: 0 3px;
-			}
-
-				.connect a:first-child {
-					background: url('../images/icon-fb.png') center no-repeat #525252;
-				}
-
-				.connect a:nth-child(2) {
-					background: url('../images/icon-twitter.png') center no-repeat #525252;
-				}
-
-				.connect a:nth-child(3) {
-					background: url('../images/icon-instagram.png') center no-repeat #525252;
-				}
-
-				.connect a:last-child {
-					background: url('../images/icon-pinterest.png') center no-repeat #525252;
-				}
-
-		.tweets,
-		.insta {
-			border-top: 1px solid #efefef;
-			padding-top: 20px;
-		}
-
-		.insta {
-			margin-bottom: 20px;
-		}
-
-			.follow-insta {
-				font-family: 'GothamBook';
-				display: inline-block;
-				background: #636363;
-				color: #fff;
-				text-transform: uppercase;
-				padding: 8px 16px;
-				border: 0;
-				-webkit-transition: all 0.3s linear;
-				transition: all 0.3s linear;
-				margin-top: 10px;
-			}
-
-				.follow-insta img {
-					margin-right: 5px;
-				}
-
-				.follow-insta:hover,
-				.follow-insta:focus {
-					text-decoration: none;
-					color: #fff;
-					background: #333;
-				}*/
 
 /* 
 =============================
@@ -4248,6 +4110,11 @@ footer {
 			padding: 0 0 10px;
 			border-bottom: 1px solid #e3e3e3;
 		}
+
+.woocommerce .woocommerce-message {
+	border-top-color: #b5985a;
+	color: #b5985a;
+}
 
 /* 
 =============================
