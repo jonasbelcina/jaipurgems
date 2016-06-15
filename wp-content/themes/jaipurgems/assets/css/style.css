@@ -5262,23 +5262,26 @@ footer {
 	}
 
 	.history-item {
-		margin: 0 30px;
+		margin: 0 15px;
 		height: auto;
 		border-bottom: 0;
 	}
 
 		.history-item .content {
-			height: auto;
+			height: auto !important;
 			border: 0;
+			padding: 0;
 		}
 
 		.history-item h4 {
 			border: 0;
 			color: #000;
+			padding: 0 0 18px;
 		}
 
 		.history-item p {
 			color: #000;
+			padding: 0;
 		}
 
 		.history-item img {
