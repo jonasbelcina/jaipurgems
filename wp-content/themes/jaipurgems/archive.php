@@ -54,7 +54,7 @@ get_header(); ?>
 					// get_template_part( 'template-parts/content', get_post_format() );
 					?>
 
-					<div class="single-campaign col-md-4 col-sm-6" id="<?php echo $element_id .'_id_' .get_the_ID(); ?>">
+					<div class="single-campaign <?php echo (get_post_type() == 'campaigns') ? 'col-md-6' : 'col-md-4'; ?> col-sm-6" id="<?php echo $element_id .'_id_' .get_the_ID(); ?>">
 						<?php $images = get_field('gallery', get_the_ID());
 						if( $images ): ?>
 							<a class="open-popup campaign-popup" href="#<?php echo $element_id; ?>_<?php echo $post->ID; ?>">
