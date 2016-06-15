@@ -123,12 +123,13 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 
 #header_wrapper {
-    padding: 36px 48px;
+    padding: 15px;
     display: block;
+    background: #111;
 }
 
 h1 {
-    color: <?php echo esc_attr( $base ); ?>;
+    color: #fff;
     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     font-size: 30px;
     font-weight: 300;

@@ -93,7 +93,7 @@ else
 		</li>
 
 		<li>
-			<form class="woocommerce-ordering" method="get" action="<?php echo home_url(); ?>/product-category/jewellery">
+			<form class="woocommerce-ordering" method="get" action="<?php echo home_url(); ?><?php if(is_tax('collection')) { ?>/collection/sparkling-diamond-collection<?php } else { ?>/product-category/jewellery<?php } ?>">
 			<ul class="sort-categories">
 				<li><button type="button">Categories:</button></li>
 				<li>
