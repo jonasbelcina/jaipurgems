@@ -109,7 +109,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php do_action( 'woocommerce_register_form' ); ?>
 			<?php do_action( 'register_form' ); ?>
 
-			<p class="form-row">
+			<p class="form-row register-btn">
 				<?php wp_nonce_field( 'woocommerce-register' ); ?>
 				<input type="submit" class="button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>" />
 			</p>
