@@ -5258,7 +5258,8 @@ footer {
 	}
 
 	.custom-nav {
-		bottom: 0;
+		bottom: initial;
+		top: 50%;
 	}
 
 	.history-item {
@@ -5298,10 +5299,12 @@ footer {
 
 	.custom-prev {
 		margin-left: 10px;
+		float: left;
 	}
 
 	.custom-next {
 		margin-right: 10px;
+		float: right;
 	}
 
 	.about-expertise-slider {
