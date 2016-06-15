@@ -520,6 +520,9 @@
 			itemSelector: '.blog-item',
 			// columnWidth: 200
 		});
+
+		$('.page-loader').css('display', 'none');
+		$('body').css('overflow', 'visible');
 	});
 
 	var $grid = $('.campaign-holder').masonry({

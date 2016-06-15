@@ -58,26 +58,28 @@ if(!is_search()) {
 		?>
 
 		<section class="shop-banner <?php if(is_tax('collection')) { echo 'collection-banner'; } ?>" style="background-image: url(<?php echo $banner_img['url']; ?>);">
-			<div class="content">
-				<?php if(is_tax('collection')) : ?>
-					<div class="container">
-						<h3><?php the_field('collection_tagline', 'collection_' . $cat->term_id); ?></h3>
-					</div>
-				<?php else : ?>
-					<?php
-						$heading = get_field('heading', 'product_cat_' . $cat->term_id);
-						// if(!$heading) {
-						// 	$heading = woocommerce_page_title();
-						// }
-					?>
-					<?php if(get_field('heading', 'product_cat_' . $cat->term_id)) :
-						echo '<h1>' . $heading . '</h1>';
-					endif; ?>
-					<?php if(get_field('subheading', 'product_cat_' . $cat->term_id)) : ?>
-						<h2><?php the_field('subheading', 'product_cat_' . $cat->term_id); ?></h2>
+			<?php if(!is_tax('collection')) : ?>
+				<div class="content">
+					<?php if(is_tax('collection')) : ?>
+						<!-- <div class="container">
+							<h3><?php the_field('collection_tagline', 'collection_' . $cat->term_id); ?></h3>
+						</div> -->
+					<?php else : ?>
+						<?php
+							$heading = get_field('heading', 'product_cat_' . $cat->term_id);
+							// if(!$heading) {
+							// 	$heading = woocommerce_page_title();
+							// }
+						?>
+						<?php if(get_field('heading', 'product_cat_' . $cat->term_id)) :
+							echo '<h1>' . $heading . '</h1>';
+						endif; ?>
+						<?php if(get_field('subheading', 'product_cat_' . $cat->term_id)) : ?>
+							<h2><?php the_field('subheading', 'product_cat_' . $cat->term_id); ?></h2>
+						<?php endif; ?>
 					<?php endif; ?>
-				<?php endif; ?>
-			</div>
+				</div>
+			<?php endif; ?>
 		</section>
 
 		<section class="shop-filter">

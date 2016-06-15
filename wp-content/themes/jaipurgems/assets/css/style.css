@@ -1,46 +1,46 @@
 /* 
 =============================
-	 	  Font Face
+		  Font Face
 =============================
 */
 @font-face {
-    font-family: 'GothamLight';
-    src: url('../fonts/GothamLight/GothamLight.eot');
-    src: url('../fonts/GothamLight/GothamLight.eot') format('embedded-opentype'),
-         url('../fonts/GothamLight/GothamLight.woff2') format('woff2'),
-         url('../fonts/GothamLight/GothamLight.woff') format('woff'),
-         url('../fonts/GothamLight/GothamLight.ttf') format('truetype'),
-         url('../fonts/GothamLight/GothamLight.svg#GothamLight') format('svg');
+	font-family: 'GothamLight';
+	src: url('../fonts/GothamLight/GothamLight.eot');
+	src: url('../fonts/GothamLight/GothamLight.eot') format('embedded-opentype'),
+		 url('../fonts/GothamLight/GothamLight.woff2') format('woff2'),
+		 url('../fonts/GothamLight/GothamLight.woff') format('woff'),
+		 url('../fonts/GothamLight/GothamLight.ttf') format('truetype'),
+		 url('../fonts/GothamLight/GothamLight.svg#GothamLight') format('svg');
 }
 
 @font-face {
-    font-family: 'GothamBook';
-    src: url('../fonts/GothamBook/GothamBook.eot');
-    src: url('../fonts/GothamBook/GothamBook.eot') format('embedded-opentype'),
-         url('../fonts/GothamBook/GothamBook.woff2') format('woff2'),
-         url('../fonts/GothamBook/GothamBook.woff') format('woff'),
-         url('../fonts/GothamBook/GothamBook.ttf') format('truetype'),
-         url('../fonts/GothamBook/GothamBook.svg#GothamBook') format('svg');
+	font-family: 'GothamBook';
+	src: url('../fonts/GothamBook/GothamBook.eot');
+	src: url('../fonts/GothamBook/GothamBook.eot') format('embedded-opentype'),
+		 url('../fonts/GothamBook/GothamBook.woff2') format('woff2'),
+		 url('../fonts/GothamBook/GothamBook.woff') format('woff'),
+		 url('../fonts/GothamBook/GothamBook.ttf') format('truetype'),
+		 url('../fonts/GothamBook/GothamBook.svg#GothamBook') format('svg');
 }
 
 @font-face {
-    font-family: 'GothamLightItalic';
-    src: url('../fonts/GothamLightItalic/GothamLightItalic.eot');
-    src: url('../fonts/GothamLightItalic/GothamLightItalic.eot') format('embedded-opentype'),
-         url('../fonts/GothamLightItalic/GothamLightItalic.woff2') format('woff2'),
-         url('../fonts/GothamLightItalic/GothamLightItalic.woff') format('woff'),
-         url('../fonts/GothamLightItalic/GothamLightItalic.ttf') format('truetype'),
-         url('../fonts/GothamLightItalic/GothamLightItalic.svg#GothamLightItalic') format('svg');
+	font-family: 'GothamLightItalic';
+	src: url('../fonts/GothamLightItalic/GothamLightItalic.eot');
+	src: url('../fonts/GothamLightItalic/GothamLightItalic.eot') format('embedded-opentype'),
+		 url('../fonts/GothamLightItalic/GothamLightItalic.woff2') format('woff2'),
+		 url('../fonts/GothamLightItalic/GothamLightItalic.woff') format('woff'),
+		 url('../fonts/GothamLightItalic/GothamLightItalic.ttf') format('truetype'),
+		 url('../fonts/GothamLightItalic/GothamLightItalic.svg#GothamLightItalic') format('svg');
 }
 
 @font-face {
-    font-family: 'HVDFontsNiveauGroteskLightSmallCaps';
-    src: url('../fonts/HVDFontsNiveauGroteskLightSmallCaps/HVDFontsNiveauGroteskLightSmallCaps.eot');
-    src: url('../fonts/HVDFontsNiveauGroteskLightSmallCaps/HVDFontsNiveauGroteskLightSmallCaps.eot') format('embedded-opentype'),
-         url('../fonts/HVDFontsNiveauGroteskLightSmallCaps/HVDFontsNiveauGroteskLightSmallCaps.woff2') format('woff2'),
-         url('../fonts/HVDFontsNiveauGroteskLightSmallCaps/HVDFontsNiveauGroteskLightSmallCaps.woff') format('woff'),
-         url('../fonts/HVDFontsNiveauGroteskLightSmallCaps/HVDFontsNiveauGroteskLightSmallCaps.ttf') format('truetype'),
-         url('../fonts/HVDFontsNiveauGroteskLightSmallCaps/HVDFontsNiveauGroteskLightSmallCaps.svg#HVDFontsNiveauGroteskLightSmallCaps') format('svg');
+	font-family: 'HVDFontsNiveauGroteskLightSmallCaps';
+	src: url('../fonts/HVDFontsNiveauGroteskLightSmallCaps/HVDFontsNiveauGroteskLightSmallCaps.eot');
+	src: url('../fonts/HVDFontsNiveauGroteskLightSmallCaps/HVDFontsNiveauGroteskLightSmallCaps.eot') format('embedded-opentype'),
+		 url('../fonts/HVDFontsNiveauGroteskLightSmallCaps/HVDFontsNiveauGroteskLightSmallCaps.woff2') format('woff2'),
+		 url('../fonts/HVDFontsNiveauGroteskLightSmallCaps/HVDFontsNiveauGroteskLightSmallCaps.woff') format('woff'),
+		 url('../fonts/HVDFontsNiveauGroteskLightSmallCaps/HVDFontsNiveauGroteskLightSmallCaps.ttf') format('truetype'),
+		 url('../fonts/HVDFontsNiveauGroteskLightSmallCaps/HVDFontsNiveauGroteskLightSmallCaps.svg#HVDFontsNiveauGroteskLightSmallCaps') format('svg');
 }
 
 body {
@@ -49,6 +49,7 @@ body {
 	font-size: 13px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
 }
 
 .clearfix {
@@ -260,7 +261,7 @@ body {
 		background: none;
 		font-family: 'GothamBook';
 		/*-webkit-transition: all 0.3s linear;*/
-		    	/*transition: all 0.3s linear;*/
+				/*transition: all 0.3s linear;*/
 	}
 
 		.navbar-default .navbar-nav > li > a:hover {
@@ -384,10 +385,10 @@ body {
 			transform: translateY(-50%);
 			object-fit: cover;
 			object-position: center right;
-		    height: 100%;
-		    width: 100%;
-		    display: none;
-		    left: 0;
+			height: 100%;
+			width: 100%;
+			display: none;
+			left: 0;
 		}
 
 		.dropdown-sub li:first-child img {
@@ -418,44 +419,44 @@ body {
 
 
 .search-bar {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.9);
-    z-index: 999;
-    height: 100vh;
-    width: 100%;
-    padding-top: 50px;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.9);
+	z-index: 999;
+	height: 100vh;
+	width: 100%;
+	padding-top: 50px;
 }
 
 	.search-bar .open-search {
-	    background: #b5985a;
-	    padding: 8px 12px;
-	    float: right;
-	    color: #fff;
-	    line-height: 1;
-	    cursor: pointer;
+		background: #b5985a;
+		padding: 8px 12px;
+		float: right;
+		color: #fff;
+		line-height: 1;
+		cursor: pointer;
 	}
 
 	.search-bar .nav-search span {
-	    padding: 10px 14px;
-	    margin: 0;
+		padding: 10px 14px;
+		margin: 0;
 	}
 
 	.search-box {
-	    margin-top: 70px;
-	    overflow: hidden;
+		margin-top: 70px;
+		overflow: hidden;
 	}
 
 	.search-box input[type="text"] {
-	    font-size: 21px;
-	    color: #fff;
-	    background: transparent;
-	    border: 2px solid #fff;
-	    padding: 20px;
-	    width: 100%;
-	    font-family: 'GothamBook';
+		font-size: 21px;
+		color: #fff;
+		background: transparent;
+		border: 2px solid #fff;
+		padding: 20px;
+		width: 100%;
+		font-family: 'GothamBook';
 	}
 
 	.search-box input[type="text"] ::-webkit-input-placeholder,
@@ -467,12 +468,12 @@ body {
 	}
 
 	.search-box button {
-	    border: 0;
-	    background: none;
-	    color: #fff;
-	    font-size: 55px;
-	    padding: 4px 15px 0 15px;
-	    /*margin-top: -8px;*/
+		border: 0;
+		background: none;
+		color: #fff;
+		font-size: 55px;
+		padding: 4px 15px 0 15px;
+		/*margin-top: -8px;*/
 	}
 
 #navbar {
@@ -493,11 +494,69 @@ body {
 	.fixed-logo img {
 		max-height: 30px;
 	}
+
+.page-loader {
+	height: 100vh;
+	background: rgba(0,0,0,0.5);
+	text-align: center;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+}
+
+	.page-loader img {
+		position: relative;
+		max-height: 70px;
+		top: 50%;
+		margin-top: -35px;
+	}
+
+	#slidecaption {
+		-webkit-animation-name: spinner; 
+		-webkit-animation-timing-function: linear; 
+		-webkit-animation-iteration-count: infinite; 
+		-webkit-animation-duration: 2s; 
+		animation-name: spinner; 
+		animation-timing-function: linear; 
+		animation-iteration-count: infinite; 
+		animation-duration: 2s; 
+		-webkit-transform-style: preserve-3d; 
+		-moz-transform-style: preserve-3d; 
+		-ms-transform-style: preserve-3d; 
+		transform-style: preserve-3d;
+	}
+
+
+	/* WebKit and Opera browsers */ 
+	@-webkit-keyframes spinner { 
+		from 
+		{ 
+			-webkit-transform: rotateY(0deg); 
+		} 
+		to { 
+			-webkit-transform: rotateY(-360deg); 
+		} 
+	} 
+	/* all other browsers */ 
+	@keyframes spinner { 
+		from { 
+			-moz-transform: rotateY(0deg); 
+			-ms-transform: rotateY(0deg); 
+			transform: rotateY(0deg); 
+		} 
+		to 
+		{ 
+			-moz-transform: rotateY(-360deg); 
+			-ms-transform: rotateY(-360deg); 
+			transform: rotateY(-360deg); 
+
+		} 
+	}
 	
 
 /* 
 =============================
-	 	   Banner
+		   Banner
 =============================
 */
 
@@ -516,8 +575,8 @@ body {
 		left: 100px;
 		-webkit-transform: translateY(-50%);
 		   -moz-transform: translateY(-50%);
-		    -ms-transform: translateY(-50%);
-		    	transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
 	}
 
 	.home-slide h1 span {
@@ -550,7 +609,7 @@ body {
 
 /* 
 =============================
-	 	  Expertise
+		  Expertise
 =============================
 */
 
@@ -593,7 +652,7 @@ body {
 		color: #000;
 		text-align: center;
 		-webkit-transition: all 0.3s linear;
-		    	transition: all 0.3s linear;
+				transition: all 0.3s linear;
 	}
 
 		.tile-link:before {
@@ -603,8 +662,8 @@ body {
 			left: 50%;
 			-webkit-transform: translateX(-50%);
 			   -moz-transform: translateX(-50%);
-			    -ms-transform: translateX(-50%);
-			    	transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+					transform: translateX(-50%);
 		}
 
 		.tile-link:hover {
@@ -666,8 +725,8 @@ body {
 		top: 50%;
 		-webkit-transform: translateY(-50%);
 		   -moz-transform: translateY(-50%);
-		    -ms-transform: translateY(-50%);
-		    	transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
 	}
 
 	.bangles-content {
@@ -676,15 +735,15 @@ body {
 		top: 65%;
 		-webkit-transform: translateY(-50%);
 		   -moz-transform: translateY(-50%);
-		    -ms-transform: translateY(-50%);
-		    	transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
 	}
 
 	.necklaces-tile:hover img,
 	.earrings-tile:hover img,
 	.bangles-tile:hover img {
 		-webkit-filter: grayscale(95%);
-		    	filter: grayscale(95%);
+				filter: grayscale(95%);
 	}
 
 	.earrings-tile img:nth-last-of-type(1),
@@ -713,8 +772,8 @@ body {
 			top: 50%;
 			-webkit-transform: translateY(-50%);
 			   -moz-transform: translateY(-50%);
-			    -ms-transform: translateY(-50%);
-			    	transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+					transform: translateY(-50%);
 		}
 
 			.gems-content h1 {
@@ -845,8 +904,8 @@ body {
 				top: 50%;
 				-webkit-transform: translateY(-50%);
 				   -moz-transform: translateY(-50%);
-				    -ms-transform: translateY(-50%);
-				    	transform: translateY(-50%);
+					-ms-transform: translateY(-50%);
+						transform: translateY(-50%);
 			}
 
 				.diamonds-content h1 {
@@ -867,15 +926,15 @@ body {
 				top: 50%;
 				-webkit-transform: translateY(-50%);
 				   -moz-transform: translateY(-50%);
-				    -ms-transform: translateY(-50%);
-				    	transform: translateY(-50%);
+					-ms-transform: translateY(-50%);
+						transform: translateY(-50%);
 			}
 
 	.diamonds-tile:hover img,
 	.rajputana-tile:hover img,
 	.gems-tile:hover img {
 		-webkit-filter: grayscale(95%);
-		    	filter: grayscale(95%);
+				filter: grayscale(95%);
 	}
 
 /* 
@@ -905,8 +964,8 @@ body {
 		top: 55%;
 		-webkit-transform: translateY(-50%);
 		   -moz-transform: translateY(-50%);
-		    -ms-transform: translateY(-50%);
-		    	transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
 	}
 
 		.princess-content h1 {
@@ -931,7 +990,7 @@ body {
 	.princess-tile:hover img,
 	.history-tile:hover img {
 		-webkit-filter: grayscale(95%);
-		    	filter: grayscale(95%);
+				filter: grayscale(95%);
 	}
 
 /* 
@@ -1059,7 +1118,7 @@ footer {
 		border: 0;
 		font-weight: bold;
 		-webkit-transition: all 0.3s linear;
-		    	transition: all 0.3s linear;
+				transition: all 0.3s linear;
 	}
 
 		.footer-top button:hover {
@@ -1084,7 +1143,7 @@ footer {
 			line-height: 42px;
 			text-align: center;
 			-webkit-transition: all 0.3s linear;
-			    	transition: all 0.3s linear;
+					transition: all 0.3s linear;
 		}
 
 			.footer-social a:hover {
@@ -1111,9 +1170,9 @@ footer {
 		.footer-menu h3 span {
 			display: none;
 			font-size: 9px;
-		    position: absolute;
-		    right: -15px;
-		    top: 1px;
+			position: absolute;
+			right: -15px;
+			top: 1px;
 		}
 
 	.footer-menu ul {
@@ -1128,10 +1187,10 @@ footer {
 		color: #5d5d5d;
 		font-weight: bold;
 		letter-spacing: 1px;
-	    display: block;
-	    margin-bottom: 4px;
-	    -webkit-transition: all 0.3s linear;
-	        	transition: all 0.3s linear;
+		display: block;
+		margin-bottom: 4px;
+		-webkit-transition: all 0.3s linear;
+				transition: all 0.3s linear;
 	}
 
 		.footer-menu li a:hover {
@@ -1142,7 +1201,7 @@ footer {
 	.locator a {
 		color: #b9b9b9;
 		-webkit-transition: all 0.3s linear;
-		    	transition: all 0.3s linear;
+				transition: all 0.3s linear;
 	}
 
 		.locator a:hover,
@@ -1233,35 +1292,35 @@ footer {
 
 		#appointmentForm ::-webkit-input-placeholder,
 			#contactForm ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-		  	color: #777;
-		  	font-family: 'GothamBook';
-		  	font-size: 11px;
-		  	text-transform: none;
-		  	text-align: left;
+			color: #777;
+			font-family: 'GothamBook';
+			font-size: 11px;
+			text-transform: none;
+			text-align: left;
 		}
 		#appointmentForm ::-moz-placeholder,
 			#contactForm ::-moz-placeholder { /* Firefox 19+ */
-		  	color: #777;
-		  	font-family: 'GothamBook';
-		  	font-size: 11px;
-		  	text-transform: none;
-		  	text-align: left;
+			color: #777;
+			font-family: 'GothamBook';
+			font-size: 11px;
+			text-transform: none;
+			text-align: left;
 		}
 		#appointmentForm :-ms-input-placeholder,
 			#contactForm :-ms-input-placeholder { /* IE 10+ */
-		  		color: #777;
-		  		font-family: 'GothamBook';
-		  		font-size: 11px;
-		  		text-transform: none;
-		  		text-align: left;
+				color: #777;
+				font-family: 'GothamBook';
+				font-size: 11px;
+				text-transform: none;
+				text-align: left;
 		}
 		#appointmentForm :-moz-placeholder,
 			#contactForm :-moz-placeholder { /* Firefox 18- */
-			  	color: #777;
-			  	font-family: 'GothamBook';
-			  	font-size: 11px;
-			  	text-transform: none;
-			  	text-align: left;
+				color: #777;
+				font-family: 'GothamBook';
+				font-size: 11px;
+				text-transform: none;
+				text-align: left;
 		}
 
 	#snrModal h5 {
@@ -1459,55 +1518,55 @@ footer {
 		}
 
 	.cd-top {
-	    width: 40px;
-	    height: 40px;
-	    display: block;
-	    position: fixed;
-	    bottom: 30px;
-	    right: 30px;
-	    background: #252525;
-	    opacity: 0.5;
-	    /*border-radius: 50%;*/
-	    text-align: center;
-	    visibility: hidden;
+		width: 40px;
+		height: 40px;
+		display: block;
+		position: fixed;
+		bottom: 30px;
+		right: 30px;
+		background: #252525;
+		opacity: 0.5;
+		/*border-radius: 50%;*/
+		text-align: center;
+		visibility: hidden;
 	}
 
 	.cd-top:hover {
-	    opacity: 1 !important;
+		opacity: 1 !important;
 	}
 
 	.cd-top span {
-	    color: #fff;
-	    line-height: 38px;
-	    font-size: 24px;
+		color: #fff;
+		line-height: 38px;
+		font-size: 24px;
 	}
 
 	.cd-top span:hover {
-	    color: #fff;
+		color: #fff;
 	}
 
 	.cd-top.cd-is-visible,
 	.cd-top.cd-fade-out,
 	.no-touch .cd-top:hover {
-	    -webkit-transition: opacity .3s 0s, visibility 0s 0s;
-	    -moz-transition: opacity .3s 0s, visibility 0s 0s;
-	    transition: opacity .3s 0s, visibility 0s 0s;
+		-webkit-transition: opacity .3s 0s, visibility 0s 0s;
+		-moz-transition: opacity .3s 0s, visibility 0s 0s;
+		transition: opacity .3s 0s, visibility 0s 0s;
 	}
 
 	.cd-top.cd-is-visible {
-	    /* the button becomes visible */
-	    visibility: visible;
-	    opacity: 1;
+		/* the button becomes visible */
+		visibility: visible;
+		opacity: 1;
 	}
 
 	.cd-top.cd-fade-out {
-	    /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
-	    opacity: .4;
+		/* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+		opacity: .4;
 	}
 
 	.no-touch .cd-top:hover {
-	    background-color: #bf1f39;
-	    opacity: 1;
+		background-color: #bf1f39;
+		opacity: 1;
 	}
 
 /* 
@@ -1569,12 +1628,12 @@ footer {
 	
 	.blogs h1 {
 		font-family: 'GothamBook';
-	    font-size: 28px;
-	    text-transform: uppercase;
-	    margin: 0;
-	    display: inline-block;
-	    background: #fff;
-	    padding-right: 10px;
+		font-size: 28px;
+		text-transform: uppercase;
+		margin: 0;
+		display: inline-block;
+		background: #fff;
+		padding-right: 10px;
 	}
 
 	.blog-title h2 {
@@ -2092,19 +2151,19 @@ footer {
 	}
 
 	.video-container {
-	    position: relative;
-	    padding-bottom: 56.25%;
-	    padding-top: 35px;
-	    height: 0;
-	    overflow: hidden;
+		position: relative;
+		padding-bottom: 56.25%;
+		padding-top: 35px;
+		height: 0;
+		overflow: hidden;
 	}
 
 		.video-container iframe {
-		    position: absolute;
-		    top:0;
-		    left: 0;
-		    width: 100%;
-		    height: 100%;
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 		}
 
 	.owner p {
@@ -2445,8 +2504,8 @@ footer {
 			top: 50%;
 			-webkit-transform: translateY(-50%);
 			   -moz-transform: translateY(-50%);
-			    -ms-transform: translateY(-50%);
-			    	transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+					transform: translateY(-50%);
 		}
 
 		.ph-tile .content a {
@@ -2613,8 +2672,8 @@ footer {
 			position: relative;
 			-webkit-transform: translateY(-50%);
 			   -moz-transform: translateY(-50%);
-			    -ms-transform: translateY(-50%);
-			    	transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+					transform: translateY(-50%);
 		}
 
 			.latest-item .content h3:after {
@@ -2716,8 +2775,8 @@ footer {
 		top: 50%;
 		-webkit-transform: translateY(-50%);
 		   -moz-transform: translateY(-50%);
-		    -ms-transform: translateY(-50%);
-		    	transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
 	}
 
 	.shop-banner h1 {
@@ -2744,9 +2803,9 @@ footer {
 	.sort-categories li:first-child button {
 		display: none;
 		font-size: 14px;
-	    text-transform: uppercase;
-	    color: #a48c5a;
-	    font-family: 'GothamBook';
+		text-transform: uppercase;
+		color: #a48c5a;
+		font-family: 'GothamBook';
 	}
 
 	.mobile-filter {
@@ -3348,7 +3407,7 @@ footer {
 			letter-spacing: 1px;
 			text-decoration: underline;
 			float: right;
-		    line-height: 46px;
+			line-height: 46px;
 		}
 
 		#sizeChart .modal-body {
@@ -4060,9 +4119,9 @@ footer {
 		background: none;
 	}
 
- 	#add_payment_method #payment div.payment_box, .woocommerce-checkout #payment div.payment_box:before {
- 		content: none;
- 	}
+	#add_payment_method #payment div.payment_box, .woocommerce-checkout #payment div.payment_box:before {
+		content: none;
+	}
 
 	.woocommerce-checkout #payment div.form-row {
 		text-align: center;
@@ -4233,14 +4292,14 @@ footer {
 
 	.my-account .register input[type="submit"] {
 		background: #252525;
-	    color: #fff;
-	    font-family: 'GothamBook';
-	    font-size: 14px;
-	    line-height: 35px;
-	    border-radius: 0;
-	    padding: 0 15px;
-	    margin-top: 10px;
-	    min-width: 147px;
+		color: #fff;
+		font-family: 'GothamBook';
+		font-size: 14px;
+		line-height: 35px;
+		border-radius: 0;
+		padding: 0 15px;
+		margin-top: 10px;
+		min-width: 147px;
 	}
 
 		.my-account .register input[type="submit"]:disabled[disabled] {
@@ -4319,8 +4378,8 @@ footer {
 		top: 50%;
 		-webkit-transform: translateY(-50%);
 		   -moz-transform: translateY(-50%);
-		   	-ms-transform: translateY(-50%);
-		   		transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
 	}
 
 	/*.collection > a {
@@ -4375,8 +4434,8 @@ footer {
 	bottom: 0;
 	-webkit-transform: none;
 	   -moz-transform: none;
-	    -ms-transform: none;
-	    	transform: none;
+		-ms-transform: none;
+			transform: none;
 }
 
 	.collection-banner .content h3 {
@@ -4399,8 +4458,8 @@ footer {
 
 /* Store locator */
 .store-map {
-    width: 100%;
-    height: 75vh;
+	width: 100%;
+	height: 75vh;
 }
 
 	.more-button {
@@ -4411,7 +4470,7 @@ footer {
 		color: #fff;
 		text-transform: uppercase;
 		font-family: 'GothamBook';
-	    padding: 15px 30px;
+		padding: 15px 30px;
 	}
 
 		.more-button:hover,
@@ -4421,77 +4480,77 @@ footer {
 		}
 
 	.store-map .map-list {
-	    width: 30%;
-	    background: #fff;
-	    float: left;
-	    display: flex;
-	    flex-flow: column;
-	    height: 100%;
-	    padding: 10px;
-	    box-sizing: border-box;
+		width: 30%;
+		background: #fff;
+		float: left;
+		display: flex;
+		flex-flow: column;
+		height: 100%;
+		padding: 10px;
+		box-sizing: border-box;
 	}
 
 		.map-list .inner {
-		    display: flex;
-		    flex-flow: column;
-		    height: 100%;
+			display: flex;
+			flex-flow: column;
+			height: 100%;
 		}
 
 		.map-list h1 {
-		    font-weight: lighter;
-		    font-size: 20px;
-		    text-transform: uppercase;
-		    color: #111;
+			font-weight: lighter;
+			font-size: 20px;
+			text-transform: uppercase;
+			color: #111;
 		}
 
 		.map-list .search {
-		    background: #ccc;
-		    padding: 5px;
-		    margin: 10px 0;
-		    overflow: hidden;
-		    min-height: 50px;
+			background: #ccc;
+			padding: 5px;
+			margin: 10px 0;
+			overflow: hidden;
+			min-height: 50px;
 		}
 
 		.map-list .search input {
-		    width: 70%;
-		    border: none;
-		    height: 40px;
-		    line-height: 40px;
-		    padding: 0px 10px;
-		    box-sizing: border-box;
-		    float: left;
+			width: 70%;
+			border: none;
+			height: 40px;
+			line-height: 40px;
+			padding: 0px 10px;
+			box-sizing: border-box;
+			float: left;
 		}
 
 		.map-list .search button {
-		    width: 30%;
-		    height: 40px;
-		    text-align: center;
-		    box-sizing: border-box;
-		    padding: 0;
-		    float: right;
-		    cursor: pointer;
+			width: 30%;
+			height: 40px;
+			text-align: center;
+			box-sizing: border-box;
+			padding: 0;
+			float: right;
+			cursor: pointer;
 		}
 
 		.show-around {
-		    text-align: center;
-		    padding: 20px 0;
+			text-align: center;
+			padding: 20px 0;
 		}
 
 			.show-around .more-button {
-			    display: inline-block;
-			    margin: 5px auto;
+				display: inline-block;
+				margin: 5px auto;
 			}
 
 		.map-list .results {
-		    border-top: 1px solid #cdcdcd;
-		    overflow: auto;
-		    padding-bottom: 10px;
+			border-top: 1px solid #cdcdcd;
+			overflow: auto;
+			padding-bottom: 10px;
 		}
 
 			.map-list .results li {
-			    margin: 10px 0;
-			    list-style: none;
-			    cursor: pointer;
+				margin: 10px 0;
+				list-style: none;
+				cursor: pointer;
 			}
 
 			.map-list .results li h2 {
@@ -4501,10 +4560,10 @@ footer {
 			}
 
 	.store-map .map {
-	    width: 70%;
-	    height: 100%;
-	    background: #efefef;
-	    float: left;
+		width: 70%;
+		height: 100%;
+		background: #efefef;
+		float: left;
 	}
 
 		#map_canvas h2 {
@@ -4525,10 +4584,10 @@ footer {
 	}
 
 	.all-stores h3 {
-	    font-size: 20px;
-	    text-transform: uppercase;
-	    font-family: 'GothamBook';
-	    margin: 0 0 5px;
+		font-size: 20px;
+		text-transform: uppercase;
+		font-family: 'GothamBook';
+		margin: 0 0 5px;
 	}
 
 	.all-stores .col-md-4 a {
@@ -4704,7 +4763,7 @@ footer {
 			::-moz-placeholder,
 			:-ms-input-placeholder,
 			:-moz-placeholder { /* Chrome/Opera/Safari */
-			  	text-align: center;
+				text-align: center;
 			}
 
 		.header-right-bottom {
@@ -5010,41 +5069,41 @@ footer {
 
 
 	.navbar-header {
-        float: none;
-    }
-    .navbar-left,.navbar-right {
-        float: none !important;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-fixed-top {
+		float: none;
+	}
+	.navbar-left,.navbar-right {
+		float: none !important;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+	.navbar-fixed-top {
 		top: 0;
 		border-width: 0 0 1px;
 		background: rgba(0,0,0,0.6) !important;
 		bottom: initial !important;
 		position: fixed !important;
 	}
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
+	.navbar-collapse.collapse {
+		display: none!important;
+	}
+	.navbar-nav {
+		float: none!important;
 		margin-top: 7.5px;
 	}
 	.navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .collapse.in{
-  		display:block !important;
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.collapse.in{
+		display:block !important;
 	}
 
 		.navbar-default .navbar-nav > li > a:focus {
@@ -5617,20 +5676,20 @@ footer {
 	}
 
 	.store-map {
-	    height: auto;
+		height: auto;
 	}
 
 	.store-map .map-list {
-	    width: 100%;
-	    float: none;
-	    display: block;
-	    height: auto;
+		width: 100%;
+		float: none;
+		display: block;
+		height: auto;
 	}
 
 	.store-map .map {
-	    width: 100%;
-	    float: none;
-	    height: 300px;
+		width: 100%;
+		float: none;
+		height: 300px;
 	}
 
 }
@@ -5638,14 +5697,14 @@ footer {
 
 @media only screen and (max-width : 568px) {
 	.cd-top {
-	    width: 30px;
-	    height: 30px;
-	    right: 15px;
+		width: 30px;
+		height: 30px;
+		right: 15px;
 	}
 
 	.cd-top span {
-	    line-height: 28px;
-	    font-size: 18px;
+		line-height: 28px;
+		font-size: 18px;
 	}
 
 	.collections-home {
@@ -5823,10 +5882,10 @@ footer {
 
 			.find-jewellery .tile-link:before {
 				content: '';
-			    background: #000;
-			    width: 140px;
-			    height: 1px;
-			    top: -10px;
+				background: #000;
+				width: 140px;
+				height: 1px;
+				top: -10px;
 			}
 
 	.footer-bottom {
@@ -5898,12 +5957,12 @@ footer {
 
 	.bangles-content {
 		left: 10px;
-	    top: initial;
-	    bottom: 10px;
-	    -webkit-transform: none; 
-	       -moz-transform: none;
-	        -ms-transform: none;
-	    		transform: none; 
+		top: initial;
+		bottom: 10px;
+		-webkit-transform: none; 
+		   -moz-transform: none;
+			-ms-transform: none;
+				transform: none; 
 	}
 
 	.history-item .content {
@@ -5922,10 +5981,15 @@ footer {
 	}
 
 	#rc-imageselect, .g-recaptcha, .recaptcha-holder {
-	    transform: scale(0.77);
-	    -webkit-transform: scale(0.77);
-	    transform-origin: 0 0;
-	    -webkit-transform-origin: 0 0;
+		transform: scale(0.77);
+		-webkit-transform: scale(0.77);
+		transform-origin: 0 0;
+		-webkit-transform-origin: 0 0;
+	}
+
+	.collection .overlay h2 {
+		margin: 20px 0 0;
+		font-size: 24px;
 	}
 
 }

@@ -27,6 +27,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+    <div class="page-loader">
+        <img id="slidecaption" src="<?php echo get_template_directory_uri(); ?>/assets/images/crown.png" />
+    </div>
 	<header>
         <div class="navbar-top">
             <div class="header-left">
