@@ -129,7 +129,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 
 h1 {
-    color: #fff;
+    color: #fff !important;
     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     font-size: 30px;
     font-weight: 300;
