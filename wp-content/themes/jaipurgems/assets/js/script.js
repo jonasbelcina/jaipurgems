@@ -15,7 +15,7 @@
 			items: 1,
 			nav: true,
 			navText: true,
-			dots: false
+			dots: false,
 			// loop: true,
 			// animateOut: 'fadeOut',
 			autoplay: true
@@ -94,7 +94,7 @@
 			owl.on('initialized.owl.carousel', function( event ){
 				$('.history-slider .owl-item:nth-of-type(1)').addClass('current');
 			});
-			
+
 			owl.owlCarousel({
 				items: 3,
 				nav: true,
