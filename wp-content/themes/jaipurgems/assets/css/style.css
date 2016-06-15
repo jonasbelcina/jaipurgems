@@ -2571,10 +2571,11 @@ footer {
 		}
 
 		.product-line .tab-content p {
-			font-size: 18px;
+			font-size: 16px;
 			color: #000;
 			text-align: justify;
 			margin-bottom: 13px;
+			line-height: 24px;
 		}
 
 		.product-line .tab-content img {
@@ -4219,6 +4220,26 @@ footer {
 		border: 1px solid #e3e3e3;
 		height: 28px;
 	}
+
+	.myaccount_user {
+		margin-bottom: 20px;
+	}
+
+	.myaccount_user a,
+	.addresses a {
+		color: #b5985a;
+		font-family: 'GothamBook';
+	}
+
+	.addresses {
+		margin-top: 30px;
+	}
+
+		.address header.title {
+			margin: 0 0 15px;
+			padding: 0 0 10px;
+			border-bottom: 1px solid #e3e3e3;
+		}
 
 /* 
 =============================
