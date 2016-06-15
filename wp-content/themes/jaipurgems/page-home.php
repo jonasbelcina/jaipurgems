@@ -15,13 +15,15 @@ get_header(); ?>
 		<div class="home-slides">
 			<?php while ( have_rows('home_slides') ) : the_row(); ?>
 				<div class="home-slide">
-					<?php
-						$sub_image = get_sub_field('image');
-						$mobile_image = get_sub_field('image_mobile');
-					?>
-					<img src="<?php echo $sub_image['url']; ?>" alt="<?php echo $sub_image['alt']; ?>" />
-					<img src="<?php echo $mobile_image['url']; ?>" alt="<?php echo $mobile_image['alt']; ?>" />
-					<h1><?php the_sub_field('text'); ?></h1>
+					<a href="<?php the_sub_field('link'); ?>">
+						<?php
+							$sub_image = get_sub_field('image');
+							$mobile_image = get_sub_field('image_mobile');
+						?>
+						<img src="<?php echo $sub_image['url']; ?>" alt="<?php echo $sub_image['alt']; ?>" />
+						<img src="<?php echo $mobile_image['url']; ?>" alt="<?php echo $mobile_image['alt']; ?>" />
+						<h1><?php the_sub_field('text'); ?></h1>
+					</a>
 				</div>
 			<?php endwhile; ?>
 		</div>

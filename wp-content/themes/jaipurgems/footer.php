@@ -68,7 +68,7 @@
 									<h3>Maison <span class="glyphicon glyphicon-plus"></span></h3>
 									<ul>
 										<li><a href="<?php echo home_url(); ?>/about-us">Our Legacy</a></li>
-										<li><a href="#">Philanthropy</a></li>
+										<li><a href="<?php echo home_url(); ?>/events">Philanthropy</a></li>
 										<li><a href="<?php echo home_url(); ?>/product-category/jewellery">Product Line</a></li>
 										<li><a href="<?php echo home_url(); ?>/blog">News</a></li>
 									</ul>
