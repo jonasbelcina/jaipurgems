@@ -90,7 +90,7 @@ get_header(); ?>
 			<div class="history-year">
 				<?php if( have_rows('timeline') ): $ctr = 1; ?>
 					<?php while ( have_rows('timeline') ) : the_row(); ?>
-						<div class="<?php if($ctr == 1) { ?>current<?php } ?>"><span><?php the_sub_field('year'); ?></span></div>
+						<div><span><?php the_sub_field('year'); ?></span></div>
 						<?php $ctr++; ?>
 					<?php endwhile; ?>
 				<?php endif; ?>

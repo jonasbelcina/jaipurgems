@@ -23,71 +23,172 @@
 
 		// About Us - History slider
 		var owl = $('.history-slider');
+		var hist = $('.history-year');
 
-		owl.on('initialized.owl.carousel', function( event ){
-			$('.history-slider .owl-item:nth-of-type(1)').addClass('current');
-		});
+		var ww = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+		if(ww > 991) {
+			owl.on('initialized.owl.carousel', function( event ){
+				// $('.history-slider .owl-item:nth-of-type(1)').addClass('current');
+				$('.history-slider .owl-item:nth-of-type(1)').addClass('initial');
+				$('.history-slider .owl-item:nth-of-type(2)').addClass('current');
+				// $('.history-slider .owl-item:nth-of-type(3)').addClass('current');
+			});
 
-		owl.owlCarousel({
-			items: 3,
-			nav: true,
-			navText: false,
-			// loop: true,
-			dots: false,
-			touchDrag  : false,
-			mouseDrag  : false,
-			// center: true,
-			responsive : {
-				991 : {
-					items : 3,
-					onResized: removeLast
+			owl.owlCarousel({
+				items: 3,
+				nav: true,
+				navText: false,
+				// loop: true,
+				dots: false,
+				touchDrag  : false,
+				mouseDrag  : false,
+				center: true,
+				responsive : {
+					991 : {
+						items : 3,
+						// onResized: removeLast
+					},
+					767: {
+						items: 2,
+					},
+					0 : {
+						items : 1,
+					}
 				},
-				767: {
-					items: 2,
+				URLhashListener:true,
+	            startPosition: 1
+				// animateOut: 'fadeOut',
+				// autoplay: true
+				// afterInit: addCurrent
+			});
+
+			hist.on('initialized.owl.carousel', function( event ){
+				$('.history-year .owl-item:nth-of-type(1)').addClass('initial');
+			});
+
+			hist.owlCarousel({
+				items: 3,
+				nav: true,
+				navText: false,
+				// loop: true,
+				dots: false,
+				touchDrag  : false,
+				mouseDrag  : false,
+				center: true,
+				responsive : {
+					991 : {
+						items : 3,
+						// onResized: removeLast
+					},
+					767: {
+						items: 2,
+					},
+					0 : {
+						items : 1,
+					}
 				},
-				0 : {
-					items : 1,
-				}
-			},
-			// animateOut: 'fadeOut',
-			// autoplay: true
-			// afterInit: addCurrent
-		});
+				URLhashListener:true,
+	            startPosition: 1
+			});
+		} else {
+			owl.on('initialized.owl.carousel', function( event ){
+				$('.history-slider .owl-item:nth-of-type(1)').addClass('current');
+			});
+			
+			owl.owlCarousel({
+				items: 3,
+				nav: true,
+				navText: false,
+				// loop: true,
+				dots: false,
+				touchDrag  : false,
+				mouseDrag  : false,
+				center: true,
+				responsive : {
+					991 : {
+						items : 3,
+						// onResized: removeLast
+					},
+					767: {
+						items: 2,
+					},
+					0 : {
+						items : 1,
+					}
+				},
+				// animateOut: 'fadeOut',
+				// autoplay: true
+				// afterInit: addCurrent
+			});
+
+			hist.owlCarousel({
+				items: 3,
+				nav: true,
+				navText: false,
+				// loop: true,
+				dots: false,
+				touchDrag  : false,
+				mouseDrag  : false,
+				center: true,
+				responsive : {
+					991 : {
+						items : 3,
+						// onResized: removeLast
+					},
+					767: {
+						items: 2,
+					},
+					0 : {
+						items : 1,
+					}
+				},
+			});
+		}
 
 		$('.custom-next').on('click', function() {
 			var current = $('.owl-item.current');
-			var currentYear = $('.history-year .current');
+			// var currentYear = $('.history-year .center');
+
+			if($('.history-slider .owl-item:nth-of-type(1)').hasClass('initial')) {
+				$('.history-slider .owl-item:nth-of-type(1)').removeClass('initial');
+			}
+
+			if($('.history-year .owl-item:nth-of-type(1)').hasClass('initial')) {
+				$('.history-year .owl-item:nth-of-type(1)').removeClass('initial');
+			}
 
 			if(current.next('.owl-item').length) {
-				if(!current.next('.owl-item').hasClass('active')) {
+				// if(!current.next('.owl-item').hasClass('active')) {
 					owl.trigger('next.owl.carousel');
-				}
+					hist.trigger('next.owl.carousel');
+				// }
 
 				current.removeClass('current');
 				// current.find('.history-item').css('opacity', '1');
 				// current.find('.history-item').css('opacity', '0.4');
 				current.next('.owl-item').addClass('current');
 
-				currentYear.removeClass('current');
-				currentYear.next('div').addClass('current');
+				// currentYear.removeClass('center');
+				// currentYear.next('owl-item').addClass('center');
 			}
 		});
 
 		$('.custom-prev').on('click', function() {
 			var current = $('.owl-item.current');
-			var currentYear = $('.history-year .current');
+			// var currentYear = $('.history-year .center');
 
 			if(current.prev('.owl-item').length) {
-				if(!current.prev('.owl-item').hasClass('active')) {
+				// if(!current.prev('.owl-item').hasClass('active')) {
 					owl.trigger('prev.owl.carousel');
-				}
+					hist.trigger('prev.owl.carousel');
+				// }
 
 				current.removeClass('current');
 				// current.find('.history-item').css('opacity', '0.4');
 				current.prev('.owl-item').addClass('current');
 
-				currentYear.removeClass('current');
-				currentYear.prev('div').addClass('current');
+				// currentYear.removeClass('center');
+				// currentYear.prev('.owl-item').addClass('center');
 			}
 		});
 
@@ -96,7 +197,7 @@
 			// console.log('removed');
 		}
 
-		removeLast();
+		// removeLast();
 
 		// About Us - Expertise slider
 		$('.about-expertise-slider').owlCarousel({
