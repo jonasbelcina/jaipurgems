@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php else : ?>
 
-			<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
+			<p class="woocommerce-thankyou-order-received order-thankyou"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received. Please check your inbox for your order details.', 'woocommerce' ), $order ); ?></p>
 
 			<ul class="woocommerce-thankyou-order-details order_details">
 				<li class="order">
@@ -62,9 +62,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</ul>
 			<div class="clear"></div>
 
+			<a class="thankyou-back" href="<?php echo home_url(); ?>">Continue to site</a>
+
 		<?php endif; ?>
 
-		<?php do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
+		<?php //do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
 		<?php //do_action( 'woocommerce_thankyou', $order->id ); ?>
 
 	<?php else : ?>

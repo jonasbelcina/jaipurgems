@@ -4004,6 +4004,7 @@ footer {
 	border: 1px solid #e3e3e3;
 	margin-top: 20px;
 	font-family: 'GothamBook';
+	margin-bottom: 30px;
 }
 
 	.checkout-review h2 {
@@ -4089,6 +4090,36 @@ footer {
 	.woocommerce .order_details li {
 		float: none;
 		display: inline-block;
+	}
+
+.order-thankyou {
+	font-size: 15px;
+}
+
+.woocommerce-thankyou-order-details {
+	font-size: 16px;
+	margin-top: 50px !important;
+}
+
+	.woocommerce .order_details li {
+		margin-bottom: 30px;
+	}
+
+.thankyou-back {
+	background: #111;
+	color: #fff;
+	font-family: 'GothamBook';
+	padding: 8px 20px;
+	font-size: 15px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	display: inline-block;
+}
+
+	.thankyou-back:hover,
+	.thankyou-back:focus {
+		text-decoration: none;
+		color: #fff;
 	}
 
 /* Accounts page */
