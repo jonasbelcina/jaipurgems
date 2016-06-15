@@ -41,17 +41,18 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 
 #template_container {
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 !important;
     background-color: <?php echo esc_attr( $body ); ?>;
-    border: 1px solid <?php echo esc_attr( $bg_darker_10 ); ?>;
-    border-radius: 3px !important;
+    border: 0;
+    border-radius: 0 !important;
 }
 
 #template_header {
-    background-color: <?php echo esc_attr( $base ); ?>;
+    background-color: none;
     border-radius: 3px 3px 0 0 !important;
     color: <?php echo esc_attr( $base_text ); ?>;
-    border-bottom: 0;
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
     font-weight: bold;
     line-height: 100%;
     vertical-align: middle;
@@ -59,12 +60,14 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 
 #template_header h1 {
-    color: <?php echo esc_attr( $base_text ); ?>;
+    color: #111;
+    text-shadow: 0;
 }
 
 #template_footer td {
     padding: 0;
     -webkit-border-radius: 6px;
+    border-top: 1px solid #e3e3e3;
 }
 
 #template_footer #credit {

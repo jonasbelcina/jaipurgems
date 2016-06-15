@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</head>
     <body <?php echo is_rtl() ? 'rightmargin' : 'leftmargin'; ?>="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
     	<div id="wrapper" dir="<?php echo is_rtl() ? 'rtl' : 'ltr'?>">
-        	<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+        	<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="background-color: #fff; box-shadow: none !important;">
             	<tr>
                 	<td align="center" valign="top">
 						<div id="template_header_image">
@@ -42,10 +42,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                         	<tr>
                             	<td align="center" valign="top">
                                     <!-- Header -->
-                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_header">
+                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_header" style="background: none;">
                                         <tr>
                                             <td id="header_wrapper">
-                                            	<h1><?php echo $email_heading; ?></h1>
+                                            	<h1 style="text-align: center; font-size: 20px;"><?php echo $email_heading; ?></h1>
                                             </td>
                                         </tr>
                                     </table>
