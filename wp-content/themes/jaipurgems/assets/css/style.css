@@ -4498,6 +4498,42 @@ footer {
 		font-family: 'GothamBook';
 	}
 
+/* Search */
+.prod-search {
+	margin: 30px auto;
+	text-align: center;
+}
+
+	.prod-search p {
+		font-size: 18px;
+		color: #111;
+		/*margin-bottom: 0;*/
+	}
+
+	.prod-search form {
+		padding: 0 5px;
+	}
+
+		.prod-search form input {
+			border: 0;
+			width: 200px;
+			border-bottom: 1px solid #e3e3e3;
+			text-align: center;
+			font-size: 18px;
+		}
+
+			.prod-search form input:focus {
+				outline: 0;
+			}
+
+		.prod-search form button {
+			border: 0;
+			background: url('../images/search.png');
+			width: 11px;
+			height: 11px;
+			padding: 0;
+		}
+
 /* 
 =============================
 		Media Queries

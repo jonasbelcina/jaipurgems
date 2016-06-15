@@ -24,66 +24,80 @@ get_header( 'shop' );
 global $wp_query;
 $cat = $wp_query->get_queried_object();
 // var_dump($cat);
-$parent = $cat->parent == 0 ? $cat->term_id : $cat->parent;
+if(!is_search()) {
+	$parent = $cat->parent == 0 ? $cat->term_id : $cat->parent;
+}
  ?>
 
-	<nav class="shop-nav">
-		<div class="container">
-			<ul>
-				<?php
-					$categories = get_categories(array(
-									'taxonomy' 		=> 'product_cat',
-									'parent' 		=> $parent,
-									'hide_empty' 	=> false
-								));
-					foreach ($categories as $category) { ?>
-						<li><a href="<?php echo get_term_link($category); ?>"><?php echo $category->name; ?></a></li>
-					<?php }
-				?>
-			</ul>
-		</div>
-	</nav>
+ 	<?php if(!is_search()) : ?>
+		<nav class="shop-nav">
+			<div class="container">
+				<ul>
+					<?php
+						$categories = get_categories(array(
+										'taxonomy' 		=> 'product_cat',
+										'parent' 		=> $parent,
+										'hide_empty' 	=> false
+									));
+						foreach ($categories as $category) { ?>
+							<li><a href="<?php echo get_term_link($category); ?>"><?php echo $category->name; ?></a></li>
+						<?php }
+					?>
+				</ul>
+			</div>
+		</nav>
 
-	<?php if(is_tax('collection')) : ?>
-		<div class="container collection-header">
-			<h1><?php echo $cat->name; ?></h1>
+		<?php if(is_tax('collection')) : ?>
+			<div class="container collection-header">
+				<h1><?php echo $cat->name; ?></h1>
+			</div>
+		<?php endif; ?>
+
+		<?php 
+			$banner_img = (is_tax('collection') == true) ? get_field( 'collection_image' , 'collection_' . $cat->term_id ) : get_field('banner_image', 'product_cat_' . $cat->term_id);
+		?>
+
+		<section class="shop-banner <?php if(is_tax('collection')) { echo 'collection-banner'; } ?>" style="background-image: url(<?php echo $banner_img['url']; ?>);">
+			<div class="content">
+				<?php if(is_tax('collection')) : ?>
+					<div class="container">
+						<h3><?php the_field('collection_tagline', 'collection_' . $cat->term_id); ?></h3>
+					</div>
+				<?php else : ?>
+					<?php
+						$heading = get_field('heading', 'product_cat_' . $cat->term_id);
+						// if(!$heading) {
+						// 	$heading = woocommerce_page_title();
+						// }
+					?>
+					<?php if(get_field('heading', 'product_cat_' . $cat->term_id)) :
+						echo '<h1>' . $heading . '</h1>';
+					endif; ?>
+					<?php if(get_field('subheading', 'product_cat_' . $cat->term_id)) : ?>
+						<h2><?php the_field('subheading', 'product_cat_' . $cat->term_id); ?></h2>
+					<?php endif; ?>
+				<?php endif; ?>
+			</div>
+		</section>
+
+		<section class="shop-filter">
+			<div class="container">
+				<div class="row">
+					<?php do_action( 'woocommerce_before_shop_loop' ); ?>
+				</div>
+			</div>
+		</section>
+
+	<?php else : ?>
+		<div class="container prod-search">
+			<p>Search results for:</p>
+    		<form method="get" action="<?php echo home_url();?>" style="">
+		  		<input type="text" name="s" placeholder="Search" value="<?php echo $_GET['s']; ?>" />
+		  		<input type="hidden" name="post_type" value="product">
+		  		<button type="submit"></button>
+    		</form>
 		</div>
 	<?php endif; ?>
-
-	<?php 
-		$banner_img = (is_tax('collection') == true) ? get_field( 'collection_image' , 'collection_' . $cat->term_id ) : get_field('banner_image', 'product_cat_' . $cat->term_id);
-	?>
-
-	<section class="shop-banner <?php if(is_tax('collection')) { echo 'collection-banner'; } ?>" style="background-image: url(<?php echo $banner_img['url']; ?>);">
-		<div class="content">
-			<?php if(is_tax('collection')) : ?>
-				<div class="container">
-					<h3><?php the_field('collection_tagline', 'collection_' . $cat->term_id); ?></h3>
-				</div>
-			<?php else : ?>
-				<?php
-					$heading = get_field('heading', 'product_cat_' . $cat->term_id);
-					// if(!$heading) {
-					// 	$heading = woocommerce_page_title();
-					// }
-				?>
-				<?php if(get_field('heading', 'product_cat_' . $cat->term_id)) :
-					echo '<h1>' . $heading . '</h1>';
-				endif; ?>
-				<?php if(get_field('subheading', 'product_cat_' . $cat->term_id)) : ?>
-					<h2><?php the_field('subheading', 'product_cat_' . $cat->term_id); ?></h2>
-				<?php endif; ?>
-			<?php endif; ?>
-		</div>
-	</section>
-
-	<section class="shop-filter">
-		<div class="container">
-			<div class="row">
-				<?php do_action( 'woocommerce_before_shop_loop' ); ?>
-			</div>
-		</div>
-	</section>
 
 	<?php
 		/**
