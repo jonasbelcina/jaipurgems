@@ -18,6 +18,15 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+global $product;
+// var_dump($product);
+$terms = get_the_terms( $product->ID, 'product_cat' );
+foreach ($terms as $term) {
+    if($term->parent != 0) {
+        $product_cat_id = $term->term_id;
+        break;
+    }
+}
 ?>
 <div class="quantity input-group">
 	<div class="label">Qty:</div>
@@ -25,14 +34,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 
 <?php if(!is_cart()) : ?>
-	<div class="size input-group">
-		<div class="label">Size:</div>
-		<select name="size" required>
-			<option value="Small">Small</option>
-			<option value="Medium">Medium</option>
-			<option value="Large">Large</option>
-		</select>
-	</div>
+	<?php if($product_cat_id == 7) : ?>
+		<div class="size input-group">
+			<div class="label">Size:</div>
+			<select name="size" required>
+				<option value="Small">Small</option>
+				<option value="Medium">Medium</option>
+				<option value="Large">Large</option>
+			</select>
+		</div>
 
-	<a href="#" id="size-chart">Size chart</a>
+		<a href="#" id="size-chart" data-toggle="modal" data-target="#sizeChart">Size chart</a>
+	<?php endif; ?>
 <?php endif; ?>

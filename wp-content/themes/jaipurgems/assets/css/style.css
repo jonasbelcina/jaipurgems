@@ -3270,6 +3270,19 @@ footer {
 		    line-height: 46px;
 		}
 
+		#sizeChart .modal-body {
+			overflow: hidden;
+		}
+
+			#sizeChart .modal-body table {
+				width: 100%;
+			}
+
+				#sizeChart .modal-body table th,
+				#sizeChart .modal-body table td {
+					padding: 7px 5px;
+				}
+
 	.single-product .product .entry-summary ul {
 		padding: 0 0 20px;
 		list-style: none;

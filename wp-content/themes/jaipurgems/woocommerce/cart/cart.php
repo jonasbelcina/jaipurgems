@@ -51,6 +51,15 @@ do_action( 'woocommerce_before_cart' ); ?>
 				$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 				$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
+				$terms = get_the_terms( $product_id, 'product_cat' );
+				foreach ($terms as $term) {
+				    if($term->parent != 0) {
+				    	// var_dump($terms);
+				        $product_cat_id = $term->term_id;
+				        break;
+				    }
+				}
+
 				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 					?>
 					<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
@@ -109,7 +118,15 @@ do_action( 'woocommerce_before_cart' ); ?>
 						</td>
 
 						<td class="product-size">
-							<?php echo ($cart_item['variation']) ? $cart_item['variation']['attribute_pa_size'] : $cart_item['size']; ?>
+							<?php if($product_cat_id == 7) : ?>
+							
+								<?php echo ($cart_item['variation']) ? $cart_item['variation']['attribute_pa_size'] : $cart_item['size']; ?>
+
+							<?php else : ?>
+
+								<?php echo '-'; ?>
+							
+							<?php endif; ?>
 						</td>
 
 						<td class="product-price" data-title="<?php _e( 'Price', 'woocommerce' ); ?>">
