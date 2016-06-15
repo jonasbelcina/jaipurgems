@@ -24,10 +24,10 @@
 
 							<div class="col-md-8">
 								<div class="row">
-									<form>
+									<!-- <form>
 										<div class="col-xs-9">
 											<div class="row">
-												<input type="email" placeholder="E-MAIL"></input>
+												<input type="email" placeholder="E-MAIL" />
 											</div>
 										</div>
 
@@ -36,7 +36,8 @@
 												<button type="submit">Sign In</button>
 											</div>
 										</div>
-									</form>
+									</form> -->
+									<?php echo do_shortcode('[mc4wp_form id="477"]'); ?>
 								</div>
 							</div>
 						</div>
