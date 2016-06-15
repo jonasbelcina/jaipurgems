@@ -38,9 +38,14 @@ foreach ($terms as $term) {
 		<div class="size input-group">
 			<div class="label">Size:</div>
 			<select name="size" required>
-				<option value="Small">Small</option>
-				<option value="Medium">Medium</option>
-				<option value="Large">Large</option>
+				<option value="2-2">2-2</option>
+				<option value="2-4">2-4</option>
+				<option value="2-6">2-6</option>
+				<option value="2-8">2-8</option>
+				<option value="2-10">2-10</option>
+				<option value="2-12">2-12</option>
+				<option value="2-14">2-14</option>
+				<option value="3">3</option>
 			</select>
 		</div>
 
