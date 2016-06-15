@@ -2199,7 +2199,7 @@ footer {
 	.history-item {
 		border-left: 1px solid #cacaca;
 		padding: 0 25px 25px;
-		height: 315px;
+		height: 395px;
 		position: relative;
 		margin: 0 0 0 5px;
 	}
@@ -2250,8 +2250,9 @@ footer {
 			position: relative;
 			margin-top: 30px;
 			margin-right: -30px;
-			margin-left: -25px;
-			display: none;
+			margin-left: -26px;
+			/*display: none;*/
+			border: 1px solid #fff;
 		}
 
 			.owl-item.current .content-year {
@@ -2305,6 +2306,7 @@ footer {
 	.history-year {
 		border-top: 1px solid #cacaca;
 		margin: 5px;
+		display: none;
 	}
 
 		.history-year > div {
