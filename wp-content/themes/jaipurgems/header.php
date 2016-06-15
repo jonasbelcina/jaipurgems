@@ -105,7 +105,7 @@
                                     <!-- </div> -->
                                 </div>
                             </li>
-                            <li><a href="#">Diamonds</a></li>
+                            <li><a href="<?php echo home_url(); ?>/collection/sparkling-diamond-collection">Diamonds</a></li>
                             <li><a href="<?php echo home_url(); ?>/collections">Collections</a></li>
                             <li><a href="<?php echo home_url(); ?>/about-us">Our Legacy</a></li>
                             <li>
@@ -131,7 +131,7 @@
                             	                    </li> 
                                                     <li>
                                                         <a href="<?php echo home_url(); ?>/celebrities">Celebrities</a>
-                                                        <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/dropdown-campaigns.jpg" alt="Celebrities" />
+                                                        <img class="dropdown-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/DROPDWN-celeb.jpg" alt="Celebrities" />
                                                     </li>
                             	                </ul>
                             	            </div>

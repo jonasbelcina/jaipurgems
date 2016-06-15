@@ -75,8 +75,12 @@ get_header(); ?>
 			<div class="col-md-6 col-sm-6 col-xs-6 collections-right">
 				<div class="earrings-tile collections-right-tile">
 					<a class="outer-link" href="<?php the_field('cs_right_top_link'); ?>">
-						<?php $cs_right_top_image = get_field('cs_right_top_image'); ?>
+						<?php 
+							$cs_right_top_image = get_field('cs_right_top_image');
+							$cs_right_top_mobile_image = get_field('cs_right_top_mobile_image');
+						?>
 						<img class="img-responsive" src="<?php echo $cs_right_top_image['url']; ?>" alt="<?php echo $cs_right_top_image['alt']; ?>" />
+						<img class="img-responsive" src="<?php echo $cs_right_top_mobile_image['url']; ?>" alt="<?php echo $cs_right_top_mobile_image['alt']; ?>" />
 						<div class="earrings-content">
 							<h1><?php the_field('cs_right_top_heading'); ?></h1>
 							<a class="tile-link" href="<?php the_field('cs_right_top_link'); ?>"><?php the_field('cs_right_top_link_text'); ?></a>
@@ -86,8 +90,12 @@ get_header(); ?>
 
 				<div class="bangles-tile collections-right-tile">
 					<a class="outer-link" href="<?php the_field('cs_right_bottom_link'); ?>">
-						<?php $cs_right_bottom_image = get_field('cs_right_bottom_image'); ?>
+						<?php 
+							$cs_right_bottom_image = get_field('cs_right_bottom_image');
+							$cs_right_bottom_mobile_image = get_field('cs_right_bottom_mobile_image');
+						?>
 						<img class="img-responsive" src="<?php echo $cs_right_bottom_image['url']; ?>" alt="<?php echo $cs_right_bottom_image['alt']; ?>" />
+						<img class="img-responsive" src="<?php echo $cs_right_bottom_mobile_image['url']; ?>" alt="<?php echo $cs_right_bottom_mobile_image['alt']; ?>" />
 						<div class="bangles-content">
 							<h1><?php the_field('cs_right_bottom_heading'); ?></h1>
 							<a class="tile-link" href="<?php the_field('cs_right_bottom_link'); ?>"><?php the_field('cs_right_bottom_link_text'); ?></a>

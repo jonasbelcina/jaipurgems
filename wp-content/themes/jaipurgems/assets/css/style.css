@@ -571,7 +571,7 @@ body {
 }
 
 	.collections-right-tile {
-		max-height: 236px;
+		max-height: auto;
 		position: relative;
 	}
 
@@ -604,6 +604,11 @@ body {
 	.bangles-tile:hover img {
 		-webkit-filter: grayscale(95%);
 		    	filter: grayscale(95%);
+	}
+
+	.earrings-tile img:nth-last-of-type(1),
+	.bangles-tile img:nth-last-of-type(1) {
+		display: none;
 	}
 
 /* 
@@ -5503,6 +5508,26 @@ footer {
 
 	.gems-home {
 		padding: 0 10px;
+	}
+
+	.earrings-tile img:nth-last-of-type(1),
+	.bangles-tile img:nth-last-of-type(1) {
+		display: block;
+	}
+
+	.earrings-tile img:nth-of-type(1),
+	.bangles-tile img:nth-of-type(1) {
+		display: none;
+	}
+
+	.earrings-content {
+		top: initial;
+		bottom: -30px;
+	}
+
+	.bangles-content {
+		top: initial;
+		bottom: -30px;
 	}
 
 	.princess {
