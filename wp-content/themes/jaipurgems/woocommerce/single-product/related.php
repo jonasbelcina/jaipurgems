@@ -23,8 +23,10 @@ global $product, $woocommerce_loop;
 // var_dump($product);
 $terms = get_the_terms( $product->ID, 'product_cat' );
 foreach ($terms as $term) {
-    $product_cat_id[] = $term->term_id;
-    break; // get only first category
+    if($term->parent != 0) {
+        $product_cat_id = $term->term_id;
+        break;
+    }
 }
 // echo $product_cat_id;
 // var_dump($product_cat_id);
@@ -111,7 +113,7 @@ $woocommerce_loop['columns'] = $columns;
     															array(
     																'taxonomy'	=> 'product_cat',
     																'field'		=> 'term_id',
-    																'terms'		=> $terms[0]->term_id,
+    																'terms'		=> $product_cat_id,
     																'operator' 	=> 'NOT IN'
     															)
     													),
