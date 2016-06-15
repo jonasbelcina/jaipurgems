@@ -5468,6 +5468,23 @@ footer {
 		margin: 30px auto 0;
 	}
 
+	.store-map {
+	    height: auto;
+	}
+
+	.store-map .map-list {
+	    width: 100%;
+	    float: none;
+	    display: block;
+	    height: auto;
+	}
+
+	.store-map .map {
+	    width: 100%;
+	    float: none;
+	    height: 300px;
+	}
+
 }
 
 

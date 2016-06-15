@@ -42,7 +42,7 @@
             		  		<button type="submit"></button>
                 		</form>
                     </li>
-                    <li><a href="#">Store Locator</a></li>
+                    <li><a href="<?php echo home_url(); ?>/store-locator">Store Locator</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#contactForm">Contact</a></li>
                 </ul>
             </div>

@@ -99,7 +99,7 @@
 
 							<div class="col-md-3 col-sm-6 locator">
 								<div class="row">
-									<a href="#">Store Locator</a>
+									<a href="<?php echo home_url(); ?>/store-locator">Store Locator</a>
 									<ul>
 										<li><a href="#" data-toggle="modal" data-target="#contactForm">Contact via Email</a></li>
 										<li><a href="#" data-toggle="modal" data-target="#appointmentForm">Make an Appointment</a></li>
