@@ -500,6 +500,18 @@
 			});
 		}
 
+		if(window.location.href.indexOf('filterby') > -1 || window.location.href.indexOf('orderby') > -1) {
+			$('html, body').animate({
+				scrollTop: $('.shop-filter').offset().top - 58
+			}, 1000);
+		}
+
+		// nav search
+		$('.open-search').on('click', function() {
+		    $('body').toggleClass('nav-search-active');
+		    $('.search-bar').slideToggle();
+		});
+
 	}); // end document.ready
 
 	$(window).load(function() {

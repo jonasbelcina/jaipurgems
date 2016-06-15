@@ -36,10 +36,10 @@
             <div class="header-right-top">
                 <ul>
                     <li>
-                		<form method="get" action="<?php echo home_url();?>" style="">
+                		<form method="get" class="open-search" action="<?php echo home_url();?>" style="">
             		  		<input type="text" name="s" placeholder="Search">
             		  		<input type="hidden" name="post_type" value="product">
-            		  		<button type="submit"></button>
+            		  		<button type="button"></button>
                 		</form>
                     </li>
                     <li><a href="<?php echo home_url(); ?>/store-locator">Store Locator</a></li>
@@ -72,7 +72,7 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a href="<?php echo home_url(); ?>/product-category/jewellery" class="dropdown-toggle" data-hover="dropdown" data-delay="100" data-close-others="true">Jewellery <span class="glyphicon glyphicon-plus"></span></a>
+                                <a href="<?php echo home_url(); ?>/product-category/jewellery" class="dropdown-toggle" data-hover="dropdown" data-delay="100" data-close-others="true">Jewellery <span class="glyphicon glyphicon-plus"></span><i class="fa fa-angle-down" aria-hidden="true"></i></a>
 
                                 <div class="dropdown-menu main-dropdown">
                                     <!-- <div class="container"> -->
@@ -109,7 +109,7 @@
                             <li><a href="<?php echo home_url(); ?>/collections">Collections</a></li>
                             <li><a href="<?php echo home_url(); ?>/about-us">Our Legacy</a></li>
                             <li>
-                            	<a href="#" class="dropdown-toggle" data-hover="dropdown" data-delay="100" data-close-others="true">Our World <span class="glyphicon glyphicon-plus"></span></a>
+                            	<a href="#" class="dropdown-toggle" data-hover="dropdown" data-delay="100" data-close-others="true">Our World <span class="glyphicon glyphicon-plus"></span><i class="fa fa-angle-down" aria-hidden="true"></i></a>
 
                             	<div class="dropdown-menu main-dropdown">
                             	    <div class="container">
@@ -149,6 +149,34 @@
             </div>
         </nav>
 	</header>
+
+        <div class="search-bar">
+            <div class="container">
+                <div class="open-search">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </div>
+
+                <div class="search-box">
+                    <div class="col-md-8 col-md-offset-2">
+                        <form class="search" method="get">
+                            <div class="col-xs-10">
+                                <div class="row">
+                                    <input type="text" name="s" placeholder="Search">
+                                    <input type="hidden" name="post_type" value="product">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <div class="row">
+                                    <button type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
 
 
 
