@@ -5505,13 +5505,17 @@ footer {
 		padding: 0 10px;
 	}
 
+	.princess {
+		padding: 10px;
+	}
+
 	.princess .row > div {
 		width: 100%;
 		padding: 0;
 	}
 
 		.princess-tile {
-			margin: 0;
+			margin: 0 0 10px;
 		}
 
 		.history-tile {
