@@ -176,6 +176,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 						$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 						$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
+						$terms = get_the_terms( $product_id, 'product_cat' );
+						foreach ($terms as $term) {
+						    if($term->parent != 0) {
+						    	// var_dump($terms);
+						        $product_cat_id = $term->term_id;
+						        break;
+						    }
+						}
+
 						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key ); ?>
 
 						<li>
@@ -185,7 +194,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 							<ul class="review-details">
 								<li class="review-prod-title"><?php echo $_product->get_title(); ?></li>
-								<li>Size: <?php echo ($cart_item['variation']) ? $cart_item['variation']['attribute_pa_size'] : $cart_item['size']; ?></li>
+								<?php if($product_cat_id == 7) : ?>
+									<li>Size: <?php echo ($cart_item['variation']) ? $cart_item['variation']['attribute_pa_size'] : $cart_item['size']; ?></li>
+								<?php endif; ?>
 								<li>Price: <?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?></li>
 								<li>
 									Quantity: <?php echo $cart_item['quantity']; ?>
