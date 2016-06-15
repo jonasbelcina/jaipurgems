@@ -49,9 +49,8 @@
 
 							<a href="<?php the_field('facebook' , 'options'); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 							<a href="<?php the_field('twitter' , 'options'); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-							<a href="<?php the_field('google_plus' , 'options'); ?>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-							<a href="<?php the_field('pinterest' , 'options'); ?>" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-							<a href="<?php the_field('youtube' , 'options'); ?>" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+							<a href="<?php the_field('instagram' , 'options'); ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+							<a href="<?php the_field('tumblr' , 'options'); ?>" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
@@ -70,7 +69,7 @@
 										<li><a href="<?php echo home_url(); ?>/about-us">Our Legacy</a></li>
 										<li><a href="<?php echo home_url(); ?>/events">Philanthropy</a></li>
 										<li><a href="<?php echo home_url(); ?>/product-category/jewellery">Product Line</a></li>
-										<li><a href="<?php echo home_url(); ?>/blog">News</a></li>
+										<!-- <li><a href="<?php echo home_url(); ?>/blog">News</a></li> -->
 									</ul>
 								</div>
 							</div>
@@ -92,7 +91,7 @@
 									<h3>My Account <span class="glyphicon glyphicon-plus"></span></h3>
 									<ul>
 										<li><a href="<?php echo home_url(); ?>/my-account">Sign In / Sign Up</a></li>
-										<li><a href="#">Privacy Policy</a></li>
+										<!-- <li><a href="#">Privacy Policy</a></li> -->
 										<li><a href="#" data-toggle="modal" data-target="#snrModal">Shipping &amp; Returns</a></li>
 									</ul>
 								</div>
