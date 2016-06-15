@@ -20,6 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product, $woocommerce_loop;
+// var_dump($product);
+$terms = get_the_terms( $product->ID, 'product_cat' );
+foreach ($terms as $term) {
+    $product_cat_id[] = $term->term_id;
+    break; // get only first category
+}
+// echo $product_cat_id;
+// var_dump($product_cat_id);
 
 if ( empty( $product ) || ! $product->exists() ) {
 	return;
@@ -35,8 +43,15 @@ $args = apply_filters( 'woocommerce_related_products_args', array(
 	'no_found_rows'        => 1,
 	'posts_per_page'       => 8,
 	'orderby'              => $orderby,
-	'post__in'             => $related,
-	'post__not_in'         => array( $product->id )
+	// 'post__in'             => $related,
+	'post__not_in'         => array( $product->id ),
+    'tax_query'            => array(
+                                array(
+                                    'taxonomy'  => 'product_cat',
+                                    'field'     => 'term_id',
+                                    'terms'     => $product_cat_id
+                                )
+                            ),
 ) );
 
 $products = new WP_Query( $args );
@@ -84,7 +99,7 @@ $woocommerce_loop['columns'] = $columns;
     			<div class="row">
     				<!-- <h2>Additional Items</h2> -->
     				<?php
-    					$terms = get_the_terms( $post->ID, 'product_cat' );
+    					$terms = get_the_terms( $product->ID, 'product_cat' );
     					// var_dump($terms);
     					// $cat = get_category($terms[0]->term_id);
     					$adtl_args = array(
