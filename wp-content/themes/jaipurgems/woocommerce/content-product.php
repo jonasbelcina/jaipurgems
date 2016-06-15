@@ -57,7 +57,7 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 <div class="product-col <?php if(is_product()) { ?>single-prod-col col-md-3 col-sm-6<?php } else { if($woocommerce_loop['loop'] % 5 == 4 || $woocommerce_loop['loop'] % 5 == 0) { ?>col-md-6 col-sm-6<?php } elseif($woocommerce_loop['loop'] % 5 <= 3) { ?>col-md-4 col-sm-4<?php } } ?>">
 	<div class="row">
-		<div class="product">
+		<div class="product" ontouchstart>
 
 			<?php
 			/**
