@@ -18,7 +18,7 @@
 			dots: false
 			// loop: true,
 			// animateOut: 'fadeOut',
-			// autoplay: true
+			autoplay: true
 		});
 
 		// About Us - History slider
