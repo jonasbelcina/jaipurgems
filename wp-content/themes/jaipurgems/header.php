@@ -48,7 +48,7 @@
             </div>
 
             <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Jaipur Gems" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-new.png" alt="Jaipur Gems" />
             </a>
 
             <div class="header-right-bottom">
