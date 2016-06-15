@@ -16,7 +16,7 @@
 			nav: true,
 			navText: true,
 			dots: false,
-			// loop: true,
+			loop: true,
 			// animateOut: 'fadeOut',
 			autoplay: true
 		});
