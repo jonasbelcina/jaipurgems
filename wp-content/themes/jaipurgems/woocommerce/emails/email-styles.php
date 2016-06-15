@@ -35,7 +35,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 #wrapper {
     background-color: <?php echo esc_attr( $bg ); ?>;
     margin: 0;
-    padding: 70px 0 70px 0;
+    padding: 0;
     -webkit-text-size-adjust: none !important;
     width: 100%;
 }
