@@ -56,8 +56,9 @@
 
             <div class="header-right-bottom">
                 <ul>
-                    <li><a href="<?php echo home_url(); ?>/my-account"><?php echo (is_user_logged_in()) ? 'My Account' : 'Login or Register'; ?></a></li>
-                    <li><a href="<?php echo WC()->cart->get_cart_url(); ?>">(<span class="cart-qty"><?php echo WC()->cart->get_cart_contents_count(); ?></span>) Shopping Cart</a></li>
+                    <li><a href="<?php echo home_url(); ?>/wishlist/view"><span><?php echo yith_wcwl_count_products(); ?></span><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo home_url(); ?>/my-account"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo WC()->cart->get_cart_url(); ?>"><span class="cart-qty"><?php echo WC()->cart->get_cart_contents_count(); ?></span><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>

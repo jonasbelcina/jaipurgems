@@ -181,42 +181,68 @@ body {
 
 		.header-right-bottom ul {
 			list-style: none;
-			padding: 0;
+			padding: 0 20px;
 			margin: 0;
 		}
 
 		.header-right-bottom li {
 			display: inline-block;
+			max-width: 20px;
+			margin: 0 7px;
 		}
 
 		.header-right-bottom li a {
 			font-family: 'GothamBook';
 			color: #000;
 			text-transform: uppercase;
-			margin: 0 20px;
+			margin: 0;
 			position: relative;
 		}
 
 		.header-right-bottom li:last-child a {
-			color: #b5985a;
+			/*color: #b5985a;*/
 		}
+
+			.header-right-bottom li a span {
+				position: absolute;
+			    right: -10px;
+			    top: -20px;
+			    background: #b5985a;
+			    color: #fff;
+			    width: 18px;
+			    height: 18px;
+			    border-radius: 50%;
+			    font-size: 12px;
+			    font-weight: bold;
+			    line-height: 18px;
+			    z-index: 9;
+			}
 
 			.header-right-bottom li a:hover {
 				text-decoration: none;
 			}
 
-			.header-right-bottom li:first-child a:before {
-				content: url('../images/login.png');
+			/*.header-right-bottom li:first-child a:before {
+				content: '\f007';
 				position: absolute;
-				left: -22px;
+				font-family: 'FontAwesome';
+				font-size: 20px;
+				left: -11px;
 				top: -1px;
 			}
 
 			.header-right-bottom li:last-child a:before {
-				content: url('../images/basket.png');
+				content: '\f07a';
+				font-family: 'FontAwesome';
+				font-size: 20px;
 				position: absolute;
-				left: -22px;
+				left: -11px;
 				top: -1px;
+			}*/
+
+			.header-right-bottom li a i {
+				font-size: 21px;
+				color: #5a5a5a;
 			}
 
 .navbar {
@@ -3474,10 +3500,10 @@ footer {
 	.product .content-bottom li:last-child a:before {
 		content: '\f015';
 		font-family: 'FontAwesome';
-		font-size: 14px;
+		font-size: 15px;
 		color: #b09d76;
 		position: absolute;
-		top: -2px;
+		top: -3px;
 		left: -17px;
 		line-height: 1;
 	}
