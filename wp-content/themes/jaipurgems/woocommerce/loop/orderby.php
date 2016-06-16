@@ -43,18 +43,10 @@ else
 				<li><button type="button">Sort by:</button></li>
 				<?php
 					$price = false; 
-					if(isset($_GET['orderby']) && ($_GET['orderby'] == 'name')) {
-						echo '<li><button  class="active" type="submit" name="orderby" value="name-desc" >Name</button></li>';
-					} else {
-						echo '<li><button type="submit" name="orderby" value="name" >Name</button></li>';
-					}
-
-					// if(isset($_GET['orderby']) && $_GET['orderby'] == 'price') {
-					// 	echo '<li><button class="active" type="submit" name="orderby" value="price-desc" >Price</button></li>';
-					// } else if(isset($_GET['orderby']) && $_GET['orderby'] == 'price-desc') {
-					// 	echo '<li><button class="active" type="submit" name="orderby" value="price" >Price</button></li>';
+					// if(isset($_GET['orderby']) && ($_GET['orderby'] == 'name')) {
+					// 	echo '<li><button  class="active" type="submit" name="orderby" value="name-desc" >Name</button></li>';
 					// } else {
-					// 	echo '<li><button type="submit" name="orderby" value="price" >Price</button></li>';
+					// 	echo '<li><button type="submit" name="orderby" value="name" >Name</button></li>';
 					// }
 
 					foreach ( $catalog_orderby_options as $id => $name ) {
@@ -62,9 +54,9 @@ else
 						if($id == 'price' || $id == 'price-desc'){
 							if(!$price){
 								if(isset($_GET['orderby']) && $_GET['orderby'] ==  'price')
-									echo '<li class="active"><button type="submit" name="orderby" value="price-desc" >Price</button></li>';
+									echo '<li class="active"><button type="submit" name="orderby" value="price-desc" >Price&nbsp;&nbsp;<i class="fa fa-long-arrow-up" aria-hidden="true"></i></button></li>';
 								else if(isset($_GET['orderby']) && $_GET['orderby'] == 'price-desc')
-									echo '<li class="active"><button type="submit" name="orderby" value="price" >Price</button></li>';
+									echo '<li class="active"><button type="submit" name="orderby" value="price" >Price&nbsp;&nbsp;<i class="fa fa-long-arrow-down" aria-hidden="true"></i></button></li>';
 								else
 									echo '<li><button type="submit" name="orderby" value="price" >Price</button></li>';
 

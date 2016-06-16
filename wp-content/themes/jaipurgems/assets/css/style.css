@@ -2904,6 +2904,10 @@ footer {
 			padding: 20px 0;
 		}
 
+			.sort-fields li button i {
+				font-size: 14px;
+			}
+
 			.sort-fields li:first-child button:focus {
 				outline: 0;
 			}
