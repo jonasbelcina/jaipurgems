@@ -3448,12 +3448,13 @@ footer {
 		}
 
 			.add_to_wishlist:before {
-				content: '+';
-				font-size: 20px;
+				content: '\f08a';
+				font-family: 'FontAwesome';
+				font-size: 14px;
 				color: #b09d76;
 				font-weight: bold;
 				position: absolute;
-				top: -4px;
+				top: -2px;
 				left: 0;
 				line-height: 1;
 			}
@@ -3469,6 +3470,17 @@ footer {
 			.wishlist-exists .fa-check {
 				color: #a38d60;
 			}
+
+	.product .content-bottom li:last-child a:before {
+		content: '\f015';
+		font-family: 'FontAwesome';
+		font-size: 14px;
+		color: #b09d76;
+		position: absolute;
+		top: -2px;
+		left: -17px;
+		line-height: 1;
+	}
 
 	.single-product .product .entry-summary li a {
 		font-family: 'GothamBook';
