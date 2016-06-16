@@ -1,14 +1,14 @@
 ;(function($){
 	$(document).ready(function(){
 		// home page slider
-		$('.home-slides').owlCarousel({
-			items: 1,
-			nav: false,
-			loop: true,
-			navText: false,
-			animateOut: 'fadeOut',
-			autoplay: true
-		});
+		// $('.home-slides').owlCarousel({
+		// 	items: 1,
+		// 	nav: false,
+		// 	loop: true,
+		// 	navText: false,
+		// 	animateOut: 'fadeOut',
+		// 	autoplay: true
+		// });
 
 		// Home - Celebrities slider
 		$('.celebrity-slides').owlCarousel({
