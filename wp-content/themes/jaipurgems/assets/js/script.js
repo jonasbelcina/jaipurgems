@@ -544,11 +544,13 @@
 		if(windowTop > headerTop) {
 			$('.navbar').addClass('navbar-fixed-top');
 			$('.fixed-logo').addClass('active');
+			$('.mobile-icons').addClass('active');
 			if(ww > 768) {
 				$('body').css('padding-top', '50px');
 			}
 		} else {
 			$('.fixed-logo').removeClass('active');
+			$('.mobile-icons').removeClass('active');
 			$('.navbar').removeClass('navbar-fixed-top');
 			if(ww > 768) {
 				$('body').css('padding-top', '0');

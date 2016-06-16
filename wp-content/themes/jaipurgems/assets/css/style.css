@@ -245,6 +245,62 @@ body {
 				color: #5a5a5a;
 			}
 
+.mobile-icons {
+	display: none;
+	float: right;
+    padding: 0;
+    margin: 15px 50px 0 0;
+    vertical-align: bottom;
+}
+
+	.mobile-icons.active {
+		display: inline-block;
+	}
+
+	.mobile-icons ul {
+		list-style: none;
+		padding: 0 20px;
+		margin: 0;
+	}
+
+	.mobile-icons li {
+		display: inline-block;
+		max-width: 20px;
+		margin: 0 7px;
+	}
+
+	.mobile-icons li a {
+		font-family: 'GothamBook';
+		color: #000;
+		text-transform: uppercase;
+		margin: 0;
+		position: relative;
+	}
+
+		.mobile-icons li a span {
+			position: absolute;
+		    right: -10px;
+		    top: -12px;
+		    background: #b5985a;
+		    color: #fff;
+		    width: 14px;
+		    height: 14px;
+		    border-radius: 50%;
+		    font-size: 10px;
+		    font-weight: bold;
+		    line-height: 14px;
+		    z-index: 9;
+		}
+
+		.mobile-icons li a:hover {
+			text-decoration: none;
+		}
+
+		.mobile-icons li a i {
+			font-size: 16px;
+			color: #5a5a5a;
+		}
+
 .navbar {
 	background: #252525;
 	/*border: 1px solid #959595;*/
@@ -5098,7 +5154,6 @@ footer {
 			padding: 0;
 		}*/
 
-
 	.navbar {
 		height: auto;
 		border: 0;
@@ -5126,9 +5181,11 @@ footer {
 	.navbar-fixed-top {
 		top: 0;
 		border-width: 0 0 1px;
-		background: rgba(0,0,0,0.6) !important;
+		background: #fff;
 		bottom: initial !important;
 		position: fixed !important;
+		border-bottom: #969696;
+		max-height: 50px;
 	}
 	.navbar-collapse.collapse {
 		display: none!important;
