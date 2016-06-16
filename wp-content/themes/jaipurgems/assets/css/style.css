@@ -5196,7 +5196,9 @@ footer {
 							display: none;
 						}
 
-
+	.fixed-logo.active {
+		display: none;
+	}
 
 	.related .products > .container > .row,
 	.additional-items .products > .container > .row {
