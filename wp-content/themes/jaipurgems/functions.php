@@ -1086,6 +1086,14 @@ function add_custom_class_checkout_fields($fields) {
     return $fields;
 }
 
+// change Add to Cart button text
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );    // 2.1 +
+function woo_custom_cart_button_text() {
+ 
+        return __( 'Buy Now', 'woocommerce' );
+ 
+}
+
 // ajax login
 function ajax_login_init(){
 
