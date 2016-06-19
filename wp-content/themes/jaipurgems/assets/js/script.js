@@ -527,7 +527,7 @@
 	                action: 'update_wishlist_count'
 	            },
 	            success   : function (data) {
-	                $('.header-right-bottom li:first-child a span').text(data);
+	                $('.header-right-bottom li:first-child a span, .mobile-icons li:first-child a span').text(data);
 	                //do something
 	            },
 
