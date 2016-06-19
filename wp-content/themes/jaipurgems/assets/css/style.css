@@ -5185,7 +5185,7 @@ footer {
 		background: #fff;
 		bottom: initial !important;
 		position: fixed !important;
-		border-bottom: #969696;
+		border-bottom: 1px solid #e3e3e3;
 		max-height: 50px;
 	}
 	.navbar-collapse.collapse {
@@ -5915,20 +5915,22 @@ footer {
 		padding: 10px 15px;
 	}
 
-	.product-nav > .container > a {
+	/*.product-nav > .container > a {
 		display: block;
-	}
+	}*/
 
 	.product-nav a {
-		font-size: 15px;
+		font-size: 14px;
+		padding-left: 10px;
 	}
 
 		.product-nav a:before {
-			top: 3px;
+			top: 1px;
 		}
 
 	.product-nav ul {
-		float: none;
+		/*float: none;*/
+		font-size: 14px;
 	}
 
 	.product-nav li a:before {
@@ -5945,6 +5947,11 @@ footer {
 		padding: 0;
 		border: 0;
 	}
+
+		.product-nav li.next a {
+			padding-right: 10px;
+			margin-left: 10px;
+		}
 
 }
 
