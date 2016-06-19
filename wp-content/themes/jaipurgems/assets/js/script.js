@@ -383,15 +383,16 @@
 					zoomWindowHeight: 400,
 					'borderSize': 1
 				});
-			} else {
-				$('.single-prod-img').elevateZoom({
-					'zoomType': 'inner',
-					'cursor': 'crosshair',
-					zoomWindowWidth: 400,
-					zoomWindowHeight: 400,
-					'borderSize': 1
-				});
 			}
+			// } else {
+			// 	$('.single-prod-img').elevateZoom({
+			// 		'zoomType': 'inner',
+			// 		'cursor': 'crosshair',
+			// 		zoomWindowWidth: 400,
+			// 		zoomWindowHeight: 400,
+			// 		'borderSize': 1
+			// 	});
+			// }
 		}
 
 		// main nav mobile dropdown
@@ -490,15 +491,16 @@
 				zoomWindowHeight: 400,
 				'borderSize': 1
 			});
-		} else {
-			$('.single-prod-img').elevateZoom({
-				'zoomType': 'inner',
-				'cursor': 'crosshair',
-				zoomWindowWidth: 400,
-				zoomWindowHeight: 400,
-				'borderSize': 1
-			});
 		}
+		// } else {
+		// 	$('.single-prod-img').elevateZoom({
+		// 		'zoomType': 'inner',
+		// 		'cursor': 'crosshair',
+		// 		zoomWindowWidth: 400,
+		// 		zoomWindowHeight: 400,
+		// 		'borderSize': 1
+		// 	});
+		// }
 
 		if(window.location.href.indexOf('filterby') > -1 || window.location.href.indexOf('orderby') > -1) {
 			$('html, body').animate({
