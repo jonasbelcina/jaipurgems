@@ -173,6 +173,77 @@ body {
 				padding: 0;
 			}
 
+		.contact-dropdown {
+			position: relative;
+			color: #000;
+		    text-transform: uppercase;
+		    padding: 0 20px;
+		    border-left: 1px solid #000;
+		    cursor: pointer;
+		}
+
+			.contact-dropdown-details {
+				position: absolute;
+				right: 20px;
+				top: 30px;
+				border: 1px solid #e3e3e3;
+				z-index: 99;
+				background: #fff;
+				width: 350px;
+				text-align: left;
+				text-transform: none;
+				font-family: 'GothamBook';
+				display: none;
+			}
+
+				.contact-dropdown-details:before {
+					content: '';
+				    width: 0;
+				    height: 0;
+				    border-left: 10px solid transparent;
+				    border-right: 10px solid transparent;
+				    border-bottom: 10px solid #f2f1ed;
+				    position: absolute;
+				    right: 10px;
+				    top: -10px;
+				}
+
+			.contact-dropdown-details > div {
+				padding: 10px 10px 5px;
+			}
+
+			.contact-dropdown-details > div:nth-child(2) {
+				background: #e3e3e3;
+			}
+
+			.contact-dropdown-details p {
+				margin: 0;
+			}
+
+			.header-right-top .contact-dropdown-details a {
+				border-left: 0 !important;
+				padding: 0 0 5px;
+				display: block;
+				text-transform: none;
+			}
+
+				.header-right-top .contact-dropdown-details a:hover {
+					font-weight: bold;
+				}
+
+				.header-right-top .contact-dropdown-details a span {
+					color: #b5985a;
+				}
+
+				.contact-dropdown-details i {
+					color: #b5985a;
+				}
+
+			.service span {
+				font-weight: bold;
+				display: block;
+			}
+
 	.header-right-bottom {
 		position: absolute;
 		right: 0;

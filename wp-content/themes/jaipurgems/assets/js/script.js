@@ -661,6 +661,11 @@
 		$(this).next('ul').slideToggle();
 	});
 
+	// header contact dropdown
+	$('.contact-dropdown').on('click', function() {
+		$('.contact-dropdown-details').slideToggle();
+	});
+
 })(jQuery);
 
 // social sharing popup

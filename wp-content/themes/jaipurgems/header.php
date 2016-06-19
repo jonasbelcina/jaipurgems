@@ -61,7 +61,35 @@
 						</form>
 					</li>
 					<li><a href="<?php echo home_url(); ?>/store-locator">Store Locator</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#contactForm">Contact</a></li>
+					<li>
+						<div class="contact-dropdown">
+							Contact
+							<div class="contact-dropdown-details">
+								<div class="service">
+									<span>Customer Service Office Hours:</span>
+									<p>Sat to Thu 9:00 AM to 6:00 PM (GMT +04:00)</p>
+								</div>
+
+								<div class="store">
+									<p>
+										<a href=""><i class="fa fa-home"></i>&nbsp;&nbsp;Store <span>(Available)</span></a>
+									</p>
+									<p>
+										<a href="tel:+971528804545"><i class="fa fa-phone" style="font-size: 14px;"></i>&nbsp;&nbsp;Helpline: +971 52 880 4545 <span>(Available)</span></a>
+									</p>
+								</div>
+
+								<div class="chat">
+									<p>
+										<a href=""><i class="fa fa-comment-o"></i>&nbsp;&nbsp;Live Chat <span>(Available)</span></a>
+									</p>
+									<p>
+										<a href="mailto:dubai@jaipurgems.com"><i class="fa fa-envelope-o"></i>&nbsp;&nbsp;Email: dubai@jaipurgems.com <span>(Available)</span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</li>
 				</ul>
 			</div>
 
