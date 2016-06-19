@@ -1094,6 +1094,20 @@ function woo_custom_cart_button_text() {
  
 }
 
+// ajax add to wishlist
+function update_wishlist_count(){
+    if( function_exists( 'YITH_WCWL' ) ){
+        wp_send_json( YITH_WCWL()->count_products() );
+    }
+}
+add_action( 'wp_ajax_update_wishlist_count', 'update_wishlist_count' );
+add_action( 'wp_ajax_nopriv_update_wishlist_count', 'update_wishlist_count' );
+
+// function enqueue_custom_wishlist_js(){
+// 	wp_enqueue_script( 'yith-wcwl-custom-js', get_stylesheet_directory_uri() . '/yith-wcwl-custom.js', array( 'jquery' ), false, true );
+// }
+// add_action( 'wp_enqueue_scripts', 'enqueue_custom_wishlist_js' );
+
 // ajax login
 function ajax_login_init(){
 
