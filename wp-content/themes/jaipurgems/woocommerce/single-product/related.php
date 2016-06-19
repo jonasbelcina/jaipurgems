@@ -65,8 +65,8 @@ $woocommerce_loop['columns'] = $columns;
 
 	<!-- Nav tabs -->
 	<ul class="nav nav-tabs" role="tablist">
-		<li role="presentation" class="active"><a href="#related" aria-controls="related" role="tab" data-toggle="tab">Related Products</a></li>
-		<li role="presentation"><a href="#additional" aria-controls="additional" role="tab" data-toggle="tab" class="additional">Additional Items</a></li>
+		<li role="presentation" class="active"><a href="#related" aria-controls="related" role="tab" data-toggle="tab">You may also like</a></li>
+		<li role="presentation"><a href="#additional" aria-controls="additional" role="tab" data-toggle="tab" class="additional">Most viewed products</a></li>
 	</ul>
 
 	<!-- Tab panes -->

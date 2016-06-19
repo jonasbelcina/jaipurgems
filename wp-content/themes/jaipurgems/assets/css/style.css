@@ -5754,6 +5754,10 @@ footer {
 		padding: 0 15px;
 	}
 
+	.other-products .nav-tabs li a {
+		font-size: 15px;
+	}
+
 	.related .products > .container > .row .owl-prev,
 	.additional-items .products > .container > .row .owl-prev {
 		margin-left: -20px;
