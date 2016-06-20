@@ -630,7 +630,7 @@
 	});
 
 	// include product name on try at home contact
-	$('.try-at-home').on('click', function(){
+	$('.try-at-home, .product .content-bottom li:last-child a').on('click', function(){
 	    var product = $(this).data('product');
 	    $(".product-hidden").val(product);
 	});
