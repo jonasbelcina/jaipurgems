@@ -178,4 +178,34 @@ if(!is_search()) {
 		// do_action( 'woocommerce_sidebar' );
 	?>
 
+	<!-- Try at Home Modal -->
+	<div class="modal fade" id="tryAtHome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Try at Home</h4>
+				</div>
+				<div class="modal-body">
+					<p>Try Before You Buy in 3 Simple Steps</p>
+					<div class="try-cols">
+						<div class="col-xs-4">
+							<div class="try-img try-img-1"></div>
+							<p>Pick your jewel</p>
+						</div>
+						<div class="col-xs-4">
+							<div class="try-img try-img-2"></div>
+							<p>Try on for free</p>
+						</div>
+						<div class="col-xs-4">
+							<div class="try-img try-img-3"></div>
+							<p>Buy if you like</p>
+						</div>
+					</div>
+					<?php echo do_shortcode('[contact-form-7 id="293" title="Try at Home"]'); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+
 <?php get_footer( 'shop' ); ?>

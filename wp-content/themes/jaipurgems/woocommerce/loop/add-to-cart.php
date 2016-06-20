@@ -39,7 +39,7 @@ global $product;
 <?php if(!is_page('448')) : ?>
 	<ul>
 		<li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
-		<li><a href="">Try at Home</a></li>
+		<li><a href="" data-toggle="modal" data-target="#tryAtHome" data-product="<?php the_title(); ?>">Try at Home</a></li>
 	</ul>
 <?php endif; ?>
 
