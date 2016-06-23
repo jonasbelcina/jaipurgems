@@ -52,6 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="summary entry-summary">
 
+			<div class="desktop-single">
 			<?php
 				/**
 				 * woocommerce_single_product_summary hook.
@@ -66,6 +67,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				 */
 				do_action( 'woocommerce_single_product_summary' );
 			?>
+			</div>
+
+			<div class="mobile-single">
+				<div class="mobile-price"><?php woocommerce_template_single_price(); ?></div>
+				<div class="mobile-cart"><?php woocommerce_template_single_add_to_cart(); ?></div>
+				<div class="mobile-share"><?php woocommerce_template_single_sharing(); ?></div>
+			</div>
 
 		</div><!-- .summary -->
 

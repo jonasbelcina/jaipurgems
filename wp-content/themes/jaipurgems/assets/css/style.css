@@ -3353,6 +3353,7 @@ footer {
 			div.product .mobile-details li a i {
 				position: absolute;
 				top: 2px;
+				left: 0;
 			}
 
 .product-nav {
@@ -3738,13 +3739,13 @@ footer {
 		}
 
 		.single-product .product .entry-summary li a span {
-			font-size: 20px;
+			/*font-size: 20px;
 			color: #b09d76;
 			position: absolute;
 			left: 0;
 			top: -4px;
 			line-height: 1;
-			font-weight: bold;
+			font-weight: bold;*/
 		}
 
 		.single-product .product .entry-summary li:first-child a {
@@ -3754,17 +3755,6 @@ footer {
 		.single-product .product .entry-summary li:last-child {
 			float: right;
 		}
-
-		.single-product .product .entry-summary li:last-child a {
-			padding-left: 30px;
-		}
-
-			.single-product .product .entry-summary li:last-child a:before {
-				content: url('../images/contact-icon.png');
-				position: absolute;
-				left: 0;
-				top: 0;
-			}
 
 	.single-product .entry-summary .share-buttons {
 		padding-top: 10px;
@@ -3790,6 +3780,25 @@ footer {
 
 			.single-product .entry-summary .share-buttons a:nth-child(5) {
 				background: url('../images/share-pinterest.png') center no-repeat;
+			}
+
+			.single-product .entry-summary .share-buttons a:last-child {
+				float: right;
+			    color: #000;
+			    text-transform: uppercase;
+			    width: auto !important;
+			    line-height: 39px;
+			    /*text-decoration: underline;*/
+			    position: relative;
+			    padding-left: 20px;
+			}
+
+			.single-product .entry-summary .share-buttons a:last-child:before {
+				content: '\f003';
+				font-family: 'FontAwesome';
+			    position: absolute;
+			    left: 0;
+			    top: -1px;
 			}
 
 		.single-product .entry-summary .share-buttons .label {
@@ -3831,8 +3840,8 @@ footer {
 			color: #000;
 			text-transform: uppercase;
 			width: auto !important;
-			line-height: 39px;
-			text-decoration: underline;
+			/*line-height: 39px;*/
+			/*text-decoration: underline;*/
 		}
 
 		#tryAtHome .modal-dialog {
@@ -3902,6 +3911,48 @@ footer {
 		  font-family: 'GothamBook';
 		  font-size: 11px;
 		  text-transform: none;
+		}
+
+	.mobile-single {
+		display: none;
+	}
+
+		.mobile-single .offers {
+			border: 0;
+			width: 100%;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+
+		.mobile-cart .cart {
+			padding: 5px 0 0 !important;
+		}
+
+		div.product .entry-summary .mobile-share ul {
+			padding: 0 !important;
+			margin: 0 !important;
+			border: 0;
+		}
+
+		.mobile-share .add_to_wishlist:before {
+			top: -1px;
+		}
+
+		div.product .entry-summary .mobile-share .share-buttons {
+			padding: 0;
+			overflow: hidden;
+		}
+
+		div.product .entry-summary .mobile-share .share-buttons .label,
+		div.product .entry-summary .mobile-share .share-buttons a {
+			display: none;
+		}
+
+		div.product .entry-summary .mobile-share .share-buttons a:last-child {
+			display: inline-block;
+			height: auto;
+			line-height: 1;
+			margin-top: 15px;
 		}
 
 	.other-products {
@@ -5879,6 +5930,19 @@ footer {
 			margin-top: 15px;
 		}
 
+	.mobile-single {
+		display: block;
+	}
+
+		.mobile-single .ref,
+		.mobile-single .specs {
+			display: none !important;
+		}
+
+	.desktop-single {
+		display: none;
+	}
+
 	.single-product div.product div.images,
 	.single-product div.product div.entry-summary {
 		padding: 0 15px;
@@ -5888,6 +5952,45 @@ footer {
 		height: 350px;
 		object-fit: cover;
 		/*width: 100%;*/
+		display: none;
+	}
+
+	.single-product div.product div.images {
+		position: relative;
+	}
+
+		.single-product .product .images .thumbs-count {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 50%;
+		}
+
+		.single-product .product .images .thumbs-count .thumb-custom-prev {
+			float: left;
+			margin: 0;
+			z-index: 999;
+			position: relative;
+			padding: 15px;
+			background: url('../images/prev.png') center no-repeat;
+		}
+
+		.single-product .product .images .thumbs-count .thumb-custom-next {
+			float: right;
+			margin: 0;
+			z-index: 999;
+			position: relative;
+			padding: 15px;
+			background: url('../images/next.png') center no-repeat;
+		}
+
+	.single-product div.product .images div.thumbnails a img {
+		max-height: 350px;
+		height: 350px;
+		max-width: 100%;
+		width: auto;
+		border: 0;
+		margin: 0 auto;
 	}
 
 	.single-product .entry-summary h1.product_title {
@@ -5940,7 +6043,7 @@ footer {
 		}
 
 	.single-product .size {
-		/*float: right;*/
+		float: right;
 		margin-left: 10px;
 	}
 
@@ -5952,7 +6055,8 @@ footer {
 		}
 
 	#size-chart {
-		float: none;
+		/*float: none;*/
+		line-height: 30px;
 	}
 
 	.single-product .cart .single_add_to_cart_button {
@@ -6165,6 +6269,24 @@ footer {
 			margin-left: 10px;
 		}
 
+	div.product .entry-summary .mobile-share ul li {
+		float: none;
+		display: block;
+	}
+
+	div.product .entry-summary .mobile-share ul li a.try-at-home {
+		float: none;
+	}
+
+	div.product .entry-summary .mobile-share ul li:last-child {
+		float: none;
+	}
+
+	div.product .entry-summary .mobile-share .share-buttons a:last-child {
+		float: none;
+		margin: 0;
+	}
+
 }
 
 @media only screen and (max-width : 480px) {
@@ -6295,7 +6417,7 @@ footer {
 	}
 
 	.single-product .product .entry-summary ul {
-		text-align: center;
+		/*text-align: center;*/
 	}
 
 	.single-product .product .entry-summary li,

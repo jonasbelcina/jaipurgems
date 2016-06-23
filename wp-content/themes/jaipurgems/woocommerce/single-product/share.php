@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <ul>
 	<!-- <li><a href="#"><span>+</span> Add to my jewellery box</a></li> -->
 	<li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
-	<li><a href="<?php the_permalink(); ?>">Contact us</a></li>
+	<li><i class="fa fa-home" aria-hidden="true" style="color: #a38d60; font-size: 16px;"></i>&nbsp;<a class="try-at-home" href="" data-toggle="modal" data-target="#tryAtHome" data-product="<?php the_title(); ?>">Try at Home</a></li>
 </ul>
 
 <?php do_action( 'woocommerce_share' ); // Sharing plugins can hook into here ?>

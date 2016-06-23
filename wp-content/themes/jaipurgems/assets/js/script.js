@@ -260,11 +260,8 @@
 				767 : {
 					items : 4,
 				},
-				568: {
-					items: 3,
-				},
 				0 : {
-					items : 2,
+					items : 1,
 				}
 			},
 		});
@@ -439,6 +436,10 @@
 	    $('body').on( 'added_to_wishlist removed_from_wishlist', update_wishlist_count );
 
 	}); // end document.ready
+
+	$('.thumbnails a').on('click', function(e) {
+		e.preventDefault();
+	});
 
 	$(window).load(function() {
 		$('.blog-holder').masonry({

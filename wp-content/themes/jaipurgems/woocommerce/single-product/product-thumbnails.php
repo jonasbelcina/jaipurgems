@@ -54,7 +54,7 @@ if ( $attachment_ids ) {
 
 			$image_class = esc_attr( implode( ' ', $classes ) );
 
-			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" class="%s" title="%s" data-rel="prettyPhoto[product-gallery]">%s</a>', $image_link, $image_class, $image_caption, $image ), $attachment_id, $post->ID, $image_class );
+			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" class="" title="%s" data-rel="">%s</a>', $image_link, $image_caption, $image ), $attachment_id, $post->ID, $image_class );
 
 			$loop++;
 		}
