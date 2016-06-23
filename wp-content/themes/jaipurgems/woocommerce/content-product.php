@@ -57,7 +57,7 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 <div class="product-col <?php if(is_product()) { ?>single-prod-col col-md-3 col-sm-6<?php } else { if($woocommerce_loop['loop'] % 5 == 4 || $woocommerce_loop['loop'] % 5 == 0) { ?>col-md-6 col-sm-6<?php } elseif($woocommerce_loop['loop'] % 5 <= 3) { ?>col-md-4 col-sm-4<?php } } ?>">
 	<div class="row">
-		<div class="product" ontouchstart>
+		<div class="product">
 
 			<?php
 			/**
@@ -110,6 +110,14 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 					?>
 					</div>
 				</div>
+			</div>
+
+			<div class="mobile-details">
+				<?php echo woocommerce_template_loop_price(); ?>
+				<ul>
+					<li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
+					<li><a href="" data-toggle="modal" data-target="#tryAtHome" data-product="<?php the_title(); ?>"><span>Try at Home</span></a></li>
+				</ul>
 			</div>
 
 		</div>

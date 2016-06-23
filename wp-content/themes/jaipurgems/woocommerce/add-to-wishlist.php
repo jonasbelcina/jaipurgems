@@ -23,16 +23,16 @@ global $product;
 	    </div>
 
 	    <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-	        <span class="feedback"><?php echo $product_added_text ?></span>
+	        <!-- <span class="feedback"><?php echo $product_added_text ?></span> -->
 	        <a href="<?php echo esc_url( $wishlist_url )?>" rel="nofollow">
-	            <?php echo apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text )?>
+	            <i class="fa fa-heart" aria-hidden="true" style="color: #a38d60;"></i><span><?php echo apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text )?></span>
 	        </a>
 	    </div>
 
 	    <div class="yith-wcwl-wishlistexistsbrowse <?php echo ( $exists && ! $available_multi_wishlist ) ? 'show' : 'hide' ?>" style="display:<?php echo ( $exists && ! $available_multi_wishlist ) ? 'block' : 'none' ?>">
-	        <span class="feedback"><?php echo $already_in_wishslist_text ?></span>
+	        <!-- <span class="feedback"><?php echo $already_in_wishslist_text ?></span> -->
 	        <a href="<?php echo esc_url( $wishlist_url ) ?>" rel="nofollow" class="wishlists-exists">
-	            <i class="fa fa-check" aria-hidden="true" style="color: #a38d60;"></i> <?php echo apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text )?>
+	            <i class="fa fa-heart" aria-hidden="true" style="color: #a38d60;"></i> <span><?php echo apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text )?></span>
 	        </a>
 	    </div>
 
