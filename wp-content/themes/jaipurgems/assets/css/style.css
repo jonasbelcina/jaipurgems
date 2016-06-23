@@ -5824,8 +5824,13 @@ footer {
 	}
 
 	.shop-filter {
-		padding: 0 15px;
-		margin-top: 30px;
+		/*padding: 0 15px;*/
+		/*margin-top: 30px;*/
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		z-index: 999;
+		background: #fff;
 	}
 
 	.mobile-filter {
