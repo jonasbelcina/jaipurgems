@@ -48,7 +48,7 @@
 	<header>
 		<div class="navbar-top">
 			<div class="header-left">
-				We Ship To <span class="uae"><?php echo $_COOKIE['country']; ?></span><span class="uae">UAE</span>
+				Ensured Express Shipping To <span class="uae"><?php echo $_COOKIE['country']; ?></span><span class="uae">UAE</span>
 			</div>
 
 			<div class="header-right-top">
