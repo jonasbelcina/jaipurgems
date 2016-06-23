@@ -6274,6 +6274,12 @@ footer {
 			margin-left: 10px;
 		}
 
+	div.product .entry-summary .mobile-cart .cart #size-chart {
+		display: block;
+		width: 100%;
+		text-align: right;
+	}
+
 	div.product .entry-summary .mobile-share ul li {
 		float: none;
 		display: block;
