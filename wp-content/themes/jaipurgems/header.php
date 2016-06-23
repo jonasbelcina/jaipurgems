@@ -49,7 +49,7 @@
 		<div class="navbar-top">
 			<div class="header-left">
 				Ensured Express Shipping To <span class="uae"><?php echo $_COOKIE['country']; ?></span><span class="uae">UAE</span>
-			</div> 
+			</div>
 
 			<div class="header-right-top">
 				<ul>
