@@ -6327,6 +6327,10 @@ footer {
 		margin-top: -1px;
 	}
 
+	.checkout_panel form.login.guest-form {
+		margin-bottom: 20px;
+	}
+
 }
 
 
