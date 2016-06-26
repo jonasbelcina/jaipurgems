@@ -135,6 +135,24 @@ global $product;
 						<h3>Lifetime Exchange</h3>
 					</article>
 				</div>
+
+				<div>
+					<article class="offset_left">
+						<div class="adv_pic">
+							<span class="shippingIcon"></span>
+						</div><!--//adv_pic-->
+						
+						<h3>Free Insured Shipping</h3>
+					</article>
+					
+					<article>
+						<div class="adv_pic">
+							<span class="payIcon"></span>
+						</div><!--//adv_pic-->
+						
+						<h3>Pay as You Like</h3>
+					</article>
+				</div>
 			</div>
 
 		</div><!-- .summary -->
