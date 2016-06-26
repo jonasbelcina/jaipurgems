@@ -4717,6 +4717,7 @@ footer {
 	.my-account form .input-text {
 		border: 1px solid #e3e3e3;
 		height: 28px;
+		border-radius: 0;
 	}
 
 	.my-account .register-btn {
