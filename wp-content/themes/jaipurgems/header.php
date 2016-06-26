@@ -71,8 +71,8 @@
 								</div>
 
 								<div class="store">
-									<p>
-										<i class="fa fa-home"></i>&nbsp;&nbsp;25H Almas Tower<br/>JLT Dubai
+									<p style="padding-bottom: 5px;">
+										<i class="fa fa-home"></i>&nbsp;&nbsp;25H Almas Tower<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JLT Dubai
 									</p>
 									<p>
 										<a href="tel:+971528804545"><i class="fa fa-phone" style="font-size: 14px;"></i>&nbsp;&nbsp;Helpline: +971 52 880 4545 <span>(Available)</span></a>
