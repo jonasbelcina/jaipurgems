@@ -108,6 +108,35 @@ global $product;
 				<?php endif; ?>
 			</div>
 
+			<div class="brand-promise">
+				<h4>Brand Promise</h4>
+				<div>
+					<article>
+						<div class="adv_pic">
+							<span class="certIcon"></span>
+						</div><!--//adv_pic-->
+						
+						<h3>100% Certified</h3>
+					</article>
+					
+					<article>
+						<div class="adv_pic">
+							<span class="moneyIcon"></span>
+						</div><!--//adv_pic-->
+						
+						<h3>30-Day Money Back</h3>
+					</article>
+					
+					<article>
+						<div class="adv_pic">
+							<span class="lifeExchIcon"></span>
+						</div><!--//adv_pic-->
+						
+						<h3>Lifetime Exchange</h3>
+					</article>
+				</div>
+			</div>
+
 		</div><!-- .summary -->
 
 		<div class="clearfix"></div>

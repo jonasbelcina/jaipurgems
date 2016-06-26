@@ -3914,7 +3914,8 @@ footer {
 		}
 
 	.mobile-single,
-	.mobile-single-details {
+	.mobile-single-details,
+	.brand-promise {
 		display: none;
 	}
 
@@ -3966,6 +3967,73 @@ footer {
 			color: #b09d76;
 			margin: 0;
 		}
+
+	.brand-promise {
+		margin-top: 30px;
+	}
+
+		.brand-promise h4 {
+			font-family: 'GothamBook';
+			font-size: 17px;
+			color: #000;
+			margin: 0 0 20px;
+			text-transform: uppercase;
+			text-align: center;
+			letter-spacing: 1px;
+		}
+
+		.brand-promise article {
+			width: 33.333%;
+		    float: left;
+		    text-align: center;
+		    margin-bottom: 40px;
+		    padding: 0 10px;
+		    font-size: 14px;
+		}
+
+			.brand-promise article .adv_pic {
+				margin-bottom: 10px;
+				text-align: center;
+			}
+
+			.brand-promise article .adv_pic span {
+			    background-image: url("../images/header-sprite.png");
+			    background-repeat: no-repeat;
+			    background-size: 156.872% auto;
+			    height: 93px;
+			    display: block;
+			    margin: 0 auto 10px;
+			    width: 120px;
+			}
+
+			.brand-promise article.offset_left {
+			    margin-left: 16.5%;
+			}
+
+			.brand-promise article .adv_pic span.certIcon {
+			    background-position: 6px -743px;
+			}
+
+			.brand-promise article .adv_pic span.moneyIcon {
+			    background-position: 6px -951px;
+			}
+
+			.brand-promise article .adv_pic span.lifeExchIcon {
+			    background-position: 6px -642px;
+			}
+
+			.brand-promise article .adv_pic span.shippingIcon {
+			    background-position: 6px -851px;
+			}
+
+			.brand-promise article .adv_pic span.payIcon {
+			    background-position: 6px -1321px;
+			}
+
+			.brand-promise article h3 {
+			    color: #434343;
+			    font-size: 14px;
+			}
 
 	.other-products {
 		overflow: hidden;
@@ -5948,7 +6016,8 @@ footer {
 		}
 
 	.mobile-single,
-	.mobile-single-details {
+	.mobile-single-details,
+	.brand-promise {
 		display: block;
 	}
 
@@ -6437,6 +6506,32 @@ footer {
 		display: block;
 		margin: 0;
 		text-align: right;
+	}
+
+	.brand-promise article .adv_pic span {
+	    width: 70px;
+	    height: 54px;
+	    margin: 0 auto 10px;
+	}
+
+	.brand-promise article .adv_pic span.certIcon {
+	    background-position: 5px -435px;
+	}
+
+	.brand-promise article .adv_pic span.moneyIcon {
+	    background-position: 3px -557px;
+	}
+
+	.brand-promise article .adv_pic span.lifeExchIcon {
+	    background-position: 4px -377px;
+	}
+
+	.brand-promise article .adv_pic span.shippingIcon {
+	    background-position: 4px -499px;
+	}
+
+	.brand-promise article .adv_pic span.payIcon {
+	    background-position: 3px -770px;
 	}
 
 }
