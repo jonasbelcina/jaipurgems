@@ -6054,7 +6054,7 @@ footer {
 
 		.single-product .size select {
 			height: 30px;
-			width: 70px;
+			width: 100px;
 			padding: 0 15px;
 			font-size: 14px;
 			letter-spacing: 0;
@@ -6378,12 +6378,12 @@ footer {
 
 	.single-product .size {
 		float: right;
-		width: 63%;
+		width: auto;
 		margin: 0;
 	}
 
 		.single-product .size select {
-			width: calc(100% - 50px);
+			width: 100px;
 			padding: 0 20px;
 		}
 
