@@ -4664,18 +4664,54 @@ footer {
 	margin: 30px auto;
 }
 
+	.my-account .nav-tabs li {
+		display: block;
+		float: none;
+	}
+
+	.my-account .nav-tabs > li > a {
+		border-radius: 0;
+		color: #000;
+		text-transform: uppercase;
+		font-family: 'GothamBook';
+		font-size: 15px;
+		border: 1px solid #ddd;
+		margin: 0;
+	}
+
+	.my-account .nav-tabs > li > a:hover {
+		border: 1px solid #ddd;
+		background: none;
+	}
+
+	.my-account .nav-tabs > li.active > a,
+	.my-account .nav-tabs > li.active > a:focus,
+	.my-account .nav-tabs > li.active > a:hover {
+		color: #000;
+		border-radius: 0;
+		background-color: #eee;
+		border: 1px solid #ddd;
+	}
+
+	.my-account .tab-content {
+		border: 1px solid #d3ced2;
+	}
+
+	.my-account .woocommerce form.login,
+	.my-account .woocommerce form.register {
+		margin: 0 0;
+		border-radius: 0;
+		border: 0;
+	}
+
 	.my-account h3 {
 		font-size: 20px;
 		text-transform: uppercase;
 		font-family: 'GothamBook';
 		color: #111;
 		margin: 0;
-	}
-
-	.my-account form {
-		margin: 15px 0 0 !important;
-		border-radius: 0 !important;
-		border-color: #e3e3e3 !important;
+		padding: 20px;
+		text-align: center;
 	}
 
 	.my-account form .input-text {
@@ -4729,6 +4765,11 @@ footer {
 			padding: 0 0 10px;
 			border-bottom: 1px solid #e3e3e3;
 		}
+
+	.my-account .lost_password {
+		text-align: center;
+		margin: 0;
+	}
 
 	.lost_password a {
 		font-family: 'GothamBook';
@@ -6241,6 +6282,41 @@ footer {
 		width: 100%;
 		float: none;
 		height: 300px;
+	}
+
+	.my-account .nav-tabs {
+		border: 0;
+	}
+
+	.my-account .nav-tabs li {
+		display: inline-block;
+		opacity: 0.3;
+	}
+
+	.my-account .nav-tabs > li.active {
+		opacity: 1;
+	}
+
+	.my-account .nav-tabs > li > a {
+		border-bottom: 1px solid #fff;
+		background: #eee;
+	}
+
+	.my-account .nav-tabs > li > a:hover {
+		border-bottom: 1px solid #fff;
+		background: #eee;
+	}
+
+	.my-account .nav-tabs > li.active > a,
+	.my-account .nav-tabs > li.active > a:focus,
+	.my-account .nav-tabs > li.active > a:hover {
+		background: #fff;
+		border-bottom: 1px solid #fff;
+		z-index: 9;
+	}
+
+	.my-account .tab-content {
+		margin-top: -1px;
 	}
 
 }

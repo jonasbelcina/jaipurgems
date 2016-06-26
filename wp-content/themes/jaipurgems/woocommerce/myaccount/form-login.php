@@ -23,17 +23,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php wc_print_notices(); ?>
 
+<?php if(is_account_page()) { ?>
+	<div class="col-sm-3">
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a href="#login_acct" aria-controls="login" role="tab" data-toggle="tab">Login</a></li>
+			<li role="presentation"><a href="#register_acct" aria-controls="register" role="tab" data-toggle="tab">Register</a></li>
+		</ul>
+	</div>
+<?php } ?>
+
 <?php do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' && !is_checkout() ) : ?>
 
-<div class="col2-set" id="customer_login">
+<!-- <div class="col2-set" id="customer_login"> -->
+<?php if(is_account_page()) { ?>
+<!-- Tab panes -->
+<div class="col-sm-9">
+<div class="tab-content">
 
+	<div role="tabpanel" class="tab-pane active" id="login_acct">
+	<?php } ?>
 	<div class="col-1">
 
 <?php endif; ?>
 
-		<h3><?php _e( 'Login', 'woocommerce' ); ?></h3>
+		<?php if(!is_account_page()) { ?>
+			<h3><?php _e( 'Login', 'woocommerce' ); ?></h3>
+		<?php } ?>
+
 		<?php if(is_checkout()) : ?>
 			<p>If you have a Jaipur Gems Account, please sign in below:</p>
 		<?php endif; ?>
@@ -71,10 +90,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' && !is_checkout() ) : ?>
 
 	</div>
+	<?php if(is_account_page()) { ?>
+	</div><!-- Tab panel -->
+	<?php } ?>
 
+	<?php if(is_account_page()) { ?>
+	<div role="tabpanel" class="tab-pane" id="register_acct">
+	<?php } ?>
 	<div class="col-2">
 
-		<h3><?php _e( 'Register', 'woocommerce' ); ?></h3>
+		<?php if(!is_account_page()) { ?>
+			<h3><?php _e( 'Register', 'woocommerce' ); ?></h3>
+		<?php } ?>
 
 		<form method="post" class="register">
 
@@ -119,8 +146,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</form>
 
 	</div>
+	<?php if(is_account_page()) { ?>
+	</div>
+	<?php } ?>
 
-</div>
+<!-- </div> -->
+</div><!-- Tab panes -->
+</div><!-- col-sm-3 -->
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_after_customer_login_form' ); ?>
