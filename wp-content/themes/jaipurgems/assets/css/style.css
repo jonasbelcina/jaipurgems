@@ -634,18 +634,26 @@ body {
 	position: relative;
 }
 
-.fixed-logo {
+.fixed-logo,
+.mobile-fixed-logo {
 	display: none;
 	position: absolute;
 	left: 0;
 	top: 15px;
 }
 
-	.fixed-logo.active {
+	.mobile-fixed-logo {
+		left: 10px;
+		top: 9px;
+	}
+
+	.fixed-logo.active,
+	.mobile-fixed-logo.active {
 		display: block;
 	}
 
-	.fixed-logo img {
+	.fixed-logo img,
+	.mobile-fixed-logo img {
 		max-height: 30px;
 	}
 

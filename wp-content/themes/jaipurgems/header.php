@@ -109,6 +109,10 @@
 		<nav class="navbar navbar-default">
 			<div class="container">
 
+			<a class="mobile-fixed-logo" href="<?php echo home_url(); ?>">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/crown-black.png" alt="Jaipur Gems" />
+			</a>
+
 			<ul class="mobile-icons">
 				<li><a href="<?php echo home_url(); ?>/wishlist/view"><span><?php echo yith_wcwl_count_products(); ?></span><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
 				<li><a href="<?php echo home_url(); ?>/my-account"><i class="fa fa-user" aria-hidden="true"></i></a></li>

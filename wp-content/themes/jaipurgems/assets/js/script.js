@@ -474,6 +474,7 @@
 				$('body').css('padding-top', '50px');
 			} else {
 				$('.mobile-icons').addClass('active');
+				$('.mobile-fixed-logo').addClass('active');
 			}
 		} else {
 			$('.fixed-logo').removeClass('active');
@@ -483,6 +484,7 @@
 				$('body').css('padding-top', '0');
 			} else {
 				$('.mobile-icons').removeClass('active');
+				$('.mobile-fixed-logo').removeClass('active');
 			}
 		}
 	});
