@@ -6428,6 +6428,12 @@ footer {
 		height: 380px;
 	}
 
+	.single-product div.product .images div.thumbnails a img {
+		width: 100%;
+		height: auto;
+		max-height: 100%;
+	}
+
 	.single-product .product .entry-summary ul {
 		/*text-align: center;*/
 	}
