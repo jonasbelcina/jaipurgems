@@ -4718,7 +4718,9 @@ footer {
 		border: 1px solid #e3e3e3;
 		height: 28px;
 		border-radius: 0;
-		box-shadow: 0;
+		-webkit-appearance: none;
+		   -moz-appearance: none;
+		    	appearance: none;
 	}
 
 	.my-account .register-btn {
