@@ -3913,7 +3913,8 @@ footer {
 		  text-transform: none;
 		}
 
-	.mobile-single {
+	.mobile-single,
+	.mobile-single-details {
 		display: none;
 	}
 
@@ -3953,6 +3954,17 @@ footer {
 			height: auto;
 			line-height: 1;
 			margin-top: 15px;
+		}
+
+	.mobile-single-details {
+		margin-top: 30px;
+	}
+
+		.mobile-single-details h4 {
+			font-family: 'GothamBook';
+			font-size: 18px;
+			color: #b09d76;
+			margin: 0;
 		}
 
 	.other-products {
@@ -5935,7 +5947,8 @@ footer {
 			margin-top: 15px;
 		}
 
-	.mobile-single {
+	.mobile-single,
+	.mobile-single-details {
 		display: block;
 	}
 
@@ -5946,6 +5959,17 @@ footer {
 
 	.desktop-single {
 		display: none;
+	}
+
+	.mobile-single-details .mobile-ref,
+	.mobile-single-details .mobile-specs {
+		display: block !important;
+	}
+
+	.mobile-single-details .mobile-ref.ref {
+		float: none;
+		color: #868686;
+		margin: 0 0 10px;
 	}
 
 	.single-product div.product div.images,

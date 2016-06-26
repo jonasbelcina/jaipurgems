@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+global $product;
+
 ?>
 
 <div class="container">
@@ -73,6 +75,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="mobile-price"><?php woocommerce_template_single_price(); ?></div>
 				<div class="mobile-cart"><?php woocommerce_template_single_add_to_cart(); ?></div>
 				<div class="mobile-share"><?php woocommerce_template_single_sharing(); ?></div>
+			</div>
+
+			<div class="mobile-single-details">
+				<h4><?php the_title(); ?></h4>
+				<span class="ref mobile-ref">Ref: <?php echo $product->sku; ?></span>
+				<?php woocommerce_template_single_excerpt(); ?>
+
+				<?php if(get_field('white_gold') || get_field('diamonds') || get_field('gem')) : ?>
+					<div class="mobile-specs specs">
+						<?php if(get_field('white_gold')) { ?>
+							<div class="white-gold">
+								<?php the_field('white_gold'); ?>K
+								<span>Gold</span>
+							</div>
+						<?php } ?>
+
+						<?php if(get_field('diamonds')) { ?>
+							<div class="diamond">
+								<?php the_field('diamonds'); ?>CT
+								<span>Diamonds</span>
+							</div>
+						<?php } ?>
+
+						<?php if(get_field('gem')) { ?>
+							<div class="rose-gold">
+								<?php the_field('gem'); ?> 
+								<span>Gem</span>
+							</div>
+						<?php } ?>
+					</div>
+				<?php endif; ?>
 			</div>
 
 		</div><!-- .summary -->
