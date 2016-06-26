@@ -52,6 +52,56 @@ body {
 	overflow: hidden;
 }
 
+body.no-country {
+	overflow: hidden;
+}
+
+.landing {
+	height: 100vh;
+	background: #fff;
+}
+
+	.landing-content {
+		margin: 0 auto;
+		text-align: center;
+		position: relative;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		   -moz-transform: translateY(-50%);
+		    -ms-transform: translateY(-50%);
+		    	transform: translateY(-50%);
+	}
+
+	.landing img {
+		margin-bottom: 40px;
+	}
+
+	.landing p {
+		font-family: 'GothamBook';
+		color: #000;
+		font-size: 15px;
+	}
+
+	.country-select {
+		margin-top: 30px;
+	}
+
+	.country-select button {
+		background: none;
+		color: #000;
+		border: 1px solid #000;
+		margin: 0 15px;
+		font-family: 'GothamBook';
+		text-transform: uppercase;
+		padding: 7px 15px;
+	}
+
+		.country-select button:hover {
+			background: #000;
+			/*color: #b5985a;*/
+			color: #fff;
+		}
+
 .clearfix {
 	clear: both;
 	overflow: hidden;
@@ -658,6 +708,11 @@ body {
 	}
 
 .page-loader {
+	display: none;
+}
+
+body:not(.no-country) .page-loader {
+	display: block;
 	height: 100vh;
 	background: rgba(0,0,0,0.5);
 	text-align: center;

@@ -1297,7 +1297,14 @@ function get_client_ip() {
     return $ipaddress;
 }
 
+add_action( 'init', 'setting_my_first_cookie' );
+function setting_my_first_cookie() {
+  	setcookie('selected_country', 'empty');
+}
 
+function edit_cookie($val) {
+  	setcookie('selected_country', $val);
+}
 
 
 

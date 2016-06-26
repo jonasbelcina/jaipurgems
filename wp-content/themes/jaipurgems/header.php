@@ -9,6 +9,8 @@
  * @since Twenty Sixteen 1.0
  */
 
+	session_start();
+
 	if(isset($_COOKIE['country']) && $_COOKIE['country'] != ''){
 		$country = $_COOKIE['country'];
 	}
@@ -41,14 +43,53 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php 
+$addtl_class = ' ';
+$selected_country = '';
+
+if (isset($_POST['location'])) {   
+    $_SESSION['selected_country'] = $_POST['location'];
+}
+
+if(!$_SESSION['selected_country']) {
+  	// echo "The cookie: '" . $selected_country . "' is not set.";
+  	$addtl_class = 'no-country';
+} else {
+  	// echo "The cookie '" . $selected_country . "' is set.";
+  	// echo "Cookie is:  " . $_COOKIE['selected_country'];
+  	// $selected_country = $_COOKIE['selected_country'];
+}
+
+// echo $_COOKIE['selected_country'];
+
+// if($selected_country == '') {
+// 	$addtl_class = 'no-country';
+// }
+?>
+
+<body <?php body_class($addtl_class); ?>>
 	<div class="page-loader">
 		<img id="slidecaption" src="<?php echo get_template_directory_uri(); ?>/assets/images/crown.png" />
 	</div>
+
+	<?php if(!$_SESSION['selected_country']) { ?>
+		<div class="landing">
+			<div class="landing-content">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-new.png" alt="Jaipur Gems" />
+				<p>Select your location:</p>
+
+				<form class="country-select" method="post">
+					<button type="submit" name="location" value="india" class="india">India</button>
+					<button type="submit" name="location" value="international" class="international">International</button>
+				</form>
+			</div>
+		</div>
+	<?php } ?>
+
 	<header>
 		<div class="navbar-top">
 			<div class="header-left">
-				Ensured Express Shipping To <span class="uae"><?php echo $_COOKIE['country']; ?></span><span class="uae">UAE</span>
+				Insured Express Shipping To <span class="uae"><?php echo $_COOKIE['country']; ?></span><span class="uae">UAE</span>
 			</div>
 
 			<div class="header-right-top">

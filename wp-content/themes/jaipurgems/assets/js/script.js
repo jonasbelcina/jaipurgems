@@ -448,7 +448,13 @@
 		});
 
 		$('.page-loader').css('display', 'none');
-		$('body').css('overflow', 'visible');
+		$('body:not(.no-country)').css('overflow', 'visible');
+	});
+
+	$('.india').on('click', function(e) {
+		e.preventDefault();
+		window.location.replace('http://jaipurgems.com');
+
 	});
 
 	var $grid = $('.campaign-holder').masonry({
