@@ -866,20 +866,23 @@ body:not(.no-country) .page-loader {
 	}
 
 	.tile-link {
-		display: block;
+		display: inline-block;
 		position: relative;
 		font-family: 'HVDFontsNiveauGroteskLightSmallCaps';
 		font-size: 21px;
 		color: #000;
 		text-align: center;
+		border: 1px solid transparent;
+		border-top: 1px solid #000;
+		padding: 4px 10px;
 		-webkit-transition: all 0.3s linear;
 				transition: all 0.3s linear;
 	}
 
 		.tile-link:before {
-			content: url('../images/prelink-black.png');
+			content: url('../images/crown-black2.png');
 			position: absolute;
-			top: -25px;
+			top: -20px;
 			left: 50%;
 			-webkit-transform: translateX(-50%);
 			   -moz-transform: translateX(-50%);
@@ -890,6 +893,7 @@ body:not(.no-country) .page-loader {
 		.tile-link:hover {
 			color: #ab9056;
 			text-decoration: none;
+			border: 1px solid #000;
 		}
 
 	.outer-link:hover,
@@ -989,7 +993,10 @@ body:not(.no-country) .page-loader {
 		.gems-content {
 			text-align: center;
 			width: 100%;
+			max-width: 220px;
 			position: absolute;
+			left: 50%;
+			margin-left: -110px;
 			top: 50%;
 			-webkit-transform: translateY(-50%);
 			   -moz-transform: translateY(-50%);
@@ -1006,7 +1013,7 @@ body:not(.no-country) .page-loader {
 			}
 
 			.gems-content .tile-link:before {
-				content: url('../images/prelink-black-sm.png');
+				content: url('../images/crown-black2.png');
 			}
 
 	.iconic-tile {
@@ -1079,15 +1086,16 @@ body:not(.no-country) .page-loader {
 				text-transform: uppercase;
 				color: #fff;
 				margin-bottom: 10px;
+				border-top: 1px solid #fff;
 			}
 
-				/*.iconic-content .tile-link:hover {
-					color: #b5985a;
-				}*/
+				.iconic-content .tile-link:hover {
+					border: 1px solid #fff;
+				}
 
 				.iconic-content .tile-link:before {
-					content: url('../images/prelink-white.png');
-					top: -30px;
+					content: url('../images/crown-small.png');
+					top: -21px;
 				}
 
 	.gems-right {
@@ -1119,7 +1127,7 @@ body:not(.no-country) .page-loader {
 			.diamonds-content {
 				text-align: center;
 				width: 100%;
-				max-width: 283px;
+				max-width: 303px;
 				position: absolute;
 				right: 50px;
 				top: 50%;
@@ -1198,14 +1206,16 @@ body:not(.no-country) .page-loader {
 
 		.princess-content .tile-link {
 			color: #fff;
+			border-top: 1px solid #fff;
 		}
 
 			.princess-content .tile-link:hover {
 				color: #b5985a;
+				border: 1px solid #fff;
 			}
 
 			.princess-content .tile-link:before {
-				content: url('../images/prelink-white.png');
+				content: url('../images/crown-small.png');
 			}
 
 	.princess-tile:hover img,
@@ -1254,6 +1264,8 @@ body:not(.no-country) .page-loader {
 
 	.find-jewellery .tile-link {
 		margin-bottom: 30px;
+		display: block;
+		border: 0;
 	}
 
 		.find-jewellery .tile-link:before {
@@ -5331,7 +5343,7 @@ footer {
 	}
 
 		.tile-link:before {
-			content: url('../images/prelink-black-sm.png');
+			/*content: url('../images/prelink-black-sm.png');*/
 		}
 
 	.collections-home h1 {
@@ -5374,7 +5386,7 @@ footer {
 
 		.diamonds-content {
 			right: 15px;
-			max-width: 229px;
+			max-width: 250px;
 		}
 
 			.diamonds-content h1 {
@@ -5814,7 +5826,7 @@ footer {
 			}
 
 			.princess-content .tile-link:before {
-				content: url('../images/prelink-white-sm.png');
+				/*content: url('../images/prelink-white-sm.png');*/
 			}
 
 	/*.featured-blogs > .container {
@@ -6587,7 +6599,7 @@ footer {
 	}
 
 	.rajputana-content {
-		max-width: 192px;
+		max-width: 210px;
 		left: 10px;
 		top: 75%;
 	}
