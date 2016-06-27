@@ -85,6 +85,15 @@ do_action( 'woocommerce_before_cart' ); ?>
 								} else {
 									printf( '<a href="%s">%s</a>', esc_url( $_product->get_permalink( $cart_item ) ), $thumbnail );
 								}
+
+								// remove item from cart
+								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+									'<a href="%s" class="remove mobile-remove" title="%s" data-product_id="%s" data-product_sku="%s">Remove from cart</a>',
+									esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+									__( 'Remove this item', 'woocommerce' ),
+									esc_attr( $product_id ),
+									esc_attr( $_product->get_sku() )
+								), $cart_item_key );
 							?>
 						</td>
 
@@ -108,7 +117,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 								// remove item from cart
 								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-									'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">Remove from cart</a>',
+									'<a href="%s" class="remove desktop-remove" title="%s" data-product_id="%s" data-product_sku="%s">Remove from cart</a>',
 									esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
 									__( 'Remove this item', 'woocommerce' ),
 									esc_attr( $product_id ),
