@@ -9,7 +9,6 @@
  * @since Twenty Sixteen 1.0
  */
 
-	session_start();
 
 	if(isset($_COOKIE['country']) && $_COOKIE['country'] != ''){
 		$country = $_COOKIE['country'];
@@ -21,9 +20,12 @@
 		if(isset($location['countryName']) && $location['countryName'] != '' && $location['countryName'] != '-') {
 			$country  = $location['countryName'];
 		} else {
-			$country = 'United Arab Emirates';
+			// $country = 'United Arab Emirates';
 		}
 		setcookie('country' , $country);
+		// setcookie('location', $location);
+
+		session_start();
 	}
 
 ?><!DOCTYPE html>
@@ -65,6 +67,7 @@ if(!$_SESSION['selected_country']) {
 // if($selected_country == '') {
 // 	$addtl_class = 'no-country';
 // }
+// var_dump($_COOKIE);
 ?>
 
 <body <?php body_class($addtl_class); ?>>
@@ -89,7 +92,7 @@ if(!$_SESSION['selected_country']) {
 	<header>
 		<div class="navbar-top">
 			<div class="header-left">
-				Insured Express Shipping To <span class="uae"><?php echo $_COOKIE['country']; ?></span><span class="uae">UAE</span>
+				Insured Express Shipping To <span class="uae"><?php echo $country; ?></span><span class="uae">UAE</span>
 			</div>
 
 			<div class="header-right-top">

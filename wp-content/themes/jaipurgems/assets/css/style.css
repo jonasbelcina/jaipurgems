@@ -125,12 +125,12 @@ body.no-country {
 			position: relative;
 		}
 
-			.uae:after {
+			/*.uae:after {
 				position: absolute;
 				right: -35px;
 				top: 0;
 				content: url('../images/uae.png');
-			}
+			}*/
 
 			.uae:last-child {
 				display: none;
