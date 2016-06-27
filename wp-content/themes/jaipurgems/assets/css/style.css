@@ -4348,6 +4348,13 @@ footer {
 		padding: 0 0 5px;
 	}
 
+	td.product-quantity .quantity input {
+		border-radius: 0;
+		border: 1px solid #ddd;
+		-webkit-appearance: none;
+				appearance: none;
+	}
+
 	.woocommerce-cart .cart-collaterals .cart_totals table .order-total th,
 	.woocommerce-cart .cart-collaterals .cart_totals table .order-total td {
 		border-top: 1px solid #ebe9eb;
@@ -5826,6 +5833,14 @@ footer {
 		font-weight: 700;
 		color: #000;
 	}
+
+	td.product-quantity {
+		overflow: hidden;
+	}
+
+		td.product-quantity .quantity {
+			float: right;
+		}
 
 }
 
