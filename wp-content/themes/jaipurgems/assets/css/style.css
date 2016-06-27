@@ -121,7 +121,9 @@ body.no-country {
 	}
 
 		.header-left img {
-			max-width: 24px;
+			max-width: 20px;
+			margin-left: 5px;
+			margin-top: -4px;
 		}
 
 		.uae {
