@@ -10,9 +10,9 @@
  */
 
 
-	if(isset($_COOKIE['country']) && $_COOKIE['country'] != ''){
+	if(isset($_COOKIE['country']) && $_COOKIE['country'] != '' && isset($_COOKIE['country_code']) && $_COOKIE['country_code'] != ''){
 		$country = $_COOKIE['country'];
-		$country_code = $_COOKIE['countryCode'];
+		$country_code = $_COOKIE['country_code'];
 	}
 	else{
 		$ip = get_client_ip();
@@ -25,7 +25,7 @@
 			// $country = 'United Arab Emirates';
 		}
 		setcookie('country' , $country);
-		setcookie('code' , $country_code);
+		setcookie('country_code' , $country_code);
 		// setcookie('location', $location);
 
 		session_start();
@@ -70,7 +70,7 @@ if(!$_SESSION['selected_country']) {
 // if($selected_country == '') {
 // 	$addtl_class = 'no-country';
 // }
-// var_dump($_COOKIE);
+var_dump($_COOKIE);
 ?>
 
 <body <?php body_class($addtl_class); ?>>
