@@ -5780,6 +5780,10 @@ footer {
 		float: none;
 	}
 
+	.woocommerce-page table.cart .product-thumbnail {
+		display: block !important;
+	}
+
 }
 
 @media only screen and (max-width : 767px) {
