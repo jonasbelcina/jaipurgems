@@ -12,6 +12,7 @@
 
 	if(isset($_COOKIE['country']) && $_COOKIE['country'] != ''){
 		$country = $_COOKIE['country'];
+		$country_code = $_COOKIE['countryCode'];
 	}
 	else{
 		$ip = get_client_ip();
@@ -19,10 +20,12 @@
 
 		if(isset($location['countryName']) && $location['countryName'] != '' && $location['countryName'] != '-') {
 			$country  = $location['countryName'];
+			$country_code = $location['countryCode'];
 		} else {
 			// $country = 'United Arab Emirates';
 		}
 		setcookie('country' , $country);
+		setcookie('code' , $country_code);
 		// setcookie('location', $location);
 
 		session_start();
@@ -92,7 +95,7 @@ if(!$_SESSION['selected_country']) {
 	<header>
 		<div class="navbar-top">
 			<div class="header-left">
-				Insured Express Shipping To <span class="uae"><?php echo $country; ?></span><span class="uae">UAE</span>
+				Insured Express Shipping To <span class="uae"><?php echo $country; ?></span><img src="http://www.geonames.org/flags/x/<?php echo $country_code; ?>.gif" /><span class="uae">UAE</span>
 			</div>
 
 			<div class="header-right-top">

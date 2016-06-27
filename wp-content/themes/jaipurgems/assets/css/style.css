@@ -120,6 +120,10 @@ body.no-country {
 		margin-left: 10px;
 	}
 
+		.header-left img {
+			max-width: 24px;
+		}
+
 		.uae {
 			color: #b5985a;
 			position: relative;
