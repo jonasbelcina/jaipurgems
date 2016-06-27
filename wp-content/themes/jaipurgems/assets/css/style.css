@@ -5257,7 +5257,7 @@ footer {
 		}
 
 			.uae:first-child {
-				display: none;
+				/*display: none;*/
 			}
 
 			.uae:last-child {
@@ -5771,6 +5771,10 @@ footer {
 }
 
 @media only screen and (max-width : 767px) {
+	.uae:first-child {
+		display: none;
+	}
+	
 	.navbar-brand img {
 		max-width: 75px;
 	}
