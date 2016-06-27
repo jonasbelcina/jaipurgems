@@ -123,7 +123,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="footer-cc">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/cc.png" alt="Payment Options" />
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/cc2.png" alt="Payment Options" />
 					</div>
 
 					<div class="footer-heych">
