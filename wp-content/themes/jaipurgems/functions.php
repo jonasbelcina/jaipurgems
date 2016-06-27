@@ -749,7 +749,7 @@ function wooshare(){
 	   <a target="_blank" class="share-link" href="https://plus.google.com/share?url=<?php echo $link;?>"  onclick="return popitup('https://plus.google.com/share?url=<?php echo $link;?>')"></a>
 	   <a target="_blank" class="share-link" href="https://pinterest.com/pin/create/button/?url=<?php echo $link; ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>&description=<?php echo shortenText(get_the_content(), 110, '');?>" onclick="return popitup('https://pinterest.com/pin/create/button/?url=<?php echo $link; ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>&description=<?php echo shortenText(get_the_content(), 110, '');?>');"></a>
 
-	   <a href="">Contact us</a>
+	   <a href="" class="product-contact" data-toggle="modal" data-target="#productContact" data-product="<?php the_title(); ?>">Contact us</a>
 	</div>
 <?php
 }

@@ -3782,7 +3782,7 @@ footer {
 				color: #b09d76;
 				font-weight: bold;
 				position: absolute;
-				top: 2px;
+				top: -2px;
 				left: 0;
 				line-height: 1;
 			}
@@ -3939,6 +3939,14 @@ footer {
 			font-family: 'GothamBook';
 		}
 
+		#tryAtHome {
+			text-align: center;
+		}
+
+		#tryAtHome form {
+			max-width: 335px;
+		}
+
 		#tryAtHome input:not([type="submit"]) {
 			width: 100%;
 			height: 30px;
@@ -3978,24 +3986,28 @@ footer {
 		  font-family: 'GothamBook';
 		  font-size: 11px;
 		  text-transform: none;
+		  text-align: left;
 		}
 		#tryAtHome ::-moz-placeholder { /* Firefox 19+ */
 		  color: #777;
 		  font-family: 'GothamBook';
 		  font-size: 11px;
 		  text-transform: none;
+		  text-align: left;
 		}
 		#tryAtHome :-ms-input-placeholder { /* IE 10+ */
 		  color: #777;
 		  font-family: 'GothamBook';
 		  font-size: 11px;
 		  text-transform: none;
+		  text-align: left;
 		}
 		#tryAtHome :-moz-placeholder { /* Firefox 18- */
 		  color: #777;
 		  font-family: 'GothamBook';
 		  font-size: 11px;
 		  text-transform: none;
+		  text-align: left;
 		}
 
 	.mobile-single,
@@ -5774,7 +5786,7 @@ footer {
 	.uae:first-child {
 		display: none;
 	}
-	
+
 	.navbar-brand img {
 		max-width: 75px;
 	}
