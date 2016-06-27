@@ -5253,7 +5253,7 @@ footer {
 			margin: 5px 0 0;
 			display: inline-block;
 			float: right;
-			padding-right: 30px;
+			/*padding-right: 30px;*/
 		}
 
 			.uae:first-child {
@@ -5261,7 +5261,7 @@ footer {
 			}
 
 			.uae:last-child {
-				display: inline-block;
+				/*display: inline-block;*/
 			}
 
 		.header-right-top {
