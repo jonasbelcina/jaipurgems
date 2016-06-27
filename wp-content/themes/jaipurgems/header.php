@@ -70,7 +70,7 @@ if(!$_SESSION['selected_country']) {
 // if($selected_country == '') {
 // 	$addtl_class = 'no-country';
 // }
-var_dump($_COOKIE);
+// var_dump($_COOKIE);
 ?>
 
 <body <?php body_class($addtl_class); ?>>
