@@ -114,4 +114,19 @@ $terms = get_the_terms( $post->ID, 'product_cat' );
 		</div>
 	</div>
 
+	<!-- Product Contact Modal -->
+	<div class="modal fade" id="productContact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Contact Us</h4>
+				</div>
+				<div class="modal-body">
+					<?php echo do_shortcode('[contact-form-7 id="626" title="Product Contact"]'); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+
 <?php get_footer( 'shop' ); ?>
