@@ -115,7 +115,7 @@ $terms = get_the_terms( $post->ID, 'product_cat' );
 	</div>
 
 	<!-- Product Contact Modal -->
-	<div class="modal fade" id="productContact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<!-- <div class="modal fade" id="productContact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -127,6 +127,6 @@ $terms = get_the_terms( $post->ID, 'product_cat' );
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 <?php get_footer( 'shop' ); ?>
