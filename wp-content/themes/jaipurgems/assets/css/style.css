@@ -800,6 +800,10 @@ body:not(.no-country) .page-loader {
 		display: block;
 	}
 
+	.home-slide img {
+		width: 100%;
+	}
+
 	.home-slide img:nth-child(2) {
 		display: none;
 	}
