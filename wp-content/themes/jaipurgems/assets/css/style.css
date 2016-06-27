@@ -6839,8 +6839,8 @@ footer {
 	}
 
 	#rc-imageselect, .g-recaptcha, .recaptcha-holder {
-		transform: scale(0.83);
-		-webkit-transform: scale(0.83);
+		transform: scale(0.88);
+		-webkit-transform: scale(0.88);
 		transform-origin: 0 0;
 		-webkit-transform-origin: 0 0;
 	}
