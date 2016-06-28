@@ -4026,7 +4026,14 @@ footer {
 
 		.mobile-cart .cart {
 			padding: 5px 0 0 !important;
+			position: relative;
 		}
+
+			.quantity.input-group.not-bangle {
+				position: absolute;
+				right: 0;
+				top: -23px;
+			}
 
 		div.product .entry-summary .mobile-share ul {
 			padding: 0 !important;
@@ -6257,6 +6264,7 @@ footer {
 	.single-product div.product div.images,
 	.single-product div.product div.entry-summary {
 		padding: 0 15px;
+		margin-bottom: 13px;
 	}
 
 	.woocommerce div.product div.images > img {
