@@ -4074,7 +4074,7 @@ footer {
 			position: relative;
 		}
 
-			.quantity.input-group.not-bangle {
+			.mobile-cart .quantity.input-group.not-bangle {
 				position: absolute;
 				right: 0;
 				top: -23px;
@@ -4467,6 +4467,18 @@ footer {
 			.wishlist_table a.remove:hover {
 				background: none;
 				color: #b5985a !important;
+			}
+
+		.wishlist_table .product-add-to-cart a.add_to_cart {
+			background: #000;
+			border-radius: 0;
+			/*color: #b5985a;*/
+		}
+
+			.wishlist_table .product-add-to-cart a.add_to_cart:hover {
+				/*color: #b5985a;
+				text-decoration: underline;*/
+				background: #b5985a;
 			}
 
 /* Checkout */

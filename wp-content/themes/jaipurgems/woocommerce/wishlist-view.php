@@ -90,7 +90,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 
                     <th class="product-price">
                         <span class="nobr">
-                            <?php echo apply_filters( 'yith_wcwl_wishlist_view_price_heading', __( 'Unit Price', 'yith-woocommerce-wishlist' ) ) ?>
+                            <?php echo apply_filters( 'yith_wcwl_wishlist_view_price_heading', __( 'Price', 'yith-woocommerce-wishlist' ) ) ?>
                         </span>
                     </th>
 
@@ -213,10 +213,30 @@ if ( ! defined( 'YITH_WCWL' ) ) {
                                 <?php if( $show_add_to_cart && isset( $stock_status ) && $stock_status != 'Out' ): ?>
                                     <?php
     								if( function_exists( 'woocommerce_template_loop_add_to_cart' ) ) {
-    									woocommerce_template_loop_add_to_cart();
+    									// woocommerce_template_loop_add_to_cart();
+                                        echo apply_filters( 'woocommerce_loop_add_to_cart_link',
+                                         sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s">%s</a>',
+                                             esc_url( $product->add_to_cart_url() ),
+                                             esc_attr( isset( $quantity ) ? $quantity : 1 ),
+                                             esc_attr( $product->id ),
+                                             esc_attr( $product->get_sku() ),
+                                             esc_attr( isset( $class ) ? $class : 'button' ),
+                                             esc_html( $product->add_to_cart_text() )
+                                         ),
+                                        $product );
     								}
     								else{
-    									wc_get_template( 'loop/add-to-cart.php' );
+    									// wc_get_template( 'loop/add-to-cart.php' );
+                                        echo apply_filters( 'woocommerce_loop_add_to_cart_link',
+                                         sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s">%s</a>',
+                                             esc_url( $product->add_to_cart_url() ),
+                                             esc_attr( isset( $quantity ) ? $quantity : 1 ),
+                                             esc_attr( $product->id ),
+                                             esc_attr( $product->get_sku() ),
+                                             esc_attr( isset( $class ) ? $class : 'button' ),
+                                             esc_html( $product->add_to_cart_text() )
+                                         ),
+                                        $product );
     								}
                                     ?>
                                 <?php endif ?>
