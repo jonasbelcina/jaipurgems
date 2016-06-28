@@ -58,7 +58,8 @@ body.no-country {
 
 .landing {
 	height: 100vh;
-	background: #fff;
+	background: url('../images/landing-bg.jpg') center no-repeat;
+	background-size: cover;
 }
 
 	.landing-content {
@@ -72,34 +73,78 @@ body.no-country {
 		    	transform: translateY(-50%);
 	}
 
-	.landing img {
+	.landing-logo {
 		margin-bottom: 40px;
+		opacity: 0;
+		-webkit-transition: all 1s ease;
+				transition: all 1s ease;
 	}
 
-	.landing p {
-		font-family: 'GothamBook';
-		color: #000;
-		font-size: 15px;
+	.landing-bangle {
+		display: block;
+		margin: 0 auto;
+		max-width: 600px;
+		position: relative;
+		text-align: center;
 	}
+
+		.landing-bangle img {
+			max-width: 100%;
+			height: auto;
+			opacity: 0;
+			-webkit-transition: all 1s ease;
+					transition: all 1s ease;
+		}
+
+		.landing-bangle p {
+			position: absolute;
+			top: 90px;
+			margin: 0;
+			font-family: 'HVDFontsNiveauGroteskLightSmallCaps';
+			font-size: 17px;
+			color: #fff;
+			width: 100%;
+			opacity: 0;
+			-webkit-transition: all 1s ease;
+					transition: all 1s ease;
+		}
 
 	.country-select {
-		margin-top: 30px;
+		position: absolute;
+		top: 78px;
+		width: 100%;
+		overflow: hidden;
+		opacity: 0;
+		-webkit-transition: all 1s ease;
+				transition: all 1s ease;
 	}
 
 	.country-select button {
 		background: none;
-		color: #000;
-		border: 1px solid #000;
-		margin: 0 15px;
-		font-family: 'GothamBook';
+		color: #fff;
+		border: 2px solid #fff;
+		font-family: 'HVDFontsNiveauGroteskLightSmallCaps';
+		font-size: 17px;
 		text-transform: uppercase;
-		padding: 7px 15px;
+		padding: 11px 0;
+		width: 166px;
+		-webkit-transition: all 0.3s linear;
+				transition: all 0.3s linear;
 	}
 
 		.country-select button:hover {
-			background: #000;
+			/*background: #000;*/
 			/*color: #b5985a;*/
-			color: #fff;
+			color: #000;
+			border: 2px solid #000;
+		}
+
+		.country-select button:first-child {
+			float: left;
+		}
+
+		.country-select button:last-child {
+			float: right;
 		}
 
 .clearfix {
@@ -6494,6 +6539,17 @@ footer {
 	.checkout_panel form.login.guest-form {
 		margin-bottom: 20px;
 	}
+
+	.country-select {
+		position: initial;
+		margin-top: 30px;
+	}
+
+		.country-select button {
+			float: none !important;
+			display: inline-block;
+			margin: 0 15px 20px;
+		}
 
 }
 

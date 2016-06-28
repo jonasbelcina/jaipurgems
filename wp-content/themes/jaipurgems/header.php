@@ -81,13 +81,15 @@ if(!$_SESSION['selected_country']) {
 	<?php if(!$_SESSION['selected_country']) { ?>
 		<div class="landing">
 			<div class="landing-content">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-new.png" alt="Jaipur Gems" />
-				<p>Select your location:</p>
-
-				<form class="country-select" method="post">
-					<button type="submit" name="location" value="india" class="india">India</button>
-					<button type="submit" name="location" value="international" class="international">International</button>
-				</form>
+				<img class="landing-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/landing-logo.png" alt="Jaipur Gems" />
+				<div class="landing-bangle">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing-bangle.png" alt="Jaipur Gems" />
+					<p>Select Your Location:</p>
+					<form class="country-select" method="post">
+						<button type="submit" name="location" value="india" class="india">India</button>
+						<button type="submit" name="location" value="international" class="international">International</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	<?php } ?>
