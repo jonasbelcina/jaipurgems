@@ -272,7 +272,7 @@ if(!$_SESSION['selected_country']) {
 						<form class="search" method="get">
 							<div class="col-xs-10">
 								<div class="row">
-									<input type="text" name="s" placeholder="Search">
+									<input type="text" name="s" placeholder="I am looking for">
 									<input type="hidden" name="post_type" value="product">
 								</div>
 							</div>

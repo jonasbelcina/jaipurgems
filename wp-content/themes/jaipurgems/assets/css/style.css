@@ -714,12 +714,30 @@ body.no-country {
 		font-family: 'GothamBook';
 	}
 
-	.search-box input[type="text"] ::-webkit-input-placeholder,
-	.search-box input[type="text"] ::-moz-placeholder,
-	.search-box input[type="text"] :-ms-input-placeholder
-	.search-box input[type="text"] :-moz-placeholder {
-	  color: rgba(255,255,255,0.7) !important;
-	  font-size: 18px;
+	.search-box .search ::-moz-placeholder {
+		color: rgba(255,255,255,0.7) !important;
+		font-size: 18px;
+		text-align: left;
+		text-transform: none;
+
+	}
+	.search-box .search :-ms-input-placeholder {
+		color: rgba(255,255,255,0.7) !important;
+		font-size: 18px;
+		text-align: left;
+		text-transform: none;
+	}
+	.search-box .search :-moz-placeholder {
+		color: rgba(255,255,255,0.7) !important;
+		font-size: 18px;
+		text-align: left;
+		text-transform: none;
+	}
+	.search-box .search ::-webkit-input-placeholder {
+	  	color: rgba(255,255,255,0.7) !important;
+	  	font-size: 18px;
+	  	text-align: left;
+	  	text-transform: none;
 	}
 
 	.search-box button {
