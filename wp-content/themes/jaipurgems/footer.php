@@ -195,8 +195,8 @@
 	<!-- <script type='text/javascript' src='https://maps.google.com/maps/api/js?sensor=false&ver=4.2.7'></script> -->
 
 	<script type="text/javascript">
-		var $ = jQuery.noConflict();
-
+		// var $ = jQuery.noConflict();
+	;(function($){
 		var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 		var xhr;
 		var map;
@@ -370,6 +370,7 @@
 				initializeMaps();
 			}, 1500);
 		});
+	})(jQuery);
 	</script>
 
 	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=initializeMaps"></script> -->
