@@ -358,14 +358,11 @@
 		$(document).ready(function(){
 			// loadMapScript();
 			// setTimeout(function() {
-			// 	initializeMaps();
+				initializeMaps();
 			// }, 1500);
 		});
 	})(jQuery);
 
-	document.addEventListener('DOMContentLoaded', function() {
-		initializeMaps();
-	});
 	</script>
 
 	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=initializeMaps"></script> -->
