@@ -50,7 +50,7 @@ function jg_scripts() {
 		wp_dequeue_script( 'rwmb-map-frontend' );
 		wp_deregister_script( 'google-maps' );
 
-		wp_register_script( 'google-maps-new', 'https://maps.google.com/maps/api/js', array(), '4.2.7', true);
+		wp_register_script( 'google-maps-new', 'https://maps.google.com/maps/api/js?sensor=false', array(), '4.2.7', true);
 		wp_enqueue_script('google-maps-new');
 	}
 
