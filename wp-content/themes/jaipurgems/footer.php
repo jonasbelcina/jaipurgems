@@ -241,7 +241,7 @@
 			addMarkers(allMarkers);
 		 
 		}
-		function addMarkers(m, trigger = false){
+		function addMarkers(m){
 			var infowindow = new google.maps.InfoWindow(); 
 			var marker, i;
 			var bounds = new google.maps.LatLngBounds();
@@ -324,7 +324,7 @@
 							$('#list').html('');
 							deleteMarkers();
 							if(getMarkers.length > 0){
-								addMarkers(getMarkers, true);
+								addMarkers(getMarkers);
 							}
 							else{
 								$('#list').html('No stores found.');
@@ -357,11 +357,15 @@
 
 		$(document).ready(function(){
 			// loadMapScript();
-			setTimeout(function() {
-				initializeMaps();
-			}, 1500);
+			// setTimeout(function() {
+			// 	initializeMaps();
+			// }, 1500);
 		});
 	})(jQuery);
+
+	document.addEventListener('DOMContentLoaded', function() {
+		initializeMaps();
+	});
 	</script>
 
 	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=initializeMaps"></script> -->
