@@ -50,11 +50,16 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	position: relative;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
+	.body-wrap {
+		overflow: hidden;
+		max-height: 100vh;
+	}
+
 body.no-country {
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 .landing {
@@ -5929,16 +5934,21 @@ footer {
 }
 
 @media only screen and (max-width : 767px) {
-	.landing-content {
-		margin: 0 auto;
-		text-align: center;
-		position: relative;
-		top: initial;
-		-webkit-transform: none;
-		   -moz-transform: none;
-		    -ms-transform: none;
-		    	transform: none;
+	.landing {
+		min-height: 100vh;
 	}
+
+		.landing-content {
+			padding-top: 30px;
+			margin: 0 auto;
+			text-align: center;
+			position: relative;
+			top: initial;
+			-webkit-transform: none;
+			   -moz-transform: none;
+			    -ms-transform: none;
+			    	transform: none;
+		}
 
 	.uae:first-child {
 		display: none;

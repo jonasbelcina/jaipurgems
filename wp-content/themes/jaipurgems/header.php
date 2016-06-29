@@ -74,6 +74,8 @@ if(!$_SESSION['selected_country']) {
 ?>
 
 <body <?php body_class($addtl_class); ?>>
+	<div class="body-wrap">
+	
 	<div class="page-loader">
 		<img id="slidecaption" src="<?php echo get_template_directory_uri(); ?>/assets/images/crown.png" />
 	</div>

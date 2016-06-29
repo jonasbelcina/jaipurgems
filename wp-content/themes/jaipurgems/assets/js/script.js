@@ -474,7 +474,7 @@
 		});
 
 		$('.page-loader').css('display', 'none');
-		$('body:not(.no-country)').css('overflow', 'visible');
+		$('body:not(.no-country) .body-wrap').css('overflow', 'visible');
 	});
 
 	$('.india').on('click', function(e) {
