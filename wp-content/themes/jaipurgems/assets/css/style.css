@@ -5964,7 +5964,7 @@ footer {
 
 	.wishlist_table .product-name a,
 	.wishlist_table .product-price span {
-		text-align: left !important;
+		text-align: center !important;
 		display: block;
 	}
 
