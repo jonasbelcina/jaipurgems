@@ -44,7 +44,16 @@ function jg_scripts() {
 	wp_register_style('vendor-owl-carousel', get_template_directory_uri().'/assets/vendor/owl.carousel.css', array(), '2.0' );
 	wp_register_style('vendor-magnific-popup', get_template_directory_uri().'/assets/vendor/magnific-popup.css', array(), '1.0' );
 
-	wp_register_script( 'google-maps', 'https://maps.google.com/maps/api/js?sensor=false', array(), false , false);
+	if(is_page('453')) {
+		// remove rwmb google maps script
+		wp_dequeue_script( 'rwmb-map' );
+		wp_dequeue_script( 'rwmb-map-frontend' );
+		wp_deregister_script( 'google-maps' );
+
+		wp_register_script( 'google-maps', 'https://maps.google.com/maps/api/js?sensor=false&callback=initializeMaps', array(), false, '1.0', false);
+		wp_enqueue_script('google-maps');
+	}
+
 	wp_register_script( 'vendor-owl-carousel', get_template_directory_uri().'/assets/vendor/owl.carousel' . $suffix . '.js', array( 'jquery'), '2.0', true );
 	wp_register_script( 'jg-bootstrap', get_template_directory_uri().'/assets/vendor/bootstrap' . $suffix . '.js', array(), '3.3.6', true );
 	wp_register_script( 'jg-bootstrap-hover-dropdown', get_template_directory_uri().'/assets/vendor/bootstrap-hover-dropdown' . $suffix . '.js', array(), '1.0', true );
@@ -60,7 +69,6 @@ function jg_scripts() {
 	wp_enqueue_style('vendor-magnific-popup');
 	wp_enqueue_style('jg-style');
 
-	wp_enqueue_script('google-maps');
 	wp_enqueue_script('vendor-owl-carousel');
 	wp_enqueue_script('vendor-masonry');
 	wp_enqueue_script('vendor-magnific-popup');
@@ -489,144 +497,144 @@ function shortenText($text, $num, $ellipsis) { // Function name shortenText
 	$text = substr($text,0,strrpos($text,' '));
 
 	if ($chars_text > $chars_limit)
-	 	{ $text = $text . $ellipsis; } // Ellipsis
-	 	return $text;
+		{ $text = $text . $ellipsis; } // Ellipsis
+		return $text;
 }
 
 // ignore sticky posts on main blog page
 function jg_ignore_sticky( $query ) {
 	$obj = get_queried_object();
 	// var_dump(get_queried_object());
-    if ( is_home() && $query->is_main_query() ) {
-        // $query->set('ignore_sticky_posts', 1);
-        $query->set( 'post__not_in', get_option( 'sticky_posts' ) ); 
-    }
+	if ( is_home() && $query->is_main_query() ) {
+		// $query->set('ignore_sticky_posts', 1);
+		$query->set( 'post__not_in', get_option( 'sticky_posts' ) ); 
+	}
 }
 // add_action( 'pre_get_posts', 'jg_ignore_sticky' );
 
 function set_archive_posts_per_page( $query ) {
-    if ( is_admin() || ! $query->is_main_query() )
-        return;
+	if ( is_admin() || ! $query->is_main_query() )
+		return;
 
-    if ( is_post_type_archive( 'campaigns' ) || is_post_type_archive( 'media' ) ) {
-        $query->set( 'posts_per_page', -1 );
-        return;
-    }
+	if ( is_post_type_archive( 'campaigns' ) || is_post_type_archive( 'media' ) ) {
+		$query->set( 'posts_per_page', -1 );
+		return;
+	}
 }
 add_action( 'pre_get_posts', 'set_archive_posts_per_page', 1 );
 
 // enable disqus shortcode
 function disqus_embed($disqus_shortname) {
-    global $post;
-    wp_enqueue_script('disqus_embed','http://'.$disqus_shortname.'.disqus.com/embed.js');
-    echo '<div id="disqus_thread"></div>
-    <script type="text/javascript">
-        var disqus_shortname = "'.$disqus_shortname.'";
-        var disqus_title = "'.$post->post_title.'";
-        var disqus_url = "'.get_permalink($post->ID).'";
-        var disqus_identifier = "'.$disqus_shortname.'-'.$post->ID.'";
-    </script>';
+	global $post;
+	wp_enqueue_script('disqus_embed','http://'.$disqus_shortname.'.disqus.com/embed.js');
+	echo '<div id="disqus_thread"></div>
+	<script type="text/javascript">
+		var disqus_shortname = "'.$disqus_shortname.'";
+		var disqus_title = "'.$post->post_title.'";
+		var disqus_url = "'.get_permalink($post->ID).'";
+		var disqus_identifier = "'.$disqus_shortname.'-'.$post->ID.'";
+	</script>';
 }
 
 // Register Bootstrap Navigation Walker
 include get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
 register_nav_menus( array(
-    'primary' => __( 'Primary Menu', 'jaipurgems' ),
+	'primary' => __( 'Primary Menu', 'jaipurgems' ),
 ) );
 
 function get_product_top_level_category ( $product_id ) {
  
-    $product_terms            =  get_the_terms ( $product_id, 'product_cat' );
-    $product_category         =  $product_terms[0]->parent;
-    $product_category_term    =  get_term ( $product_category, 'product_cat' );
-    $product_category_parent  =  $product_category_term->parent;
-    $product_top_category     =  $product_category_term->term_id;
+	$product_terms            =  get_the_terms ( $product_id, 'product_cat' );
+	$product_category         =  $product_terms[0]->parent;
+	$product_category_term    =  get_term ( $product_category, 'product_cat' );
+	$product_category_parent  =  $product_category_term->parent;
+	$product_top_category     =  $product_category_term->term_id;
 
-    while ( $product_category_parent  !=  0 ) {
-            $product_category_term    =  get_term ( $product_category_parent, 'product_cat' );
-            $product_category_parent  =  $product_category_term->parent;
-            $product_top_category     =  $product_category_term->term_id;
-    }
+	while ( $product_category_parent  !=  0 ) {
+			$product_category_term    =  get_term ( $product_category_parent, 'product_cat' );
+			$product_category_parent  =  $product_category_term->parent;
+			$product_top_category     =  $product_category_term->term_id;
+	}
 
-    return $product_top_category;
+	return $product_top_category;
 }
 
 // Add custom type
 add_filter('acf/location/rule_types', 'acf_location_rules_types');
 function acf_location_rules_types( $choices )
 {
-    $choices['Woocommerce']['product_parent_category'] = 'Product Parent Category';
+	$choices['Woocommerce']['product_parent_category'] = 'Product Parent Category';
 
-    return $choices;
+	return $choices;
 }
 
 // Add custom value
 add_filter('acf/location/rule_values/product_parent_category', 'acf_location_rules_values_product_parent_category');
 function acf_location_rules_values_product_parent_category( $choices )
 {
-    $args = array(
-    			'taxonomy'		=> 'product_cat',
-    			'hide_empty' 	=> 0,
-    			'parent'		=> 0
-    		);
+	$args = array(
+				'taxonomy'		=> 'product_cat',
+				'hide_empty' 	=> 0,
+				'parent'		=> 0
+			);
 
-    $categories = get_categories($args);
+	$categories = get_categories($args);
 
-    if($categories) {
-    	foreach ($categories as $cat) {
-    		$choices[$cat->term_id] = $cat->name;
-    	}
-    }
+	if($categories) {
+		foreach ($categories as $cat) {
+			$choices[$cat->term_id] = $cat->name;
+		}
+	}
 
-    return $choices;
+	return $choices;
 }
 
 // Matching the rule
 add_filter('acf/location/rule_match/product_parent_category', 'acf_location_rules_match_product_parent_category', 10, 3);
 function acf_location_rules_match_product_parent_category( $match, $rule, $options )
 {
-    if(isset($_GET['taxonomy']) && isset($_GET['tag_ID'])) {
-    	$current_cat = $_GET['tag_ID'];
-    }
+	if(isset($_GET['taxonomy']) && isset($_GET['tag_ID'])) {
+		$current_cat = $_GET['tag_ID'];
+	}
 
-    $selected_cat = $rule['value'];
-    // print_r(array($rule));
+	$selected_cat = $rule['value'];
+	// print_r(array($rule));
 
-    $cat_id = intval($current_cat);
+	$cat_id = intval($current_cat);
 
-    $args = array(
-    			'taxonomy'		=> 'product_cat',
-    			'child_of'		=> $selected_cat,
-    			'hide_empty'	=> 0
+	$args = array(
+				'taxonomy'		=> 'product_cat',
+				'child_of'		=> $selected_cat,
+				'hide_empty'	=> 0
 			);
 
-    $categories = get_terms($args);
-    // var_dump($categories);
-    $child_of = false;
-    foreach ($categories as $cat) {
-    	if($cat->term_id == $cat_id) {
-    		if($cat->term_id == $cat_id) {
-    			$child_of = true;
-    		}
-    	}
-    }
+	$categories = get_terms($args);
+	// var_dump($categories);
+	$child_of = false;
+	foreach ($categories as $cat) {
+		if($cat->term_id == $cat_id) {
+			if($cat->term_id == $cat_id) {
+				$child_of = true;
+			}
+		}
+	}
 
-    // var_dump($child_of);
+	// var_dump($child_of);
 
-    if($rule['operator'] == "==") {
-    	$match = ($current_cat == $selected_cat || $child_of);
-    }
-    elseif($rule['operator'] == "!=") {
-    	$match = ($current_cat != $selected_cat || !$child_of);
-    }
+	if($rule['operator'] == "==") {
+		$match = ($current_cat == $selected_cat || $child_of);
+	}
+	elseif($rule['operator'] == "!=") {
+		$match = ($current_cat != $selected_cat || !$child_of);
+	}
 
-    return $match;
+	return $match;
 }
 
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
+	add_theme_support( 'woocommerce' );
 }
 
 // redirect to checkout page after clicking add to cart button
@@ -661,69 +669,69 @@ remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_pr
 
 add_filter( 'woocommerce_currencies', 'add_my_currency' );
 function add_my_currency( $currencies ) {
-     $currencies['AED'] = __( 'Currency name', 'woocommerce' );
-     return $currencies;
+	 $currencies['AED'] = __( 'Currency name', 'woocommerce' );
+	 return $currencies;
 }
 
 add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
 function add_my_currency_symbol( $currency_symbol, $currency ) {
-     switch( $currency ) {
-          case 'AED': $currency_symbol = ' AED'; break;
-     }
-     return $currency_symbol;
+	 switch( $currency ) {
+		  case 'AED': $currency_symbol = ' AED'; break;
+	 }
+	 return $currency_symbol;
 }
 
 //Store the custom field for size
 add_filter( 'woocommerce_add_cart_item_data', 'add_cart_item_custom_data_vase', 10, 2 );
 function add_cart_item_custom_data_vase( $cart_item_meta, $product_id ) {
 
-    global $woocommerce;
+	global $woocommerce;
 
-    if(is_array($_POST['size'])){
-        foreach ($_POST['size'] as $key => $size) {
-            if($key == $product_id && $size != '')
-                $cart_item_meta['size'] = $size ;
-        }
-        
-    }
-    else{
-        if( $_POST['size'] != '')
-            $cart_item_meta['size'] = $_POST['size'] ;
-    }
-    return $cart_item_meta; 
+	if(is_array($_POST['size'])){
+		foreach ($_POST['size'] as $key => $size) {
+			if($key == $product_id && $size != '')
+				$cart_item_meta['size'] = $size ;
+		}
+		
+	}
+	else{
+		if( $_POST['size'] != '')
+			$cart_item_meta['size'] = $_POST['size'] ;
+	}
+	return $cart_item_meta; 
 }
 
 //Get it from the session and add it to the cart variable
 function get_cart_items_from_session( $item, $values, $key ) {
-    if ( array_key_exists( 'size', $values ) )
-        $item[ 'size' ] = $values['size'];
-    return $item;
+	if ( array_key_exists( 'size', $values ) )
+		$item[ 'size' ] = $values['size'];
+	return $item;
 }
 add_filter( 'woocommerce_get_cart_item_from_session', 'get_cart_items_from_session', 1, 3 );
 
 add_action('woocommerce_add_order_item_meta','wdm_add_values_to_order_item_meta',1,2);
 function wdm_add_values_to_order_item_meta($item_id, $values)
 {
-        global $woocommerce,$wpdb;
-        $user_custom_values = $values['size'];
-        if(!empty($user_custom_values))
-        {
-            wc_add_order_item_meta($item_id,'size',$user_custom_values);  
-        }
+		global $woocommerce,$wpdb;
+		$user_custom_values = $values['size'];
+		if(!empty($user_custom_values))
+		{
+			wc_add_order_item_meta($item_id,'size',$user_custom_values);  
+		}
 }
 
 add_action('woocommerce_before_cart_item_quantity_zero','wdm_remove_user_custom_data_options_from_cart',1,1);
 function wdm_remove_user_custom_data_options_from_cart($cart_item_key)
 {
-        global $woocommerce;
-        // Get cart
-        $cart = $woocommerce->cart->get_cart();
-        // For each item in cart, if item is upsell of deleted product, delete it
-        foreach( $cart as $key => $values)
-        {
-        // if ( $values['size'] == $cart_item_key )
-            unset( $woocommerce->cart->cart_contents[ $key ] );
-        }
+		global $woocommerce;
+		// Get cart
+		$cart = $woocommerce->cart->get_cart();
+		// For each item in cart, if item is upsell of deleted product, delete it
+		foreach( $cart as $key => $values)
+		{
+		// if ( $values['size'] == $cart_item_key )
+			unset( $woocommerce->cart->cart_contents[ $key ] );
+		}
 }
 
 // get top level category of post
@@ -756,87 +764,87 @@ function wooshare(){
 
 // get facebook followers count - 1223633204329440|euvE-dfiXsIWzEcCJ8UQUE_EQiA
 function facebook_count( $username ) {
-    $facebook_count = file_get_contents( 'https://graph.facebook.com/v2.6/' . $username .'?fields=fan_count&access_token=1223633204329440|euvE-dfiXsIWzEcCJ8UQUE_EQiA' );
-    return json_decode( $facebook_count )->fan_count;
+	$facebook_count = file_get_contents( 'https://graph.facebook.com/v2.6/' . $username .'?fields=fan_count&access_token=1223633204329440|euvE-dfiXsIWzEcCJ8UQUE_EQiA' );
+	return json_decode( $facebook_count )->fan_count;
 }
 
 // get twitter followers count
 function getTwitterFollowers($screenName = 'wpbeginner')
 {
-    // some variables
-    $consumerKey = 'lEnX52Llvi6Uzn1Ml5yyeKEtK';
-    $consumerSecret = 'PG4vb8QrDf6uii6EHD8InkCEiFATTSjkvq3keZmnsTIvCiOU8L';
-    $token = get_option('cfTwitterToken');
+	// some variables
+	$consumerKey = 'lEnX52Llvi6Uzn1Ml5yyeKEtK';
+	$consumerSecret = 'PG4vb8QrDf6uii6EHD8InkCEiFATTSjkvq3keZmnsTIvCiOU8L';
+	$token = get_option('cfTwitterToken');
  
-    // get follower count from cache
-    $numberOfFollowers = get_transient('cfTwitterFollowers');
+	// get follower count from cache
+	$numberOfFollowers = get_transient('cfTwitterFollowers');
  
-    // cache version does not exist or expired
-    if (false === $numberOfFollowers) {
-        // getting new auth bearer only if we don't have one
-        if(!$token) {
-            // preparing credentials
-            $credentials = $consumerKey . ':' . $consumerSecret;
-            $toSend = base64_encode($credentials);
+	// cache version does not exist or expired
+	if (false === $numberOfFollowers) {
+		// getting new auth bearer only if we don't have one
+		if(!$token) {
+			// preparing credentials
+			$credentials = $consumerKey . ':' . $consumerSecret;
+			$toSend = base64_encode($credentials);
  
-            // http post arguments
-            $args = array(
-                'method' => 'POST',
-                'httpversion' => '1.1',
-                'blocking' => true,
-                'headers' => array(
-                    'Authorization' => 'Basic ' . $toSend,
-                    'Content-Type' => 'application/x-www-form-urlencoded;charset=UTF-8'
-                ),
-                'body' => array( 'grant_type' => 'client_credentials' )
-            );
+			// http post arguments
+			$args = array(
+				'method' => 'POST',
+				'httpversion' => '1.1',
+				'blocking' => true,
+				'headers' => array(
+					'Authorization' => 'Basic ' . $toSend,
+					'Content-Type' => 'application/x-www-form-urlencoded;charset=UTF-8'
+				),
+				'body' => array( 'grant_type' => 'client_credentials' )
+			);
  
-            add_filter('https_ssl_verify', '__return_false');
-            $response = wp_remote_post('https://api.twitter.com/oauth2/token', $args);
+			add_filter('https_ssl_verify', '__return_false');
+			$response = wp_remote_post('https://api.twitter.com/oauth2/token', $args);
  
-            $keys = json_decode(wp_remote_retrieve_body($response));
+			$keys = json_decode(wp_remote_retrieve_body($response));
  
-            if($keys) {
-                // saving token to wp_options table
-                update_option('cfTwitterToken', $keys->access_token);
-                $token = $keys->access_token;
-            }
-        }
-        // we have bearer token wether we obtained it from API or from options
-        $args = array(
-            'httpversion' => '1.1',
-            'blocking' => true,
-            'headers' => array(
-                'Authorization' => "Bearer $token"
-            )
-        );
+			if($keys) {
+				// saving token to wp_options table
+				update_option('cfTwitterToken', $keys->access_token);
+				$token = $keys->access_token;
+			}
+		}
+		// we have bearer token wether we obtained it from API or from options
+		$args = array(
+			'httpversion' => '1.1',
+			'blocking' => true,
+			'headers' => array(
+				'Authorization' => "Bearer $token"
+			)
+		);
  
-        add_filter('https_ssl_verify', '__return_false');
-        $api_url = "https://api.twitter.com/1.1/users/show.json?screen_name=$screenName";
-        $response = wp_remote_get($api_url, $args);
+		add_filter('https_ssl_verify', '__return_false');
+		$api_url = "https://api.twitter.com/1.1/users/show.json?screen_name=$screenName";
+		$response = wp_remote_get($api_url, $args);
  
-        if (!is_wp_error($response)) {
-            $followers = json_decode(wp_remote_retrieve_body($response));
-            $numberOfFollowers = $followers->followers_count;
-        } else {
-            // get old value and break
-            $numberOfFollowers = get_option('cfNumberOfFollowers');
-            // uncomment below to debug
-            //die($response->get_error_message());
-        }
+		if (!is_wp_error($response)) {
+			$followers = json_decode(wp_remote_retrieve_body($response));
+			$numberOfFollowers = $followers->followers_count;
+		} else {
+			// get old value and break
+			$numberOfFollowers = get_option('cfNumberOfFollowers');
+			// uncomment below to debug
+			//die($response->get_error_message());
+		}
  
-        // cache for an hour
-        set_transient('cfTwitterFollowers', $numberOfFollowers, 1*60*60);
-        update_option('cfNumberOfFollowers', $numberOfFollowers);
-    }
+		// cache for an hour
+		set_transient('cfTwitterFollowers', $numberOfFollowers, 1*60*60);
+		update_option('cfNumberOfFollowers', $numberOfFollowers);
+	}
  
-    return $numberOfFollowers;
+	return $numberOfFollowers;
 }
 
 // get google plus followers count
 function googleplus_count( $user, $apikey ) {
-    $google = file_get_contents( 'https://www.googleapis.com/plus/v1/people/' . $user . '?key=' . $apikey );
-    return json_decode( $google )->circledByCount;
+	$google = file_get_contents( 'https://www.googleapis.com/plus/v1/people/' . $user . '?key=' . $apikey );
+	return json_decode( $google )->circledByCount;
 }
 
 // get instagram followers count
@@ -849,28 +857,28 @@ function instagram_count($user_id) {
 
 // Create Events Custom Post Type
 function jg_events_init() {
-    $args = array(
-      	'labels' => array(
-      					'name' => _x( 'Events', 'events' ),
-      					'singular_name' => _x( 'Event', 'event' ),
-      					'add_new_item' => __( 'Add New Event' ),
-      					'all_items' => __( 'All Events' ),
-      					'edit_item' => __( 'Edit Event' ),
-      				),
-        'public' => true,
-        'show_ui' => true,
-        'capability_type' => 'post',
-        'hierarchical' => false,
-        'query_var' => true,
-        // 'rewrite' => array('slug' => 'events'),
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail',)
-        );
-    register_post_type( 'events', $args );
- 	flush_rewrite_rules( false );
+	$args = array(
+		'labels' => array(
+						'name' => _x( 'Events', 'events' ),
+						'singular_name' => _x( 'Event', 'event' ),
+						'add_new_item' => __( 'Add New Event' ),
+						'all_items' => __( 'All Events' ),
+						'edit_item' => __( 'Edit Event' ),
+					),
+		'public' => true,
+		'show_ui' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'query_var' => true,
+		// 'rewrite' => array('slug' => 'events'),
+		'has_archive' => true,
+		'supports' => array(
+			'title',
+			'editor',
+			'thumbnail',)
+		);
+	register_post_type( 'events', $args );
+	flush_rewrite_rules( false );
 }
 add_action( 'init', 'jg_events_init' );
 
@@ -881,79 +889,79 @@ add_action( 'init', 'jg_events_init' );
 
 // Create Campaigns Custom Post Type
 function jg_campaigns_init() {
-    $args = array(
-      	'labels' => array(
-      					'name' => _x( 'Campaigns', 'campaigns' ),
-      					'singular_name' => _x( 'Campaign', 'campaign' ),
-      					'add_new_item' => __( 'Add New Campaign' ),
-      					'all_items' => __( 'All Campaigns' ),
-      					'edit_item' => __( 'Edit Campaign' ),
-      				),
-        'public' => true,
-        'show_ui' => true,
-        'capability_type' => 'post',
-        'hierarchical' => false,
-        'query_var' => true,
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail',)
-        );
-    register_post_type( 'campaigns', $args );
- 	// flush_rewrite_rules( true );
+	$args = array(
+		'labels' => array(
+						'name' => _x( 'Campaigns', 'campaigns' ),
+						'singular_name' => _x( 'Campaign', 'campaign' ),
+						'add_new_item' => __( 'Add New Campaign' ),
+						'all_items' => __( 'All Campaigns' ),
+						'edit_item' => __( 'Edit Campaign' ),
+					),
+		'public' => true,
+		'show_ui' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'query_var' => true,
+		'has_archive' => true,
+		'supports' => array(
+			'title',
+			'editor',
+			'thumbnail',)
+		);
+	register_post_type( 'campaigns', $args );
+	// flush_rewrite_rules( true );
 }
 add_action( 'init', 'jg_campaigns_init' );
 
 // Create Media Custom Post Type
 function jg_media_init() {
-    $args = array(
-      	'labels' => array(
-      					'name' => _x( 'Media', 'media' ),
-      					'singular_name' => _x( 'media', 'media' ),
-      					'add_new_item' => __( 'Add New media' ),
-      					'all_items' => __( 'All Media' ),
-      					'edit_item' => __( 'Edit media' ),
-      				),
-        'public' => true,
-        'show_ui' => true,
-        'capability_type' => 'post',
-        'hierarchical' => false,
-        'query_var' => true,
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail',)
-        );
-    register_post_type( 'media', $args );
- 	// flush_rewrite_rules( true );
+	$args = array(
+		'labels' => array(
+						'name' => _x( 'Media', 'media' ),
+						'singular_name' => _x( 'media', 'media' ),
+						'add_new_item' => __( 'Add New media' ),
+						'all_items' => __( 'All Media' ),
+						'edit_item' => __( 'Edit media' ),
+					),
+		'public' => true,
+		'show_ui' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'query_var' => true,
+		'has_archive' => true,
+		'supports' => array(
+			'title',
+			'editor',
+			'thumbnail',)
+		);
+	register_post_type( 'media', $args );
+	// flush_rewrite_rules( true );
 }
 add_action( 'init', 'jg_media_init' );
 
 // Create Celebrities Custom Post Type
 function jg_celebrities_init() {
-    $args = array(
-      	'labels' => array(
-      					'name' => _x( 'Celebrities', 'celebrities' ),
-      					'singular_name' => _x( 'Celebrity', 'celebrity' ),
-      					'add_new_item' => __( 'Add New Celebrity' ),
-      					'all_items' => __( 'All Celebrities' ),
-      					'edit_item' => __( 'Edit Celebrity' ),
-      				),
-        'public' => true,
-        'show_ui' => true,
-        'capability_type' => 'post',
-        'hierarchical' => false,
-        'query_var' => true,
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail',)
-        );
-    register_post_type( 'celebrities', $args );
- 	// flush_rewrite_rules( true );
+	$args = array(
+		'labels' => array(
+						'name' => _x( 'Celebrities', 'celebrities' ),
+						'singular_name' => _x( 'Celebrity', 'celebrity' ),
+						'add_new_item' => __( 'Add New Celebrity' ),
+						'all_items' => __( 'All Celebrities' ),
+						'edit_item' => __( 'Edit Celebrity' ),
+					),
+		'public' => true,
+		'show_ui' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'query_var' => true,
+		'has_archive' => true,
+		'supports' => array(
+			'title',
+			'editor',
+			'thumbnail',)
+		);
+	register_post_type( 'celebrities', $args );
+	// flush_rewrite_rules( true );
 }
 add_action( 'init', 'jg_celebrities_init' );
 
@@ -969,89 +977,89 @@ add_action( 'init', 'jg_celebrities_init' );
 /* Extra taxonomy for Collections */
 add_action( 'init', 'custom_taxonomy_Item' , 0 );
 function custom_taxonomy_Item()  {
-    $labels = array(
-        'name'                       => 'Collections',
-        'singular_name'              => 'Collection',
-        'menu_name'                  => 'Collections',
-        'all_items'                  => 'All Collections',
-        'parent_item'                => 'Parent Collection',
-        'parent_item_colon'          => 'Parent Collection:',
-        'new_item_name'              => 'New Collection Name',
-        'add_new_item'               => 'Add New Collection',
-        'edit_item'                  => 'Edit Collection',
-        'update_item'                => 'Update Collection',
-        'separate_items_with_commas' => 'Separate Collection with commas',
-        'search_items'               => 'Search Collections',
-        'add_or_remove_items'        => 'Add or remove Collections',
-        'choose_from_most_used'      => 'Choose from the most used Collections',
-    );
-    $args = array(
-        'labels'                     => $labels,
-        'hierarchical'               => true,
-        'public'                     => true,
-        'show_ui'                    => true,
-        'show_admin_column'          => true,
-        'show_in_nav_menus'          => true,
-        'show_tagcloud'              => false,
-        'rewrite'           => array( 'slug' => 'collection' , 'with_front' => true ),
-    );
+	$labels = array(
+		'name'                       => 'Collections',
+		'singular_name'              => 'Collection',
+		'menu_name'                  => 'Collections',
+		'all_items'                  => 'All Collections',
+		'parent_item'                => 'Parent Collection',
+		'parent_item_colon'          => 'Parent Collection:',
+		'new_item_name'              => 'New Collection Name',
+		'add_new_item'               => 'Add New Collection',
+		'edit_item'                  => 'Edit Collection',
+		'update_item'                => 'Update Collection',
+		'separate_items_with_commas' => 'Separate Collection with commas',
+		'search_items'               => 'Search Collections',
+		'add_or_remove_items'        => 'Add or remove Collections',
+		'choose_from_most_used'      => 'Choose from the most used Collections',
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => false,
+		'rewrite'           => array( 'slug' => 'collection' , 'with_front' => true ),
+	);
 
 
-    register_taxonomy( 'collection',
-            apply_filters( 'woocommerce_taxonomy_objects_product_cat', array( 'product' ) ),
-            apply_filters( 'woocommerce_taxonomy_args_product_cat', $args) 
-        );
-    register_taxonomy_for_object_type( 'collection', 'product' );
+	register_taxonomy( 'collection',
+			apply_filters( 'woocommerce_taxonomy_objects_product_cat', array( 'product' ) ),
+			apply_filters( 'woocommerce_taxonomy_args_product_cat', $args) 
+		);
+	register_taxonomy_for_object_type( 'collection', 'product' );
 }
 
 // Extra sorting options for products
 function custom_woocommerce_get_catalog_ordering_args( $args ) {
-    global $wp_query;
-    if (isset($_GET['orderby'])) {
-        switch ($_GET['orderby']) :
-            case 'name' :
-                $args['order'] = 'ASC';
-                $args['orderby'] = 'title';
-                break;
-            case 'name-desc' :
-                $args['order'] = 'DESC';
-                $args['orderby'] = 'title';
-                break;
-        endswitch;
-    }
-    return $args;
+	global $wp_query;
+	if (isset($_GET['orderby'])) {
+		switch ($_GET['orderby']) :
+			case 'name' :
+				$args['order'] = 'ASC';
+				$args['orderby'] = 'title';
+				break;
+			case 'name-desc' :
+				$args['order'] = 'DESC';
+				$args['orderby'] = 'title';
+				break;
+		endswitch;
+	}
+	return $args;
 }
 add_filter('woocommerce_get_catalog_ordering_args', 'custom_woocommerce_get_catalog_ordering_args');
 
 // Filter products by category
 function custom_pre_get_posts_query( $q ) {
 
-    if ( ! $q->is_main_query() ) return;
+	if ( ! $q->is_main_query() ) return;
 
-    $query = array();
-    
-    if (isset($_GET['filterby']) && ! is_admin()) {
-        $query[] = array(
-            'taxonomy' => 'product_cat',
-            'field' => 'slug',
-            'terms' => array( $_GET['filterby'] ),
-            'operator' => 'IN'
-        ); 
-        
-    }
-    
-    // if (isset($_GET['color']) && ! is_admin()) {
-    //     $query[] = array(
-    //         'taxonomy' => 'pa_color',
-    //         'field' => 'slug',
-    //         'terms' => array( $_GET['color'] ),
-    //         'operator' => 'IN'
-    //     );
-    // }
-    if(!empty($query))
-        $q->set( 'tax_query', $query );
+	$query = array();
+	
+	if (isset($_GET['filterby']) && ! is_admin()) {
+		$query[] = array(
+			'taxonomy' => 'product_cat',
+			'field' => 'slug',
+			'terms' => array( $_GET['filterby'] ),
+			'operator' => 'IN'
+		); 
+		
+	}
+	
+	// if (isset($_GET['color']) && ! is_admin()) {
+	//     $query[] = array(
+	//         'taxonomy' => 'pa_color',
+	//         'field' => 'slug',
+	//         'terms' => array( $_GET['color'] ),
+	//         'operator' => 'IN'
+	//     );
+	// }
+	if(!empty($query))
+		$q->set( 'tax_query', $query );
 
-    remove_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+	remove_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
 
 }
 add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
@@ -1060,45 +1068,45 @@ add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 // Our hooked in function - $fields is passed via the filter!
 function custom_override_checkout_fields( $fields ) {
- 	unset($fields['billing']['billing_company']);
- 	unset($fields['billing']['billing_address_2']);
- 	unset($fields['billing']['billing_state']);
- 	// unset($fields['billing']['billing_email']);
- 	unset($fields['billing']['billing_city']);
- 	unset($fields['billing']['billing_postcode']);
+	unset($fields['billing']['billing_company']);
+	unset($fields['billing']['billing_address_2']);
+	unset($fields['billing']['billing_state']);
+	// unset($fields['billing']['billing_email']);
+	unset($fields['billing']['billing_city']);
+	unset($fields['billing']['billing_postcode']);
 
- 	$fields['billing']['billing_address_1']['placeholder'] = '';
+	$fields['billing']['billing_address_1']['placeholder'] = '';
 
- 	return $fields;
+	return $fields;
 }
 
 add_filter('woocommerce_checkout_fields', 'add_custom_class_checkout_fields' );
 function add_custom_class_checkout_fields($fields) {
-    foreach ($fields as &$fieldset) {
-        foreach ($fieldset as &$field) {
-            // if you want to add the form-group class around the label and the input
-            $field['class'][] = 'checkout-field'; 
+	foreach ($fields as &$fieldset) {
+		foreach ($fieldset as &$field) {
+			// if you want to add the form-group class around the label and the input
+			$field['class'][] = 'checkout-field'; 
 
-            // add form-control to the actual input
-            // $field['input_class'][] = 'form-control';
-        }
-    }
-    return $fields;
+			// add form-control to the actual input
+			// $field['input_class'][] = 'form-control';
+		}
+	}
+	return $fields;
 }
 
 // change Add to Cart button text
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );    // 2.1 +
 function woo_custom_cart_button_text() {
  
-        return __( 'Buy Now', 'woocommerce' );
+		return __( 'Buy Now', 'woocommerce' );
  
 }
 
 // ajax add to wishlist
 function update_wishlist_count(){
-    if( function_exists( 'YITH_WCWL' ) ){
-        wp_send_json( YITH_WCWL()->count_products() );
-    }
+	if( function_exists( 'YITH_WCWL' ) ){
+		wp_send_json( YITH_WCWL()->count_products() );
+	}
 }
 add_action( 'wp_ajax_update_wishlist_count', 'update_wishlist_count' );
 add_action( 'wp_ajax_nopriv_update_wishlist_count', 'update_wishlist_count' );
@@ -1111,62 +1119,62 @@ add_action( 'wp_ajax_nopriv_update_wishlist_count', 'update_wishlist_count' );
 // ajax login
 function ajax_login_init(){
 
-    wp_register_script('ajax-login-script', get_template_directory_uri() . '/assets/js/ajax-login-script.js', array('jquery') ); 
-    wp_enqueue_script('ajax-login-script');
+	wp_register_script('ajax-login-script', get_template_directory_uri() . '/assets/js/ajax-login-script.js', array('jquery') ); 
+	wp_enqueue_script('ajax-login-script');
 
-    wp_localize_script( 'ajax-login-script', 'ajax_login_object', array( 
-        'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        'redirecturl' => home_url(),
-        'loadingmessage' => __('Sending user info, please wait...')
-    ));
+	wp_localize_script( 'ajax-login-script', 'ajax_login_object', array( 
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		'redirecturl' => home_url(),
+		'loadingmessage' => __('Sending user info, please wait...')
+	));
 
-    // Enable the user with no privileges to run ajax_login() in AJAX
-    add_action( 'wp_ajax_nopriv_ajaxlogin', 'ajax_login' );
+	// Enable the user with no privileges to run ajax_login() in AJAX
+	add_action( 'wp_ajax_nopriv_ajaxlogin', 'ajax_login' );
 }
 
 // Execute the action only if the user isn't logged in
 if (!is_user_logged_in()) {
-    add_action('init', 'ajax_login_init');
+	add_action('init', 'ajax_login_init');
 }
 
 function ajax_login(){
 
-    // First check the nonce, if it fails the function will break
-    // check_ajax_referer( 'ajax-login-nonce', 'security' );
+	// First check the nonce, if it fails the function will break
+	// check_ajax_referer( 'ajax-login-nonce', 'security' );
 
-    // Nonce is checked, get the POST data and sign user on
-    $info = array();
-    $info['user_login'] = $_POST['username'];
-    $info['user_password'] = $_POST['password'];
-    $info['remember'] = true;
+	// Nonce is checked, get the POST data and sign user on
+	$info = array();
+	$info['user_login'] = $_POST['username'];
+	$info['user_password'] = $_POST['password'];
+	$info['remember'] = true;
 
-    $user_signon = wp_signon( $info, false );
-    if ( is_wp_error($user_signon) ){
-        echo json_encode(array('loggedin'=>false, 'message'=>__('Wrong username or password.')));
-    } else {
-    	// $user = get_user_by('login', $info['user_login']);
-    	// $userdata = get_userdata( $user->ID );
-    	$user_address = get_user_meta( $user_signon->ID, 'billing_address_1', true );
-    	$user_phone = get_user_meta( $user_signon->ID, 'billing_phone', true );
-    	$user_first = get_user_meta( $user_signon->ID, 'billing_first_name', true );
-    	$user_last = get_user_meta( $user_signon->ID, 'billing_last_name', true );
-    	$user_email = get_user_meta( $user_signon->ID, 'billing_email', true );
-        echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, redirecting...'), 'billing_address'=>$user_address, 'user_phone'=>$user_phone, 'user_first'=>$user_first, 'user_last'=>$user_last, 'user_email'=>$user_email ));
-    }
+	$user_signon = wp_signon( $info, false );
+	if ( is_wp_error($user_signon) ){
+		echo json_encode(array('loggedin'=>false, 'message'=>__('Wrong username or password.')));
+	} else {
+		// $user = get_user_by('login', $info['user_login']);
+		// $userdata = get_userdata( $user->ID );
+		$user_address = get_user_meta( $user_signon->ID, 'billing_address_1', true );
+		$user_phone = get_user_meta( $user_signon->ID, 'billing_phone', true );
+		$user_first = get_user_meta( $user_signon->ID, 'billing_first_name', true );
+		$user_last = get_user_meta( $user_signon->ID, 'billing_last_name', true );
+		$user_email = get_user_meta( $user_signon->ID, 'billing_email', true );
+		echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, redirecting...'), 'billing_address'=>$user_address, 'user_phone'=>$user_phone, 'user_first'=>$user_first, 'user_last'=>$user_last, 'user_email'=>$user_email ));
+	}
 
-    die();
+	die();
 }
 
 // change post object order
 function my_post_object_query( $args, $field, $post_id ) {
 	
-    // only show children of the current post being edited
-    $args['order'] = 'DESC';
-    $args['orderby'] = 'post_date';
+	// only show children of the current post being edited
+	$args['order'] = 'DESC';
+	$args['orderby'] = 'post_date';
 	
 	// return
-    return $args;
-    
+	return $args;
+	
 }
 
 // filter for every field
@@ -1174,31 +1182,31 @@ add_filter('acf/fields/post_object/query', 'my_post_object_query', 10, 3);
 
 // create store custom post
 function jg_stores_init() {
-    $args = array(
-      'label' => 'Stores',
-        'public' => true,
-        'show_ui' => true,
-        'capability_type' => 'post',
-        'hierarchical' => false,
-        'query_var' => true,
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor')
-        );
-    register_post_type( 'store', $args );
+	$args = array(
+	  'label' => 'Stores',
+		'public' => true,
+		'show_ui' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'query_var' => true,
+		'has_archive' => true,
+		'supports' => array(
+			'title',
+			'editor')
+		);
+	register_post_type( 'store', $args );
 
-    $args = array(
-        'label'                      => 'Country &amp; State',
-        'hierarchical'               => true,
-        'public'                     => true,
-        'show_ui'                    => true,
-        'show_admin_column'          => true,
-        'show_in_nav_menus'          => true,
-        'show_tagcloud'              => true,
-        'query_var'                  => true, 
-    );
-    register_taxonomy( 'country-state' , 'store' , $args );
+	$args = array(
+		'label'                      => 'Country &amp; State',
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+		'query_var'                  => true, 
+	);
+	register_taxonomy( 'country-state' , 'store' , $args );
 }
 add_action( 'init', 'jg_stores_init' );
 
@@ -1208,31 +1216,31 @@ add_filter( 'rwmb_meta_boxes', 'mr_meta_fields' );
 function mr_meta_fields( $meta_boxes )
 {
 
-    $meta_boxes[] = array(
-        'title'  => __( 'Store Location' ),
-        'post_types' => array( 'store' ),
-        'fields' => array(
-            array(
-                'id'   => 'address',
-                'name' => __( 'Address to search on map' ),
-                'type' => 'text',
-            ),
-            array(
-                'id'            => 'location',
-                'name'          => __( 'Map' ),
-                'type'          => 'map',
+	$meta_boxes[] = array(
+		'title'  => __( 'Store Location' ),
+		'post_types' => array( 'store' ),
+		'fields' => array(
+			array(
+				'id'   => 'address',
+				'name' => __( 'Address to search on map' ),
+				'type' => 'text',
+			),
+			array(
+				'id'            => 'location',
+				'name'          => __( 'Map' ),
+				'type'          => 'map',
 
-                // Default location: 'latitude,longitude[,zoom]' (zoom is optional)
-                'std'           => '-6.233406,-35.049906,15',
+				// Default location: 'latitude,longitude[,zoom]' (zoom is optional)
+				'std'           => '-6.233406,-35.049906,15',
 
-                // Name of text field where address is entered. Can be list of text fields, separated by commas (for ex. city, state)
-                'address_field' => 'address',
-            ),
-        ),
-    );
+				// Name of text field where address is entered. Can be list of text fields, separated by commas (for ex. city, state)
+				'address_field' => 'address',
+			),
+		),
+	);
 
 
-    return $meta_boxes;
+	return $meta_boxes;
 }
 
 /* AJAX Store Search */
@@ -1240,70 +1248,70 @@ add_action( 'wp_ajax_store_search', 'store_search' );
 add_action( 'wp_ajax_nopriv_store_search', 'store_search' );
 function store_search()
 {
-    global $wpdb;
-    $query = "SELECT distinct jaipurgems_posts.*
-                FROM jaipurgems_posts, jaipurgems_term_relationships, jaipurgems_term_taxonomy, jaipurgems_terms
-                WHERE (jaipurgems_terms.name LIKE '%".$_POST["s"]."%'
-                OR jaipurgems_posts.post_title LIKE '%".$_POST["s"]."%')
-                AND jaipurgems_posts.post_status = 'publish'
-                AND jaipurgems_posts.post_type = 'store'
-                AND jaipurgems_posts.ID = jaipurgems_term_relationships.object_id
-                AND jaipurgems_term_relationships.term_taxonomy_id = jaipurgems_term_taxonomy.term_taxonomy_id
-                AND jaipurgems_term_taxonomy.term_id = jaipurgems_terms.term_id";
+	global $wpdb;
+	$query = "SELECT distinct jaipurgems_posts.*
+				FROM jaipurgems_posts, jaipurgems_term_relationships, jaipurgems_term_taxonomy, jaipurgems_terms
+				WHERE (jaipurgems_terms.name LIKE '%".$_POST["s"]."%'
+				OR jaipurgems_posts.post_title LIKE '%".$_POST["s"]."%')
+				AND jaipurgems_posts.post_status = 'publish'
+				AND jaipurgems_posts.post_type = 'store'
+				AND jaipurgems_posts.ID = jaipurgems_term_relationships.object_id
+				AND jaipurgems_term_relationships.term_taxonomy_id = jaipurgems_term_taxonomy.term_taxonomy_id
+				AND jaipurgems_term_taxonomy.term_id = jaipurgems_terms.term_id";
 
-    $stores = $wpdb->get_results($query);
+	$stores = $wpdb->get_results($query);
 
-    $stores_array =  array();
-    if($stores){
-        foreach ($stores as $s) {
-            if($location = rwmb_meta('location' , array(), $s->ID)){
-                $store = array();
-                // $location = explode(',', $location);
-                $location = get_post_meta( $s->ID, 'location', false );
-                $location = substr($location[0], 0, strrpos($location[0], ","));
-                $location = explode(',', $location);
-                $content = str_replace(array("\r\n", "\n", "\r"), '<br/>', $s->post_content);
-                $content1 = strip_tags(get_the_term_list( $s->ID, 'country-state', '', ',', '' ));
-                $content2  =  htmlentities($content);
-                $store[0] = $s->post_title;
-                $store[1] = $location[0];
-                $store[2] = $location[1];
-                $store[3] = $content1;
-                $store[4] = $content2;
-                $stores_array[] = $store;
-            }
-            
-        }
-    }
-    echo json_encode($stores_array);
-    wp_die();
+	$stores_array =  array();
+	if($stores){
+		foreach ($stores as $s) {
+			if($location = rwmb_meta('location' , array(), $s->ID)){
+				$store = array();
+				// $location = explode(',', $location);
+				$location = get_post_meta( $s->ID, 'location', false );
+				$location = substr($location[0], 0, strrpos($location[0], ","));
+				$location = explode(',', $location);
+				$content = str_replace(array("\r\n", "\n", "\r"), '<br/>', $s->post_content);
+				$content1 = strip_tags(get_the_term_list( $s->ID, 'country-state', '', ',', '' ));
+				$content2  =  htmlentities($content);
+				$store[0] = $s->post_title;
+				$store[1] = $location[0];
+				$store[2] = $location[1];
+				$store[3] = $content1;
+				$store[4] = $content2;
+				$stores_array[] = $store;
+			}
+			
+		}
+	}
+	echo json_encode($stores_array);
+	wp_die();
 }
 
 // Get client IP
 function get_client_ip() {
-    $ipaddress = '';
-    if (isset($_SERVER['HTTP_CLIENT_IP']))
-        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
-    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
-        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    else if(isset($_SERVER['HTTP_X_FORWARDED']))
-        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
-    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
-        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
-    else if(isset($_SERVER['HTTP_FORWARDED']))
-        $ipaddress = $_SERVER['HTTP_FORWARDED'];
-    else if(isset($_SERVER['REMOTE_ADDR']))
-        $ipaddress = $_SERVER['REMOTE_ADDR'];
-    return $ipaddress;
+	$ipaddress = '';
+	if (isset($_SERVER['HTTP_CLIENT_IP']))
+		$ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+	else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+		$ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	else if(isset($_SERVER['HTTP_X_FORWARDED']))
+		$ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+	else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+		$ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+	else if(isset($_SERVER['HTTP_FORWARDED']))
+		$ipaddress = $_SERVER['HTTP_FORWARDED'];
+	else if(isset($_SERVER['REMOTE_ADDR']))
+		$ipaddress = $_SERVER['REMOTE_ADDR'];
+	return $ipaddress;
 }
 
 add_action( 'init', 'setting_my_first_cookie' );
 function setting_my_first_cookie() {
-  	setcookie('selected_country', 'empty');
+	setcookie('selected_country', 'empty');
 }
 
 function edit_cookie($val) {
-  	setcookie('selected_country', $val);
+	setcookie('selected_country', $val);
 }
 
 

@@ -193,6 +193,7 @@
 
 <?php if(is_page('453')) : ?>
 	<!-- <script type='text/javascript' src='https://maps.google.com/maps/api/js?sensor=false&ver=4.2.7'></script> -->
+
 	<script type="text/javascript">
 		var $ = jQuery.noConflict();
 
@@ -348,15 +349,15 @@
 		    $('#store-list').slideUp('slow');
 		    $('#store-map').slideDown('slow');
 		}
-		$(window).load(function() {
-			initializeMaps();
-		});
+		// initializeMaps();
 		$('#search-store').keypress(function(e) {
 		    if(e.which == 13) {
 		        searchStore();
 		    }
 		});
 	</script>
+
+	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=initializeMaps"></script> -->
 <?php endif; ?>
 
 <?php wp_footer(); ?>
