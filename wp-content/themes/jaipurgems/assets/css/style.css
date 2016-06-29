@@ -5952,6 +5952,10 @@ footer {
 	input[type="tel"],
 	textarea {
 		font-size: 16px !important; /* Adding 16px on focus will prevent page zoom */
+		border: 1px solid #e3e3e3;
+		border-radius: 0;
+		-webkit-appearance: none;
+				appearance: none;
 	}
 
 }
