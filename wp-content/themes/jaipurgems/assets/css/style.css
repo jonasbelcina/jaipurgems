@@ -5958,6 +5958,21 @@ footer {
 				appearance: none;
 	}
 
+	.wishlist_table a.remove {
+		margin-left: 12px;
+	}
+
+	.wishlist_table .product-name a,
+	.wishlist_table .product-price span {
+		text-align: left !important;
+		display: block;
+	}
+
+		.wishlist_table .product-name:before,
+		.wishlist_table .product-price:before {
+			content: none !important;
+		}
+
 }
 
 @media only screen and (max-width : 767px) {
