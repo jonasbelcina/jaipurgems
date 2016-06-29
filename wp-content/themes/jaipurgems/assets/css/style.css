@@ -49,6 +49,7 @@ body {
 	font-size: 13px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	position: relative;
 	overflow: hidden;
 }
 
@@ -5928,6 +5929,17 @@ footer {
 }
 
 @media only screen and (max-width : 767px) {
+	.landing-content {
+		margin: 0 auto;
+		text-align: center;
+		position: relative;
+		top: initial;
+		-webkit-transform: none;
+		   -moz-transform: none;
+		    -ms-transform: none;
+		    	transform: none;
+	}
+
 	.uae:first-child {
 		display: none;
 	}
