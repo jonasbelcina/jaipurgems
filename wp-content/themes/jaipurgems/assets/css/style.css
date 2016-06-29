@@ -6579,6 +6579,7 @@ footer {
 		width: 100%;
 		float: none;
 		height: 300px;
+		z-index: 999;
 	}
 
 	.my-account .nav-tabs {
