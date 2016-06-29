@@ -5958,9 +5958,22 @@ footer {
 				appearance: none;
 	}
 
-	.wishlist_table a.remove {
-		margin-left: 12px;
+	.woocommerce table.wishlist_table tbody td {
+		padding: 10px;
 	}
+
+	.wishlist_table a.remove {
+		margin-left: 10px;
+	}
+
+	.wishlist_table tr td.product-thumbnail a {
+		margin: 0 auto;
+		max-width: 120px;
+	}
+
+		.wishlist_table tr td.product-thumbnail a img {
+			max-width: 100% !important;
+		}
 
 	.wishlist_table .product-name a,
 	.wishlist_table .product-price span {
