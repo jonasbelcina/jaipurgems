@@ -250,7 +250,7 @@ if(!$_SESSION['selected_country']) {
 									</div>
 								</div>
 							</li>
-							<li><a href="<?php echo home_url(); ?>/my-account">Login or Register</a></li>
+							<li><a href="<?php echo home_url(); ?>/store-locator">Store Locator</a></li>
 							<li><a href="" data-toggle="modal" data-target="#contactForm">Contact</a></li>
 						</ul>
 
