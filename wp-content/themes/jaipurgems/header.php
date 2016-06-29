@@ -75,7 +75,7 @@ if(!$_SESSION['selected_country']) {
 
 <body <?php body_class($addtl_class); ?>>
 	<div class="body-wrap">
-	
+
 	<div class="page-loader">
 		<img id="slidecaption" src="<?php echo get_template_directory_uri(); ?>/assets/images/crown.png" />
 	</div>
@@ -96,6 +96,7 @@ if(!$_SESSION['selected_country']) {
 		</div>
 	<?php } ?>
 
+	<div class="content-wrap" style="display: <?php echo !$_SESSION['selected_country'] ? 'none' : 'block'; ?>">
 	<header>
 		<div class="navbar-top">
 			<div class="header-left">

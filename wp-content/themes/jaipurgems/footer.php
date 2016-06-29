@@ -135,6 +135,7 @@
 
 		<a href="#top" class="cd-top"><span class="glyphicon glyphicon-chevron-up"></span></a>
 	</footer>
+	</div><!-- content-wrap -->
 
 	<!-- Appointment Modal -->
 	<div class="modal fade" id="appointmentForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

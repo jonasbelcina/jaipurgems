@@ -53,13 +53,18 @@ body {
 	/*overflow: hidden;*/
 }
 
-	.body-wrap {
+	body:not(.no-country) .body-wrap {
 		overflow: hidden;
 		max-height: 100vh;
+		position: relative;
 	}
 
 body.no-country {
 	/*overflow: hidden;*/
+}
+
+.content-wrap {
+	/*display: none;*/
 }
 
 .landing {
@@ -5936,6 +5941,7 @@ footer {
 @media only screen and (max-width : 767px) {
 	.landing {
 		min-height: 100vh;
+		height: auto;
 	}
 
 		.landing-content {
@@ -6982,6 +6988,7 @@ footer {
 		bottom: 20px;
 	}
 }
+
 
 
 
