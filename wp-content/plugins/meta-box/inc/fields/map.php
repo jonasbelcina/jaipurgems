@@ -18,7 +18,7 @@ class RWMB_Map_Field extends RWMB_Field
 		$google_maps_url = apply_filters( 'rwmb_google_maps_url', 'https://maps.google.com/maps/api/js?sensor=false' );
 		wp_register_script( 'google-maps', esc_url_raw( $google_maps_url ), array(), '', true );
 		wp_enqueue_style( 'rwmb-map', RWMB_CSS_URL . 'map.css' );
-		wp_enqueue_script( 'rwmb-map', RWMB_JS_URL . 'map.js', array( 'jquery-ui-autocomplete', 'google-maps' ), RWMB_VER, true );
+		// wp_enqueue_script( 'rwmb-map', RWMB_JS_URL . 'map.js', array( 'jquery-ui-autocomplete', 'google-maps' ), RWMB_VER, true );
 	}
 
 	/**
@@ -123,7 +123,7 @@ class RWMB_Map_Field extends RWMB_Field
 		 */
 		$google_maps_url = apply_filters( 'rwmb_google_maps_url', 'https://maps.google.com/maps/api/js?sensor=false' );
 		wp_register_script( 'google-maps', esc_url_raw( $google_maps_url ), array(), '', true );
-		wp_enqueue_script( 'rwmb-map-frontend', RWMB_JS_URL . 'map-frontend.js', array( 'google-maps' ), '', true );
+		// wp_enqueue_script( 'rwmb-map-frontend', RWMB_JS_URL . 'map-frontend.js', array( 'google-maps' ), '', true );
 
 		// Map parameters
 		$args = wp_parse_args( $args, array(

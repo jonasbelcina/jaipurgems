@@ -50,8 +50,8 @@ function jg_scripts() {
 		wp_dequeue_script( 'rwmb-map-frontend' );
 		wp_deregister_script( 'google-maps' );
 
-		// wp_register_script( 'google-maps', 'https://maps.google.com/maps/api/js?sensor=false&callback=initializeMaps', array(), false, '1.0', false);
-		// wp_enqueue_script('google-maps');
+		wp_register_script( 'google-maps-new', 'https://maps.google.com/maps/api/js', array(), '4.2.7', true);
+		wp_enqueue_script('google-maps-new');
 	}
 
 	wp_register_script( 'vendor-owl-carousel', get_template_directory_uri().'/assets/vendor/owl.carousel' . $suffix . '.js', array( 'jquery'), '2.0', true );

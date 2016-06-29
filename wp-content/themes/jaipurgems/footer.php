@@ -192,7 +192,6 @@
 	</div>
 
 <?php if(is_page('453')) : ?>
-	<!-- <script type='text/javascript' src='https://maps.google.com/maps/api/js?sensor=false&ver=4.2.7'></script> -->
 
 	<script type="text/javascript">
 		// var $ = jQuery.noConflict();
@@ -228,14 +227,6 @@
 		}
 		echo ']';
 		?>
-
-		function loadMapScript() {
-			var script = document.createElement('script');
-			script.type = 'text/javascript';
-			script.id = 'googleMaps'
-			script.src = 'https://maps.googleapis.com/maps/api/js?sensor=false&callback=initializeMap';
-			document.body.appendChild(script);
-		}
 
 		function initializeMaps() {
 
