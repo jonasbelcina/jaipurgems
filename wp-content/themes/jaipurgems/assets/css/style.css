@@ -5947,6 +5947,10 @@ footer {
 			float: right;
 		}
 
+	input[type="text"]:focus{
+		font-size: 16px !important; /* Adding 16px on focus will prevent page zoom */
+	}
+
 }
 
 @media only screen and (max-width : 767px) {
@@ -6619,10 +6623,6 @@ footer {
 			display: inline-block;
 			margin: 0 15px 20px;
 		}
-
-	input[type=”text”]:focus{
-		font-size: 16px; /* Adding 16px on focus will prevent page zoom */
-	}
 
 }
 
