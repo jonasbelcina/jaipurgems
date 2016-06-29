@@ -6620,6 +6620,10 @@ footer {
 			margin: 0 15px 20px;
 		}
 
+	input[type=”text”]:focus{
+		font-size: 16px; /* Adding 16px on focus will prevent page zoom */
+	}
+
 }
 
 
