@@ -271,8 +271,8 @@
 				marker = new google.maps.Marker({
 					position: pos,
 					map: map,
-					// icon: pinImage
-					icon: '<?=get_template_directory_uri()?>/assets/images/map-marker.png'
+					icon: pinImage
+					// icon: '<?=get_template_directory_uri()?>/assets/images/map-marker.png'
 				});
 				(function(marker){
 					google.maps.event.addDomListener($('<li/>').html( '<h2>' + m[i][0] + '</h2>' + html_entity_decode(m[i][3]) ).appendTo('#list')[0],'click',function(){
@@ -294,9 +294,9 @@
 				})(marker, i));
 				markers.push(marker);
 			}
-			if(!trigger) {
+			// if(!trigger) {
 				map.fitBounds(bounds);
-			}
+			// }
 		}
 		function deleteMarkers() {
 			for (var i = 0; i < markers.length; i++) {
