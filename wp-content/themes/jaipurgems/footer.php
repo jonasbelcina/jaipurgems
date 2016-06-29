@@ -348,7 +348,9 @@
 		    $('#store-list').slideUp('slow');
 		    $('#store-map').slideDown('slow');
 		}
-		initializeMaps();
+		$(window).load(function() {
+			initializeMaps();
+		});
 		$('#search-store').keypress(function(e) {
 		    if(e.which == 13) {
 		        searchStore();
