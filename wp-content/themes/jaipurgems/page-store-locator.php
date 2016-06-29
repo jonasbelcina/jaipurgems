@@ -10,7 +10,7 @@
                 <div class="clearfix"></div>
             </div> 
             <div class="show-around">
-                <!-- <a class="more-button" onclick="showAroundMe();">Show around me</a> --> <a class="more-button" onclick="hideMap();">Hide map</a>
+                <!-- <a class="more-button" onclick="showAroundMe();">Show around me</a> --> <a class="more-button hide-map">Hide map</a>
             </div>
             <h1>Our Stores</h1>
             <div class="results" id="list">
