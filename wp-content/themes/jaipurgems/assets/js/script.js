@@ -474,8 +474,42 @@
 		});
 
 		$('.page-loader').css('display', 'none');
-		$('body:not(.no-country) .body-wrap').css('overflow', 'visible');
+		$('body:not(.no-country) .body-wrap').css({
+			'overflow': 'visible',
+			'max-height': '100%'
+		});
 		$('body:not(.no-country) .content-wrap').css('display', 'block');
+
+		var footerTop, filterOffset;
+		var inShop = false;
+		var shopFilterHeight = $('.shop-filter').height();
+		if($('.shop-filter').length) {
+			inShop = true;
+			footerTop = $('.footer-top').offset().top;
+			filterOffset = $(window).height() - shopFilterHeight;
+		}
+
+		$(window).scroll(function(e){
+			var windowTop = $(window).scrollTop();
+
+			if(inShop) {
+				if((windowTop + filterOffset) >= footerTop) {
+					$('.shop-filter').addClass('inactive');
+				} else {
+					if($('.shop-filter').hasClass('inactive')) {
+						// console.log($('.mobile-filter').next('ul').css('display') == 'none');
+						if($('.mobile-filter').next('ul').css('display') == 'block') {
+							$('.mobile-filter').next('ul').slideToggle();
+						}
+					}
+					$('.shop-filter').removeClass('inactive');
+					
+				}
+			}
+
+		});
+
+
 	});
 
 	$('.india').on('click', function(e) {
@@ -496,6 +530,7 @@
 
 	var ww = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 	var headerTop = $('.navbar').offset().top;
+	
 	$(window).scroll(function(e){
 		var windowTop = $(window).scrollTop();
 

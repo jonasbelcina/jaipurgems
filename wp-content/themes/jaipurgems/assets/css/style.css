@@ -6286,7 +6286,13 @@ footer {
 		width: 100%;
 		z-index: 9;
 		background: #fff;
+		-webkit-transition: all 0.8s linear;
+				transition: all 0.8s linear;
 	}
+
+		.shop-filter.inactive {
+			margin-bottom: -100%;
+		}
 
 	.mobile-filter {
 		display: block;
