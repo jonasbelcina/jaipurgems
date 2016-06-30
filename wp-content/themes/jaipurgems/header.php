@@ -23,7 +23,6 @@
 			$country_code = strtolower($location['countryCode']);
 		} else {
 			// $country = 'United Arab Emirates';
-			// $country_code = 'ae';
 		}
 		setcookie('country' , $country);
 		setcookie('country_code' , $country_code);
@@ -81,7 +80,22 @@ if(!$_SESSION['selected_country']) {
 		<img id="slidecaption" src="<?php echo get_template_directory_uri(); ?>/assets/images/crown.png" />
 	</div>
 
-	
+	<?php if(!$_SESSION['selected_country']) { ?>
+		<div class="landing">
+			<div class="landing-content">
+				<img class="landing-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/landing-logo.png" alt="Jaipur Gems" />
+				<div class="landing-bangle">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing-bangle.png" alt="Jaipur Gems" />
+					<p>Select Your Location:</p>
+					<form class="country-select" method="post">
+						<button type="submit" name="location" value="india" class="india">India</button>
+						<button type="submit" name="location" value="international" class="international">International</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	<?php } ?>
+
 	<div class="content-wrap" style="display: <?php echo !$_SESSION['selected_country'] ? 'none' : 'block'; ?>">
 	<header>
 		<div class="navbar-top">
