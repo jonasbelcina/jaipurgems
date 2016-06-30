@@ -22,7 +22,8 @@
 			$country  = $location['countryName'];
 			$country_code = strtolower($location['countryCode']);
 		} else {
-			// $country = 'United Arab Emirates';
+			$country = 'United Arab Emirates';
+			$country = 'ae';
 		}
 		setcookie('country' , $country);
 		setcookie('country_code' , $country_code);
