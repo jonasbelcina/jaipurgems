@@ -4001,6 +4001,7 @@ footer {
 			color: #4f4f4f;
 			letter-spacing: 2px;
 			padding-top: 12px;
+			padding-left: 0;
 		}
 
 		.try-img {
@@ -4127,6 +4128,74 @@ footer {
 		  text-transform: none;
 		  text-align: left;
 		}
+
+		#details_accordion {
+			margin: 20px 0 0;
+		}
+
+			#details_accordion .panel-default {
+				border: 0;
+				border-top: 1px solid #e5e5e5;
+				border-radius: 0;
+				box-shadow: none;
+			}
+
+			#details_accordion .panel-default > .panel-heading {
+				background: none;
+				padding: 15px 0;
+			}
+
+				.panel-title {
+					font-family: 'GothamBook';
+					font-size: 15px;
+					color: #000;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					position: relative;
+				}
+
+					.panel-title:after {
+						content: '\f107';
+						font-family: 'FontAwesome';
+						font-size: 20px;
+						color: #8a8a8a;
+						position: absolute;
+						right: 0;
+						bottom: 0;
+						line-height: 1;
+					}
+
+					.panel-title a {
+						display: block;
+					}
+
+						.panel-title a:hover {
+							text-decoration: none;
+						}
+
+			#details_accordion .panel-default > .panel-heading+.panel-collapse > .panel-body {
+				border-top: 0;
+			}
+
+			#details_accordion .panel-body {
+				padding: 0;
+			}
+
+			#details_accordion .panel-body ul {
+				border-bottom: 0;
+				padding: 0;
+			}
+
+			#details_accordion .panel-body li {
+				display: block;
+				float: none;
+				font-weight: bold;
+				margin-bottom: 3px;
+			}
+
+				#details_accordion .panel-body li span {
+					font-weight: normal;
+				}
 
 	.mobile-single,
 	.mobile-single-details,
