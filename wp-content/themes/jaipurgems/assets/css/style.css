@@ -4133,19 +4133,30 @@ footer {
 			margin: 20px 0 0;
 		}
 
-			#details_accordion .panel-default {
+		#mobile_details_accordion {
+			margin: 0;
+		}
+
+			#details_accordion .panel-default,
+			#mobile_details_accordion .panel-default {
 				border: 0;
 				border-top: 1px solid #e5e5e5;
 				border-radius: 0;
 				box-shadow: none;
 			}
 
-			#details_accordion .panel-default > .panel-heading {
+			#mobile_details_accordion .panel-default {
+				border-top: 0;
+			}
+
+			#details_accordion .panel-default > .panel-heading,
+			#mobile_details_accordion .panel-default > .panel-heading {
 				background: none;
 				padding: 15px 0;
 			}
 
-				.panel-title {
+				#details_accordion .panel-title,
+				#mobile_details_accordion .panel-title {
 					font-family: 'GothamBook';
 					font-size: 15px;
 					color: #000;
@@ -4154,7 +4165,8 @@ footer {
 					position: relative;
 				}
 
-					.panel-title:after {
+					#details_accordion .panel-title:after,
+					#mobile_details_accordion .panel-title:after {
 						content: '\f107';
 						font-family: 'FontAwesome';
 						font-size: 20px;
@@ -4165,37 +4177,48 @@ footer {
 						line-height: 1;
 					}
 
-					.panel-title a {
+					#details_accordion .panel-title a,
+					#mobile_details_accordion .panel-title a {
 						display: block;
 					}
 
-						.panel-title a:hover {
+						#details_accordion .panel-title a:hover,
+						#mobile_details_accordion .panel-title a:hover {
 							text-decoration: none;
 						}
 
-			#details_accordion .panel-default > .panel-heading+.panel-collapse > .panel-body {
+			#details_accordion .panel-default > .panel-heading+.panel-collapse > .panel-body,
+			#mobile_details_accordion .panel-default > .panel-heading+.panel-collapse > .panel-body {
 				border-top: 0;
 			}
 
-			#details_accordion .panel-body {
+			#details_accordion .panel-body,
+			#mobile_details_accordion .panel-body {
 				padding: 0;
 			}
 
-			#details_accordion .panel-body ul {
+			#details_accordion .panel-body ul,
+			#mobile_details_accordion .panel-body ul {
 				border-bottom: 0;
 				padding: 0;
 			}
 
-			#details_accordion .panel-body li {
+			#details_accordion .panel-body li,
+			#mobile_details_accordion .panel-body li {
 				display: block;
 				float: none;
 				font-weight: bold;
 				margin-bottom: 3px;
 			}
 
-				#details_accordion .panel-body li span {
+				#details_accordion .panel-body li span,
+				#mobile_details_accordion .panel-body li span {
 					font-weight: normal;
 				}
+
+	#mobile_details_accordion {
+		display: none;
+	}
 
 	.mobile-single,
 	.mobile-single-details,
@@ -6396,6 +6419,10 @@ footer {
 			margin-bottom: -100%;
 		}
 
+	#details_accordion {
+		display: none;
+	}
+
 	.mobile-filter {
 		display: block;
 	}
@@ -6522,6 +6549,10 @@ footer {
 		float: none;
 		color: #868686;
 		margin: 0 0 10px;
+	}
+
+	#mobile_details_accordion {
+		display: block;
 	}
 
 	.single-product div.product div.images,
