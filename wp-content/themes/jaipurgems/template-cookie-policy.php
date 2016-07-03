@@ -10,14 +10,16 @@
 
 get_header(); ?>
 
-<?php
-// Start the loop.
-while ( have_posts() ) : the_post();
+<div class="container">
+	<?php
+	// Start the loop.
+	while ( have_posts() ) : the_post();
 
-	the_content();
+		the_content();
 
-	// End of the loop.
-endwhile;
-?>
+		// End of the loop.
+	endwhile;
+	?>
+</div>
 
 <?php get_footer(); ?>
