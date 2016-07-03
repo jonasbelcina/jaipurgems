@@ -67,6 +67,33 @@ body.no-country {
 	/*display: none;*/
 }
 
+.cookie-notice .container {
+	border-bottom: 1px solid #e3e3e3;
+}
+
+	.cookie-notice p {
+		margin: 0;
+		padding: 7px 0;
+		font-size: 14px;
+		color: #000;
+		font-family: 'GothamBook';
+		text-align: center;
+	}
+
+		.cookie-notice p a {
+			text-decoration: underline;
+			color: #b5985a;
+		}
+
+		.cookie-notice p a.cookie-close {
+			display: inline-block;
+			background: #000;
+			color: #fff;
+			padding: 3px 7px;
+			margin-left: 15px;
+			text-decoration: none;
+		}
+
 .landing {
 	height: 100vh;
 	background: url('../images/landing-bg.jpg') center no-repeat;

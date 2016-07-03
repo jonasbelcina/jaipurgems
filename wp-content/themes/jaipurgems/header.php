@@ -102,6 +102,15 @@ if(!isset($_SESSION['selected_country'])) {
 	<?php } ?>
 
 	<div class="content-wrap" style="display: <?php echo (!isset($_SESSION['selected_country'])) ? 'none' : 'block'; ?>">
+
+	<?php if (isset($_POST['location'])) {  ?>
+		<div class="cookie-notice">
+			<div class="container">
+				<p>We use cookies to improve our site and your shopping experience. By continuing to browse our site you accept our cookie policy. <a href="">Find out more</a>. <a class="cookie-close" href="">Close</a></p>
+			</div>
+		</div>
+	<?php } ?>
+
 	<header>
 		<div class="navbar-top">
 			<div class="header-left">
