@@ -4333,7 +4333,7 @@ footer {
 			}
 
 			.brand-promise article .adv_pic span {
-			    background-image: url("../images/header-sprite.png");
+			    /*background-image: url("../images/header-sprite.png");*/
 			    background-repeat: no-repeat;
 			    background-size: 156.872% auto;
 			    height: 93px;
@@ -4351,23 +4351,28 @@ footer {
 			}
 
 			.brand-promise article .adv_pic span.certIcon {
-			    background-position: 6px -743px;
+			    /*background-position: 6px -743px;*/
+			    background: url('../images/100CERTIFIED.png') center no-repeat;
 			}
 
 			.brand-promise article .adv_pic span.moneyIcon {
-			    background-position: 6px -951px;
+			    /*background-position: 6px -951px;*/
+			    background: url('../images/30DAYS.png') center no-repeat;
 			}
 
 			.brand-promise article .adv_pic span.lifeExchIcon {
-			    background-position: 6px -642px;
+			    /*background-position: 6px -642px;*/
+			    background: url('../images/LIFETIMEEXCHANGE.png') center no-repeat;
 			}
 
 			.brand-promise article .adv_pic span.shippingIcon {
-			    background-position: 6px -851px;
+			    /*background-position: 6px -851px;*/
+			    background: url('../images/FREESHIPPING.png') center no-repeat;
 			}
 
 			.brand-promise article .adv_pic span.payIcon {
-			    background-position: 6px -1321px;
+			    /*background-position: 6px -1321px;*/
+			    background: url('../images/PAYASYOULIKE.png') center no-repeat;
 			}
 
 			.brand-promise article h3 {
@@ -5725,7 +5730,7 @@ footer {
 	}
 
 	label.sign-up {
-		line-height: 39px;
+		/*line-height: 39px;*/
 	}
 
 	.footer-menu .row > div {
