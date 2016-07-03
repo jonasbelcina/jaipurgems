@@ -7069,13 +7069,13 @@ footer {
 			margin-bottom: 15px;
 		}
 
-			.find-jewellery .tile-link:before {
+			/*.find-jewellery .tile-link:before {
 				content: '';
 				background: #000;
 				width: 140px;
 				height: 1px;
 				top: -10px;
-			}
+			}*/
 
 	.footer-bottom {
 		padding: 10px;
