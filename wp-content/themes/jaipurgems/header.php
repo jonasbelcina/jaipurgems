@@ -57,9 +57,9 @@
 <?php 
 $addtl_class = ' ';
 $selected_country = '';
-var_dump($_POST['location']);
 if (isset($_POST['location'])) {   
     $_SESSION['selected_country'] = $_POST['location'];
+    var_dump($_POST['location']);
 }
 
 if(!isset($_SESSION['selected_country'])) {
