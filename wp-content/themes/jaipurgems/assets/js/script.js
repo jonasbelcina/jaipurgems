@@ -483,7 +483,7 @@
 		// need help popup
 		var idleTimer = null;
 		var idleState = false;
-		var idleWait = 1000;
+		var idleWait = 10000;
 
 		$('*').bind('mousemove keydown scroll', function () {
 		

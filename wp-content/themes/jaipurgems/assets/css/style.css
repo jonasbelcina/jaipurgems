@@ -1555,7 +1555,8 @@ footer {
 	}
 
 		#appointmentForm .modal-dialog,
-		#contactForm .modal-dialog {
+		#contactForm .modal-dialog,
+		#support-popup .modal-dialog {
 			max-width: 400px;
 		}
 
@@ -1566,7 +1567,8 @@ footer {
 		}
 
 		#appointmentForm input:not([type="submit"]),
-		#contactForm input:not([type="submit"]) {
+		#contactForm input:not([type="submit"]),
+		#support-popup input:not([type="submit"]) {
 			width: 100%;
 			height: 30px;
 			border: 1px solid #e3e3e3;
@@ -1574,7 +1576,8 @@ footer {
 		}
 
 		#appointmentForm textarea,
-		#contactForm textarea {
+		#contactForm textarea,
+		#support-popup textarea {
 			width: 100%;
 			border: 1px solid #e3e3e3;
 			height: 90px;
@@ -1586,12 +1589,14 @@ footer {
 		}
 
 		#appointmentForm p:nth-last-of-type(1),
-		#contactForm p:nth-last-of-type(1) {
+		#contactForm p:nth-last-of-type(1),
+		#support-popup p:nth-last-of-type(1) {
 			text-align: center;
 		}
 
 		#appointmentForm input[type="submit"],
-		#contactForm input[type="submit"] {
+		#contactForm input[type="submit"],
+		#support-popup input[type="submit"] {
 			background: #b09d76;
 			color: #fff;
 			text-transform: uppercase;
@@ -1604,7 +1609,8 @@ footer {
 		}
 
 		#appointmentForm ::-webkit-input-placeholder,
-			#contactForm ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+			#contactForm ::-webkit-input-placeholder,
+			#support-popup ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 			color: #777;
 			font-family: 'GothamBook';
 			font-size: 11px;
@@ -1612,7 +1618,8 @@ footer {
 			text-align: left;
 		}
 		#appointmentForm ::-moz-placeholder,
-			#contactForm ::-moz-placeholder { /* Firefox 19+ */
+			#contactForm ::-moz-placeholder,
+			#support-popup ::-moz-placeholder { /* Firefox 19+ */
 			color: #777;
 			font-family: 'GothamBook';
 			font-size: 11px;
@@ -1620,7 +1627,8 @@ footer {
 			text-align: left;
 		}
 		#appointmentForm :-ms-input-placeholder,
-			#contactForm :-ms-input-placeholder { /* IE 10+ */
+			#contactForm :-ms-input-placeholder,
+			#support-popup :-ms-input-placeholder { /* IE 10+ */
 				color: #777;
 				font-family: 'GothamBook';
 				font-size: 11px;
@@ -1628,7 +1636,8 @@ footer {
 				text-align: left;
 		}
 		#appointmentForm :-moz-placeholder,
-			#contactForm :-moz-placeholder { /* Firefox 18- */
+			#contactForm :-moz-placeholder,
+			#support-popup :-moz-placeholder { /* Firefox 18- */
 				color: #777;
 				font-family: 'GothamBook';
 				font-size: 11px;
