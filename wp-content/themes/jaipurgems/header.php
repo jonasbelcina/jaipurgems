@@ -60,6 +60,7 @@ $selected_country = '';
 if (isset($_POST['location'])) {   
     $_SESSION['selected_country'] = $_POST['location'];
     var_dump($_POST['location']);
+    echo 'Session path "'.session_save_path().'" is not writable for PHP!'; 
 }
 
 if (!is_writable(session_save_path())) {
