@@ -7139,11 +7139,12 @@ footer {
 
 	.brand-promise article .adv_pic span {
 	    width: 70px;
-	    height: 54px;
+	    height: 70px;
 	    margin: 0 auto 10px;
+	    background-size: cover !important;
 	}
 
-	.brand-promise article .adv_pic span.certIcon {
+	/*.brand-promise article .adv_pic span.certIcon {
 	    background-position: 5px -435px;
 	}
 
@@ -7161,7 +7162,7 @@ footer {
 
 	.brand-promise article .adv_pic span.payIcon {
 	    background-position: 3px -770px;
-	}
+	}*/
 
 }
 
