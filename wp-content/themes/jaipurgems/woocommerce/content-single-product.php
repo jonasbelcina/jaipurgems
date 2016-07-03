@@ -108,87 +108,101 @@ global $product;
 				<?php endif; ?>
 			</div>
 
-			<div class="panel-group" id="mobile_details_accordion" role="tablist" aria-multiselectable="true">
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingOne">
-						<h4 class="panel-title">
-							<a role="button" data-toggle="collapse" data-parent="#mobile_details_accordion" href="#collapseOneMobile" aria-expanded="true" aria-controls="collapseOneMobile">
-								Details
-							</a>
-						</h4>
-					</div>
-					<div id="collapseOneMobile" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-						<div class="panel-body">
-							<ul>
-							<?php
-								$goldwt_terms = get_the_terms( $post->ID, 'pa_gold-weight-in-grams' );
-								if ( $goldwt_terms && ! is_wp_error( $goldwt_terms ) ) : 
-									foreach ( $goldwt_terms as $term ) {
-										echo '<li><span>Gold weight in grams: </span>' . $term->name . '</li>';
-									}
-								endif;
+			<?php
+			$goldwt_terms = get_the_terms( $post->ID, 'pa_gold-weight-in-grams' );
+			$price_single_terms = get_the_terms( $post->ID, 'pa_price-for-single-bangle' );
+			$di_pcs = get_the_terms( $post->ID, 'pa_di-pcs' );
+			$di_wt_carats = get_the_terms( $post->ID, 'pa_di-weight-in-carats' );
+			$polki_di_wt_carats = get_the_terms( $post->ID, 'pa_polki-di-weight-in-carats' );
+			$color_stone_pcs = get_the_terms( $post->ID, 'pa_colour-stone-pcs' );
+			$col_st_wt = get_the_terms( $post->ID, 'pa_col-st-weight-in-carats' );
+			$rose_cut_dia = get_the_terms( $post->ID, 'pa_rose-cut-dia-pcs' );
+			$rose_cut_dia_wt = get_the_terms( $post->ID, 'pa_rose-cut-dia-wt' );
 
-								$price_single_terms = get_the_terms( $post->ID, 'pa_price-for-single-bangle' );
-								if ( $price_single_terms && ! is_wp_error( $price_single_terms ) ) : 
-									foreach ( $price_single_terms as $term ) {
-										echo '<li><span>Price for single bangle: </span>' . $term->name . '</li>';
-									}
-								endif;
+			if($goldwt_terms && $price_single_terms && $di_pcs && $di_wt_carats && $rose_cut_dia_wt && $polki_di_wt_carats && $color_stone_pcs && $col_st_wt && $rose_cut_dia) {
+			?>
+				<div class="panel-group" id="mobile_details_accordion" role="tablist" aria-multiselectable="true">
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingOne">
+							<h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#mobile_details_accordion" href="#collapseOneMobile" aria-expanded="true" aria-controls="collapseOneMobile">
+									Details
+								</a>
+							</h4>
+						</div>
+						<div id="collapseOneMobile" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+							<div class="panel-body">
+								<ul>
+								<?php
+									
+									if ( $goldwt_terms && ! is_wp_error( $goldwt_terms ) ) : 
+										foreach ( $goldwt_terms as $term ) {
+											echo '<li><span>Gold weight in grams: </span>' . $term->name . '</li>';
+										}
+									endif;
 
-								$di_pcs = get_the_terms( $post->ID, 'pa_di-pcs' );
-								if ( $di_pcs && ! is_wp_error( $di_pcs ) ) : 
-									foreach ( $di_pcs as $term ) {
-										echo '<li><span>Di Pcs: </span>' . $term->name . '</li>';
-									}
-								endif;
+									
+									if ( $price_single_terms && ! is_wp_error( $price_single_terms ) ) : 
+										foreach ( $price_single_terms as $term ) {
+											echo '<li><span>Price for single bangle: </span>' . $term->name . '</li>';
+										}
+									endif;
 
-								$di_wt_carats = get_the_terms( $post->ID, 'pa_di-weight-in-carats' );
-								if ( $di_wt_carats && ! is_wp_error( $di_wt_carats ) ) : 
-									foreach ( $di_wt_carats as $term ) {
-										echo '<li><span>Di Wt. in Carats: </span>' . $term->name . '</li>';
-									}
-								endif;
+									
+									if ( $di_pcs && ! is_wp_error( $di_pcs ) ) : 
+										foreach ( $di_pcs as $term ) {
+											echo '<li><span>Di Pcs: </span>' . $term->name . '</li>';
+										}
+									endif;
 
-								$polki_di_wt_carats = get_the_terms( $post->ID, 'pa_polki-di-weight-in-carats' );
-								if ( $polki_di_wt_carats && ! is_wp_error( $polki_di_wt_carats ) ) : 
-									foreach ( $polki_di_wt_carats as $term ) {
-										echo '<li><span>Polki Di Wt. in Carats: </span>' . $term->name . '</li>';
-									}
-								endif;
+									
+									if ( $di_wt_carats && ! is_wp_error( $di_wt_carats ) ) : 
+										foreach ( $di_wt_carats as $term ) {
+											echo '<li><span>Di Wt. in Carats: </span>' . $term->name . '</li>';
+										}
+									endif;
 
-								$color_stone_pcs = get_the_terms( $post->ID, 'pa_colour-stone-pcs' );
-								if ( $color_stone_pcs && ! is_wp_error( $color_stone_pcs ) ) : 
-									foreach ( $color_stone_pcs as $term ) {
-										echo '<li><span>Colour Stone Pcs: </span>' . $term->name . '</li>';
-									}
-								endif;
+									
+									if ( $polki_di_wt_carats && ! is_wp_error( $polki_di_wt_carats ) ) : 
+										foreach ( $polki_di_wt_carats as $term ) {
+											echo '<li><span>Polki Di Wt. in Carats: </span>' . $term->name . '</li>';
+										}
+									endif;
 
-								$col_st_wt = get_the_terms( $post->ID, 'pa_col-st-weight-in-carats' );
-								if ( $col_st_wt && ! is_wp_error( $col_st_wt ) ) : 
-									foreach ( $col_st_wt as $term ) {
-										echo '<li><span>Col St Wt. in Carats: </span>' . $term->name . '</li>';
-									}
-								endif;
+									
+									if ( $color_stone_pcs && ! is_wp_error( $color_stone_pcs ) ) : 
+										foreach ( $color_stone_pcs as $term ) {
+											echo '<li><span>Colour Stone Pcs: </span>' . $term->name . '</li>';
+										}
+									endif;
 
-								$rose_cut_dia = get_the_terms( $post->ID, 'pa_rose-cut-dia-pcs' );
-								if ( $rose_cut_dia && ! is_wp_error( $rose_cut_dia ) ) : 
-									foreach ( $rose_cut_dia as $term ) {
-										echo '<li><span>Rose Cut Dia Pcs: </span>' . $term->name . '</li>';
-									}
-								endif;
+									
+									if ( $col_st_wt && ! is_wp_error( $col_st_wt ) ) : 
+										foreach ( $col_st_wt as $term ) {
+											echo '<li><span>Col St Wt. in Carats: </span>' . $term->name . '</li>';
+										}
+									endif;
 
-								$rose_cut_dia_wt = get_the_terms( $post->ID, 'pa_rose-cut-dia-wt' );
-								if ( $rose_cut_dia_wt && ! is_wp_error( $rose_cut_dia_wt ) ) : 
-									foreach ( $rose_cut_dia_wt as $term ) {
-										echo '<li><span>Rose Cut Dia Wt: </span>' . $term->name . '</li>';
-									}
-								endif;
-							?>
-							</ul>
+									
+									if ( $rose_cut_dia && ! is_wp_error( $rose_cut_dia ) ) : 
+										foreach ( $rose_cut_dia as $term ) {
+											echo '<li><span>Rose Cut Dia Pcs: </span>' . $term->name . '</li>';
+										}
+									endif;
+
+									
+									if ( $rose_cut_dia_wt && ! is_wp_error( $rose_cut_dia_wt ) ) : 
+										foreach ( $rose_cut_dia_wt as $term ) {
+											echo '<li><span>Rose Cut Dia Wt: </span>' . $term->name . '</li>';
+										}
+									endif;
+								?>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			<?php } ?>
 
 			<div class="brand-promise">
 				<h4>Brand Promise</h4>
