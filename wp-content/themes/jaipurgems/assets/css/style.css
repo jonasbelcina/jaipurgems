@@ -4560,6 +4560,14 @@ footer {
 		border-radius: 0;
 	}
 
+	.shop_table ::-webkit-input-placeholder,
+	.shop_table ::-moz-placeholder,
+	.shop_table :-ms-input-placeholder,
+	.shop_table :-moz-placeholder { /* Chrome/Opera/Safari */
+		color: #e5e5e5;
+		text-transform: none;
+	}
+
 	.woocommerce-cart .cart-collaterals .cart_totals {
 		margin-top: 20px;
 	}
