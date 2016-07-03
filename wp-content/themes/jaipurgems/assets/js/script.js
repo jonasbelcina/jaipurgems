@@ -461,7 +461,8 @@
 	    	$('.country-select').css('opacity', '1');
 	    }, 3000);
 
-	    $('.cookie-close').on('click', function() {
+	    $('.cookie-close').on('click', function(e) {
+	    	e.preventDefault();
 	    	$('.cookie-notice').slideToggle();
 	    });
 
