@@ -102,7 +102,7 @@ if(!isset($_SESSION['selected_country'])) {
 		</div>
 	<?php } ?>
 
-	<div class="content-wrap" style="display: <?php echo (isset($_SESSION['selected_country'])) ? 'none' : 'block'; ?>">
+	<div class="content-wrap" style="display: <?php echo (!isset($_SESSION['selected_country'])) ? 'none' : 'block'; ?>">
 	<header>
 		<div class="navbar-top">
 			<div class="header-left">
