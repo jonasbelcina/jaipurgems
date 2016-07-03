@@ -94,6 +94,15 @@ body.no-country {
 			text-decoration: none;
 		}
 
+.cookie-policy h1 {
+	text-align: center;
+}
+
+.cookie-policy a {
+	color: #b5985a;
+	font-family: 'GothamBook';
+}
+
 .landing {
 	height: 100vh;
 	background: url('../images/landing-bg.jpg') center no-repeat;
