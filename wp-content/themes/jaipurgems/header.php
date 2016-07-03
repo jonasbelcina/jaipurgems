@@ -111,6 +111,12 @@ if(!isset($_SESSION['selected_country'])) {
 		</div>
 	<?php } ?>
 
+	<div class="ramadan-campaign">
+		<div class="container">
+			<p>Receive AED 1000 voucher <a href="https://www.jaipurgems.ae/" target="_blank">Register Now</a></p>
+		</div>
+	</div>
+
 	<header>
 		<div class="navbar-top">
 			<div class="header-left">

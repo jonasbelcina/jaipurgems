@@ -94,6 +94,28 @@ body.no-country {
 			text-decoration: none;
 		}
 
+.ramadan-campaign {
+	background: #252525;
+}
+
+	.ramadan-campaign p {
+		margin: 0;
+		padding: 7px 0;
+		font-size: 14px;
+		color: #fff;
+		font-family: 'GothamBook';
+		text-align: center;
+	}
+
+	.ramadan-campaign p a {
+		display: inline-block;
+		background: #b5985a;
+		color: #fff;
+		padding: 3px 12px;
+		margin-left: 15px;
+		text-decoration: none;
+	}
+
 .cookie-policy {
 	padding-bottom: 30px;
 }
@@ -1933,6 +1955,7 @@ footer {
 		/*border-radius: 50%;*/
 		text-align: center;
 		visibility: hidden;
+		z-index: 99;
 	}
 
 	.cd-top:hover {
@@ -7095,6 +7118,23 @@ footer {
 }
 
 @media only screen and (max-width : 480px) {
+	.cookie-notice p {
+		font-size: 13px;
+	}
+
+		.cookie-notice p a.cookie-close {
+			margin-left: 5px;
+		}
+
+	.ramadan-campaign p {
+		font-size: 13px;
+	}
+
+		.ramadan-campaign p a {
+			margin-left: 5px;
+			padding: 3px 8px;
+		}
+
 	.gems-right > div {
 		height: 260px;
 	}
