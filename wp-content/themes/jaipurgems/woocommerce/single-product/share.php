@@ -42,7 +42,7 @@ $col_st_wt = get_the_terms( $post->ID, 'pa_col-st-weight-in-carats' );
 $rose_cut_dia = get_the_terms( $post->ID, 'pa_rose-cut-dia-pcs' );
 $rose_cut_dia_wt = get_the_terms( $post->ID, 'pa_rose-cut-dia-wt' );
 
-if($goldwt_terms && $price_single_terms && $di_pcs && $di_wt_carats && $rose_cut_dia_wt && $polki_di_wt_carats && $color_stone_pcs && $col_st_wt && $rose_cut_dia) {
+if($goldwt_terms || $price_single_terms || $di_pcs || $di_wt_carats || $rose_cut_dia_wt || $polki_di_wt_carats || $color_stone_pcs || $col_st_wt || $rose_cut_dia) {
 ?>
 	<div class="panel-group" id="details_accordion" role="tablist" aria-multiselectable="true">
 		<div class="panel panel-default">
