@@ -62,7 +62,7 @@ if (isset($_POST['location'])) {
     $_SESSION['selected_country'] = $_POST['location'];
 }
 
-if(isset($_SESSION['selected_country'])) {
+if(!isset($_SESSION['selected_country'])) {
   	// echo "The cookie: '" . $selected_country . "' is not set.";
   	$addtl_class = 'no-country';
 } else {
@@ -86,7 +86,7 @@ if(isset($_SESSION['selected_country'])) {
 		<img id="slidecaption" src="<?php echo get_template_directory_uri(); ?>/assets/images/crown.png" />
 	</div>
 
-	<?php if(isset($_SESSION['selected_country'])) { ?>
+	<?php if(!isset($_SESSION['selected_country'])) { ?>
 		<div class="landing">
 			<div class="landing-content">
 				<img class="landing-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/landing-logo.png" alt="Jaipur Gems" />
@@ -102,7 +102,7 @@ if(isset($_SESSION['selected_country'])) {
 		</div>
 	<?php } ?>
 
-	<div class="content-wrap" style="display: <?php echo isset($_SESSION['selected_country']) ? 'none' : 'block'; ?>">
+	<div class="content-wrap" style="display: <?php echo (isset($_SESSION['selected_country'])) ? 'none' : 'block'; ?>">
 	<header>
 		<div class="navbar-top">
 			<div class="header-left">
