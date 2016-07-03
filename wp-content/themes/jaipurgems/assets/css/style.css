@@ -94,22 +94,26 @@ body.no-country {
 			text-decoration: none;
 		}
 
-.cookie-policy h1 {
-	text-align: center;
-	font-size: 24px;
-   text-transform: uppercase;
-   margin: 40px 0;
+.cookie-policy {
+	padding-bottom: 30px;
 }
 
-.cookie-policy h2 {
-	font-size: 18px;
-	font-family: 'GothamBook';
-}
+	.cookie-policy h1 {
+		text-align: center;
+		font-size: 24px;
+	   text-transform: uppercase;
+	   margin: 40px 0;
+	}
 
-.cookie-policy a {
-	color: #b5985a;
-	font-family: 'GothamBook';
-}
+	.cookie-policy h2 {
+		font-size: 18px;
+		font-family: 'GothamBook';
+	}
+
+	.cookie-policy a {
+		color: #b5985a;
+		font-family: 'GothamBook';
+	}
 
 .landing {
 	height: 100vh;
