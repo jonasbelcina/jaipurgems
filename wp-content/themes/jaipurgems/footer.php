@@ -18,7 +18,7 @@
 						<div class="row">
 							<div class="col-md-4">
 								<div class="row">
-									<label>Be the first one to know</label>
+									<label class="sign-up">Sign up to receive the latest designs</label>
 								</div>
 							</div>
 

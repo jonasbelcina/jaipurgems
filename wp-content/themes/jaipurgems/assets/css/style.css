@@ -1384,6 +1384,10 @@ footer {
 		vertical-align: top;
 	}
 
+		label.sign-up {
+			line-height: 19px;
+		}
+
 	.footer-top input {
 		height: 39px;
 		line-height: 39px;
@@ -5718,6 +5722,10 @@ footer {
 	.footer-social label {
 		display: block;
 		margin: 0;
+	}
+
+	label.sign-up {
+		line-height: 39px;
 	}
 
 	.footer-menu .row > div {
