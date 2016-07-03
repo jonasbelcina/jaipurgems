@@ -4561,26 +4561,26 @@ footer {
 	}
 
 	.coupon ::-moz-placeholder {
-		color: #e5e5e5;
+		color: #d8d8d8;
 		font-size: 14px;
 		text-align: left;
 		text-transform: none;
 
 	}
 	.coupon :-ms-input-placeholder {
-		color: #e5e5e5;
+		color: #d8d8d8;
 		font-size: 14px;
 		text-align: left;
 		text-transform: none;
 	}
 	.coupon :-moz-placeholder {
-		color: #e5e5e5;
+		color: #d8d8d8;
 		font-size: 14px;
 		text-align: left;
 		text-transform: none;
 	}
 	.coupon ::-webkit-input-placeholder {
-	  	color: #e5e5e5;
+	  	color: #d8d8d8;
 	  	font-size: 14px;
 	  	text-align: left;
 	  	text-transform: none;
