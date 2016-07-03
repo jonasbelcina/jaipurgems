@@ -658,6 +658,8 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 // rmeove data tabs
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
 
+// remove coupon code on checkout
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 
 add_filter( 'woocommerce_currencies', 'add_my_currency' );
 function add_my_currency( $currencies ) {
