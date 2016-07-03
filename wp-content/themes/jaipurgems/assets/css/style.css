@@ -4560,12 +4560,30 @@ footer {
 		border-radius: 0;
 	}
 
-	.shop_table ::-webkit-input-placeholder,
-	.shop_table ::-moz-placeholder,
-	.shop_table :-ms-input-placeholder,
-	.shop_table :-moz-placeholder { /* Chrome/Opera/Safari */
-		color: #e5e5e5;
+	.coupon ::-moz-placeholder {
+		color: rgba(255,255,255,0.7) !important;
+		font-size: 14px;
+		text-align: left;
 		text-transform: none;
+
+	}
+	.coupon :-ms-input-placeholder {
+		color: rgba(255,255,255,0.7) !important;
+		font-size: 14px;
+		text-align: left;
+		text-transform: none;
+	}
+	.coupon :-moz-placeholder {
+		color: rgba(255,255,255,0.7) !important;
+		font-size: 14px;
+		text-align: left;
+		text-transform: none;
+	}
+	.coupon ::-webkit-input-placeholder {
+	  	color: rgba(255,255,255,0.7) !important;
+	  	font-size: 14px;
+	  	text-align: left;
+	  	text-transform: none;
 	}
 
 	.woocommerce-cart .cart-collaterals .cart_totals {
