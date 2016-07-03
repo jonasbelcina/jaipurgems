@@ -99,10 +99,11 @@ body.no-country {
 }
 
 	.cookie-policy h1 {
+		font-family: 'GothamBook';
 		text-align: center;
 		font-size: 24px;
-	   text-transform: uppercase;
-	   margin: 40px 0;
+	   	text-transform: uppercase;
+	   	margin: 40px 0;
 	}
 
 	.cookie-policy h2 {
