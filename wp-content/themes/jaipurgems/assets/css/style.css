@@ -1312,6 +1312,7 @@ body:not(.no-country) .page-loader {
 
 .find-jewellery {
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 .find-jewellery .container {
@@ -1344,14 +1345,19 @@ body:not(.no-country) .page-loader {
 
 	.find-jewellery .tile-link {
 		margin-bottom: 30px;
-		display: block;
-		border: 0;
+		display: inline-block;
+		border: 1px solid transparent;
+		border-top: 1px solid #000;
+		width: 300px;
 	}
 
 		.find-jewellery .tile-link:before {
-			content: url('../images/prelink-simple.png');
+			content: none;
 		}
 
+		.find-jewellery .tile-link:hover {
+			border: 1px solid #000;
+		}
 
 /* 
 =============================
