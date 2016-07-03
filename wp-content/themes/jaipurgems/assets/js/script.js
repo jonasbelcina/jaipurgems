@@ -480,6 +480,36 @@
 		});
 		$('body:not(.no-country) .content-wrap').css('display', 'block');
 
+		// need help popup
+		var idleTimer = null;
+		var idleState = false;
+		var idleWait = 1000;
+
+		$('*').bind('mousemove keydown scroll', function () {
+		
+		    clearTimeout(idleTimer);
+		            
+		    if (idleState == true) { 
+		        
+		        // Reactivated event
+		        //$("body").append("<p>Welcome Back.</p>");            
+		    }
+		    
+		    idleState = false;
+		    
+		    idleTimer = setTimeout(function () { 
+		        
+		        // Idle Event
+		        // $("body").append("<p>You've been idle for " + idleWait/1000 + " seconds.</p>");
+
+		        $('.help-popup').slideDown();
+
+		        idleState = true; 
+
+		    }, idleWait);
+
+		});
+
 		var footerTop, filterOffset;
 		var inShop = false;
 		var shopFilterHeight = $('.shop-filter').height();
@@ -507,8 +537,19 @@
 				}
 			}
 
-		});
+			// need help popup
+			var footerOffset = $('.footer-top').offset().top;
+			var scrollTop = $(window).scrollTop();
+			var windowHeight = $(window).height();
+			var footer = windowHeight - ( footerOffset - scrollTop );
+			if(footer > 0){
+				$('.help-popup').css( 'bottom' , footer );
+			}
+			else{
+				$('.help-popup').css( 'bottom' , 0 );
+			}
 
+		});
 
 	});
 
