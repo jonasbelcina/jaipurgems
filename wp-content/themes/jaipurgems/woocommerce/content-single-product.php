@@ -241,6 +241,53 @@ global $product;
 
 		<div class="clearfix"></div>
 
+		<div class="brand-promise desktop-brand">
+			<h4>Brand Promise</h4>
+			<!-- <div> -->
+				<article>
+					<div class="adv_pic">
+						<span class="certIcon"></span>
+					</div><!--//adv_pic-->
+					
+					<h3>100% Certified</h3>
+				</article>
+				
+				<article>
+					<div class="adv_pic">
+						<span class="moneyIcon"></span>
+					</div><!--//adv_pic-->
+					
+					<h3>30-Day Money Back</h3>
+				</article>
+				
+				<article>
+					<div class="adv_pic">
+						<span class="lifeExchIcon"></span>
+					</div><!--//adv_pic-->
+					
+					<h3>Lifetime Exchange</h3>
+				</article>
+			<!-- </div> -->
+
+			<!-- <div> -->
+				<article class="offset_left">
+					<div class="adv_pic">
+						<span class="shippingIcon"></span>
+					</div><!--//adv_pic-->
+					
+					<h3>Free Insured Shipping</h3>
+				</article>
+				
+				<article>
+					<div class="adv_pic">
+						<span class="payIcon"></span>
+					</div><!--//adv_pic-->
+					
+					<h3>Pay as You Like</h3>
+				</article>
+			<!-- </div> -->
+		</div>
+
 		<?php
 			/**
 			 * woocommerce_after_single_product_summary hook.

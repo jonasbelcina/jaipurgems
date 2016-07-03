@@ -4226,6 +4226,11 @@ footer {
 		display: none;
 	}
 
+	.brand-promise.desktop-brand {
+		display: block;
+		text-align: center;
+	}
+
 		.mobile-single .offers {
 			border: 0;
 			width: 100%;
@@ -4305,6 +4310,13 @@ footer {
 		    font-size: 14px;
 		}
 
+		.brand-promise.desktop-brand article {
+			float: none;
+			display: inline-block;
+			width: auto;
+			padding: 0 3%;
+		}
+
 			.brand-promise article .adv_pic {
 				margin-bottom: 10px;
 				text-align: center;
@@ -4322,6 +4334,10 @@ footer {
 
 			.brand-promise article.offset_left {
 			    margin-left: 16.5%;
+			}
+
+			.brand-promise.desktop-brand article.offset_left {
+			    margin-left: 0;
 			}
 
 			.brand-promise article .adv_pic span.certIcon {
@@ -6532,7 +6548,8 @@ footer {
 	}
 
 		.mobile-single .ref,
-		.mobile-single .specs {
+		.mobile-single .specs,
+		.desktop-brand {
 			display: none !important;
 		}
 
