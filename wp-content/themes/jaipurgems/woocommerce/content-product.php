@@ -99,7 +99,7 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 				?>
 
 					<div class="content-bottom">
-					<?
+					<?php
 					/**
 					 * woocommerce_after_shop_loop_item hook.
 					 *
