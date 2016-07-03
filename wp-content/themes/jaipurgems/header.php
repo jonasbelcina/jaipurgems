@@ -277,7 +277,7 @@ if(!isset($_SESSION['selected_country'])) {
 
 				<div class="search-box">
 					<div class="col-md-8 col-md-offset-2">
-						<form class="search" method="get">
+						<form class="search" method="get" action="<?php echo home_url(); ?>">
 							<div class="col-xs-10">
 								<div class="row">
 									<input type="text" name="s" placeholder="I am looking for">
