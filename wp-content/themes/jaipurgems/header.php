@@ -29,10 +29,10 @@
 		// setcookie('location', $location);
 
 		// server should keep session data for AT LEAST 1 hour
-		// ini_set('session.gc_maxlifetime', 3600);
+		ini_set('session.gc_maxlifetime', 3600);
 
 		// each client should remember their session id for EXACTLY 1 hour
-		// session_set_cookie_params(3600);
+		session_set_cookie_params(3600);
 
 		session_start(); // ready to go!
 	}
@@ -60,6 +60,10 @@ $selected_country = '';
 if (isset($_POST['location'])) {   
     $_SESSION['selected_country'] = $_POST['location'];
     var_dump($_POST['location']);
+}
+
+if (!is_writable(session_save_path())) {
+    echo 'Session path "'.session_save_path().'" is not writable for PHP!'; 
 }
 
 if(!isset($_SESSION['selected_country'])) {
