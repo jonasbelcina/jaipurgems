@@ -27,6 +27,8 @@
 		}
 		setcookie('country' , $country);
 		setcookie('country_code' , $country_code);
+
+		echo 'cookiecountry = ' . $_COOKIE['country']; 
 		// setcookie('location', $location);
 
 		// // server should keep session data for AT LEAST 1 hour
