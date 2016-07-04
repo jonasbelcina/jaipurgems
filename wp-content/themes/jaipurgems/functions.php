@@ -667,13 +667,13 @@ function add_my_currency( $currencies ) {
      return $currencies;
 }
 
-add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
-function add_my_currency_symbol( $currency_symbol, $currency ) {
-     switch( $currency ) {
-          case 'AED': $currency_symbol = ' AED'; break;
-     }
-     return $currency_symbol;
-}
+// add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
+// function add_my_currency_symbol( $currency_symbol, $currency ) {
+//      switch( $currency ) {
+//           case 'AED': $currency_symbol = ' AED'; break;
+//      }
+//      return $currency_symbol;
+// }
 
 //Store the custom field for size
 add_filter( 'woocommerce_add_cart_item_data', 'add_cart_item_custom_data_vase', 10, 2 );
