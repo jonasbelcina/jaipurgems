@@ -129,7 +129,7 @@ if(!isset($_SESSION['selected_country'])) {
 	<?php if (isset($_POST['location'])) {  ?>
 		<div class="cookie-notice">
 			<div class="container">
-				<p>We use cookies to improve our site and your shopping experience. By continuing to browse our site you accept our cookie policy. <a href="">Find out more</a>. <a class="cookie-close" href="">Close</a></p>
+				<p>We use cookies to improve our site and your shopping experience. By continuing to browse our site you accept our cookie policy. <a href="<?php echo home_url(); ?>/cookie-policy">Find out more</a>. <a class="cookie-close" href="">Close</a></p>
 			</div>
 		</div>
 	<?php } ?>
