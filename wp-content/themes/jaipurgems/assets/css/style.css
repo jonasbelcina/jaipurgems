@@ -94,6 +94,35 @@ body.no-country {
 			text-decoration: none;
 		}
 
+.woocommerce-currency-switcher-form {
+	display: inline-block;
+	position: relative;
+}
+
+	.woocommerce-currency-switcher-form:after {
+		content: '\f107';
+		font-family: 'FontAwesome';
+		font-size: 14px;
+		color: #000;
+		position: absolute;
+		right: 0;
+		top: 1px;
+		line-height: 1;
+	}
+	
+	.woocommerce-currency-switcher {
+		-webkit-appearance: none;
+				appearance: none;
+		border: 0;
+		background: none;
+		border-radius: 0;
+		padding-right: 10px;
+	}
+
+		.woocommerce-currency-switcher:focus {
+			outline: 0;
+		}
+
 .ramadan-campaign {
 	background: #b5985a;
 }
