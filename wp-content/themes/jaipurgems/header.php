@@ -25,8 +25,8 @@
 		} else {
 			// $country = 'United Arab Emirates';
 		}
-		setcookie('country' , $country, time() + ( 7 * DAY_IN_SECONDS ), '/');
-		setcookie('country_code' , $country_code, time() + ( 7 * DAY_IN_SECONDS ), '/');
+		setcookie('country' , $country, time() + ( 7 * 86400 ), '/');
+		setcookie('country_code' , $country_code, time() + ( 7 * 86400 ), '/');
 
 		echo 'cookiecountry = ' . $_COOKIE['country']; 
 		// setcookie('location', $location);
