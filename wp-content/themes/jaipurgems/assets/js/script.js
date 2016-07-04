@@ -671,6 +671,7 @@
 			$('.guest-error').removeClass('active');
 			$('#email').css('border-color', '#e3e3e3');
 			$('.checkout_panel.step_1').removeClass('active');
+			$('.checkout_panel.step_2 #billing_address_1').attr('placeholder', '');
 			$('.checkout_panel.step_2').addClass('active');
 		}
 	});

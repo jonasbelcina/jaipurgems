@@ -4946,13 +4946,6 @@ footer {
 			/*display: none !important;*/
 		}
 
-		.checkout_panel.step_2 #billing_address_1 ::-webkit-input-placeholder,
-		.checkout_panel.step_2 #billing_address_1 ::-moz-placeholder,
-		.checkout_panel.step_2 #billing_address_1 :-ms-input-placeholder,
-		.checkout_panel.step_2 #billing_address_1 :-moz-placeholder { /* Chrome/Opera/Safari */
-			text-align: left;
-		}
-
 	.panel-btn {
 		text-align: center;
 		margin-top: 10px;
