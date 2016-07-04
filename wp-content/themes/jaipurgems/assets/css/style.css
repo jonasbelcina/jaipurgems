@@ -4831,6 +4831,10 @@ footer {
 		    cursor: pointer;
 		}
 
+			.checkout_panel h2 span:hover {
+				text-decoration: none;
+			}
+
 	.checkout_panel.active h2 {
 		color: #fff;
 		background: #252525;
