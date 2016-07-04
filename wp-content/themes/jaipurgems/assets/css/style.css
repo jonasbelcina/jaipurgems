@@ -265,7 +265,7 @@ body.no-country {
 				content: url('../images/uae.png');
 			}*/
 
-			.uae:last-child {
+			.uae:nth-last-of-type(1) {
 				display: none;
 			}
 

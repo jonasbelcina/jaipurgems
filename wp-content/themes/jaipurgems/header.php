@@ -120,7 +120,7 @@ if(!isset($_SESSION['selected_country'])) {
 	<header>
 		<div class="navbar-top">
 			<div class="header-left">
-				Insured Express Shipping To <span class="uae"><?php echo $country; ?></span><img src="http://www.geonames.org/flags/x/<?php echo $country_code; ?>.gif" /><span class="uae">UAE</span>
+				Insured Express Shipping To <span class="uae"><?php echo $country; ?></span><img src="http://www.geonames.org/flags/x/<?php echo $country_code; ?>.gif" /><span class="uae">UAE</span><?php do_action('wcpbc_manual_country_selector'); ?>
 			</div>
 
 			<div class="header-right-top">
