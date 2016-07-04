@@ -714,6 +714,10 @@
 	// $('.new-form .wcpbc-widget-country-selecting').append('<button type="submit" name="location" value="india" class="india">India</button><button type="submit" name="location" value="international" class="international">International</button>');
 	// $('.new-form .wcpbc-widget-country-selecting').addClass('country-select');
 
+	$('.change-country').on('change', '.ch-country', function(){
+		$(this).closest('form').submit();
+	});
+
 })(jQuery);
 
 // social sharing popup

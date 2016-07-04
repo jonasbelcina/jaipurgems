@@ -289,8 +289,8 @@ body.no-country {
 
 		.header-left img {
 			max-width: 20px;
-			margin-left: 5px;
-			margin-top: -4px;
+			/*margin-left: 5px;*/
+			margin-top: -3px;
 		}
 
 		.uae {
@@ -305,8 +305,25 @@ body.no-country {
 				content: url('../images/uae.png');
 			}*/
 
-			.uae:nth-last-of-type(1) {
+			/*.uae:nth-last-of-type(1) {
 				display: none;
+			}*/
+
+		.change-country {
+			width: auto;
+			display: inline-block;
+		}
+
+			.ch-country {
+				position: absolute;
+				    display: inline-block;
+				    width: 20px;
+				    -webkit-appearance: none;
+				    border: 0;
+				    opacity: 0;
+				    top: 0;
+				    right: 52px;
+				    cursor: pointer;
 			}
 
 	.navbar-brand {
