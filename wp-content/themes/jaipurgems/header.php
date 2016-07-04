@@ -13,6 +13,7 @@
 	if(isset($_COOKIE['country']) && $_COOKIE['country'] != '' && isset($_COOKIE['country_code']) && $_COOKIE['country_code'] != ''){
 		$country = $_COOKIE['country'];
 		$country_code = $_COOKIE['country_code'];
+		echo 'cookie = ' . $_COOKIE['country']; 
 	}
 	else{
 		$ip = get_client_ip();
