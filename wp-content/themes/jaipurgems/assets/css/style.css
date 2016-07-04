@@ -196,9 +196,20 @@ body.no-country {
 		top: 78px;
 		width: 100%;
 		overflow: hidden;
+		/*opacity: 0;*/
+		-webkit-transition: all 1s ease;
+				transition: all 1s ease;
+	}
+
+	.new-form {
 		opacity: 0;
 		-webkit-transition: all 1s ease;
 				transition: all 1s ease;
+	}
+
+	.country-select select {
+		display: none;
+		opacity: 0;
 	}
 
 	.country-select button {
@@ -221,11 +232,11 @@ body.no-country {
 			border: 2px solid #000;
 		}
 
-		.country-select button:first-child {
+		.country-select button:nth-of-type(1) {
 			float: left;
 		}
 
-		.country-select button:last-child {
+		.country-select button:nth-of-type(2) {
 			float: right;
 		}
 

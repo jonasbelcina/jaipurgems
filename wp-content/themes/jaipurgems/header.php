@@ -97,10 +97,14 @@ if(!isset($_SESSION['selected_country'])) {
 				<div class="landing-bangle">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing-bangle.png" alt="Jaipur Gems" />
 					<p>Select Your Location:</p>
-					<form class="country-select" method="post">
+					<!--form class="country-select" method="post">
 						<button type="submit" name="location" value="india" class="india">India</button>
 						<button type="submit" name="location" value="international" class="international">International</button>
-					</form>
+					</form-->
+
+					<div class="new-form">
+						<?php do_action('wcpbc_manual_country_selector'); ?>
+					</div>
 				</div>
 			</div>
 		</div>
