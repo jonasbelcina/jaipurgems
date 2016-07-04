@@ -196,7 +196,7 @@ body.no-country {
 		top: 78px;
 		width: 100%;
 		overflow: hidden;
-		/*opacity: 0;*/
+		opacity: 0;
 		-webkit-transition: all 1s ease;
 				transition: all 1s ease;
 	}

@@ -458,7 +458,7 @@
 	    }, 2000);
 
 	    setTimeout(function() {
-	    	$('.new-form').css('opacity', '1');
+	    	$('.country-select').css('opacity', '1');
 	    }, 3000);
 
 	    $('.cookie-close').on('click', function(e) {
@@ -711,8 +711,8 @@
 		$(this).closest('.checkout_panel').addClass('active').addClass('editing').removeClass('filled-in');
 	});
 
-	$('.new-form .wcpbc-widget-country-selecting').append('<button type="submit" name="location" value="india" class="india">India</button><button type="submit" name="location" value="international" class="international">International</button>');
-	$('.new-form .wcpbc-widget-country-selecting').addClass('country-select');
+	// $('.new-form .wcpbc-widget-country-selecting').append('<button type="submit" name="location" value="india" class="india">India</button><button type="submit" name="location" value="international" class="international">International</button>');
+	// $('.new-form .wcpbc-widget-country-selecting').addClass('country-select');
 
 })(jQuery);
 
