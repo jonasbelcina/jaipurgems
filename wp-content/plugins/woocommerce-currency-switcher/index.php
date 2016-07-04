@@ -1,6 +1,6 @@
 <?php
 /*
-  Plugin Name: WooCommerce Currency Switcher
+  Plugin Name: WooCommerce Currency Switcher edited by Heych
   Plugin URI: http://currency-switcher.com/
   Description: Currency Switcher for WooCommerce
   Author: realmag777
