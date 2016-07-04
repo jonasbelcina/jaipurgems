@@ -4821,9 +4821,23 @@ footer {
 		font-weight: bold;
 	}
 
+		.checkout_panel h2 span {
+			text-transform: none;
+		    float: right;
+		    font-family: 'GothamLight';
+		    text-decoration: underline;
+		    font-size: 13px;
+		    display: none;
+		    cursor: pointer;
+		}
+
 	.checkout_panel.active h2 {
 		color: #fff;
 		background: #252525;
+	}
+
+	.checkout_panel.filled-in span {
+		display: block;
 	}
 
 	.checkout_panel .content {

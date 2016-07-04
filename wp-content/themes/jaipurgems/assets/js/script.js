@@ -670,16 +670,15 @@
 			$('#billing_email').val($('.guest-form #email').val());
 			$('.guest-error').removeClass('active');
 			$('#email').css('border-color', '#e3e3e3');
-			$('.checkout_panel.step_1').removeClass('active');
+			$('.checkout_panel.step_1').removeClass('active').addClass('filled-in');
 			$('.checkout_panel.step_2 #billing_address_1').attr('placeholder', '');
-			$('.checkout_panel.step_2').addClass('active');
+			$('.checkout_panel.step_2').addClass('active').removeClass('filled-in');
 		}
 	});
 
 	// shipping validation
 	$('.panel-btn a').on('click', function(e) {
 		e.preventDefault();
-		console.log('asdasd');
 		var billing_valid = true;
 		$('.woocommerce-billing-fields .checkout-field').each(function() {
 			if($(this).hasClass('woocommerce-invalid') || $(this).find('.input-text').val() == '') {
@@ -689,7 +688,7 @@
 		});
 
 		if(billing_valid == true) {
-			$('.checkout_panel.step_2').removeClass('active');
+			$('.checkout_panel.step_2').removeClass('active').addClass('filled-in');
 			$('.checkout_panel.step_3').addClass('active');
 		}
 	});
@@ -703,6 +702,12 @@
 	// header contact dropdown
 	$('.contact-dropdown').on('click', function() {
 		$('.contact-dropdown-details').slideToggle();
+	});
+
+	// edit previous fields
+	$(document).on( 'click', '.checkout_panel.filled-in h2 span', function() {
+		$('.checkout_panel.active').removeClass('active').addClass('filled-in');
+		$(this).closest('.checkout_panel').addClass('active').removeClass('filled-in');
 	});
 
 })(jQuery);

@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="col-md-8 col-sm-8">
 			<!-- <div class="row"> -->
 				<div class="checkout_panel step_1 <?php if(!is_user_logged_in()) { echo 'active'; } ?>">
-					<h2>1. Sign In</h2>
+					<h2>1. Sign In <span>edit</span></h2>
 					<div class="content">
 						<div class="col-md-6 col-sm-6">
 							<h3>New user</h3>
@@ -67,7 +67,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 				<div class="checkout_panel step_2 <?php if(is_user_logged_in()) { echo 'active'; } ?>">
-					<h2>2. Ship To</h2>
+					<h2>2. Ship To <span>edit</span></h2>
 					<div class="content">
 						<div class="col-md-12 col-sm-12">
 							<!-- <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data"> -->
