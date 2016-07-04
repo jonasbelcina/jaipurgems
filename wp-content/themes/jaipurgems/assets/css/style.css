@@ -6348,6 +6348,11 @@ footer {
 		display: none;
 	}
 
+	.ch-country {
+		top: 13px;
+		right: 67px;
+	}
+
 	.navbar-brand img {
 		max-width: 75px;
 	}
