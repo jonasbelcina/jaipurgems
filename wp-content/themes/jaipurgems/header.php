@@ -136,7 +136,7 @@ if(!isset($_SESSION['selected_country'])) {
 
 	<div class="ramadan-campaign">
 		<div class="container">
-			<p>Receive AED 1000 voucher <a href="https://www.jaipurgems.ae/" target="_blank">Register Now</a></p>
+			<p>Receive AED 1000 voucher <a href="https://ramadan.jaipurgems.ae/" target="_blank">Register Now</a></p>
 		</div>
 	</div>
 
