@@ -21,7 +21,9 @@
 
 		if(isset($location['countryName']) && $location['countryName'] != '' && $location['countryName'] != '-') {
 			$country  = $location['countryName'];
+			echo 'country = ' . $country;
 			$country_code = strtolower($location['countryCode']);
+			echo 'country_code = ' . $country_code;
 		} else {
 			// $country = 'United Arab Emirates';
 		}
