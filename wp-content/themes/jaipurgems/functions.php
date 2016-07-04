@@ -1331,7 +1331,18 @@ if (!session_id()) {
 	$_SESSION['discard_after'] = $now + 3600;
 }
 
-
+// function wcpbc_get_woocommerce_country() {
+	
+// 	// $_country = WC()->customer->get_country();
+// 	$_country = strtoupper($_COOKIE['country_code']);
+	
+// 	if ( $_country !== WC()->customer->get_shipping_country() && 'shipping' === get_option('wc_price_based_country_based_on', 'billing') ) {
+// 		$_country = WC()->customer->get_shipping_country();	
+// 	}		
+	
+// 	return $_country;
+// }
+// add_action( 'init', 'wcpbc_get_woocommerce_country' );
 
 
 
