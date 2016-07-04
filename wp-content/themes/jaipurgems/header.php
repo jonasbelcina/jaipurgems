@@ -13,7 +13,7 @@
 	if(isset($_COOKIE['country']) && $_COOKIE['country'] != '' && isset($_COOKIE['country_code']) && $_COOKIE['country_code'] != ''){
 		$country = $_COOKIE['country'];
 		$country_code = $_COOKIE['country_code'];
-		echo 'cookie = ' . $_COOKIE['country']; 
+		// echo 'cookie = ' . $_COOKIE['country']; 
 	}
 	else{
 		$ip = get_client_ip();
@@ -21,16 +21,16 @@
 
 		if(isset($location['countryName']) && $location['countryName'] != '' && $location['countryName'] != '-') {
 			$country  = $location['countryName'];
-			echo 'country = ' . $country;
+			// echo 'country = ' . $country;
 			$country_code = strtolower($location['countryCode']);
-			echo 'country_code = ' . $country_code;
+			// echo 'country_code = ' . $country_code;
 		} else {
 			// $country = 'United Arab Emirates';
 		}
 		setcookie('country' , $country, time() + ( 7 * 86400 ), '/');
 		setcookie('country_code' , $country_code, time() + ( 7 * 86400 ), '/');
 
-		echo 'cookiecountry = ' . $_COOKIE['country']; 
+		// echo 'cookiecountry = ' . $_COOKIE['country']; 
 		// setcookie('location', $location);
 
 		// // server should keep session data for AT LEAST 1 hour
