@@ -4240,11 +4240,12 @@ footer {
 				#details_accordion .panel-title,
 				#mobile_details_accordion .panel-title {
 					font-family: 'GothamBook';
-					font-size: 15px;
-					color: #000;
+					font-size: 17px;
+					color: #4f4f4f;
 					text-transform: uppercase;
-					letter-spacing: 1px;
+					letter-spacing: 2px;
 					position: relative;
+					font-weight: bold;
 				}
 
 					#details_accordion .panel-title:after,
@@ -4291,6 +4292,7 @@ footer {
 				float: none;
 				font-weight: bold;
 				margin-bottom: 3px;
+				font-size: 15px;
 			}
 
 				#details_accordion .panel-body li span,

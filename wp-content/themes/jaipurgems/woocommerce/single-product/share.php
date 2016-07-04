@@ -74,49 +74,49 @@ if($goldwt_terms || $price_single_terms || $di_pcs || $di_wt_carats || $rose_cut
 
 						if ( $di_pcs && ! is_wp_error( $di_pcs ) ) : 
 							foreach ( $di_pcs as $term ) {
-								echo '<li><span>Di Pcs: </span>' . $term->name . '</li>';
+								echo '<li><span>Diamond Pieces: </span>' . $term->name . '</li>';
 							}
 						endif;
 
 
 						if ( $di_wt_carats && ! is_wp_error( $di_wt_carats ) ) : 
 							foreach ( $di_wt_carats as $term ) {
-								echo '<li><span>Di Wt. in Carats: </span>' . $term->name . '</li>';
+								echo '<li><span>Diamond Weight in Carats: </span>' . $term->name . '</li>';
 							}
 						endif;
 
 
 						if ( $polki_di_wt_carats && ! is_wp_error( $polki_di_wt_carats ) ) : 
 							foreach ( $polki_di_wt_carats as $term ) {
-								echo '<li><span>Polki Di Wt. in Carats: </span>' . $term->name . '</li>';
+								echo '<li><span>Polki Diamond Weight in Carats: </span>' . $term->name . '</li>';
 							}
 						endif;
 
 
 						if ( $color_stone_pcs && ! is_wp_error( $color_stone_pcs ) ) : 
 							foreach ( $color_stone_pcs as $term ) {
-								echo '<li><span>Colour Stone Pcs: </span>' . $term->name . '</li>';
+								echo '<li><span>Colour Stone Pieces: </span>' . $term->name . '</li>';
 							}
 						endif;
 
 
 						if ( $col_st_wt && ! is_wp_error( $col_st_wt ) ) : 
 							foreach ( $col_st_wt as $term ) {
-								echo '<li><span>Col St Wt. in Carats: </span>' . $term->name . '</li>';
+								echo '<li><span>Colour Stone Weight in Carats: </span>' . $term->name . '</li>';
 							}
 						endif;
 
 
 						if ( $rose_cut_dia && ! is_wp_error( $rose_cut_dia ) ) : 
 							foreach ( $rose_cut_dia as $term ) {
-								echo '<li><span>Rose Cut Dia Pcs: </span>' . $term->name . '</li>';
+								echo '<li><span>Rose Cut Diamond Pieces: </span>' . $term->name . '</li>';
 							}
 						endif;
 
 
 						if ( $rose_cut_dia_wt && ! is_wp_error( $rose_cut_dia_wt ) ) : 
 							foreach ( $rose_cut_dia_wt as $term ) {
-								echo '<li><span>Rose Cut Dia Wt: </span>' . $term->name . '</li>';
+								echo '<li><span>Rose Cut Diamond Weight: </span>' . $term->name . '</li>';
 							}
 						endif;
 					?>
