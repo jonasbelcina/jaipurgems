@@ -711,8 +711,8 @@
 		$(this).closest('.checkout_panel').addClass('active').addClass('editing').removeClass('filled-in');
 	});
 
-	$('.wcpbc-widget-country-selecting').append('<button type="submit" name="location" value="india" class="india">India</button><button type="submit" name="location" value="international" class="international">International</button>');
-	$('.wcpbc-widget-country-selecting').addClass('country-select');
+	$('.new-form .wcpbc-widget-country-selecting').append('<button type="submit" name="location" value="india" class="india">India</button><button type="submit" name="location" value="international" class="international">International</button>');
+	$('.new-form .wcpbc-widget-country-selecting').addClass('country-select');
 
 })(jQuery);
 

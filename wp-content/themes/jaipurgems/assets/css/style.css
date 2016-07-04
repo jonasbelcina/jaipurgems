@@ -208,8 +208,7 @@ body.no-country {
 	}
 
 	.country-select select {
-		display: none;
-		opacity: 0;
+		/*display: none;*/
 	}
 
 	.country-select button {
