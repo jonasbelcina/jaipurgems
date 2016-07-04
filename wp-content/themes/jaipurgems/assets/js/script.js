@@ -706,8 +706,9 @@
 
 	// edit previous fields
 	$(document).on( 'click', '.checkout_panel.filled-in h2 span', function() {
-		$('.checkout_panel.active').removeClass('active').addClass('filled-in');
-		$(this).closest('.checkout_panel').addClass('active').removeClass('filled-in');
+		$('.checkout_panel.active').removeClass('active');
+		$('.checkout_panel.editing').addClass('filled-in');
+		$(this).closest('.checkout_panel').addClass('active').addClass('editing').removeClass('filled-in');
 	});
 
 })(jQuery);
