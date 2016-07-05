@@ -473,6 +473,12 @@
 	});
 
 	$(window).load(function() {
+		if($('#campaignPopup').length) {
+			setTimeout(function() {
+				$('#campaignPopup').modal('show');
+			}, 1500);
+		}
+
 		$('.blog-holder').masonry({
 			// options
 			itemSelector: '.blog-item',
@@ -556,7 +562,7 @@
 
 		});
 
-	});
+	}); // end window.load
 
 	$('.india').on('click', function(e) {
 		e.preventDefault();

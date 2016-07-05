@@ -1796,6 +1796,18 @@ footer {
 		width: 100% !important;
 	}*/
 
+#campaignPopup .modal-body {
+	padding: 0;
+	border-radius: 0;
+}
+
+	#campaignPopup button.close {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+		background: none;
+	}
+
 .popup-content {
 	margin: 30px;
 }

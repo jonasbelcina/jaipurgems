@@ -211,6 +211,24 @@
 		</div>
 	</div>
 
+	<?php if (isset($_POST['location'])) {  ?>
+		<!-- Campaign Modal -->
+		<div class="modal fade" id="campaignPopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<!-- <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">Make an Appointment</h4>
+					</div> -->
+					<div class="modal-body">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<a href="http://ramadan.jaipurgems.ae" target="_blank"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/ramadan-popup.png" alt="Ramadan Rewards" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php } ?>
+
 <?php if(is_page('453')) : ?>
 	<!-- <script type='text/javascript' src='https://maps.google.com/maps/api/js?sensor=false&ver=4.2.7'></script> -->
 	<script type="text/javascript">
