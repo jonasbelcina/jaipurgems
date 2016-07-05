@@ -222,7 +222,7 @@
 					</div> -->
 					<div class="modal-body">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<a href="http://ramadan.jaipurgems.ae" target="_blank"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/ramadan-popup.png" alt="Ramadan Rewards" /></a>
+							<a href="http://ramadan.jaipurgems.ae/?utm_source=pop-up-home-page&utm_medium=banner&utm_campaign=ramadan" target="_blank"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/ramadan-popup.png" alt="Ramadan Rewards" /></a>
 					</div>
 				</div>
 			</div>
