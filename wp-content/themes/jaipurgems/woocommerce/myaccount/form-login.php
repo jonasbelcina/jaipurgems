@@ -138,7 +138,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p class="form-row register-btn">
 				<?php wp_nonce_field( 'woocommerce-register' ); ?>
-				<input type="submit" class="button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>" onclick="dataLayer.push({'event': 'GAEvent', 'eventCategory': 'Register Account', 'eventAction': 'Register Account Success', 'eventLabel': undefined, 'eventValue': undefined});" />
+				<input type="submit" class="button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>" onclick="dataLayer.push({'event': 'GAEvent', 'eventCategory': 'Register Account', 'eventAction': 'Register', 'eventLabel': undefined, 'eventValue': undefined});" />
 			</p>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
