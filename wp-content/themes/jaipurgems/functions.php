@@ -1364,8 +1364,9 @@ function jg_head_order_received( ) {
     if ( is_order_received_page()) {
     	$order = new WC_Order(get_query_var('order-received'));
     	$order_id = trim(str_replace('#', '', $order->get_order_number()));
-    	$items = $order->get_items();
+    	$items = $order->get_items(); ?>
 
+    	<script>
 		dataLayer.push({
 		   'transactionId': '<?=$order_id?>',
 		   'transactionAffiliation' : 'Online-store',
@@ -1381,6 +1382,8 @@ function jg_head_order_received( ) {
 		    }?>
 		   ]
 		});
+		</script>
+	<?php
 	}
 }
 add_filter( 'wp_head', 'jg_head_order_received' );
