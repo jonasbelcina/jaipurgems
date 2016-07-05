@@ -1356,6 +1356,34 @@ function skyverge_show_coupon_js() {
 }
 add_action( 'woocommerce_before_checkout_form', 'skyverge_show_coupon_js' );
 
+// ecommerce tracking
+function jg_head_order_received( ) {
+    global $woocommerce, $post;
+
+	$output = '';
+    if ( is_order_received_page()) {
+    	$order = new WC_Order(get_query_var('order-received'));
+    	$order_id = trim(str_replace('#', '', $order->get_order_number()));
+    	$items = $order->get_items();
+
+		dataLayer.push({
+		   'transactionId': '<?=$order_id?>',
+		   'transactionAffiliation' : 'Online-store',
+		   'transactionTotal': <?=$order->get_total()?>,
+		   'transactionProducts': [
+		   <?php foreach ($items as $item) {
+		      echo "{
+		        'sku' : ".$item['product_id'].",
+		        'name': '".$item['name']."',
+		        'price': ".$item['line_total'].",
+		        'quantity': ".$item['qty']."
+		        },";
+		    }?>
+		   ]
+		});
+	}
+}
+add_filter( 'wp_head', 'jg_head_order_received' );
 
 
 
