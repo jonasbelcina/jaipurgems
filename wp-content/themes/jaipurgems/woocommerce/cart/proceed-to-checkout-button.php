@@ -22,6 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<a href="<?php echo esc_url( wc_get_checkout_url() ) ;?>" class="checkout-button button alt wc-forward">
+<a href="<?php echo esc_url( wc_get_checkout_url() ) ;?>" class="checkout-button button alt wc-forward" onclick="dataLayer.push({'event': 'GAEvent', 'eventCategory': 'Proceed To Checkout', 'eventAction': 'Proceed To Checkout Success', 'eventLabel': undefined, 'eventValue': undefined});">
 	<?php echo __( 'Proceed to Checkout', 'woocommerce' ); ?>
 </a>
