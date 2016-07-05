@@ -70,6 +70,8 @@
 		<meta property="og:image" content="<?php get_the_post_thumbnail('full'); ?>" />
 	<?php endif; ?>
 
+	<script>dataLayer = [];</script>
+
 	<?php wp_head(); ?>
 </head>
 
@@ -107,7 +109,7 @@ if(!isset($_SESSION['selected_country'])) {
 	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-WJLSK8');</script>
 	<!-- End Google Tag Manager -->
-	
+
 	<div class="body-wrap">
 
 	<div class="page-loader">
