@@ -1796,6 +1796,10 @@ footer {
 		width: 100% !important;
 	}*/
 
+.mobile-rp {
+	display: none;
+}
+
 #campaignPopup .modal-body {
 	padding: 0;
 	border-radius: 0;
@@ -6403,6 +6407,14 @@ footer {
 			    -ms-transform: none;
 			    	transform: none;
 		}
+
+	.mobile-rp {
+		display: block;
+	}
+
+	.desktop-rp {
+		display: none;
+	}
 
 	.uae:first-child {
 		display: none;
