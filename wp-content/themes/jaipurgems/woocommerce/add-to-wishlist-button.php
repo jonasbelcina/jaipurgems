@@ -14,7 +14,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 global $product;
 ?>
 
-<a href="<?php echo esc_url( add_query_arg( 'add_to_wishlist', $product_id ) )?>" rel="nofollow" data-product-id="<?php echo $product_id ?>" data-product-type="<?php echo $product_type?>" class="<?php echo $link_classes ?>" >
+<a href="<?php echo esc_url( add_query_arg( 'add_to_wishlist', $product_id ) )?>" rel="nofollow" data-product-id="<?php echo $product_id ?>" data-product-type="<?php echo $product_type?>" class="<?php echo $link_classes ?>" onclick="dataLayer.push({'event': 'GAEvent', 'eventCategory': 'Add To Jewellery Box', 'eventAction': 'Add To Jewellery Box Success', 'eventLabel': undefined, 'eventValue': undefined});">
     <?php echo $icon ?>
     <span><?php echo $label ?></span>
 </a>
