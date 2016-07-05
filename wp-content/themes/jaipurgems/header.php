@@ -72,6 +72,8 @@
 
 	<script>dataLayer = [];</script>
 
+	<meta name="google-site-verification" content="NgWqADHqsjQ69rwVaYmIape_jBGwlHMVSPWNoXTk7u0" />
+
 	<?php wp_head(); ?>
 </head>
 
