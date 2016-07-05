@@ -5153,6 +5153,54 @@ footer {
 				float: right;
 			}
 
+	li.review-enter-coupon {
+
+	}
+
+		li.review-enter-coupon input {
+			float: right;
+		}
+
+		li.review-enter-coupon input[type="text"] {
+			border: 1px solid #e3e3e3;
+			border-radius: 0;
+		}
+
+			li.review-enter-coupon input[type="text"]:focus {
+				outline: 0;
+			}
+
+		li.review-enter-coupon input[type="submit"] {
+			background: #252525;
+			color: #fff;
+			border-radius: 0;
+			margin-top: 5px;
+			-webkit-transition: all 0.3s linear;
+					transition: all 0.3s linear;
+		}
+
+			li.review-enter-coupon input[type="submit"]:hover {
+				background: #4d4d4d;
+				color: #fff;
+			}
+
+	li.review-coupon {
+
+	}
+
+		li.review-coupon .coupon-value {
+			float: right;
+		}
+
+			li.review-coupon .coupon-value .amount {
+				font-weight: bold;
+			}
+
+			li.review-coupon .coupon-value a {
+				/*color: #b5985a;*/
+				display: none;
+			}
+
 	li.review-total {
 		font-size: 16px;
 		margin-bottom: 0;

@@ -1344,6 +1344,18 @@ if (!session_id()) {
 // }
 // add_action( 'init', 'wcpbc_get_woocommerce_country' );
 
+function skyverge_show_coupon_js() {
+	wc_enqueue_js( '
+
+		
+		$( "body" ).bind( "updated_checkout", function() {
+			
+			// location.reload();
+		} );
+	');
+}
+add_action( 'woocommerce_before_checkout_form', 'skyverge_show_coupon_js' );
+
 
 
 

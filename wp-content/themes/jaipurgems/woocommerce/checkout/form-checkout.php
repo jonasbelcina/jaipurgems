@@ -214,6 +214,38 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</ul>
 					</li>
 
+					<?php
+						// woocommerce_checkout_coupon_form(); 
+					?>
+
+					<form action="" method="post">
+						<li class="review-enter-coupon">
+							
+								<?php if ( wc_coupons_enabled() ) { 
+									if(!WC()->cart->get_coupons()) { ?>
+										<div class="coupon">
+
+											<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
+											<div class="clearfix"></div>
+											<input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply', 'woocommerce' ); ?>" />
+											<div class="clearfix"></div>
+
+											<?php do_action( 'woocommerce_cart_coupon' ); ?>
+										</div>
+								<?php }
+								} ?>
+						</li>
+
+						<li class="review-coupon">
+							<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
+								<div class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+									<label><?php wc_cart_totals_coupon_label( $coupon ); ?></label>
+									<span class="coupon-value" data-title="<?php wc_cart_totals_coupon_label( $coupon ); ?>"><?php wc_cart_totals_coupon_html( $coupon ); ?></span>
+								</div>
+							<?php endforeach; ?>
+						</li>
+					</form>
+
 					<li class="review-total">
 						Total <span><?php wc_cart_totals_order_total_html(); ?></span>
 					</li>
